@@ -38,5 +38,5 @@
 - [ホールベストのルール](https://sqore-golf.com/rules/hole-best.html)
 - [へび（スネーク）のルール](https://sqore-golf.com/rules/hebi.html)
 - [ドラコン・ニアピンのルール](https://sqore-golf.com/rules/dracon-nearpin.html)
-- [サポート](https://sqore-golf.com/support.html): よくある質問・お問い合わせ
-- [プライバシーポリシー](https://sqore-golf.com/privacy.html)
+- [サポート](https://sqore-golf.com/support/): よくある質問・お問い合わせ
+- [プライバシーポリシー](https://sqore-golf.com/privacy/)
