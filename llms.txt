@@ -31,5 +31,12 @@
 ## ページ
 
 - [ランディングページ](https://sqore-golf.com/): アプリ紹介・対応ゲーム・料金・FAQ
+- [ゲームルール解説一覧](https://sqore-golf.com/rules/): 定番ゲームのルールと計算方法の解説記事
+- [オリンピックのルール](https://sqore-golf.com/rules/olympic.html)
+- [ラスベガスのルール](https://sqore-golf.com/rules/las-vegas.html)
+- [ナッソー（ピンポンパン）のルール](https://sqore-golf.com/rules/nassau.html)
+- [ホールベストのルール](https://sqore-golf.com/rules/hole-best.html)
+- [へび（スネーク）のルール](https://sqore-golf.com/rules/hebi.html)
+- [ドラコン・ニアピンのルール](https://sqore-golf.com/rules/dracon-nearpin.html)
 - [サポート](https://sqore-golf.com/support.html): よくある質問・お問い合わせ
 - [プライバシーポリシー](https://sqore-golf.com/privacy.html)
