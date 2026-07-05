@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SQORE｜ゴルフのオリンピック・ラスベガス・ナッソーをポイント自動計算する無料アプリ</title>
-<meta name="description" content="SQORE（スコア）はゴルフのオリンピック・ラスベガス・ナッソー・ホールベストなど定番ゲームのポイントを自動計算する無料iPhoneアプリ。入力はワンタップ、途中経過もリアルタイム、清算まで一発。スコア記録・成績集計・iCloud同期にも対応。">
+<meta name="description" content="SQORE（スコア）はゴルフのオリンピック・ラスベガス・ナッソー・ホールベストなど定番ゲームのポイントを自動計算する無料iPhoneアプリ。入力はワンタップ、途中経過もリアルタイム、清算まで一発。パーオン率やリカバリー率の詳細分析・成績集計・iCloud同期にも対応。">
 <link rel="canonical" href="https://sqore-golf.com/">
 
 <meta property="og:type" content="website">
@@ -74,6 +74,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "できます。「スコアのみ」でラウンドを始めれば、通常のゴルフスコアアプリとして打数やパット数だけを記録できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "スコアの分析はできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "できます。ティーショットの方向・OB・ガードバンカーなどをワンタップで記録すると、パーオン率・ボギーオン率・リカバリー率・サンドセーブ率・パーオン時とボギーオン時の平均パット・Par別の平均スコアをその日のうちに確認できます。"
       }
     },
     {
@@ -174,6 +182,16 @@
   .feat .emoji { font-size: 34px; }
   .feat h3 { font-size: 18px; margin: 10px 0 6px; }
   .feat p { font-size: 14px; color: var(--gray); }
+
+  /* score app section */
+  .score-inner { display: flex; gap: 36px; align-items: center; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+  .score-shots { display: flex; gap: 16px; flex: none; }
+  .score-shots img { width: 200px; border-radius: 20px; box-shadow: 0 12px 32px rgba(11,92,171,.25); }
+  .score-list { max-width: 420px; list-style: none; }
+  .score-list li { padding: 12px 0 12px 34px; position: relative; font-size: 15px; border-bottom: 1px solid #e8edf3; }
+  .score-list li::before { content: "✓"; position: absolute; left: 4px; top: 14px; color: #fff; background: var(--blue); border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; }
+  .score-list li strong { color: var(--blue-deep); }
+  @media (max-width: 600px) { .score-shots img { width: min(150px, 42vw); } }
 
   /* screenshots */
   .shots-sec { background: linear-gradient(175deg, var(--blue) 0%, var(--blue-deep) 100%); color: #fff; }
@@ -339,6 +357,25 @@
   </div>
 </section>
 
+<section id="score" style="padding-top:0">
+  <div class="wrap">
+    <h2>ゴルフスコア管理アプリとしても<span class="accent">本格派</span></h2>
+    <p class="lead">ゲームの計算だけじゃない。スコア記録と分析は、専用アプリ以上を目指しました。</p>
+    <div class="score-inner">
+      <ul class="score-list">
+        <li><strong>スコア以外もワンタップ記録。</strong>ティーショットの方向（キープ/左/右/オーバー/ショート）、OB・ペナルティ、ガードバンカー、使用クラブまでその場で残せます。</li>
+        <li><strong>その日のうちにプレーを分析。</strong>パーオン率・ボギーオン率・リカバリー率・サンドセーブ率がラウンド直後にわかります。</li>
+        <li><strong>平均パットはパーオン時/ボギーオン時で分けて表示。</strong>Par3・Par4・Par5別の平均スコアで、得意・苦手もひと目でわかります。</li>
+        <li><strong>入力は一度だけ。</strong>ゲームのポイント計算とスコア・詳細の記録が同時に進むので、二度手間がありません。</li>
+      </ul>
+      <div class="score-shots">
+        <img src="assets/ss6.jpg" alt="ティーショットの方向やOB・ガードバンカーをワンタップで記録するSQOREの詳細入力画面" loading="lazy" width="415" height="900">
+        <img src="assets/ss7.jpg" alt="パーオン率・リカバリー率・サンドセーブ率・平均パットをその日のうちに分析するSQOREの画面" loading="lazy" width="415" height="900">
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="shots-sec" id="screenshots">
   <h2>スクリーンショット</h2>
   <p class="lead">実際の画面をチェック</p>
@@ -397,6 +434,10 @@
       <details>
         <summary>ゲームをしないで打数だけ記録できますか？</summary>
         <p>できます。「スコアのみ」でラウンドを始めれば、通常のゴルフスコアアプリとして打数やパット数だけを記録できます。</p>
+      </details>
+      <details>
+        <summary>スコアの分析はできますか？</summary>
+        <p>できます。ティーショットの方向・OB・ガードバンカーなどをワンタップで記録すると、パーオン率・ボギーオン率・リカバリー率・サンドセーブ率・パーオン時とボギーオン時の平均パット・Par別の平均スコアをその日のうちに確認できます。</p>
       </details>
       <details>
         <summary>機種変更したらデータはどうなりますか？</summary>
