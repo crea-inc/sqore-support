@@ -22,7 +22,11 @@ header.site {
 header.site .wrap { display: flex; align-items: center; gap: 12px; }
 header.site img { width: 34px; height: 34px; border-radius: 8px; }
 header.site a { color: #fff; text-decoration: none; font-weight: 800; letter-spacing: .06em; font-size: 18px; }
-header.site .tag { font-size: 12px; opacity: .85; margin-left: auto; }
+header.site .tag { font-size: 12px; opacity: .85; }
+header.site nav.topnav { margin-left: auto; display: flex; gap: 18px; }
+header.site nav.topnav a { font-size: 13px; font-weight: 700; letter-spacing: 0; }
+header.site nav.topnav a:hover { text-decoration: underline; }
+@media (max-width: 560px) { header.site .tag { display: none; } }
 
 nav.crumb { font-size: 12px; color: var(--gray); padding: 14px 0 0; }
 nav.crumb a { color: var(--blue); text-decoration: none; }

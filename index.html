@@ -126,13 +126,21 @@
   img { max-width: 100%; height: auto; display: block; }
   .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
 
+  /* top nav */
+  .topnav { display: flex; align-items: center; gap: 20px; padding: 14px 20px 0; max-width: 980px; margin: 0 auto; }
+  .topnav .brand { font-weight: 800; letter-spacing: .06em; font-size: 17px; margin-right: auto; display: flex; align-items: center; gap: 8px; }
+  .topnav .brand img { width: 26px; height: 26px; border-radius: 6px; }
+  .topnav a { color: #fff; text-decoration: none; font-size: 14px; font-weight: 700; }
+  .topnav a:hover { text-decoration: underline; }
+  @media (max-width: 480px) { .topnav { gap: 14px; } .topnav a { font-size: 13px; } }
+
   /* ===== Hero ===== */
   .hero {
     background: linear-gradient(175deg, #2596e0 0%, var(--blue) 45%, var(--blue-deep) 100%);
-    color: #fff; text-align: center; padding: 56px 0 0; overflow: hidden;
+    color: #fff; text-align: center; padding: 0 0 0; overflow: hidden;
   }
   .hero .icon {
-    width: 96px; height: 96px; border-radius: 22px; margin: 0 auto 20px;
+    width: 96px; height: 96px; border-radius: 22px; margin: 44px auto 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,.3);
   }
   .hero .appname { font-size: 40px; letter-spacing: .08em; font-weight: 800; }
@@ -257,6 +265,13 @@
 <body>
 
 <header class="hero">
+  <nav class="topnav">
+    <span class="brand"><img src="assets/icon_180.png" alt="">SQORE</span>
+    <a href="guide/">使い方</a>
+    <a href="rules/">ルール解説</a>
+    <a href="#pricing">料金</a>
+    <a href="#faq">FAQ</a>
+  </nav>
   <div class="wrap">
     <img class="icon" src="assets/icon_512.png" alt="ゴルフポイント自動計算アプリSQOREのアイコン" width="96" height="96">
     <p class="appname">SQORE</p>
