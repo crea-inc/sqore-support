@@ -31,6 +31,7 @@
 ## ページ
 
 - [ランディングページ](https://sqore-golf.com/): アプリ紹介・対応ゲーム・料金・FAQ
+- [使い方ガイド](https://sqore-golf.com/guide/): チェックインから清算までの6ステップ解説
 - [ゲームルール解説一覧](https://sqore-golf.com/rules/): 定番ゲームのルールと計算方法の解説記事
 - [オリンピックのルール](https://sqore-golf.com/rules/olympic.html)
 - [ラスベガスのルール](https://sqore-golf.com/rules/las-vegas.html)
