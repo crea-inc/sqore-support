@@ -130,9 +130,13 @@
   .topnav { display: flex; align-items: center; gap: 20px; padding: 14px 20px 0; max-width: 980px; margin: 0 auto; }
   .topnav .brand { font-weight: 800; letter-spacing: .06em; font-size: 17px; margin-right: auto; display: flex; align-items: center; gap: 8px; }
   .topnav .brand img { width: 26px; height: 26px; border-radius: 6px; }
-  .topnav a { color: #fff; text-decoration: none; font-size: 14px; font-weight: 700; }
+  .topnav a { color: #fff; text-decoration: none; font-size: 14px; font-weight: 700; white-space: nowrap; }
   .topnav a:hover { text-decoration: underline; }
-  @media (max-width: 480px) { .topnav { gap: 14px; } .topnav a { font-size: 13px; } }
+  @media (max-width: 480px) {
+    .topnav { gap: 12px; }
+    .topnav a { font-size: 13px; }
+    .topnav a[href="#pricing"], .topnav a[href="#faq"] { display: none; }
+  }
 
   /* ===== Hero ===== */
   .hero {

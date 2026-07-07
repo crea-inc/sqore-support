@@ -24,7 +24,7 @@ header.site img { width: 34px; height: 34px; border-radius: 8px; }
 header.site a { color: #fff; text-decoration: none; font-weight: 800; letter-spacing: .06em; font-size: 18px; }
 header.site .tag { font-size: 12px; opacity: .85; }
 header.site nav.topnav { margin-left: auto; display: flex; gap: 18px; }
-header.site nav.topnav a { font-size: 13px; font-weight: 700; letter-spacing: 0; }
+header.site nav.topnav a { font-size: 13px; font-weight: 700; letter-spacing: 0; white-space: nowrap; }
 header.site nav.topnav a:hover { text-decoration: underline; }
 @media (max-width: 560px) { header.site .tag { display: none; } }
 
