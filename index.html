@@ -245,6 +245,31 @@
   .faq summary { font-weight: 700; font-size: 15px; cursor: pointer; }
   .faq p { font-size: 14px; color: var(--gray); margin-top: 10px; }
 
+  /* video */
+  .video-sec { text-align: center; }
+  .video-sec video {
+    width: min(300px, 74vw); border-radius: 28px; margin: 28px auto 0;
+    box-shadow: 0 16px 44px rgba(11,92,171,.25); display: block;
+  }
+
+  /* mobile fixed DL bar */
+  .dl-bar { display: none; }
+  @media (max-width: 640px) {
+    .dl-bar {
+      display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+      background: rgba(13,44,71,.96); backdrop-filter: blur(8px);
+      align-items: center; gap: 12px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    }
+    .dl-bar img { width: 40px; height: 40px; border-radius: 9px; }
+    .dl-bar .txt { color: #fff; font-size: 12px; line-height: 1.4; flex: 1; }
+    .dl-bar .txt b { font-size: 14px; display: block; }
+    .dl-bar a.get {
+      background: var(--blue); color: #fff; text-decoration: none; font-weight: 800;
+      font-size: 14px; border-radius: 999px; padding: 9px 22px; flex: none;
+    }
+    body { padding-bottom: 72px; }
+  }
+
   /* cta */
   .cta { background: linear-gradient(175deg, #2596e0, var(--blue-deep)); color: #fff; text-align: center; }
   .cta h2 { color: #fff; }
@@ -413,6 +438,16 @@
   </div>
 </section>
 
+<section class="video-sec" style="padding-top:0" id="video">
+  <div class="wrap">
+    <h2>15秒でわかる<span class="accent">SQORE</span></h2>
+    <p class="lead">実際の操作の流れを動画でチェック（音は出ません）</p>
+    <video autoplay muted loop playsinline preload="metadata" poster="assets/ss1.jpg" width="1080" height="1920">
+      <source src="assets/sqore_ad_15s.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
 <section class="shots-sec" id="screenshots">
   <h2>スクリーンショット</h2>
   <p class="lead">実際の画面をチェック</p>
@@ -509,5 +544,10 @@
   </div>
 </footer>
 
+<div class="dl-bar">
+  <img src="assets/icon_180.png" alt="">
+  <span class="txt"><b>SQORE</b>ゴルフのポイント自動計算</span>
+  <a class="get" href="https://apps.apple.com/jp/app/id6777357472">入手</a>
+</div>
 </body>
 </html>
