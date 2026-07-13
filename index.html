@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SQORE｜ゴルフのオリンピック・ラスベガス・ナッソーをポイント自動計算する無料アプリ</title>
-<meta name="description" content="SQORE（スコア）はゴルフのオリンピック・ラスベガス・ナッソー・ホールベストなど定番ゲームのポイントを自動計算する無料iPhoneアプリ。入力はワンタップ、途中経過もリアルタイム、清算まで一発。パーオン率やリカバリー率の詳細分析・成績集計・iCloud同期にも対応。">
+<meta name="description" content="SQORE（スコア）はゴルフのオリンピック・ラスベガス・ナッソー・ホールベストなど定番ゲームのポイントを自動計算する無料iPhoneアプリ。入力はワンタップ、途中経過もリアルタイム、清算まで一発。いま打つホールの過去の平均スコア・OB率もその場で表示。パーオン率やリカバリー率の詳細分析・成績集計・iCloud同期にも対応。">
 <link rel="canonical" href="https://sqore-golf.com/">
 
 <meta property="og:type" content="website">
@@ -211,6 +211,30 @@
   .score-list li::before { content: "✓"; position: absolute; left: 4px; top: 14px; color: #fff; background: var(--blue); border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; }
   .score-list li strong { color: var(--blue-deep); }
   @media (max-width: 600px) { .score-shots img { width: min(150px, 42vw); } }
+
+  /* このホールの過去成績(差別化の目玉なので大きめのカード) */
+  .hole-hist {
+    display: flex; gap: 40px; align-items: center; justify-content: center; flex-wrap: wrap;
+    background: #fff; border: 2px solid var(--blue); border-radius: 24px;
+    padding: 44px 36px 36px; margin: 36px auto 48px; position: relative;
+    box-shadow: 0 12px 40px rgba(11,92,171,.16);
+  }
+  .hole-hist::before {
+    content: "SQOREならでは"; position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--blue); color: #fff; font-size: 12px; font-weight: 800; letter-spacing: .08em;
+    border-radius: 999px; padding: 4px 16px; white-space: nowrap;
+  }
+  .hole-hist-text { max-width: 430px; }
+  .hole-hist-text h3 { font-size: 24px; line-height: 1.45; color: var(--blue-deep); }
+  .hole-hist-text h3 .accent { display: inline; }
+  .hole-hist-text .hh-lead { font-size: 15px; margin: 12px 0 4px; }
+  .hole-hist-shots { display: flex; gap: 18px; flex: none; }
+  .hole-hist-shots img { width: 250px; border-radius: 22px; box-shadow: 0 12px 32px rgba(11,92,171,.25); }
+  @media (max-width: 600px) {
+    .hole-hist { padding: 36px 20px 28px; }
+    .hole-hist-text h3 { font-size: 21px; }
+    .hole-hist-shots img { width: min(160px, 44vw); }
+  }
 
   /* screenshots */
   .shots-sec { background: linear-gradient(175deg, var(--blue) 0%, var(--blue-deep) 100%); color: #fff; }
@@ -434,6 +458,20 @@
   <div class="wrap">
     <h2>ゴルフスコア管理アプリとしても<span class="accent">本格派</span></h2>
     <p class="lead">ゲームの計算だけじゃない。スコア記録と分析は、専用アプリ以上を目指しました。</p>
+    <div class="hole-hist">
+      <div class="hole-hist-text">
+        <h3>いま打つホールの<br><span class="accent">自分の過去の成績</span>が<br>その場で見える</h3>
+        <p class="hh-lead">同じゴルフ場でラウンドすると、スコア画面にそのホールの自分の<strong>平均スコア</strong>と<strong>OB率</strong>を自動表示。「ここはいつも叩いてる…」が数字でわかるから、クラブ選びも攻め方も変わります。</p>
+        <ul class="score-list">
+          <li><strong>設定は不要。</strong>ラウンドを保存していくだけで、次に同じコースを回ったとき自動で表示されます。</li>
+          <li><strong>履歴を何年でも遡れる。</strong>タップすれば過去の記録を1ラウンドずつ。打数・パット・使ったクラブ・OBまでホール単位で振り返れます。</li>
+        </ul>
+      </div>
+      <div class="hole-hist-shots">
+        <img src="assets/ss8.jpg" alt="いま打つホールの自分の平均スコアとOB率をスコア画面に自動表示するSQOREの画面" loading="lazy" width="415" height="900">
+        <img src="assets/ss9.jpg" alt="同じホールの過去の打数・パット・使用クラブ・OBを何年でも遡れるSQOREのホール履歴画面" loading="lazy" width="415" height="900">
+      </div>
+    </div>
     <div class="score-inner">
       <ul class="score-list">
         <li><strong>スコア以外もワンタップ記録。</strong>ティーショットの方向（キープ/左/右/オーバー/ショート）、OB・ペナルティ、ガードバンカー、使用クラブまでその場で残せます。</li>
@@ -470,6 +508,8 @@
     <img src="assets/ss5.jpg" alt="ゴルフ場へのチェックイン画面" loading="lazy" width="415" height="900">
     <img src="assets/ss6.jpg" alt="パット数などの詳細入力画面" loading="lazy" width="415" height="900">
     <img src="assets/ss7.jpg" alt="スコアの詳細分析画面" loading="lazy" width="415" height="900">
+    <img src="assets/ss8.jpg" alt="いま打つホールの過去の平均スコアとOB率を表示する画面" loading="lazy" width="415" height="900">
+    <img src="assets/ss9.jpg" alt="ホールごとの過去の記録を遡れる履歴画面" loading="lazy" width="415" height="900">
   </div>
 </section>
 
