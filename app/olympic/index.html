@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ゴルフのオリンピック計算アプリならSQORE｜メダルを選ぶだけで清算まで自動</title>
+<meta name="description" content="ゴルフのオリンピックのポイント計算を自動化するiPhoneアプリ「SQORE」。ダイヤ・金・銀・銅・鉄のメダルを選ぶだけで、総当たりのゼロサム清算まで自動計算。配点カスタマイズ・3パット減点・バーディ加点・ラスベガスとの同時進行に対応。基本無料。">
+<link rel="canonical" href="https://sqore-golf.com/app/olympic/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SQORE">
+<meta property="og:title" content="ゴルフのオリンピック計算アプリならSQORE">
+<meta property="og:description" content="メダルを選ぶだけでオリンピックを自動計算。配点カスタマイズ・3パット減点対応。基本無料のiPhoneアプリ。">
+<meta property="og:url" content="https://sqore-golf.com/app/olympic/">
+<meta property="og:image" content="https://sqore-golf.com/assets/og_1200x630.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6777357472">
+<link rel="apple-touch-icon" href="../../assets/icon_180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon_32.png">
+<link rel="icon" type="image/png" sizes="180x180" href="../../assets/favicon_180.png">
+<link rel="stylesheet" href="../../rules/rules.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "SQORE", "item": "https://sqore-golf.com/" },
+    { "@type": "ListItem", "position": 2, "name": "オリンピック計算アプリ" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "オリンピックの計算アプリは無料ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "SQOREは基本無料で、オリンピックのポイント自動計算・途中経過・清算まで無料で使えます。いつものグループやメンバーの保存、成績の集計などの一部機能のみ月額100円のプレミアムです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "メダルの配点は変えられますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "変えられます。初期値はよく使われる「ダイヤ50・金40・銀30・銅20・鉄10」で、ルール設定から自由に変更できます。3パット減点、バーディ・イーグル加点、ニアピン加点、手動ポイントにも対応しています。" }
+    },
+    {
+      "@type": "Question",
+      "name": "3人でもオリンピックができますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "できます。3人のときは標準的な運用どおり「鉄」を抜いたメダル構成になります。ラスベガスなど他のゲームとの同時進行も可能です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "Android版はありますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "現在はiPhone（iOS）のみの提供です。インストール不要のブラウザ版オリンピック計算ツールはAndroidでも使えます。" }
+    }
+  ]
+}
+</script>
+<style>
+.hero-ss { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 22px 0; }
+.hero-ss img { border-radius: 14px; box-shadow: 0 6px 22px rgba(11,92,171,.16); }
+@media (max-width: 560px) {
+  .hero-ss { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+}
+.checklist { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; margin: 16px 0; }
+.checklist li { background: #fff; border-radius: 10px; padding: 12px 14px; margin: 0; font-size: 14px; box-shadow: 0 3px 14px rgba(11,92,171,.07); }
+.checklist li::before { content: "✓ "; color: var(--blue); font-weight: 800; }
+.steps { counter-reset: n; list-style: none; padding: 0; }
+.steps li { background: #fff; border-radius: 12px; padding: 14px 16px 14px 52px; margin: 10px 0; position: relative; box-shadow: 0 3px 14px rgba(11,92,171,.07); }
+.steps li::before { counter-increment: n; content: counter(n); position: absolute; left: 14px; top: 12px; width: 28px; height: 28px; border-radius: 50%; background: var(--blue); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.demo-wrap { margin: 22px 0; }
+.demo-cap { text-align: center; font-size: 14px; font-weight: 800; color: var(--blue-deep); margin-bottom: 10px; }
+.demo-cap small { display: block; font-weight: 400; font-size: 12px; color: var(--gray); margin-top: 2px; }
+.phone { max-width: 360px; margin: 0 auto; background: #111; border-radius: 46px; padding: 10px; box-shadow: 0 18px 44px rgba(11,44,71,.35); }
+.screen { position: relative; border-radius: 38px; overflow: hidden; background: linear-gradient(180deg, #2596e0, #0b5cab); -webkit-user-select: none; user-select: none; }
+.sb { display: flex; justify-content: space-between; color: #fff; font-size: 13px; font-weight: 700; padding: 12px 24px 0; }
+.apphead { display: flex; align-items: center; color: #fff; padding: 8px 14px 4px; gap: 10px; }
+.apphead .hole { font-size: 26px; font-weight: 800; line-height: 1; }
+.apphead .parw { line-height: 1.15; }
+.apphead .parw small { display: block; font-size: 9px; opacity: .85; }
+.apphead .parw span { font-size: 13px; font-weight: 800; }
+.apphead .course { margin-left: auto; font-size: 11px; font-weight: 700; text-align: right; line-height: 1.3; }
+.chips { display: flex; gap: 6px; padding: 6px 14px 12px; }
+.chip { flex: 1; border: 1px solid rgba(255,255,255,.55); border-radius: 9px; color: #fff; font-size: 10px; text-align: center; padding: 3px 0 2px; line-height: 1.25; cursor: pointer; }
+.chip b { display: block; font-size: 11px; }
+.chip.active { background: #fff; color: var(--blue-deep); border-color: #fff; }
+.chip.lock { opacity: .55; }
+.sheet { background: #eef3f8; border-radius: 20px 20px 0 0; padding: 12px 12px 0; }
+.pcard { background: #fff; border-radius: 14px; padding: 2px 14px; }
+.pblock { padding: 9px 0 11px; border-bottom: 1px solid #f0f2f5; }
+.pblock:last-child { border-bottom: none; }
+.prow { display: flex; align-items: center; gap: 9px; }
+.badge { width: 22px; height: 22px; border-radius: 50%; color: #fff; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex: none; background: #1479d2; }
+.pname { flex: 1; font-size: 15px; font-weight: 600; color: #1c1c1e; }
+.rpt { width: 48px; text-align: right; font-size: 14px; font-weight: 800; color: #9aa3ad; }
+.rpt.plus { color: var(--blue-deep); }
+.rpt.minus { color: #c0392b; }
+.mrow { display: flex; gap: 5px; margin-top: 7px; }
+.mtile { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0 5px; border-radius: 12px; background: #f2f3f5; border: 2px solid transparent; opacity: .55; cursor: pointer; font-family: inherit; }
+.mtile .lbl { font-size: 11px; font-weight: 800; color: #1c1c1e; }
+.mtile .disc { width: 20px; height: 20px; border-radius: 50%; color: #fff; font-size: 11px; display: flex; align-items: center; justify-content: center; }
+.mtile .gem { font-size: 18px; line-height: 20px; color: #00a6d9; }
+.mtile.sel { opacity: 1; }
+.mtile.sel .lbl { color: #fff; }
+.mtile.taken { opacity: .25; pointer-events: none; }
+.mtile[data-m="diamond"].sel { background: #00a6d9; border-color: #00a6d9; }
+.mtile[data-m="diamond"].sel .gem { color: #fff; }
+.mtile[data-m="gold"].sel { background: #d19b26; border-color: #d19b26; }
+.mtile[data-m="silver"].sel { background: #8c949e; border-color: #8c949e; }
+.mtile[data-m="bronze"].sel { background: #b0713b; border-color: #b0713b; }
+.mtile[data-m="iron"].sel { background: #3a3a3c; border-color: #3a3a3c; }
+.disc.gold { background: #d19b26; }
+.disc.silver { background: #a7adb5; }
+.disc.bronze { background: #b0713b; }
+.disc.iron { background: #3a3a3c; }
+.calcbtn { display: block; width: 100%; background: var(--blue); color: #fff; border: none; border-radius: 14px; padding: 13px; font-size: 15px; font-weight: 800; margin: 12px 0; cursor: pointer; font-family: inherit; }
+.calcbtn:active { background: var(--blue-deep); }
+.prog { padding: 0 2px 10px; }
+.prog h4 { font-size: 11px; font-weight: 700; color: #7c8794; margin: 2px 0 6px; }
+.prog .prow2 { background: #fff; border-radius: 10px; display: flex; justify-content: space-between; padding: 8px 12px; margin: 5px 0; font-size: 13px; font-weight: 700; color: #1c1c1e; }
+.prog .prow2 span:last-child { color: #9aa3ad; }
+.prog .prow2 span.plus { color: var(--blue-deep); }
+.prog .prow2 span.minus { color: #c0392b; }
+.tabbar { display: flex; background: #0d3a63; color: #a9c8e4; font-size: 10px; padding: 9px 0 14px; }
+.tabbar div { flex: 1; text-align: center; cursor: pointer; }
+.tabbar div b { display: block; font-size: 15px; font-weight: 400; }
+.tabbar div.active { color: #fff; }
+.stamp { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(13,44,71,.35); z-index: 5; }
+.stamp.show { display: flex; }
+.stamp .card { background: #fff; border-radius: 18px; padding: 18px 26px; text-align: center; box-shadow: 0 12px 34px rgba(0,0,0,.25); transform: rotate(-2deg); border: 3px solid var(--yellow); max-width: 82%; }
+.stamp .card .g { font-size: 11px; font-weight: 800; color: var(--gray); letter-spacing: .1em; }
+.stamp .card .num { font-size: 18px; font-weight: 800; color: #1c1c1e; margin: 2px 0; }
+.stamp .card .pt { font-size: 17px; font-weight: 800; color: var(--blue-deep); }
+.stamp .card .note2 { font-size: 11px; color: var(--gray); margin-top: 4px; }
+.demo-note { font-size: 13px; color: var(--gray); margin-top: 12px; text-align: center; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="../../assets/icon_180.png" alt="SQOREアイコン">
+    <a href="../../">SQORE</a>
+    <span class="tag">ポイント自動計算アプリ</span>
+    <nav class="topnav"><a href="../../guide/">使い方</a><a href="../../rules/">ルール解説</a><a href="../../support/">サポート</a><a href="https://apps.apple.com/jp/app/id6777357472">アプリ入手</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+<nav class="crumb"><a href="../../">ホーム</a> › オリンピック計算アプリ</nav>
+
+<article>
+<h1>ゴルフのオリンピック計算アプリなら SQORE</h1>
+<p class="updated">iPhone向け・基本無料</p>
+
+<p class="intro">オリンピックの面倒なところは、メダルの点数を覚えておいて<strong>「取った人が他の全員からもらう」総当たりの清算</strong>を18ホールぶん積み上げるところ。SQOREなら、その場で<strong>メダルを選ぶだけ</strong>で、ポイントも清算も全部自動です。</p>
+
+<div class="demo-wrap" id="demo">
+  <p class="demo-cap">アプリの画面を1ホールぶん、そのまま動かせます<small>1パットで沈めた人のメダルをタップして「ポイント計算する」。ダイヤは50点で他の全員からもらえます</small></p>
+  <div class="phone">
+    <div class="screen" id="dmScreen">
+      <div class="sb"><span>16:50</span><span>🔋</span></div>
+      <div class="apphead">
+        <div class="hole">1H</div>
+        <div class="parw"><small>おためしコース</small><span>PAR.4</span></div>
+        <div class="course">SQORE<br>おためしラウンド</div>
+      </div>
+      <div class="chips">
+        <div class="chip active">1H<b>PAR.4</b></div>
+        <div class="chip lock" data-lock>2H<b>PAR.5</b></div>
+        <div class="chip lock" data-lock>3H<b>PAR.4</b></div>
+        <div class="chip lock" data-lock>4H<b>PAR.3</b></div>
+        <div class="chip lock" data-lock>5H<b>PAR.4</b></div>
+      </div>
+      <div class="sheet">
+        <div class="pcard" id="pcard"></div>
+        <button class="calcbtn" id="dmCalc">✓&nbsp;&nbsp;ポイント計算する</button>
+        <div class="prog">
+          <h4>途中経過</h4>
+          <div class="prow2"><span>自分</span><span id="pg0">0pt</span></div>
+          <div class="prow2"><span>松本</span><span id="pg1">0pt</span></div>
+          <div class="prow2"><span>井上</span><span id="pg2">0pt</span></div>
+          <div class="prow2"><span>木村</span><span id="pg3">0pt</span></div>
+        </div>
+      </div>
+      <div class="tabbar">
+        <div class="active"><b>▦</b>スコア</div>
+        <div data-lock><b>⚙</b>ルール</div>
+        <div data-lock><b>⚑</b>終了</div>
+      </div>
+      <div class="stamp" id="dmStamp">
+        <div class="card">
+          <div class="g">オリンピック</div>
+          <div class="num" id="dmNum"></div>
+          <div class="pt" id="dmPt"></div>
+          <div class="note2" id="dmNote"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">アプリでは、これが<strong>18ホールずっと自動</strong>。ラスベガスやニアピン・ドラコンと同時進行しても、それぞれ別々に集計して清算まで一気に終わります。</p>
+</div>
+
+<div class="cta">
+  <p class="ttl">メダルを選ぶだけ。清算までゼロ計算。</p>
+  <p>オリンピックのポイント自動計算・途中経過・清算まで無料で使えます。</p>
+  <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
+    <span class="apple"></span>
+    <span><small>Download on the</small>App Store</span>
+  </a>
+</div>
+
+<h2>オリンピックでできること</h2>
+<ul class="checklist">
+  <li>メダルを選ぶだけで総当たりのゼロサム清算まで自動</li>
+  <li>配点は自由（初期値はダイヤ50・金40・銀30・銅20・鉄10）</li>
+  <li>3パット減点（−10点など）</li>
+  <li>バーディ・イーグル・ホールインワン加点</li>
+  <li>PAR3のニアピン加点</li>
+  <li>手動ポイントで独自ルールにも対応</li>
+  <li>3人は「鉄なし」構成に自動対応</li>
+  <li>ラスベガス・ナッソーなど他のゲームと同時進行</li>
+  <li>メダルと連動してパット数も自動記録</li>
+</ul>
+<p class="note">ポイントは全ホールゼロサム（全員の合計は常に0）で清算します。</p>
+
+<h2>使い方は3ステップ</h2>
+<ol class="steps">
+  <li><strong>ルールを選ぶ</strong> — オリンピックを選んで配点や3パット減点を設定。いつものルールは保存してワンタップで呼び出せます。</li>
+  <li><strong>メダルを選ぶ</strong> — 1パットで沈めた人のメダルをタップ。ポイントと途中経過がその場で出ます。</li>
+  <li><strong>清算する</strong> — 18ホール終わったら清算画面へ。誰が何ポイントかが一目でわかります。</li>
+</ol>
+
+<h2>よくある質問</h2>
+<div class="faq">
+  <details>
+    <summary>無料ですか？</summary>
+    <p>基本無料です。オリンピックの自動計算・途中経過・清算まで無料で使えます。いつものグループやメンバーの保存、成績集計などの一部機能のみ月額100円のプレミアムです。</p>
+  </details>
+  <details>
+    <summary>配点は変えられますか？</summary>
+    <p>ルール設定から自由に変えられます。3パット減点・バーディ加点・ニアピン加点・手動ポイントも設定できます。</p>
+  </details>
+  <details>
+    <summary>3人でもできますか？</summary>
+    <p>できます。標準的な運用どおり「鉄」を抜いた構成に自動で切り替わります。</p>
+  </details>
+  <details>
+    <summary>Android版はありますか？</summary>
+    <p>現在はiPhoneのみです。Androidの方は、インストール不要の<a href="../../tools/olympic/">ブラウザ版オリンピック計算ツール</a>（無料）をどうぞ。</p>
+  </details>
+</div>
+
+<div class="related">
+  <h2>あわせて読む</h2>
+  <ul>
+    <li><a href="../../rules/olympic.html">オリンピックのルールと点数<small>メダルの決め方・3人の場合・ローカルルール</small></a></li>
+    <li><a href="../../tools/olympic/">オリンピック計算ツール（ブラウザ版）<small>インストール不要・無料</small></a></li>
+    <li><a href="../las-vegas/">ラスベガス計算アプリ<small>反転・カット・キャリーも自動</small></a></li>
+  </ul>
+</div>
+
+<div class="cta">
+  <p class="ttl">オリンピックの清算、もう揉めない</p>
+  <p>SQOREはオリンピック・ラスベガスなど定番ゲームのポイントを自動計算する基本無料アプリです。</p>
+  <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
+    <span class="apple"></span>
+    <span><small>Download on the</small>App Store</span>
+  </a>
+</div>
+</article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 株式会社クレア</span>
+    <a href="../../">SQOREトップ</a>
+    <a href="../../rules/">ゲームルール解説</a>
+    <a href="../../guide/">使い方</a>
+    <a href="../../support/">サポート</a>
+    <a href="../../privacy/">プライバシーポリシー</a>
+  </div>
+</footer>
+
+<script>
+"use strict";
+// アプリ画面再現デモ（オリンピック メダル制: 素点→総当たりゼロサム。配点はアプリ既定の50/40/30/20/10）
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const NAMES = ["自分", "松本", "井上", "木村"];
+  const MEDALS = [
+    { k: "diamond", lbl: "ダ", pt: 50 },
+    { k: "gold", lbl: "金", pt: 40 },
+    { k: "silver", lbl: "銀", pt: 30 },
+    { k: "bronze", lbl: "銅", pt: 20 },
+    { k: "iron", lbl: "鉄", pt: 10 },
+  ];
+  const sel = [null, null, null, null];   // 各プレイヤーの選択メダルkey
+
+  function tileHTML(p) {
+    return MEDALS.map((m) => {
+      const icon = m.k === "diamond"
+        ? '<span class="gem">◆</span>'
+        : `<span class="disc ${m.k}">${m.k === "iron" ? "" : "★"}</span>`;
+      return `<button type="button" class="mtile" data-p="${p}" data-m="${m.k}">${icon}<span class="lbl">${m.lbl}</span></button>`;
+    }).join("");
+  }
+  const card = $("pcard");
+  card.innerHTML = NAMES.map((n, p) => `
+    <div class="pblock">
+      <div class="prow"><span class="badge">${p + 1}</span><span class="pname">${n}</span><span class="rpt" id="rpt${p}">±0</span></div>
+      <div class="mrow">${tileHTML(p)}</div>
+    </div>`).join("");
+
+  function refreshTiles() {
+    document.querySelectorAll(".mtile").forEach((t) => {
+      const p = +t.dataset.p, m = t.dataset.m;
+      const mine = sel[p] === m;
+      const taken = !mine && sel.some((v, q) => q !== p && v === m);
+      t.classList.toggle("sel", mine);
+      t.classList.toggle("taken", taken);
+    });
+  }
+  function resetPts() {
+    for (let i = 0; i < 4; i++) {
+      $("rpt" + i).textContent = "±0"; $("rpt" + i).className = "rpt";
+      $("pg" + i).textContent = "0pt"; $("pg" + i).className = "";
+    }
+  }
+  function showStamp(num, pt, minus, note, ms) {
+    $("dmNum").textContent = num;
+    $("dmPt").textContent = pt;
+    $("dmPt").className = "pt" + (minus ? " minus" : "");
+    $("dmNote").textContent = note;
+    $("dmStamp").classList.add("show");
+    clearTimeout(showStamp.t);
+    showStamp.t = setTimeout(() => $("dmStamp").classList.remove("show"), ms || 2200);
+  }
+  $("dmStamp").addEventListener("click", () => $("dmStamp").classList.remove("show"));
+
+  document.querySelectorAll(".mtile").forEach((t) => {
+    t.addEventListener("click", () => {
+      const p = +t.dataset.p, m = t.dataset.m;
+      sel[p] = sel[p] === m ? null : m;
+      refreshTiles(); resetPts();
+    });
+  });
+  document.querySelectorAll("[data-lock]").forEach((el) => {
+    el.addEventListener("click", () => {
+      showStamp("ここから先は", "アプリで！", false, "18ホール・配点設定・清算まで全部入り（基本無料）", 1600);
+    });
+  });
+
+  $("dmCalc").addEventListener("click", () => {
+    const raws = sel.map((k) => { const m = MEDALS.find((x) => x.k === k); return m ? m.pt : 0; });
+    const total = raws.reduce((a, b) => a + b, 0);
+    if (total === 0) { showStamp("メダルなし", "全員 ±0", false, "誰かのメダルを選んでから押してみてください", 1800); return; }
+    const nets = raws.map((r) => 4 * r - total);
+    for (let i = 0; i < 4; i++) {
+      const v = nets[i];
+      $("rpt" + i).textContent = v > 0 ? "+" + v : v < 0 ? String(v) : "±0";
+      $("rpt" + i).className = "rpt" + (v > 0 ? " plus" : v < 0 ? " minus" : "");
+      $("pg" + i).textContent = (v > 0 ? "+" + v : String(v)) + "pt";
+      $("pg" + i).className = v > 0 ? "plus" : v < 0 ? "minus" : "";
+    }
+    const got = sel.map((k, p) => k ? NAMES[p] + " " + MEDALS.find((x) => x.k === k).pt + "点" : null).filter(Boolean).join("・");
+    const top = nets.indexOf(Math.max(...nets));
+    showStamp(got, NAMES[top] + " +" + nets[top] + "pt", false, "取った点は他の全員からもらう総当たり清算。配点や3パット減点はアプリで細かく設定できます");
+  });
+
+  refreshTiles();
+})();
+</script>
+
+</body>
+</html>
