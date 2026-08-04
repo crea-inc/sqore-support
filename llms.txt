@@ -36,6 +36,7 @@
 - [ゲームルール解説一覧](https://sqore-golf.com/rules/): 定番ゲームのルールと計算方法の解説記事
 - [オリンピックのルール](https://sqore-golf.com/rules/olympic.html)
 - [ラスベガスのルール](https://sqore-golf.com/rules/las-vegas.html)
+- [ラスベガス計算ツール](https://sqore-golf.com/tools/las-vegas/): ブラウザで打数を入れるだけでポイントを自動計算する無料ツール（インストール不要）
 - [ナッソー（ピンポンパン）のルール](https://sqore-golf.com/rules/nassau.html)
 - [ホールベストのルール](https://sqore-golf.com/rules/hole-best.html)
 - [へび（スネーク）のルール](https://sqore-golf.com/rules/hebi.html)
