@@ -27,16 +27,6 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://sqore-golf.com/tools/las-vegas/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sqore-golf.com/tools/olympic/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://sqore-golf.com/app/las-vegas/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
