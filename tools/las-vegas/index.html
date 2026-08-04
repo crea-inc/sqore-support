@@ -230,7 +230,7 @@ table.vt td.res .win { color: var(--blue-deep); }
 <h2>使い方</h2>
 <ol>
   <li>プレイヤー名（表の見出し）を入れます。<strong>並び順=打順</strong>としてチーム分けに使います。</li>
-  <li>各ホールのPARを合わせて、4人の打数を入力します。</li>
+  <li>各ホールのPARを合わせて打数を入力します。<strong>1人目を入れると残りのメンバーには自動でパーが入る</strong>ので、パーじゃなかった人だけ直せばOKです。</li>
   <li>入力した瞬間にホールの勝敗ポイントと清算が自動計算されます。引き分けは次のホールにキャリーされます。</li>
 </ol>
 
@@ -579,6 +579,19 @@ function bindTable() {
       const h = +el.dataset.h, p = +el.dataset.p;
       const v = parseInt(el.value, 10);
       state.strokes[h][p] = Number.isFinite(v) && v >= 1 ? Math.min(v, 19) : null;
+      // ホール最初の入力で残りメンバーにパーを自動で入れる(違う人だけ直せばよい)
+      if (state.strokes[h][p] != null) {
+        const cols = isGhost() ? 3 : 4;
+        const empty = [];
+        for (let q = 0; q < cols; q++) if (q !== p && state.strokes[h][q] == null) empty.push(q);
+        if (empty.length === cols - 1) {
+          empty.forEach((q) => {
+            state.strokes[h][q] = state.pars[h];
+            const inp = document.querySelector(`input.st[data-h="${h}"][data-p="${q}"]`);
+            if (inp) inp.value = state.pars[h];
+          });
+        }
+      }
       recalc();
     });
   });
