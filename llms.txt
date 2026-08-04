@@ -38,6 +38,7 @@
 - [ラスベガスのルール](https://sqore-golf.com/rules/las-vegas.html)
 - [ラスベガス計算アプリの紹介](https://sqore-golf.com/app/las-vegas/): アプリでのラスベガス自動計算の機能紹介ページ
 - [オリンピック計算アプリの紹介](https://sqore-golf.com/app/olympic/): アプリでのオリンピック自動計算の機能紹介ページ
+- [ラスベガス×オリンピック同時進行おためし](https://sqore-golf.com/app/las-vegas-olympic/): 2ゲーム同時計算のアプリ画面をブラウザで体験できるデモ
 - [ナッソー（ピンポンパン）のルール](https://sqore-golf.com/rules/nassau.html)
 - [ホールベストのルール](https://sqore-golf.com/rules/hole-best.html)
 - [へび（スネーク）のルール](https://sqore-golf.com/rules/hebi.html)

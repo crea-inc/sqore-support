@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ラスベガス×オリンピック同時進行おためし｜ゴルフの握りをまとめて自動計算 - SQORE</title>
+<meta name="description" content="ゴルフの握り「ラスベガス」と「オリンピック」を同時に自動計算するSQOREのアプリ画面を、1ホールぶんブラウザでそのまま動かせます。打数とメダルを入れて「ポイント計算する」を押すだけ。2ゲームぶんの清算も一発です。">
+<link rel="canonical" href="https://sqore-golf.com/app/las-vegas-olympic/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SQORE">
+<meta property="og:title" content="ラスベガス×オリンピック同時進行おためし">
+<meta property="og:description" content="2つの握りを同時に自動計算するアプリ画面を、1ホールぶんブラウザで体験。">
+<meta property="og:url" content="https://sqore-golf.com/app/las-vegas-olympic/">
+<meta property="og:image" content="https://sqore-golf.com/assets/og_1200x630.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6777357472">
+<link rel="apple-touch-icon" href="../../assets/icon_180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon_32.png">
+<link rel="icon" type="image/png" sizes="180x180" href="../../assets/favicon_180.png">
+<link rel="stylesheet" href="../../rules/rules.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "SQORE", "item": "https://sqore-golf.com/" },
+    { "@type": "ListItem", "position": 2, "name": "ラスベガス×オリンピック同時進行おためし" }
+  ]
+}
+</script>
+<style>
+.demo-wrap { margin: 22px 0; }
+.demo-cap { text-align: center; font-size: 14px; font-weight: 800; color: var(--blue-deep); margin-bottom: 10px; }
+.demo-cap small { display: block; font-weight: 400; font-size: 12px; color: var(--gray); margin-top: 2px; }
+.phone { max-width: 360px; margin: 0 auto; background: #111; border-radius: 46px; padding: 10px; box-shadow: 0 18px 44px rgba(11,44,71,.35); }
+.screen { position: relative; border-radius: 38px; overflow: hidden; background: linear-gradient(180deg, #2596e0, #0b5cab); -webkit-user-select: none; user-select: none; }
+.sb { display: flex; justify-content: space-between; color: #fff; font-size: 13px; font-weight: 700; padding: 12px 24px 0; }
+.apphead { display: flex; align-items: center; color: #fff; padding: 8px 14px 4px; gap: 10px; }
+.apphead .hole { font-size: 26px; font-weight: 800; line-height: 1; }
+.apphead .parw { line-height: 1.15; }
+.apphead .parw small { display: block; font-size: 9px; opacity: .85; }
+.apphead .parw span { font-size: 13px; font-weight: 800; }
+.apphead .course { margin-left: auto; font-size: 11px; font-weight: 700; text-align: right; line-height: 1.3; }
+.chips { display: flex; gap: 6px; padding: 6px 14px 2px; }
+.chip { flex: 1; border: 1px solid rgba(255,255,255,.55); border-radius: 9px; color: #fff; font-size: 10px; text-align: center; padding: 3px 0 2px; line-height: 1.25; cursor: pointer; }
+.chip b { display: block; font-size: 11px; }
+.chip.active { background: #fff; color: var(--blue-deep); border-color: #fff; }
+.chip.lock { opacity: .55; }
+.multrow { display: flex; align-items: center; gap: 6px; padding: 8px 14px 12px; color: #fff; font-size: 12px; font-weight: 700; }
+.mchip { border-radius: 8px; padding: 2px 9px; font-size: 12px; font-weight: 800; color: #fff; background: rgba(255,255,255,.16); cursor: pointer; }
+.mchip.active { background: #fff; color: var(--blue-deep); }
+.sheet { background: #eef3f8; border-radius: 20px 20px 0 0; padding: 12px 12px 0; }
+.pcard { background: #fff; border-radius: 14px; padding: 2px 14px; }
+.pblock { padding: 9px 0 11px; border-bottom: 1px solid #f0f2f5; }
+.pblock:last-child { border-bottom: none; }
+.prow { display: flex; align-items: center; gap: 9px; }
+.badge { width: 22px; height: 22px; border-radius: 50%; color: #fff; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex: none; }
+.badge.ta { background: #1479d2; }
+.badge.tb { background: #e0453a; }
+.pname { flex: 1; font-size: 15px; font-weight: 600; color: #1c1c1e; }
+.yaku { font-style: normal; font-size: 10px; font-weight: 800; color: #8a6d00; background: #ffe27a; border-radius: 6px; padding: 2px 6px; margin-left: 6px; vertical-align: 1px; white-space: nowrap; }
+.step { width: 31px; height: 31px; border-radius: 50%; background: #eef3f8; color: #7c8794; font-size: 20px; line-height: 1; border: none; cursor: pointer; flex: none; padding: 0; font-weight: 700; }
+.step:active { background: #dce7f2; }
+.stk { width: 26px; text-align: center; font-size: 22px; font-weight: 800; color: #1c1c1e; }
+.rpt { width: 42px; text-align: right; font-size: 14px; font-weight: 800; color: #9aa3ad; }
+.rpt.plus { color: var(--blue-deep); }
+.rpt.minus { color: #c0392b; }
+.mrow { display: flex; gap: 5px; margin-top: 7px; }
+.mtile { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 6px 0 4px; border-radius: 12px; background: #f2f3f5; border: 2px solid transparent; opacity: .55; cursor: pointer; font-family: inherit; }
+.mtile .lbl { font-size: 10px; font-weight: 800; color: #1c1c1e; }
+.mtile .disc { width: 18px; height: 18px; border-radius: 50%; color: #fff; font-size: 10px; display: flex; align-items: center; justify-content: center; }
+.mtile .gem { font-size: 16px; line-height: 18px; color: #00a6d9; }
+.mtile.sel { opacity: 1; }
+.mtile.sel .lbl { color: #fff; }
+.mtile.taken { opacity: .25; pointer-events: none; }
+.mtile[data-m="diamond"].sel { background: #00a6d9; border-color: #00a6d9; }
+.mtile[data-m="diamond"].sel .gem { color: #fff; }
+.mtile[data-m="gold"].sel { background: #d19b26; border-color: #d19b26; }
+.mtile[data-m="silver"].sel { background: #8c949e; border-color: #8c949e; }
+.mtile[data-m="bronze"].sel { background: #b0713b; border-color: #b0713b; }
+.mtile[data-m="iron"].sel { background: #3a3a3c; border-color: #3a3a3c; }
+.disc.gold { background: #d19b26; }
+.disc.silver { background: #a7adb5; }
+.disc.bronze { background: #b0713b; }
+.disc.iron { background: #3a3a3c; }
+.calcbtn { display: block; width: 100%; background: var(--blue); color: #fff; border: none; border-radius: 14px; padding: 13px; font-size: 15px; font-weight: 800; margin: 12px 0; cursor: pointer; font-family: inherit; }
+.calcbtn:active { background: var(--blue-deep); }
+.prog { padding: 0 2px 10px; }
+.prog h4 { font-size: 11px; font-weight: 700; color: #7c8794; margin: 2px 0 6px; }
+.prog .prow2 { background: #fff; border-radius: 10px; display: flex; justify-content: space-between; padding: 8px 12px; margin: 5px 0; font-size: 13px; font-weight: 700; color: #1c1c1e; }
+.prog .prow2 span:last-child { color: #9aa3ad; }
+.prog .prow2 span.plus { color: var(--blue-deep); }
+.prog .prow2 span.minus { color: #c0392b; }
+.tabbar { display: flex; background: #0d3a63; color: #a9c8e4; font-size: 10px; padding: 9px 0 14px; }
+.tabbar div { flex: 1; text-align: center; cursor: pointer; }
+.tabbar div b { display: block; font-size: 15px; font-weight: 400; }
+.tabbar div.active { color: #fff; }
+.stamp { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(13,44,71,.35); z-index: 5; }
+.stamp.show { display: flex; }
+.stamp .card { background: #fff; border-radius: 18px; padding: 18px 24px; text-align: center; box-shadow: 0 12px 34px rgba(0,0,0,.25); transform: rotate(-2deg); border: 3px solid var(--yellow); max-width: 84%; }
+.stamp .card .g { font-size: 11px; font-weight: 800; color: var(--gray); letter-spacing: .1em; }
+.stamp .card .num { font-size: 14px; font-weight: 800; color: #1c1c1e; margin: 4px 0; line-height: 1.6; }
+.stamp .card .pt { font-size: 17px; font-weight: 800; color: var(--blue-deep); }
+.stamp .card .note2 { font-size: 11px; color: var(--gray); margin-top: 4px; }
+.demo-note { font-size: 13px; color: var(--gray); margin-top: 12px; text-align: center; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="../../assets/icon_180.png" alt="SQOREアイコン">
+    <a href="../../">SQORE</a>
+    <span class="tag">ポイント自動計算アプリ</span>
+    <nav class="topnav"><a href="../../guide/">使い方</a><a href="../../rules/">ルール解説</a><a href="../../support/">サポート</a><a href="https://apps.apple.com/jp/app/id6777357472">アプリ入手</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+<nav class="crumb"><a href="../../">ホーム</a> › ラスベガス×オリンピック同時進行おためし</nav>
+
+<article>
+<h1>ラスベガス×オリンピック、同時に自動計算</h1>
+<p class="updated">アプリ画面の1ホールおためし｜SQORE</p>
+
+<p class="intro">実際のラウンドでは、握りを1つだけやることの方が珍しいもの。SQOREは<strong>複数のゲームを同時に進行して、それぞれ別々に集計</strong>します。ここではラスベガスとオリンピックを同時に動かすアプリ画面を1ホールぶん体験できます。<strong>打数とメダルを入れて「ポイント計算する」</strong>を押してみてください。</p>
+
+<div class="demo-wrap" id="demo">
+  <p class="demo-cap">打数（ラスベガス）とメダル（オリンピック）を同じ画面で<small>行の右のポイントは2ゲームの合算。内訳は計算ポップに出ます</small></p>
+  <div class="phone">
+    <div class="screen" id="dmScreen">
+      <div class="sb"><span>16:50</span><span>🔋</span></div>
+      <div class="apphead">
+        <div class="hole">1H</div>
+        <div class="parw"><small>おためしコース</small><span>PAR.4</span></div>
+        <div class="course">SQORE<br>おためしラウンド</div>
+      </div>
+      <div class="chips">
+        <div class="chip active">1H<b>PAR.4</b></div>
+        <div class="chip lock" data-lock>2H<b>PAR.5</b></div>
+        <div class="chip lock" data-lock>3H<b>PAR.4</b></div>
+        <div class="chip lock" data-lock>4H<b>PAR.3</b></div>
+        <div class="chip lock" data-lock>5H<b>PAR.4</b></div>
+      </div>
+      <div class="multrow">ラス
+        <span class="mchip active" data-mult="1">×1</span>
+        <span class="mchip" data-mult="2">×2</span>
+        <span class="mchip" data-mult="3">×3</span>
+        <span class="mchip" data-lock>×4</span>
+        <span class="mchip" data-lock>×5</span>
+      </div>
+      <div class="sheet">
+        <div class="pcard" id="pcard"></div>
+        <button class="calcbtn" id="dmCalc">✓&nbsp;&nbsp;ポイント計算する</button>
+        <div class="prog">
+          <h4>途中経過（ラス＋オリ合算）</h4>
+          <div class="prow2"><span>自分</span><span id="pg0">0pt</span></div>
+          <div class="prow2"><span>松本</span><span id="pg1">0pt</span></div>
+          <div class="prow2"><span>井上</span><span id="pg2">0pt</span></div>
+          <div class="prow2"><span>木村</span><span id="pg3">0pt</span></div>
+        </div>
+      </div>
+      <div class="tabbar">
+        <div class="active"><b>▦</b>スコア</div>
+        <div data-lock><b>⚙</b>ルール</div>
+        <div data-lock><b>⚑</b>終了</div>
+      </div>
+      <div class="stamp" id="dmStamp">
+        <div class="card">
+          <div class="g">このホールの結果</div>
+          <div class="num" id="dmNum"></div>
+          <div class="pt" id="dmPt"></div>
+          <div class="note2" id="dmNote"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">アプリでは、これが<strong>18ホールずっと自動</strong>。ナッソーやホールベスト、ニアピン・ドラコンも同時に走らせて、ゲームごとの清算まで一気に出ます。</p>
+</div>
+
+<div class="cta">
+  <p class="ttl">何ゲーム重ねても、計算はゼロ。</p>
+  <p>複数ゲームの同時進行・途中経過・清算まで無料で使えます。</p>
+  <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
+    <span class="apple"></span>
+    <span><small>Download on the</small>App Store</span>
+  </a>
+</div>
+
+<div class="related">
+  <h2>それぞれのゲームを詳しく</h2>
+  <ul>
+    <li><a href="../las-vegas/">ラスベガス計算アプリ<small>反転・カット・キャリーも自動</small></a></li>
+    <li><a href="../olympic/">オリンピック計算アプリ<small>メダルを選ぶだけで清算まで自動</small></a></li>
+    <li><a href="../../rules/">ゲームルール解説の一覧<small>ナッソー・ホールベスト・へびなど</small></a></li>
+  </ul>
+</div>
+</article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 株式会社クレア</span>
+    <a href="../../">SQOREトップ</a>
+    <a href="../../rules/">ゲームルール解説</a>
+    <a href="../../guide/">使い方</a>
+    <a href="../../support/">サポート</a>
+    <a href="../../privacy/">プライバシーポリシー</a>
+  </div>
+</footer>
+
+<script>
+"use strict";
+// ラスベガス+オリンピック同時進行デモ（ラス=標準/バーディ反転/DP反転/DPカット、オリ=メダル制50/40/30/20/10）
+(function () {
+  const PAR = 4;
+  const $ = (id) => document.getElementById(id);
+  const NAMES = ["自分", "松本", "井上", "木村"];
+  const TEAMA = [0, 3];   // 1・4=Aチーム(青) / 2・3=Bチーム(赤)
+  const strokes = [4, 5, 6, 4];
+  let mult = 1;
+  const MEDALS = [
+    { k: "diamond", lbl: "ダ", pt: 50 },
+    { k: "gold", lbl: "金", pt: 40 },
+    { k: "silver", lbl: "銀", pt: 30 },
+    { k: "bronze", lbl: "銅", pt: 20 },
+    { k: "iron", lbl: "鉄", pt: 10 },
+  ];
+  const sel = [null, null, null, null];
+
+  // --- ラスベガス計算 ---
+  function cut(s) { return Math.min(s, PAR * 2); }
+  function digits(t) {
+    const c = t.map(cut);
+    return { lo: Math.min(c[0], c[1]), hi: Math.max(c[0], c[1]), under: t.reduce((a, s) => a + Math.max(0, PAR - s), 0), dp: t.filter((s) => s >= PAR * 2).length };
+  }
+  function vegasCalc(s) {
+    const A = [s[0], s[3]], B = [s[1], s[2]];
+    const a = digits(A), b = digits(B);
+    const spA = a.under - a.dp, spB = b.under - b.dp;
+    const n = Math.abs(spA - spB);
+    const aF = n >= 1 && spA < spB, bF = n >= 1 && spB < spA;
+    const numA = aF ? a.hi * 10 + a.lo : a.lo * 10 + a.hi;
+    const numB = bF ? b.hi * 10 + b.lo : b.lo * 10 + b.hi;
+    let bm = 1; for (let i = 1; i < n; i++) bm *= 2;
+    return { pts: (numB - numA) * bm * mult, numA, numB };
+  }
+  // --- 画面組み立て ---
+  function tileHTML(p) {
+    return MEDALS.map((m) => {
+      const icon = m.k === "diamond"
+        ? '<span class="gem">◆</span>'
+        : `<span class="disc ${m.k}">${m.k === "iron" ? "" : "★"}</span>`;
+      return `<button type="button" class="mtile" data-p="${p}" data-m="${m.k}">${icon}<span class="lbl">${m.lbl}</span></button>`;
+    }).join("");
+  }
+  $("pcard").innerHTML = NAMES.map((n, p) => `
+    <div class="pblock">
+      <div class="prow"><span class="badge ${TEAMA.includes(p) ? "ta" : "tb"}">${p + 1}</span><span class="pname">${n}<em class="yaku" id="yk${p}"></em></span><button class="step" data-st="${p}" data-d="-1">−</button><span class="stk" id="stk${p}">${strokes[p]}</span><button class="step" data-st="${p}" data-d="1">＋</button><span class="rpt" id="rpt${p}">±0</span></div>
+      <div class="mrow">${tileHTML(p)}</div>
+    </div>`).join("");
+
+  function updateYaku() {
+    for (let i = 0; i < 4; i++) {
+      const d = PAR - strokes[i];
+      const el = $("yk" + i);
+      const label = d === 1 ? "バーディ" : d === 2 ? "イーグル" : d >= 3 ? "アルバトロス" : "";
+      el.textContent = label;
+      el.style.display = label ? "" : "none";
+    }
+  }
+  function refreshTiles() {
+    document.querySelectorAll(".mtile").forEach((t) => {
+      const p = +t.dataset.p, m = t.dataset.m;
+      const mine = sel[p] === m;
+      const taken = !mine && sel.some((v, q) => q !== p && v === m);
+      t.classList.toggle("sel", mine);
+      t.classList.toggle("taken", taken);
+    });
+  }
+  // メダルを押した瞬間は素点を行に表示。「ポイント計算する」で2ゲーム合算に変わる
+  function resetPts() {
+    for (let i = 0; i < 4; i++) {
+      const m = MEDALS.find((x) => x.k === sel[i]);
+      $("rpt" + i).textContent = m ? "+" + m.pt : "±0";
+      $("rpt" + i).className = "rpt" + (m ? " plus" : "");
+      $("pg" + i).textContent = "0pt"; $("pg" + i).className = "";
+    }
+  }
+  function showStamp(numHtml, pt, minus, note, ms) {
+    $("dmNum").innerHTML = numHtml;
+    $("dmPt").textContent = pt;
+    $("dmPt").className = "pt" + (minus ? " minus" : "");
+    $("dmNote").textContent = note;
+    $("dmStamp").classList.add("show");
+    clearTimeout(showStamp.t);
+    showStamp.t = setTimeout(() => $("dmStamp").classList.remove("show"), ms || 2600);
+  }
+  $("dmStamp").addEventListener("click", () => $("dmStamp").classList.remove("show"));
+
+  document.querySelectorAll(".step").forEach((el) => {
+    el.addEventListener("click", () => {
+      const i = +el.dataset.st, d = +el.dataset.d;
+      strokes[i] = Math.min(12, Math.max(1, strokes[i] + d));
+      $("stk" + i).textContent = strokes[i];
+      updateYaku(); resetPts();
+    });
+  });
+  document.querySelectorAll(".mtile").forEach((t) => {
+    t.addEventListener("click", () => {
+      const p = +t.dataset.p, m = t.dataset.m;
+      sel[p] = sel[p] === m ? null : m;
+      refreshTiles(); resetPts();
+    });
+  });
+  document.querySelectorAll(".mchip[data-mult]").forEach((el) => {
+    el.addEventListener("click", () => {
+      mult = +el.dataset.mult;
+      document.querySelectorAll(".mchip").forEach((c) => c.classList.remove("active"));
+      el.classList.add("active");
+      resetPts();
+    });
+  });
+  document.querySelectorAll("[data-lock]").forEach((el) => {
+    el.addEventListener("click", () => {
+      showStamp("ここから先は", "アプリで！", false, "18ホール・ルール設定・清算まで全部入り（基本無料）", 1600);
+    });
+  });
+
+  $("dmCalc").addEventListener("click", () => {
+    const v = vegasCalc(strokes);
+    const vPts = [v.pts, -v.pts, -v.pts, v.pts];
+    const raws = sel.map((k) => { const m = MEDALS.find((x) => x.k === k); return m ? m.pt : 0; });
+    const oTotal = raws.reduce((a, b) => a + b, 0);
+    const oPts = raws.map((r) => 4 * r - oTotal);
+    const total = vPts.map((x, i) => x + oPts[i]);
+    for (let i = 0; i < 4; i++) {
+      const t = total[i];
+      $("rpt" + i).textContent = t > 0 ? "+" + t : t < 0 ? String(t) : "±0";
+      $("rpt" + i).className = "rpt" + (t > 0 ? " plus" : t < 0 ? " minus" : "");
+      $("pg" + i).textContent = (t > 0 ? "+" + t : String(t)) + "pt";
+      $("pg" + i).className = t > 0 ? "plus" : t < 0 ? "minus" : "";
+    }
+    const vLine = v.pts === 0 ? `ラス: ${v.numA} vs ${v.numB} 引き分け`
+      : `ラス: ${v.numA} vs ${v.numB} → ${v.pts > 0 ? "自分・木村" : "松本・井上"} +${Math.abs(v.pts)}pt`;
+    const oLine = oTotal === 0 ? "オリ: メダルなし"
+      : "オリ: " + sel.map((k, p) => k ? NAMES[p] + MEDALS.find((x) => x.k === k).pt + "点" : null).filter(Boolean).join("・");
+    const top = total.indexOf(Math.max(...total));
+    const pt = Math.max(...total) === 0 ? "全員 ±0" : `合算トップ: ${NAMES[top]} +${total[top]}pt`;
+    showStamp(vLine + "<br>" + oLine, pt, false, "2ゲームぶんを別々に集計して合算。アプリなら何ゲームでも同時に走らせられます");
+  });
+
+  updateYaku(); refreshTiles(); resetPts();
+})();
+</script>
+
+</body>
+</html>
