@@ -68,16 +68,61 @@
 .steps { counter-reset: n; list-style: none; padding: 0; }
 .steps li { background: #fff; border-radius: 12px; padding: 14px 16px 14px 52px; margin: 10px 0; position: relative; box-shadow: 0 3px 14px rgba(11,92,171,.07); }
 .steps li::before { counter-increment: n; content: counter(n); position: absolute; left: 14px; top: 12px; width: 28px; height: 28px; border-radius: 50%; background: var(--blue); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; }
-.demo { background: #fff; border-radius: 16px; padding: 20px 22px; margin: 22px 0; box-shadow: 0 3px 14px rgba(11,92,171,.07); border-top: 3px solid var(--yellow); }
-.demo .ttl { font-weight: 800; color: var(--blue-deep); font-size: 16px; }
-.demo .sub { font-size: 13px; color: var(--gray); margin: 4px 0 12px; }
-.demo-row { display: flex; gap: 10px; flex-wrap: wrap; }
-.demo-row label { font-size: 12px; font-weight: 700; color: var(--gray); display: block; }
-.demo-row input { display: block; width: 72px; font: inherit; font-size: 22px; font-weight: 800; text-align: center; padding: 8px 4px; margin-top: 3px; border: 1px solid #d6dee8; border-radius: 10px; }
-.demo-row input:focus { outline: 2px solid var(--blue); border-color: var(--blue); }
-.demo-res { font-size: 17px; font-weight: 800; color: var(--blue-deep); margin-top: 12px; min-height: 1.5em; }
-.demo-res small { display: block; font-size: 12px; font-weight: 400; color: var(--gray); }
-.demo-note { font-size: 13px; color: var(--gray); margin-top: 10px; border-top: 1px solid #eef1f5; padding-top: 10px; }
+.demo-wrap { margin: 22px 0; }
+.demo-cap { text-align: center; font-size: 14px; font-weight: 800; color: var(--blue-deep); margin-bottom: 10px; }
+.demo-cap small { display: block; font-weight: 400; font-size: 12px; color: var(--gray); margin-top: 2px; }
+.phone { max-width: 360px; margin: 0 auto; background: #111; border-radius: 46px; padding: 10px; box-shadow: 0 18px 44px rgba(11,44,71,.35); }
+.screen { position: relative; border-radius: 38px; overflow: hidden; background: linear-gradient(180deg, #2596e0, #0b5cab); -webkit-user-select: none; user-select: none; }
+.sb { display: flex; justify-content: space-between; color: #fff; font-size: 13px; font-weight: 700; padding: 12px 24px 0; }
+.apphead { display: flex; align-items: center; color: #fff; padding: 8px 14px 4px; gap: 10px; }
+.apphead .hole { font-size: 26px; font-weight: 800; line-height: 1; }
+.apphead .parw { line-height: 1.15; }
+.apphead .parw small { display: block; font-size: 9px; opacity: .85; }
+.apphead .parw span { font-size: 13px; font-weight: 800; }
+.apphead .course { margin-left: auto; font-size: 11px; font-weight: 700; text-align: right; line-height: 1.3; }
+.chips { display: flex; gap: 6px; padding: 6px 14px 2px; }
+.chip { flex: 1; border: 1px solid rgba(255,255,255,.55); border-radius: 9px; color: #fff; font-size: 10px; text-align: center; padding: 3px 0 2px; line-height: 1.25; cursor: pointer; }
+.chip b { display: block; font-size: 11px; }
+.chip.active { background: #fff; color: var(--blue-deep); border-color: #fff; }
+.chip.lock { opacity: .55; }
+.multrow { display: flex; align-items: center; gap: 6px; padding: 8px 14px 12px; color: #fff; font-size: 12px; font-weight: 700; }
+.mchip { border-radius: 8px; padding: 2px 9px; font-size: 12px; font-weight: 800; color: #fff; background: rgba(255,255,255,.16); cursor: pointer; }
+.mchip.active { background: #fff; color: var(--blue-deep); }
+.sheet { background: #eef3f8; border-radius: 20px 20px 0 0; padding: 12px 12px 0; }
+.pcard { background: #fff; border-radius: 14px; padding: 2px 14px; }
+.prow { display: flex; align-items: center; gap: 9px; padding: 11px 0; border-bottom: 1px solid #f0f2f5; }
+.prow:last-child { border-bottom: none; }
+.badge { width: 22px; height: 22px; border-radius: 50%; color: #fff; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex: none; }
+.badge.ta { background: #1479d2; }
+.badge.tb { background: #e0453a; }
+.pname { flex: 1; font-size: 15px; font-weight: 600; color: #1c1c1e; }
+.step { width: 31px; height: 31px; border-radius: 50%; background: #eef3f8; color: #7c8794; font-size: 20px; line-height: 1; border: none; cursor: pointer; flex: none; padding: 0; font-weight: 700; }
+.step:active { background: #dce7f2; }
+.stk { width: 26px; text-align: center; font-size: 22px; font-weight: 800; color: #1c1c1e; }
+.rpt { width: 42px; text-align: right; font-size: 14px; font-weight: 800; color: #9aa3ad; }
+.rpt.plus { color: var(--blue-deep); }
+.rpt.minus { color: #c0392b; }
+.calcbtn { display: block; width: 100%; background: var(--blue); color: #fff; border: none; border-radius: 14px; padding: 13px; font-size: 15px; font-weight: 800; margin: 12px 0; cursor: pointer; font-family: inherit; }
+.calcbtn:active { background: var(--blue-deep); }
+.prog { padding: 0 2px 10px; }
+.prog h4 { font-size: 11px; font-weight: 700; color: #7c8794; margin: 2px 0 6px; }
+.prog .prow2 { background: #fff; border-radius: 10px; display: flex; justify-content: space-between; padding: 8px 12px; margin: 5px 0; font-size: 13px; font-weight: 700; color: #1c1c1e; }
+.prog .prow2 span:last-child { color: #9aa3ad; }
+.prog .prow2 span.plus { color: var(--blue-deep); }
+.prog .prow2 span.minus { color: #c0392b; }
+.tabbar { display: flex; background: #0d3a63; color: #a9c8e4; font-size: 10px; padding: 9px 0 14px; }
+.tabbar div { flex: 1; text-align: center; cursor: pointer; }
+.tabbar div b { display: block; font-size: 15px; font-weight: 400; }
+.tabbar div.active { color: #fff; }
+.stamp { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(13,44,71,.35); z-index: 5; }
+.stamp.show { display: flex; }
+.stamp .card { background: #fff; border-radius: 18px; padding: 18px 26px; text-align: center; box-shadow: 0 12px 34px rgba(0,0,0,.25); transform: rotate(-2deg); border: 3px solid var(--yellow); max-width: 82%; }
+.stamp .card .g { font-size: 11px; font-weight: 800; color: var(--gray); letter-spacing: .1em; }
+.stamp .card .num { font-size: 22px; font-weight: 800; color: #1c1c1e; margin: 2px 0; }
+.stamp .card .pt { font-size: 17px; font-weight: 800; color: var(--blue-deep); }
+.stamp .card .pt.minus { color: #c0392b; }
+.stamp .card .note2 { font-size: 11px; color: var(--gray); margin-top: 4px; }
+.demo-note { font-size: 13px; color: var(--gray); margin-top: 12px; text-align: center; }
 </style>
 </head>
 <body>
@@ -100,16 +145,61 @@
 
 <p class="intro">ラスベガスは盛り上がる反面、<strong>2桁の数字づくり・反転・カット・キャリーが重なると手計算では追いつかない</strong>ゲームです。「あれ、いまのホール何ポイント動いた？」で足が止まったら、SQOREの出番。<strong>打数を入れるだけ</strong>で、ホールごとのポイントから最後の清算までぜんぶ自動計算します。</p>
 
-<div class="demo" id="demo">
-  <p class="ttl">1ホールおためし — 打数をいじると即計算</p>
-  <p class="sub">PAR4・あなたとDさんがチームです。誰かを<strong>3打（バーディ）</strong>にすると相手の数字が反転します。</p>
-  <div class="demo-row">
-    <label>あなた<input type="number" inputmode="numeric" min="1" max="19" value="4" data-demo="0"></label>
-    <label>Bさん<input type="number" inputmode="numeric" min="1" max="19" value="5" data-demo="1"></label>
-    <label>Cさん<input type="number" inputmode="numeric" min="1" max="19" value="6" data-demo="2"></label>
-    <label>Dさん<input type="number" inputmode="numeric" min="1" max="19" value="4" data-demo="3"></label>
+<div class="demo-wrap" id="demo">
+  <p class="demo-cap">アプリの画面を1ホールぶん、そのまま動かせます<small>⊖⊕で打数を変えて「ポイント計算する」。自分を3打（バーディ）にすると相手の数字が反転します</small></p>
+  <div class="phone">
+    <div class="screen" id="dmScreen">
+      <div class="sb"><span>16:50</span><span>🔋</span></div>
+      <div class="apphead">
+        <div class="hole">1H</div>
+        <div class="parw"><small>おためしコース</small><span>PAR.4</span></div>
+        <div class="course">SQORE<br>おためしラウンド</div>
+      </div>
+      <div class="chips">
+        <div class="chip active">1H<b>PAR.4</b></div>
+        <div class="chip lock" data-lock>2H<b>PAR.5</b></div>
+        <div class="chip lock" data-lock>3H<b>PAR.4</b></div>
+        <div class="chip lock" data-lock>4H<b>PAR.3</b></div>
+        <div class="chip lock" data-lock>5H<b>PAR.4</b></div>
+      </div>
+      <div class="multrow">ラス
+        <span class="mchip active" data-mult="1">×1</span>
+        <span class="mchip" data-mult="2">×2</span>
+        <span class="mchip" data-mult="3">×3</span>
+        <span class="mchip" data-lock>×4</span>
+        <span class="mchip" data-lock>×5</span>
+      </div>
+      <div class="sheet">
+        <div class="pcard">
+          <div class="prow"><span class="badge ta">1</span><span class="pname">自分</span><button class="step" data-st="0" data-d="-1">−</button><span class="stk" id="stk0">4</span><button class="step" data-st="0" data-d="1">＋</button><span class="rpt" id="rpt0">±0</span></div>
+          <div class="prow"><span class="badge tb">2</span><span class="pname">松本</span><button class="step" data-st="1" data-d="-1">−</button><span class="stk" id="stk1">5</span><button class="step" data-st="1" data-d="1">＋</button><span class="rpt" id="rpt1">±0</span></div>
+          <div class="prow"><span class="badge tb">3</span><span class="pname">井上</span><button class="step" data-st="2" data-d="-1">−</button><span class="stk" id="stk2">6</span><button class="step" data-st="2" data-d="1">＋</button><span class="rpt" id="rpt2">±0</span></div>
+          <div class="prow"><span class="badge ta">4</span><span class="pname">木村</span><button class="step" data-st="3" data-d="-1">−</button><span class="stk" id="stk3">4</span><button class="step" data-st="3" data-d="1">＋</button><span class="rpt" id="rpt3">±0</span></div>
+        </div>
+        <button class="calcbtn" id="dmCalc">✓&nbsp;&nbsp;ポイント計算する</button>
+        <div class="prog">
+          <h4>途中経過</h4>
+          <div class="prow2"><span>自分</span><span id="pg0">0pt</span></div>
+          <div class="prow2"><span>松本</span><span id="pg1">0pt</span></div>
+          <div class="prow2"><span>井上</span><span id="pg2">0pt</span></div>
+          <div class="prow2"><span>木村</span><span id="pg3">0pt</span></div>
+        </div>
+      </div>
+      <div class="tabbar">
+        <div class="active"><b>▦</b>スコア</div>
+        <div data-lock><b>⚙</b>ルール</div>
+        <div data-lock><b>⚑</b>終了</div>
+      </div>
+      <div class="stamp" id="dmStamp">
+        <div class="card">
+          <div class="g">ラスベガス</div>
+          <div class="num" id="dmNum"></div>
+          <div class="pt" id="dmPt"></div>
+          <div class="note2" id="dmNote"></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <p class="demo-res" id="demoRes"></p>
   <p class="demo-note">アプリでは、これが<strong>18ホールずっと自動</strong>。オリンピックやニアピン・ドラコンも同時に集計して、最後の清算まで一気に終わります。</p>
 </div>
 
@@ -203,9 +293,12 @@
 
 <script>
 "use strict";
-// 1ホールおためしデモ（ラスベガス標準: 数字の差1pt・バーディ相手反転・ダブルパー自チーム反転・ダブルパーカット）
+// アプリ画面再現デモ（ラスベガス標準: 数字の差1pt・バーディ相手反転・ダブルパー自チーム反転・ダブルパーカット）
 (function () {
   const PAR = 4;
+  const $ = (id) => document.getElementById(id);
+  const strokes = [4, 5, 6, 4];   // 自分・松本・井上・木村(自分と木村がチーム)
+  let mult = 1;
   function cut(s) { return Math.min(s, PAR * 2); }
   function digits(t) {
     const c = t.map(cut);
@@ -216,29 +309,69 @@
     const a = digits(A), b = digits(B);
     const spA = a.under - a.dp, spB = b.under - b.dp;
     const n = Math.abs(spA - spB);
-    const baseA = a.lo * 10 + a.hi, baseB = b.lo * 10 + b.hi;
-    const flipA = a.hi * 10 + a.lo, flipB = b.hi * 10 + b.lo;
     const aF = n >= 1 && spA < spB, bF = n >= 1 && spB < spA;
-    const numA = aF ? flipA : baseA, numB = bF ? flipB : baseB;
-    let mult = 1; for (let i = 1; i < n; i++) mult *= 2;
-    return { pts: (numB - numA) * mult, numA, numB, flipped: aF || bF, mult };
+    const numA = aF ? a.hi * 10 + a.lo : a.lo * 10 + a.hi;
+    const numB = bF ? b.hi * 10 + b.lo : b.lo * 10 + b.hi;
+    let bm = 1; for (let i = 1; i < n; i++) bm *= 2;
+    return { pts: (numB - numA) * bm * mult, numA, numB, flipped: aF || bF };
   }
-  const inputs = Array.from(document.querySelectorAll("[data-demo]"));
-  const res = document.getElementById("demoRes");
-  function render() {
-    const s = inputs.map((el) => parseInt(el.value, 10));
-    if (s.some((v) => !Number.isFinite(v) || v < 1)) { res.textContent = "打数を入れてください"; return; }
-    const r = calc(s);
-    let line, sub = `数字は ${r.numA} vs ${r.numB}`;
-    if (r.flipped) sub += "（反転あり！）";
-    if (r.mult > 1) sub += ` ×${r.mult}`;
-    if (r.pts === 0) line = "このホールは引き分け（次のホールにキャリー）";
-    else if (r.pts > 0) line = `あなたとDさんが +${r.pts}pt ずつ獲得！`;
-    else line = `Bさん・Cさんが +${-r.pts}pt ずつ獲得`;
-    res.innerHTML = `${line}<small>${sub}</small>`;
+  function resetPts() {
+    for (let i = 0; i < 4; i++) {
+      const r = $("rpt" + i), g = $("pg" + i);
+      r.textContent = "±0"; r.className = "rpt";
+      g.textContent = "0pt"; g.className = "";
+    }
   }
-  inputs.forEach((el) => el.addEventListener("input", render));
-  render();
+  function showStamp(numHtml, ptHtml, ptMinus, note, ms) {
+    $("dmNum").textContent = numHtml;
+    $("dmPt").textContent = ptHtml;
+    $("dmPt").className = "pt" + (ptMinus ? " minus" : "");
+    $("dmNote").textContent = note;
+    $("dmStamp").classList.add("show");
+    clearTimeout(showStamp.t);
+    showStamp.t = setTimeout(() => $("dmStamp").classList.remove("show"), ms || 2000);
+  }
+  $("dmStamp").addEventListener("click", () => $("dmStamp").classList.remove("show"));
+  // 打数の⊖⊕
+  document.querySelectorAll(".step").forEach((el) => {
+    el.addEventListener("click", () => {
+      const i = +el.dataset.st, d = +el.dataset.d;
+      strokes[i] = Math.min(12, Math.max(1, strokes[i] + d));
+      $("stk" + i).textContent = strokes[i];
+      resetPts();
+    });
+  });
+  // ラス倍率チップ
+  document.querySelectorAll(".mchip[data-mult]").forEach((el) => {
+    el.addEventListener("click", () => {
+      mult = +el.dataset.mult;
+      document.querySelectorAll(".mchip").forEach((c) => c.classList.remove("active"));
+      el.classList.add("active");
+      resetPts();
+    });
+  });
+  // 触れない部分は「続きはアプリで」
+  document.querySelectorAll("[data-lock]").forEach((el) => {
+    el.addEventListener("click", () => {
+      showStamp("ここから先は", "アプリで！", false, "18ホール・ルール設定・清算まで全部入り（基本無料）", 1600);
+    });
+  });
+  // ポイント計算する
+  $("dmCalc").addEventListener("click", () => {
+    const r = calc(strokes);
+    const pts = [r.pts, -r.pts, -r.pts, r.pts];
+    for (let i = 0; i < 4; i++) {
+      const v = pts[i];
+      $("rpt" + i).textContent = v > 0 ? "+" + v : v < 0 ? String(v) : "±0";
+      $("rpt" + i).className = "rpt" + (v > 0 ? " plus" : v < 0 ? " minus" : "");
+      $("pg" + i).textContent = (v > 0 ? "+" + v : String(v)) + "pt";
+      $("pg" + i).className = v > 0 ? "plus" : v < 0 ? "minus" : "";
+    }
+    let note = r.flipped ? "反転あり！" : "";
+    if (mult > 1) note += (note ? " " : "") + "ラス×" + mult;
+    if (r.pts === 0) showStamp(r.numA + " vs " + r.numB, "引き分け→キャリー", false, "次のホールの倍率が上がります");
+    else showStamp(r.numA + " vs " + r.numB, (r.pts > 0 ? "自分・木村 +" + r.pts + "pt" : "松本・井上 +" + (-r.pts) + "pt"), r.pts < 0, note);
+  });
 })();
 </script>
 
