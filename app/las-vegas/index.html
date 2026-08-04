@@ -202,7 +202,7 @@
     </div>
   </div>
   <p class="demo-note"><a href="../las-vegas-olympic/" style="display:inline-block;background:#fff;border:2px solid var(--blue);color:var(--blue-deep);font-weight:800;border-radius:12px;padding:9px 18px;text-decoration:none;">オリンピックと同時に動かすデモも見る →</a></p>
-  <p class="demo-note">アプリでは、これが<strong>18ホールずっと自動</strong>。オリンピックやニアピン・ドラコンも同時に集計して、最後の清算まで一気に終わります。</p>
+  <p class="demo-note">アプリでは、これが<strong>18ホールずっと自動</strong>。<strong>反転・カット・キャリー・チーム分けなどのルール設定も細かく変えられます</strong>。オリンピックやニアピン・ドラコンも同時に集計して、最後の清算まで一気に終わります。</p>
 </div>
 
 <div class="hero-ss">
@@ -425,7 +425,7 @@
       $("pg" + i).className = v > 0 ? "plus" : v < 0 ? "minus" : "";
     }
     if (r.pts === 0) showStamp(r.numA + " vs " + r.numB, "引き分け→キャリー", false, "次のホールの倍率が上がります");
-    else showStamp(r.numA + " vs " + r.numB, (r.pts > 0 ? "自分・木村 +" + r.pts + "pt" : "松本・井上 +" + (-r.pts) + "pt"), r.pts < 0, "反転・カット・キャリーなどのルールはアプリで細かく設定できます");
+    else showStamp(r.numA + " vs " + r.numB, (r.pts > 0 ? "自分・木村 +" + r.pts + "pt" : "松本・井上 +" + (-r.pts) + "pt"), r.pts < 0, "");
   });
 })();
 </script>

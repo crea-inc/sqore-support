@@ -199,7 +199,7 @@
     </div>
   </div>
   <p class="demo-note"><a href="../las-vegas-olympic/" style="display:inline-block;background:#fff;border:2px solid var(--blue);color:var(--blue-deep);font-weight:800;border-radius:12px;padding:9px 18px;text-decoration:none;">ラスベガスと同時に動かすデモも見る →</a></p>
-  <p class="demo-note">アプリでは、これが<strong>18ホールずっと自動</strong>。ラスベガスやニアピン・ドラコンと同時進行しても、それぞれ別々に集計して清算まで一気に終わります。</p>
+  <p class="demo-note">アプリでは、これが<strong>18ホールずっと自動</strong>。<strong>メダルの配点や3パット減点などのルール設定も細かく変えられます</strong>。ラスベガスやニアピン・ドラコンと同時進行しても、それぞれ別々に集計して清算まで一気に終わります。</p>
 </div>
 
 <div class="cta">
@@ -396,7 +396,7 @@
     }
     const got = sel.map((k, p) => k ? NAMES[p] + " " + MEDALS.find((x) => x.k === k).pt + "点" : null).filter(Boolean).join("・");
     const top = nets.indexOf(Math.max(...nets));
-    showStamp(got, NAMES[top] + " +" + nets[top] + "pt", false, "取った点は他の全員からもらう総当たり清算。配点や3パット減点はアプリで細かく設定できます");
+    showStamp(got, NAMES[top] + " +" + nets[top] + "pt", false, "取った点は他の全員からもらう総当たり清算です");
   });
 
   refreshTiles();
