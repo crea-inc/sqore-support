@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>オリンピック計算ツール｜ゴルフの握りポイントを自動計算（無料・インストール不要）</title>
+<meta name="description" content="ゴルフの「オリンピック」のポイントをブラウザで自動計算できる無料ツール。インストール不要。ダイヤ・金・銀・銅・鉄のメダルを選ぶだけで、ホールごとのポイントと清算をゼロサムで自動計算。点数のカスタマイズや3パット減点、2〜4人に対応しています。">
+<link rel="canonical" href="https://sqore-golf.com/tools/olympic/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SQORE">
+<meta property="og:title" content="オリンピック計算ツール｜ゴルフの握りポイントを自動計算">
+<meta property="og:description" content="メダルを選ぶだけでオリンピックのポイントを自動計算。無料・インストール不要。点数カスタマイズ・3パット減点対応。">
+<meta property="og:url" content="https://sqore-golf.com/tools/olympic/">
+<meta property="og:image" content="https://sqore-golf.com/assets/og_1200x630.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6777357472">
+<link rel="apple-touch-icon" href="../../assets/icon_180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon_32.png">
+<link rel="icon" type="image/png" sizes="180x180" href="../../assets/favicon_180.png">
+<link rel="stylesheet" href="../../rules/rules.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "オリンピック計算ツール",
+  "url": "https://sqore-golf.com/tools/olympic/",
+  "applicationCategory": "SportsApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "inLanguage": "ja",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+  "publisher": { "@type": "Organization", "name": "SQORE" },
+  "description": "ゴルフの握り「オリンピック」のポイントをブラウザで自動計算する無料ツール。メダル配点のカスタマイズ・3パット減点・2〜4人に対応。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "SQORE", "item": "https://sqore-golf.com/" },
+    { "@type": "ListItem", "position": 2, "name": "オリンピック計算ツール" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "オリンピックの計算ツールは無料で使えますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "無料です。アプリのインストールや会員登録は不要で、ブラウザで各ホールのメダルを選ぶだけでポイントと清算を自動計算できます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "オリンピックのポイントはどう清算しますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "メダルを取った人が、他の全員からその点数を受け取る「総当たり」で清算するのが一般的です。例えば4人でダイヤ（50点）を取ると、他の3人から50点ずつ、合計+150点になります。このツールはその計算を自動で行います。" }
+    },
+    {
+      "@type": "Question",
+      "name": "3人でもオリンピックの計算はできますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "できます。人数で3人を選ぶと、標準的な運用どおり「鉄」を抜いたメダル構成（ダイヤ・金・銀・銅）になります。点数はそのまま変えないのが一般的です。2人にも対応しています。" }
+    },
+    {
+      "@type": "Question",
+      "name": "メダルの点数は変えられますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "変えられます。初期値はよく使われる「ダイヤ50・金40・銀30・銅20・鉄10」ですが、ルール設定から自由に変更できます。3パット減点（−10点など）も設定できます。" }
+    }
+  ]
+}
+</script>
+<style>
+.tool { background: #fff; border-radius: 16px; box-shadow: 0 3px 14px rgba(11,92,171,.07); padding: 16px; margin: 18px 0 28px; }
+.tool .bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+.tool select, .tool input[type=text] {
+  font: inherit; font-size: 14px; padding: 6px 8px; border: 1px solid #d6dee8; border-radius: 8px; background: #fff; color: var(--ink);
+}
+.tool .clear-btn { margin-left: auto; font-size: 13px; font-weight: 700; color: #c0392b; background: none; border: 1px solid #e3b4ae; border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+details.opts { background: #f5f9fd; border-radius: 12px; padding: 10px 14px; margin-bottom: 14px; }
+details.opts summary { font-weight: 700; font-size: 14px; color: var(--blue-deep); cursor: pointer; }
+details.opts .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px 16px; margin-top: 10px; }
+details.opts label.f { display: block; font-size: 12px; color: var(--gray); font-weight: 700; }
+details.opts label.f input, details.opts label.f select { width: 100%; margin-top: 3px; font-size: 13px; font: inherit; padding: 5px 6px; border: 1px solid #d6dee8; border-radius: 8px; }
+.vt-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table.vt { border-collapse: collapse; width: 100%; min-width: 480px; margin: 0; font-size: 14px; }
+table.vt th, table.vt td { padding: 4px 4px; border-bottom: 1px solid #eef1f5; text-align: center; }
+table.vt th { background: #eaf3fc; color: var(--blue-deep); font-size: 12px; padding: 6px 4px; }
+table.vt th input { width: 100%; min-width: 56px; border: none; background: none; font: inherit; font-size: 12px; font-weight: 700; color: var(--blue-deep); text-align: center; }
+table.vt td.h { font-weight: 800; color: var(--gray); font-size: 12px; }
+table.vt td.sec { background: #f5f9fd; color: var(--blue-deep); font-weight: 800; font-size: 12px; text-align: left; padding: 6px 10px; }
+table.vt select.md { font: inherit; font-size: 13px; border: 1px solid #e3eaf2; border-radius: 8px; padding: 5px 2px; background: #fff; max-width: 86px; }
+table.vt select.md.got { background: #fff6dc; border-color: var(--yellow); font-weight: 700; }
+table.vt td.res { font-size: 11px; font-weight: 700; color: var(--blue-deep); white-space: nowrap; min-width: 90px; }
+.totals { position: sticky; bottom: 0; background: linear-gradient(175deg, #2596e0, var(--blue-deep)); color: #fff; border-radius: 14px; padding: 10px 14px; margin-top: 14px; box-shadow: 0 -3px 14px rgba(11,92,171,.18); }
+.totals .row { display: flex; gap: 6px; }
+.totals .p { flex: 1; text-align: center; min-width: 0; }
+.totals .p .n { font-size: 11px; opacity: .85; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.totals .p .v { font-size: 18px; font-weight: 800; }
+.totals .p .v.plus { color: #ffe27a; }
+.sumtable td.plus { color: var(--blue-deep); font-weight: 800; }
+.sumtable td.minus { color: #c0392b; font-weight: 800; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="../../assets/icon_180.png" alt="SQOREアイコン">
+    <a href="../../">SQORE</a>
+    <span class="tag">ポイント自動計算アプリ</span>
+    <nav class="topnav"><a href="../../guide/">使い方</a><a href="../../rules/">ルール解説</a><a href="../../support/">サポート</a><a href="https://apps.apple.com/jp/app/id6777357472">アプリ入手</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+<nav class="crumb"><a href="../../">ホーム</a> › オリンピック計算ツール</nav>
+
+<article>
+<h1>オリンピック計算ツール</h1>
+<p class="updated">無料・インストール不要｜SQORE</p>
+
+<p class="intro">ゴルフの握り「オリンピック」のポイントを、<strong>各ホールのメダルを選ぶだけで自動計算</strong>できる無料ツールです。取った人が他の全員から点数を受け取る総当たりの清算（ゼロサム）を自動化。メダルの点数カスタマイズ、3パット減点、2〜4人に対応し、入力はブラウザに自動保存されます。ルール自体を知りたい方は<a href="../../rules/olympic.html">オリンピックのルールと点数</a>をどうぞ。</p>
+
+<div class="tool" id="tool">
+  <div class="bar">
+    <label>人数
+      <select id="count">
+        <option value="4">4人</option>
+        <option value="3">3人（鉄なし）</option>
+        <option value="2">2人</option>
+      </select>
+    </label>
+    <button class="clear-btn" id="clearBtn" type="button">すべてクリア</button>
+  </div>
+
+  <details class="opts">
+    <summary>ルール設定（メダルの点数・3パット減点）</summary>
+    <div class="grid">
+      <label class="f">💎ダイヤ<input id="ptDiamond" type="number" inputmode="numeric" min="0" max="999" value="50"></label>
+      <label class="f">🥇金<input id="ptGold" type="number" inputmode="numeric" min="0" max="999" value="40"></label>
+      <label class="f">🥈銀<input id="ptSilver" type="number" inputmode="numeric" min="0" max="999" value="30"></label>
+      <label class="f">🥉銅<input id="ptBronze" type="number" inputmode="numeric" min="0" max="999" value="20"></label>
+      <label class="f">🩶鉄<input id="ptIron" type="number" inputmode="numeric" min="0" max="999" value="10"></label>
+      <label class="f">3パット減点
+        <select id="threePutt">
+          <option value="0">なし</option>
+          <option value="10">−10点</option>
+          <option value="20">−20点</option>
+        </select>
+      </label>
+    </div>
+  </details>
+
+  <div class="vt-scroll">
+    <table class="vt" id="vtable">
+      <thead>
+        <tr id="headrow">
+          <th>H</th>
+          <th><input id="n0" maxlength="6" value="A"></th>
+          <th><input id="n1" maxlength="6" value="B"></th>
+          <th><input id="n2" maxlength="6" value="C"></th>
+          <th><input id="n3" maxlength="6" value="D"></th>
+          <th>ポイント</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="totals" id="totals"></div>
+</div>
+
+<h2>清算（ポイント）</h2>
+<div class="table-scroll">
+  <table class="sumtable" id="sumtable"></table>
+</div>
+<p class="note">メダルを取った人は、他の全員からその点数を受け取ります（4人でダイヤ50点なら+150点）。全ホールゼロサム（全員の合計は常に0）です。</p>
+
+<h2>使い方</h2>
+<ol>
+  <li>プレイヤー名（表の見出し）を入れます。3人のときは人数を「3人」に。</li>
+  <li>各ホールで、<strong>1パットで沈めた人のメダル</strong>を選びます。グリーン外から直接カップインは💎ダイヤです。</li>
+  <li>選んだ瞬間にポイントと清算が自動計算されます。3パット減点を使う場合はルール設定でONにして、メダル欄で「3パット」を選びます。</li>
+</ol>
+
+<h2>計算例</h2>
+<div class="example">
+  <p class="ttl">4人でAがダイヤ、Bが金を取ったホール</p>
+  <p>素点は A=50点、B=40点。総当たりで清算すると<br>
+  A: 4×50 − 90 = <strong>+110</strong>／B: 4×40 − 90 = <strong>+70</strong>／C・D: それぞれ <strong>−90</strong><br>
+  （全員の合計は0になります）</p>
+</div>
+
+<h2>よくある質問</h2>
+<div class="faq">
+  <details>
+    <summary>無料ですか？登録は必要ですか？</summary>
+    <p>無料です。インストールも会員登録も不要で、このページを開くだけで使えます。入力はこの端末のブラウザに自動保存されます。</p>
+  </details>
+  <details>
+    <summary>メダルの点数は変えられますか？</summary>
+    <p>ルール設定から自由に変えられます。初期値はよく使われる「ダイヤ50・金40・銀30・銅20・鉄10」です。</p>
+  </details>
+  <details>
+    <summary>3人・2人でもできますか？</summary>
+    <p>できます。3人では標準的な運用どおり「鉄」を抜いた構成になります（点数はそのまま）。2人にも対応しています。</p>
+  </details>
+  <details>
+    <summary>バーディ加点やニアピン加点は？</summary>
+    <p>このツールはメダル＋3パット減点までの対応です。バーディ・イーグル加点、ニアピン加点、ラスベガスなど他のゲームとの同時進行はアプリのSQOREで対応しています。</p>
+  </details>
+</div>
+
+<div class="related">
+  <h2>あわせて読む</h2>
+  <ul>
+    <li><a href="../../rules/olympic.html">オリンピックのルールと点数<small>メダルの決め方・3人の場合・ローカルルール</small></a></li>
+    <li><a href="../las-vegas/">ラスベガス計算ツール<small>打数を入れるだけ・無料</small></a></li>
+    <li><a href="../../rules/">ゲームルール解説の一覧へ</a></li>
+  </ul>
+</div>
+
+<div class="cta">
+  <p class="ttl">ラウンド中はアプリがもっとラク</p>
+  <p>SQOREならオリンピック・ラスベガス・ナッソーなどを同時に自動計算。バーディ加点やニアピンも一緒に集計して、清算まで一気に終わります。</p>
+  <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
+    <span class="apple"></span>
+    <span><small>Download on the</small>App Store</span>
+  </a>
+</div>
+</article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 株式会社クレア</span>
+    <a href="../../">SQOREトップ</a>
+    <a href="../../rules/">ゲームルール解説</a>
+    <a href="../../guide/">使い方</a>
+    <a href="../../support/">サポート</a>
+    <a href="../../privacy/">プライバシーポリシー</a>
+  </div>
+</footer>
+
+<script>
+"use strict";
+// ===== 計算エンジン（アプリ SQORE の olympicHole を移植: 素点→総当たりゼロサム化） =====
+// medals[hole][player] = "none"|"iron"|"bronze"|"silver"|"gold"|"diamond"|"threePutt"
+function olympicRaw(medal, pts) {
+  switch (medal) {
+    case "iron": return pts.iron;
+    case "bronze": return pts.bronze;
+    case "silver": return pts.silver;
+    case "gold": return pts.gold;
+    case "diamond": return pts.diamond;
+    case "threePutt": return -pts.threePutt;
+  }
+  return 0;
+}
+// 1ホールぶんのネット。raws: 各自の素点。net = n×素点 − 全員合計
+function olympicNets(raws) {
+  const n = raws.length;
+  const total = raws.reduce((a, b) => a + b, 0);
+  return raws.map((r) => n * r - total);
+}
+// ===== UI =====
+const HOLES = 18, KEY = "sqore-olympic-tool-v1";
+const $ = (id) => document.getElementById(id);
+const MEDALS = [
+  { v: "none", label: "—" },
+  { v: "diamond", label: "💎ダイヤ" },
+  { v: "gold", label: "🥇金" },
+  { v: "silver", label: "🥈銀" },
+  { v: "bronze", label: "🥉銅" },
+  { v: "iron", label: "🩶鉄" },
+  { v: "threePutt", label: "3パット" },
+];
+let state = {
+  count: 4,
+  names: ["A", "B", "C", "D"],
+  pts: { diamond: 50, gold: 40, silver: 30, bronze: 20, iron: 10, threePutt: 0 },
+  medals: Array.from({ length: HOLES }, () => ["none", "none", "none", "none"]),
+};
+try {
+  const saved = JSON.parse(localStorage.getItem(KEY));
+  if (saved && saved.medals && saved.medals.length === HOLES) state = Object.assign(state, saved);
+} catch (e) { /* 保存データ破損時は初期状態で開く */ }
+
+function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* プライベートモード等 */ } }
+
+function allowedMedals() {
+  return MEDALS.filter((m) => {
+    if (m.v === "iron" && state.count <= 3) return false;
+    if (m.v === "threePutt" && state.pts.threePutt <= 0) return false;
+    return true;
+  });
+}
+
+function buildTable() {
+  const tb = $("tbody");
+  tb.innerHTML = "";
+  const n = state.count;
+  for (let i = 0; i < HOLES; i++) {
+    if (i === 0 || i === 9) {
+      const sec = document.createElement("tr");
+      sec.innerHTML = `<td class="sec" colspan="${n + 2}">${i === 0 ? "OUT（1〜9H）" : "IN（10〜18H）"}</td>`;
+      tb.appendChild(sec);
+    }
+    const tr = document.createElement("tr");
+    let cells = `<td class="h">${i + 1}</td>`;
+    for (let p = 0; p < n; p++) {
+      const cur = state.medals[i][p];
+      cells += `<td><select class="md${cur !== "none" ? " got" : ""}" data-h="${i}" data-p="${p}">` +
+        allowedMedals().map((m) => `<option value="${m.v}"${cur === m.v ? " selected" : ""}>${m.label}</option>`).join("") +
+        `</select></td>`;
+    }
+    cells += `<td class="res" data-res="${i}"></td>`;
+    tr.innerHTML = cells;
+    tb.appendChild(tr);
+  }
+  // 見出し: 使わない列を隠す
+  for (let p = 0; p < 4; p++) $("n" + p).parentElement.style.display = p < n ? "" : "none";
+}
+
+function recalc() {
+  const n = state.count;
+  const names = state.names.slice(0, n).map((x) => x || "・");
+  const totals = Array(n).fill(0);
+  const halves = [Array(n).fill(0), Array(n).fill(0)];
+  for (let i = 0; i < HOLES; i++) {
+    const raws = [];
+    for (let p = 0; p < n; p++) {
+      let m = state.medals[i][p];
+      if (m === "iron" && n <= 3) m = "none";
+      if (m === "threePutt" && state.pts.threePutt <= 0) m = "none";
+      raws.push(olympicRaw(m, state.pts));
+    }
+    const nets = olympicNets(raws);
+    const cell = document.querySelector(`[data-res="${i}"]`);
+    if (nets.every((v) => v === 0)) { if (cell) cell.textContent = ""; continue; }
+    nets.forEach((v, p) => { totals[p] += v; halves[i < 9 ? 0 : 1][p] += v; });
+    if (cell) cell.textContent = nets.map((v) => (v > 0 ? "+" + v : String(v))).join(" / ");
+  }
+  $("totals").innerHTML = `<div class="row">` + totals.map((v, i) =>
+    `<div class="p"><div class="n">${names[i]}</div><div class="v${v > 0 ? " plus" : ""}">${v > 0 ? "+" : ""}${v}</div></div>`
+  ).join("") + `</div>`;
+  const fmt = (v) => `<td class="${v > 0 ? "plus" : v < 0 ? "minus" : ""}">${v > 0 ? "+" : ""}${v}</td>`;
+  let rows = `<tr><th></th>${names.map((x) => `<th>${x}</th>`).join("")}</tr>`;
+  rows += `<tr><td>前半(OUT)</td>${halves[0].map(fmt).join("")}</tr>`;
+  rows += `<tr><td>後半(IN)</td>${halves[1].map(fmt).join("")}</tr>`;
+  rows += `<tr><td><strong>合計</strong></td>${totals.map(fmt).join("")}</tr>`;
+  $("sumtable").innerHTML = rows;
+  save();
+}
+
+function bindTable() {
+  document.querySelectorAll("select.md").forEach((el) => {
+    el.addEventListener("change", () => {
+      const h = +el.dataset.h, p = +el.dataset.p;
+      state.medals[h][p] = el.value;
+      el.classList.toggle("got", el.value !== "none");
+      recalc();
+    });
+  });
+}
+
+function buildTableAndBind() { buildTable(); bindTable(); }
+
+function bindControls() {
+  $("count").value = String(state.count);
+  $("count").addEventListener("change", () => {
+    state.count = +$("count").value;
+    buildTableAndBind(); recalc();
+  });
+  const ptFields = [["ptDiamond", "diamond"], ["ptGold", "gold"], ["ptSilver", "silver"], ["ptBronze", "bronze"], ["ptIron", "iron"]];
+  ptFields.forEach(([id, key]) => {
+    $(id).value = state.pts[key];
+    $(id).addEventListener("input", () => {
+      const v = parseInt($(id).value, 10);
+      state.pts[key] = Number.isFinite(v) && v >= 0 ? v : 0;
+      recalc();
+    });
+  });
+  $("threePutt").value = String(state.pts.threePutt);
+  $("threePutt").addEventListener("change", () => {
+    state.pts.threePutt = +$("threePutt").value;
+    buildTableAndBind(); recalc();
+  });
+  for (let i = 0; i < 4; i++) {
+    const el = $("n" + i);
+    el.value = state.names[i];
+    el.addEventListener("input", () => { state.names[i] = el.value.trim(); recalc(); });
+  }
+  $("clearBtn").addEventListener("click", () => {
+    if (!confirm("入力したメダルをすべてクリアしますか？")) return;
+    state.medals = Array.from({ length: HOLES }, () => ["none", "none", "none", "none"]);
+    buildTableAndBind(); recalc();
+  });
+}
+
+buildTableAndBind();
+bindControls();
+recalc();
+</script>
+
+</body>
+</html>

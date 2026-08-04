@@ -26,7 +26,24 @@
   "inLanguage": "ja",
   "author": { "@type": "Organization", "name": "株式会社クレア" },
   "publisher": { "@type": "Organization", "name": "SQORE" },
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-08-04",
   "mainEntityOfPage": "https://sqore-golf.com/rules/las-vegas.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "ゴルフ「ラスベガス」のポイント計算手順",
+  "inLanguage": "ja",
+  "step": [
+    { "@type": "HowToStep", "name": "チーム分け", "text": "4人を2人1組×2チームに分けます。打順の1・4番手と2・3番手で組むのが定番です。" },
+    { "@type": "HowToStep", "name": "2桁の数字を作る", "text": "各チームは2人の打数を並べて2桁の数字を作ります。小さい打数が10の位、大きい打数が1の位です（4打と5打なら45）。" },
+    { "@type": "HowToStep", "name": "差をポイントにする", "text": "両チームの数字の差がそのホールで動くポイントです（45と56なら11ポイント）。勝ったチームの2人がそれぞれ獲得し、負けたチームの2人がそれぞれ失います。" },
+    { "@type": "HowToStep", "name": "特別ルールを適用する", "text": "バーディが出たら相手チームの数字を反転（45→54）または倍、ダブルパーを叩いたら自チームの数字を反転、引き分けは次のホールに倍率をキャリーします。" },
+    { "@type": "HowToStep", "name": "清算する", "text": "18ホールぶんのポイントを合計します。各ホールがゼロサムなので、全員の合計は常に0になります。" }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -80,7 +97,7 @@
 
 <article>
 <h1>ゴルフ「ラスベガス」のルールと計算方法</h1>
-<p class="updated">SQORE編集部</p>
+<p class="updated">SQORE編集部｜更新日: 2026年8月4日</p>
 
 <p class="intro">ラスベガスは、<strong>2人1組×2チームに分かれ、チーム2人の打数から「2桁の数字」を作って差をポイントで奪い合う</strong>チーム対抗の定番ゲームです。1打の重みがホールごとに変わるスリルと、チームで戦う一体感が魅力。4人ゴルフで最も人気のあるゲームのひとつです。今すぐ計算したい方は、ブラウザで使える無料の<a href="../tools/las-vegas/">ラスベガス計算ツール</a>もどうぞ。</p>
 
@@ -133,6 +150,33 @@
   <p>iPhoneアプリの<a href="../">SQORE</a>なら、打数を入力するだけでラスベガスのポイントを自動計算。バーディ倍・ダブルパー反転・各種カット・キャリー・リーチ・チーム分け4方式・3人ゴーストまで全部設定でき、ニアピンやドラコンのポイントも同時に集計します。途中経過も清算も自動です。</p>
 </div>
 
+<h2>18ホール通しの計算例</h2>
+<p>実際の1ラウンドを通して見ると流れがつかめます。A・Dチーム vs B・Cチーム、<strong>数字の差=1打1pt・バーディで相手反転・ダブルパーで自チーム反転・ダブルパーカット・引き分けはキャリー</strong>という定番設定の例です（ポイントは検証済みの自動計算によるものです）。</p>
+<div class="table-scroll">
+<table>
+  <tr><th>H</th><th>PAR</th><th>A/B/C/Dの打数</th><th>数字</th><th>結果</th><th>A・D累計</th></tr>
+  <tr><td>1</td><td>4</td><td>4・5・5・4</td><td>44 vs 55</td><td>A・D +11</td><td>+11</td></tr>
+  <tr><td>2</td><td>4</td><td>5・5・4・4</td><td>45 vs 45</td><td>引き分け→キャリー</td><td>+11</td></tr>
+  <tr><td>3</td><td>3</td><td>3・4・3・4</td><td>34 vs 34</td><td>引き分け→キャリー</td><td>+11</td></tr>
+  <tr><td>4</td><td>5</td><td>5・6・5・5</td><td>55 vs 56</td><td>差1×キャリー3 → A・D +3</td><td>+14</td></tr>
+  <tr><td>5</td><td>4</td><td><strong>3</strong>・5・4・4</td><td>34 vs 45</td><td>Aバーディで相手反転(45→54) → A・D +20</td><td>+34</td></tr>
+  <tr><td>6</td><td>4</td><td>4・4・5・5</td><td>45 vs 45</td><td>引き分け→キャリー</td><td>+34</td></tr>
+  <tr><td>7</td><td>3</td><td>4・3・3・3</td><td>34 vs 33</td><td>差1×キャリー2 → B・C +2</td><td>+32</td></tr>
+  <tr><td>8</td><td>5</td><td>6・5・5・5</td><td>56 vs 55</td><td>B・C +1</td><td>+31</td></tr>
+  <tr><td>9</td><td>4</td><td>4・4・4・<strong>8</strong></td><td>48 vs 44</td><td>Dダブルパーで自チーム反転(48→84) → B・C +40</td><td>−9</td></tr>
+  <tr><td>10</td><td>4</td><td>4・4・5・4</td><td>44 vs 45</td><td>A・D +1</td><td>−8</td></tr>
+  <tr><td>11</td><td>3</td><td>3・3・4・3</td><td>33 vs 34</td><td>A・D +1</td><td>−7</td></tr>
+  <tr><td>12</td><td>5</td><td>5・5・5・5</td><td>55 vs 55</td><td>引き分け→キャリー</td><td>−7</td></tr>
+  <tr><td>13</td><td>4</td><td>4・6・5・4</td><td>44 vs 56</td><td>差12×キャリー2 → A・D +24</td><td>+17</td></tr>
+  <tr><td>14</td><td>4</td><td>5・4・4・5</td><td>55 vs 44</td><td>B・C +11</td><td>+6</td></tr>
+  <tr><td>15</td><td>4</td><td>4・5・4・4</td><td>44 vs 45</td><td>A・D +1</td><td>+7</td></tr>
+  <tr><td>16</td><td>3</td><td>4・3・4・<strong>2</strong></td><td>24 vs 34</td><td>Dバーディで相手反転(34→43) → A・D +19</td><td>+26</td></tr>
+  <tr><td>17</td><td>5</td><td>5・6・6・5</td><td>55 vs 66</td><td>A・D +11</td><td>+37</td></tr>
+  <tr><td>18</td><td>4</td><td>4・4・4・4</td><td>44 vs 44</td><td>引き分け</td><td>+37</td></tr>
+</table>
+</div>
+<p>最終清算は <strong>AとDが各+37pt、BとCが各−37pt</strong>（ゼロサム）。9Hのダブルパー反転で一気に40pt動いて逆転され、13Hのキャリー×2で取り返す——という浮き沈みがラスベガスの醍醐味です。この計算を自分でやるのは大変なので、<a href="../tools/las-vegas/">ブラウザの計算ツール</a>かアプリの<a href="../">SQORE</a>に任せるのがおすすめです。</p>
+
 <h2>よくある質問</h2>
 <div class="faq">
   <details>
@@ -153,6 +197,7 @@
   <h2>他のゲームのルールを見る</h2>
   <ul>
     <li><a href="../tools/las-vegas/">ラスベガス計算ツール<small>ブラウザで打数を入れるだけ・無料</small></a></li>
+    <li><a href="../app/las-vegas/">ラスベガス計算アプリSQORE<small>反転・カット・キャリーも自動</small></a></li>
     <li><a href="olympic.html">オリンピック<small>1パットで沈めてメダル獲得</small></a></li>
     <li><a href="nassau.html">ナッソー / ピンポンパン<small>前半・後半・トータルの3本勝負</small></a></li>
     <li><a href="dracon-nearpin.html">ドラコン・ニアピン<small>PAR5とPAR3の名物ルール</small></a></li>
