@@ -68,6 +68,16 @@
 .steps { counter-reset: n; list-style: none; padding: 0; }
 .steps li { background: #fff; border-radius: 12px; padding: 14px 16px 14px 52px; margin: 10px 0; position: relative; box-shadow: 0 3px 14px rgba(11,92,171,.07); }
 .steps li::before { counter-increment: n; content: counter(n); position: absolute; left: 14px; top: 12px; width: 28px; height: 28px; border-radius: 50%; background: var(--blue); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.demo { background: #fff; border-radius: 16px; padding: 20px 22px; margin: 22px 0; box-shadow: 0 3px 14px rgba(11,92,171,.07); border-top: 3px solid var(--yellow); }
+.demo .ttl { font-weight: 800; color: var(--blue-deep); font-size: 16px; }
+.demo .sub { font-size: 13px; color: var(--gray); margin: 4px 0 12px; }
+.demo-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.demo-row label { font-size: 12px; font-weight: 700; color: var(--gray); display: block; }
+.demo-row input { display: block; width: 72px; font: inherit; font-size: 22px; font-weight: 800; text-align: center; padding: 8px 4px; margin-top: 3px; border: 1px solid #d6dee8; border-radius: 10px; }
+.demo-row input:focus { outline: 2px solid var(--blue); border-color: var(--blue); }
+.demo-res { font-size: 17px; font-weight: 800; color: var(--blue-deep); margin-top: 12px; min-height: 1.5em; }
+.demo-res small { display: block; font-size: 12px; font-weight: 400; color: var(--gray); }
+.demo-note { font-size: 13px; color: var(--gray); margin-top: 10px; border-top: 1px solid #eef1f5; padding-top: 10px; }
 </style>
 </head>
 <body>
@@ -89,6 +99,19 @@
 <p class="updated">iPhone向け・基本無料</p>
 
 <p class="intro">ラスベガスは盛り上がる反面、<strong>2桁の数字づくり・反転・カット・キャリーが重なると手計算では追いつかない</strong>ゲームです。「あれ、いまのホール何ポイント動いた？」で足が止まったら、SQOREの出番。<strong>打数を入れるだけ</strong>で、ホールごとのポイントから最後の清算までぜんぶ自動計算します。</p>
+
+<div class="demo" id="demo">
+  <p class="ttl">1ホールおためし — 打数をいじると即計算</p>
+  <p class="sub">PAR4・あなたとDさんがチームです。誰かを<strong>3打（バーディ）</strong>にすると相手の数字が反転します。</p>
+  <div class="demo-row">
+    <label>あなた<input type="number" inputmode="numeric" min="1" max="19" value="4" data-demo="0"></label>
+    <label>Bさん<input type="number" inputmode="numeric" min="1" max="19" value="5" data-demo="1"></label>
+    <label>Cさん<input type="number" inputmode="numeric" min="1" max="19" value="6" data-demo="2"></label>
+    <label>Dさん<input type="number" inputmode="numeric" min="1" max="19" value="4" data-demo="3"></label>
+  </div>
+  <p class="demo-res" id="demoRes"></p>
+  <p class="demo-note">アプリでは、これが<strong>18ホールずっと自動</strong>。オリンピックやニアピン・ドラコンも同時に集計して、最後の清算まで一気に終わります。</p>
+</div>
 
 <div class="hero-ss">
   <img src="../../assets/ss1.jpg" alt="SQOREのスコア入力画面。打数をワンタップで入力するとラスベガスのポイントを自動計算" loading="lazy" width="415" height="900">
@@ -177,6 +200,47 @@
     <a href="../../privacy/">プライバシーポリシー</a>
   </div>
 </footer>
+
+<script>
+"use strict";
+// 1ホールおためしデモ（ラスベガス標準: 数字の差1pt・バーディ相手反転・ダブルパー自チーム反転・ダブルパーカット）
+(function () {
+  const PAR = 4;
+  function cut(s) { return Math.min(s, PAR * 2); }
+  function digits(t) {
+    const c = t.map(cut);
+    return { lo: Math.min(c[0], c[1]), hi: Math.max(c[0], c[1]), under: t.reduce((a, s) => a + Math.max(0, PAR - s), 0), dp: t.filter((s) => s >= PAR * 2).length };
+  }
+  function calc(s) {
+    const A = [s[0], s[3]], B = [s[1], s[2]];
+    const a = digits(A), b = digits(B);
+    const spA = a.under - a.dp, spB = b.under - b.dp;
+    const n = Math.abs(spA - spB);
+    const baseA = a.lo * 10 + a.hi, baseB = b.lo * 10 + b.hi;
+    const flipA = a.hi * 10 + a.lo, flipB = b.hi * 10 + b.lo;
+    const aF = n >= 1 && spA < spB, bF = n >= 1 && spB < spA;
+    const numA = aF ? flipA : baseA, numB = bF ? flipB : baseB;
+    let mult = 1; for (let i = 1; i < n; i++) mult *= 2;
+    return { pts: (numB - numA) * mult, numA, numB, flipped: aF || bF, mult };
+  }
+  const inputs = Array.from(document.querySelectorAll("[data-demo]"));
+  const res = document.getElementById("demoRes");
+  function render() {
+    const s = inputs.map((el) => parseInt(el.value, 10));
+    if (s.some((v) => !Number.isFinite(v) || v < 1)) { res.textContent = "打数を入れてください"; return; }
+    const r = calc(s);
+    let line, sub = `数字は ${r.numA} vs ${r.numB}`;
+    if (r.flipped) sub += "（反転あり！）";
+    if (r.mult > 1) sub += ` ×${r.mult}`;
+    if (r.pts === 0) line = "このホールは引き分け（次のホールにキャリー）";
+    else if (r.pts > 0) line = `あなたとDさんが +${r.pts}pt ずつ獲得！`;
+    else line = `Bさん・Cさんが +${-r.pts}pt ずつ獲得`;
+    res.innerHTML = `${line}<small>${sub}</small>`;
+  }
+  inputs.forEach((el) => el.addEventListener("input", render));
+  render();
+})();
+</script>
 
 </body>
 </html>
