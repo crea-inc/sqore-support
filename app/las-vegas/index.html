@@ -124,6 +124,20 @@
 .stamp .card .pt.minus { color: #c0392b; }
 .stamp .card .note2 { font-size: 11px; color: var(--gray); margin-top: 4px; }
 .demo-note { font-size: 13px; color: var(--gray); margin-top: 12px; text-align: center; }
+.demo-rules { max-width: 380px; margin: 14px auto 0; background: #fff; border-radius: 14px; padding: 14px 18px; box-shadow: 0 3px 14px rgba(11,92,171,.07); }
+.demo-rules .t { font-size: 13px; font-weight: 800; color: var(--blue-deep); text-align: center; margin-bottom: 8px; }
+.rules-pair { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; align-items: flex-start; margin-top: 14px; }
+.rules-pair .demo-rules { margin: 0; flex: 1 1 300px; }
+.rules-pair .cards { flex: 1 1 300px; max-width: 380px; display: grid; gap: 14px; }
+.rules-pair .cards .demo-rules { max-width: none; }
+.rule-shot { flex: 0 1 218px; margin: 0; text-align: center; }
+.rule-shot img { width: 100%; height: auto; border-radius: 14px; box-shadow: 0 6px 22px rgba(11,92,171,.16); }
+.rule-shot figcaption { font-size: 11px; color: var(--gray); margin-top: 6px; line-height: 1.5; }
+.demo-rules h2.t { font-size: 13px; font-weight: 800; color: var(--blue-deep); text-align: center; margin: 0 0 8px; padding: 0; border: none; }
+.demo-rules .dr { display: flex; gap: 10px; font-size: 12.5px; padding: 4px 0; border-bottom: 1px solid #f0f2f5; }
+.demo-rules .dr:last-child { border-bottom: none; }
+.demo-rules .dr b { flex: none; width: 84px; color: var(--gray); font-weight: 700; }
+.demo-rules .dr span { color: #1c1c1e; }
 </style>
 </head>
 <body>
@@ -201,8 +215,26 @@
       </div>
     </div>
   </div>
+  <div class="rules-pair">
+  <div class="demo-rules">
+    <h2 class="t">ラスベガスのルール設定はここまで細かく変えられます</h2>
+    <div class="dr"><b>得点方式</b><span>数字の差（1打=1pt）／10の位だけ／1の位は勝ちのみ5pt</span></div>
+    <div class="dr"><b>バーディ</b><span>相手チーム反転／ポイント倍／反転と倍の高い方</span></div>
+    <div class="dr"><b>ダブルパー</b><span>自チーム反転／10の位+1／なし</span></div>
+    <div class="dr"><b>カット</b><span>トリカット／ダブルパーカット／なし</span></div>
+    <div class="dr"><b>キャリー</b><span>倍率が上がる式／ポイント積み上げ式／なし</span></div>
+    <div class="dr"><b>リーチ</b><span>ハーフごとの本数を設定</span></div>
+    <div class="dr"><b>チーム分け</b><span>打順固定／チーム固定／ローテーション／ホールごと</span></div>
+    <div class="dr"><b>3人のとき</b><span>ゴースト（ボギー／ダボ／ルーレット／相方と同じ）</span></div>
+    <div class="dr"><b>ハンデ</b><span>.5（同点を勝ちに）／1打以上（打数から引く）</span></div>
+  </div>
+  <figure class="rule-shot">
+    <img src="../../assets/ss2.jpg" alt="SQOREのラスベガスのルール設定画面。チーム編成・得点方式・バーディ・ダブルパー・カットなどを項目ごとに設定できる" loading="lazy" width="415" height="900">
+    <figcaption>アプリのルール設定画面（ラスベガス）</figcaption>
+  </figure>
+  </div>
   <p class="demo-note"><a href="../las-vegas-olympic/" style="display:inline-block;background:#fff;border:2px solid var(--blue);color:var(--blue-deep);font-weight:800;border-radius:12px;padding:9px 18px;text-decoration:none;">オリンピックと同時に動かすデモも見る →</a></p>
-  <p class="demo-note">アプリでは、これが<strong>18ホールずっと自動</strong>。<strong>得点方式・反転・カット・キャリー・チーム分けなどのルール設定も細かく変えられます</strong>。オリンピックやニアピン・ドラコンも同時に集計して、最後の清算まで一気に終わります。</p>
+  <p class="demo-note">アプリでは、これが<strong>18ホールずっと自動</strong>。オリンピックやニアピン・ドラコンも同時に集計して、最後の清算まで一気に終わります。</p>
 </div>
 
 <div class="hero-ss">

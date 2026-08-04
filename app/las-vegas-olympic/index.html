@@ -28,6 +28,29 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ゴルフの握りは同時に何ゲームまで計算できますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "SQOREはラスベガス・オリンピック・ナッソー・ホールベスト・ホールマッチ・ストローク勝負・オネストジョン・へび・ニアピン・ドラコンなどを自由に組み合わせて同時進行し、それぞれのルールで別々に自動計算します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "複数ゲームの清算はどう表示されますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "ゲームごとのポイントと全ゲームの合算の両方が表示されます。どのゲームも全ホールゼロサムで清算します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ゲームを増やすと入力の手間も増えますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "増えません。打数は1回入力するだけで進行中の全ゲームに反映されます。オリンピックのメダル選択などゲーム固有の入力だけ追加でタップします。" }
+    }
+  ]
+}
+</script>
 <style>
 .demo-wrap { margin: 22px 0; }
 .demo-cap { text-align: center; font-size: 14px; font-weight: 800; color: var(--blue-deep); margin-bottom: 10px; }
@@ -103,6 +126,20 @@
 .stamp .card .pt { font-size: 17px; font-weight: 800; color: var(--blue-deep); }
 .stamp .card .note2 { font-size: 11px; color: var(--gray); margin-top: 4px; }
 .demo-note { font-size: 13px; color: var(--gray); margin-top: 12px; text-align: center; }
+.demo-rules { max-width: 380px; margin: 14px auto 0; background: #fff; border-radius: 14px; padding: 14px 18px; box-shadow: 0 3px 14px rgba(11,92,171,.07); }
+.demo-rules .t { font-size: 13px; font-weight: 800; color: var(--blue-deep); text-align: center; margin-bottom: 8px; }
+.rules-pair { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; align-items: flex-start; margin-top: 14px; }
+.rules-pair .demo-rules { margin: 0; flex: 1 1 300px; }
+.rules-pair .cards { flex: 1 1 300px; max-width: 380px; display: grid; gap: 14px; }
+.rules-pair .cards .demo-rules { max-width: none; }
+.rule-shot { flex: 0 1 218px; margin: 0; text-align: center; }
+.rule-shot img { width: 100%; height: auto; border-radius: 14px; box-shadow: 0 6px 22px rgba(11,92,171,.16); }
+.rule-shot figcaption { font-size: 11px; color: var(--gray); margin-top: 6px; line-height: 1.5; }
+.demo-rules h2.t { font-size: 13px; font-weight: 800; color: var(--blue-deep); text-align: center; margin: 0 0 8px; padding: 0; border: none; }
+.demo-rules .dr { display: flex; gap: 10px; font-size: 12.5px; padding: 4px 0; border-bottom: 1px solid #f0f2f5; }
+.demo-rules .dr:last-child { border-bottom: none; }
+.demo-rules .dr b { flex: none; width: 84px; color: var(--gray); font-weight: 700; }
+.demo-rules .dr span { color: #1c1c1e; }
 </style>
 </head>
 <body>
@@ -175,7 +212,36 @@
       </div>
     </div>
   </div>
-  <p class="demo-note">アプリでは、これが<strong>18ホールずっと自動</strong>。<strong>各ゲームのルール設定（得点方式・反転・カット・メダルの配点など）も細かく変えられます</strong>。ナッソーやホールベスト、ニアピン・ドラコンも同時に走らせて、ゲームごとの清算まで一気に出ます。</p>
+  <div class="rules-pair">
+  <div class="cards">
+  <div class="demo-rules">
+    <h2 class="t">ラスベガスのルール設定はここまで細かく変えられます</h2>
+    <div class="dr"><b>得点方式</b><span>数字の差（1打=1pt）／10の位だけ／1の位は勝ちのみ5pt</span></div>
+    <div class="dr"><b>バーディ</b><span>相手チームの数字を反転／ポイントが倍／反転と倍の高い方</span></div>
+    <div class="dr"><b>ダブルパー</b><span>自チームの数字を反転／10の位+1／効果なし</span></div>
+    <div class="dr"><b>カット</b><span>トリカット（パー+3で打ち切り）／ダブルパーカット／なし</span></div>
+    <div class="dr"><b>キャリー</b><span>倍率が上がる式／ポイント積み上げ式／なし</span></div>
+    <div class="dr"><b>リーチ</b><span>ハーフごとの本数を設定。宣言したホールの倍率+1</span></div>
+    <div class="dr"><b>チーム分け</b><span>打順で固定／チーム固定／ローテーション／ホールごとに選択</span></div>
+    <div class="dr"><b>3人のとき</b><span>ゴースト参加（ボギー固定／ダボ固定／ルーレット／相方と同じ）</span></div>
+    <div class="dr"><b>ハンデ</b><span>.5（同点を勝ちに）／1打以上（打数から引く）</span></div>
+  </div>
+  <div class="demo-rules">
+    <h2 class="t">オリンピックのルール設定はここまで細かく変えられます</h2>
+    <div class="dr"><b>メダル配点</b><span>ダイヤ・金・銀・銅・鉄をそれぞれ自由（初期値 50／40／30／20／10）</span></div>
+    <div class="dr"><b>3パット減点</b><span>あり（点数も設定可）／なし</span></div>
+    <div class="dr"><b>スコアの加点</b><span>バーディ／イーグル／ホールインワンにボーナス点</span></div>
+    <div class="dr"><b>ニアピン加点</b><span>PAR3で最もピンに近い人に加点</span></div>
+    <div class="dr"><b>手動ポイント</b><span>独自ルールぶんをその場で加減点</span></div>
+    <div class="dr"><b>人数</b><span>2〜4人（3人は「鉄なし」構成に自動対応）</span></div>
+  </div>
+  </div>
+  <figure class="rule-shot">
+    <img src="../../assets/ss2.jpg" alt="SQOREのルール設定画面。ゲームごとに項目単位でルールを設定できる" loading="lazy" width="415" height="900">
+    <figcaption>アプリのルール設定画面（ラスベガスの例）</figcaption>
+  </figure>
+  </div>
+  <p class="demo-note">アプリでは、これが<strong>18ホールずっと自動</strong>。ナッソーやホールベスト、ニアピン・ドラコンも同時に走らせて、ゲームごとの清算まで一気に出ます。</p>
 </div>
 
 <div class="cta">
@@ -185,6 +251,26 @@
     <span class="apple"></span>
     <span><small>Download on the</small>App Store</span>
   </a>
+</div>
+
+<h2>同時進行とは？ — 握りを重ねても計算はゼロ</h2>
+<p>仲間内のラウンドでは「ラスベガスをやりながら、オリンピックも回して、PAR3はニアピンも」というように、<strong>複数の握りを同時に走らせる</strong>のが普通です。ところがゲームが増えるほど計算は掛け算で面倒になり、途中経過は誰にも分からなくなります。</p>
+<p>SQOREは1回の打数入力（とメダルのタップ）だけで、<strong>進行中のすべてのゲームをそれぞれのルールで別々に計算</strong>します。途中経過も清算もゲームごとに分かれて表示されるので、「ラスでは勝ってるけどオリンピックでは負けてる」までひと目で分かります。ラウンド終了時の清算は、全ゲームの合算も自動です。</p>
+
+<h2>よくある質問</h2>
+<div class="faq">
+  <details>
+    <summary>同時に何ゲームまでできますか？</summary>
+    <p>ラスベガス・オリンピック・ナッソー（ピンポンパン）・ホールベスト・ホールマッチ・ストローク勝負・オネストジョン・へび・ニアピン・ドラコンなどを自由に組み合わせて同時進行できます。</p>
+  </details>
+  <details>
+    <summary>清算はゲームごとに分かれますか？</summary>
+    <p>分かれます。ゲームごとのポイントと、全ゲームの合算の両方が表示されます。どのゲームも全ホールゼロサム（全員の合計は常に0）です。</p>
+  </details>
+  <details>
+    <summary>入力は2倍になりませんか？</summary>
+    <p>なりません。打数は1回入力するだけで、進行中の全ゲームに反映されます。オリンピックのメダルなどゲーム固有の入力だけ追加でタップします。</p>
+  </details>
 </div>
 
 <div class="related">
