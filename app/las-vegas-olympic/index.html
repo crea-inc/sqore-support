@@ -440,5 +440,19 @@
 })();
 </script>
 
+<script>
+/* ヘッダーの出し入れ。下スクロールで隠し、上スクロールで戻す。 */
+(function () {
+  var h = document.querySelector('header.site');
+  if (!h) return;
+  var last = 0;
+  addEventListener('scroll', function () {
+    var y = window.scrollY > 0 ? window.scrollY : 0;
+    if (y > last && y > 140) h.classList.add('hide');
+    else if (y < last) h.classList.remove('hide');
+    last = y;
+  }, { passive: true });
+})();
+</script>
 </body>
 </html>

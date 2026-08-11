@@ -316,9 +316,12 @@
   .dl-bar { display: none; }
   @media (max-width: 640px) {
     .dl-bar {
-      display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
-      background: rgba(13,44,71,.96); backdrop-filter: blur(8px);
-      align-items: center; gap: 12px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      display: flex; position: fixed; left: 12px; right: 12px; z-index: 50;
+      bottom: calc(10px + env(safe-area-inset-bottom));
+      background: rgba(13,44,71,.72); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.16); border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.28);
+      align-items: center; gap: 12px; padding: 8px 10px 8px 12px;
     }
     .dl-bar img { width: 40px; height: 40px; border-radius: 9px; }
     .dl-bar .txt { color: #fff; font-size: 12px; line-height: 1.4; flex: 1; }
@@ -327,7 +330,7 @@
       background: var(--blue); color: #fff; text-decoration: none; font-weight: 800;
       font-size: 14px; border-radius: 999px; padding: 9px 22px; flex: none;
     }
-    body { padding-bottom: 72px; }
+    body { padding-bottom: 92px; }
   }
 
   /* cta */
@@ -344,6 +347,18 @@
     .hero .appname { font-size: 32px; }
     .hero h1 { font-size: 21px; }
     h2 { font-size: 23px; }
+  }
+
+  /* mobile: ヘッダーを固定し、下スクロールで隠す/上スクロールで出す(常時占有しない) */
+  @media (max-width: 640px) {
+    .topnav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+      max-width: none; padding: 9px 16px;
+      transition: transform .25s ease, background-color .2s ease;
+    }
+    .topnav.solid { background: rgba(13,44,71,.92); backdrop-filter: blur(10px); }
+    .topnav.hide { transform: translateY(-115%); }
+    .hero { padding-top: 44px; }
   }
 </style>
 </head>
@@ -638,5 +653,20 @@
   <span class="txt"><b>SQORE</b>ゴルフのポイント自動計算</span>
   <a class="get" href="https://apps.apple.com/jp/app/id6777357472">入手</a>
 </div>
+<script>
+/* ヘッダーの出し入れ。下スクロールで隠し、上スクロールで戻す。 */
+(function () {
+  var nav = document.querySelector('.topnav');
+  if (!nav) return;
+  var last = 0;
+  addEventListener('scroll', function () {
+    var y = window.scrollY > 0 ? window.scrollY : 0;
+    nav.classList.toggle('solid', y > 8);
+    if (y > last && y > 140) nav.classList.add('hide');
+    else if (y < last) nav.classList.remove('hide');
+    last = y;
+  }, { passive: true });
+})();
+</script>
 </body>
 </html>

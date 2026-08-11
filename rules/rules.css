@@ -107,3 +107,14 @@ footer { background: #0d2c47; color: rgba(255,255,255,.75); padding: 30px 0; fon
 footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; justify-content: center; }
 footer a { color: #fff; text-decoration: none; }
 footer a:hover { text-decoration: underline; }
+
+/* mobile: ヘッダーを追従させ、下スクロールで隠す/上スクロールで出す(常時占有しない) */
+@media (max-width: 640px) {
+  header.site {
+    position: sticky; top: 0; z-index: 60;
+    padding: 10px 0;
+    transition: transform .25s ease;
+    box-shadow: 0 2px 12px rgba(0,0,0,.18);
+  }
+  header.site.hide { transform: translateY(-115%); }
+}
