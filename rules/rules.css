@@ -64,12 +64,29 @@ th { background: #eaf3fc; color: var(--blue-deep); font-size: 13px; }
 
 .note { font-size: 13px; color: var(--gray); }
 
+/* 「SQOREならこう」ブロック(実際のアプリ画面つき) */
+.app-shot {
+  display: flex; gap: 22px; align-items: center;
+  background: #fff; border-radius: 16px; padding: 22px; margin: 22px 0;
+  border-top: 3px solid var(--blue); box-shadow: 0 3px 14px rgba(11,92,171,.07);
+}
+.app-shot img { width: 195px; flex: none; border-radius: 12px; box-shadow: 0 6px 18px rgba(11,92,171,.18); }
+.app-shot .ttl { font-weight: 800; color: var(--blue-deep); font-size: 15px; margin-bottom: 8px; }
+.app-shot p { font-size: 14px; }
+.app-shot .cap { font-size: 12px; color: var(--gray); margin-top: 8px; }
+@media (max-width: 560px) {
+  .app-shot { flex-direction: column-reverse; gap: 16px; }
+  .app-shot img { width: min(190px, 54vw); align-self: center; }
+}
+
 .cta {
   background: linear-gradient(175deg, #2596e0, var(--blue-deep));
   color: #fff; border-radius: 18px; padding: 28px 24px; text-align: center; margin: 44px 0 0;
 }
 .cta .ttl { font-size: 19px; font-weight: 800; }
 .cta p { font-size: 14px; opacity: .95; margin-top: 6px; }
+.cta .score-note { font-size: 13px; opacity: .88; margin-top: 10px; }
+.cta .score-note a { color: #fff; text-decoration: underline; font-weight: 700; }
 .store-btn {
   display: inline-flex; align-items: center; gap: 10px;
   background: #111; color: #fff; text-decoration: none;

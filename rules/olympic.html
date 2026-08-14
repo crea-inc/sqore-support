@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#2596e0">
-<title>ゴルフ「オリンピック」のルールと計算方法｜金・銀・銅のポイントを自動計算</title>
-<meta name="description" content="ゴルフの定番ゲーム「オリンピック」のルールを解説。グリーンに乗ってから1パットで沈めるとメダル獲得。ダイヤ・金・銀・銅・鉄の点数、3人の場合、3パット減点などのローカルルールと、面倒なポイント計算を自動化する方法を紹介します。">
+<title>ゴルフ「オリンピック」のルールと点数計算｜金4・銀3・銅2・鉄1の配点と精算の式</title>
+<meta name="description" content="ゴルフの定番ゲーム「オリンピック」のルールと計算方法を解説。金4・銀3・銅2・鉄1の配点、精算の計算式「(自分の点数×人数)−全員の合計」の使い方と具体例、1ホールぶんの早見表、3人の場合、昇格・消しゴム・砂イチなどのローカルルールまでまとめました。">
 <link rel="canonical" href="https://sqore-golf.com/rules/olympic.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="SQORE">
-<meta property="og:title" content="ゴルフ「オリンピック」のルールと計算方法">
-<meta property="og:description" content="グリーンに乗ってから1パットで沈めるとメダル獲得。点数・3人の場合・ローカルルールまで解説。">
+<meta property="og:title" content="ゴルフ「オリンピック」のルールと点数計算">
+<meta property="og:description" content="金4・銀3・銅2・鉄1の配点、精算の計算式と具体例、早見表、3人の場合、昇格や消しゴムまで解説。">
 <meta property="og:url" content="https://sqore-golf.com/rules/olympic.html">
 <meta property="og:image" content="https://sqore-golf.com/assets/og_1200x630.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -23,8 +23,10 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "ゴルフ「オリンピック」のルールと計算方法",
+  "headline": "ゴルフ「オリンピック」のルールと点数計算",
   "inLanguage": "ja",
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-08-14",
   "author": { "@type": "Organization", "name": "株式会社クレア" },
   "publisher": { "@type": "Organization", "name": "SQORE" },
   "mainEntityOfPage": "https://sqore-golf.com/rules/olympic.html"
@@ -48,18 +50,28 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "ゴルフのオリンピックで3人の場合はどうしますか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "3人の場合は「鉄」を抜いて、遠い順に金・銀・銅とするのが一般的です。点数はダイヤ50・金40・銀30・銅20のまま変えないのが標準的な運用です。" }
+      "name": "ゴルフのオリンピックの点数計算はどうやりますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "18ホール終了後に各自の合計点を出し、「(自分の合計点 × 人数) − 全員の合計点」で精算します。4人で自分が12点、全員の合計が26点なら 12×4−26＝+22 です。全員のぶんを足すと必ず0になります。" }
     },
     {
       "@type": "Question",
-      "name": "オリンピックのダイヤモンドとは何ですか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "グリーンの外から直接カップインさせた場合の最高得点です。チップインと同じ概念で、金メダルより高い点数（例: 50点）が付きます。" }
+      "name": "オリンピックのメダルは何点ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "標準は金4点・銀3点・銅2点・鉄1点で、グリーン外からのチップイン（ダイヤモンド）が5点です。この比率を保ったまま40・30・20・10のように10倍で運用することもあります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ゴルフのオリンピックで3人の場合はどうしますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "3人の場合は「鉄」を抜いて、遠い順に金・銀・銅とするのが一般的です。点数は4人のときと同じ金4・銀3・銅2のまま変えません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "オリンピックの「昇格」とは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "金の権利を持つ人が1パットで決められず、しかもボールが鉄の人より近くに寄った場合に、銀が金へ、銅が銀へ、鉄が銅へ繰り上がるルールです。採用するかどうかは仲間内の取り決めです。" }
     },
     {
       "@type": "Question",
       "name": "オリンピックのポイント計算を自動化できますか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "iPhoneアプリのSQOREを使うと、メダルをタップするだけでポイントを自動計算できます。3パット減点やニアピン加点などのローカルルール、ラウンド終了時の清算まで自動です。" }
+      "acceptedAnswer": { "@type": "Answer", "text": "iPhoneアプリのSQOREを使うと、メダルをタップするだけでポイントと精算が自動計算されます。配点の変更、3パット減点やニアピン加点、達成ポイント方式にも対応しています。" }
     }
   ]
 }
@@ -72,7 +84,7 @@
     <img src="../assets/icon_180.png" alt="SQOREアイコン">
     <a href="../">SQORE</a>
     <span class="tag">ポイント自動計算アプリ</span>
-    <nav class="topnav"><a href="../guide/">使い方</a><a href="./">ルール解説</a><a href="../support/">サポート</a><a href="https://apps.apple.com/jp/app/id6777357472">アプリ入手</a></nav>
+    <nav class="topnav"><a href="../guide/">使い方</a><a href="../score/">スコア管理</a><a href="./">ルール解説</a><a href="../support/">サポート</a><a href="https://apps.apple.com/jp/app/id6777357472">アプリ入手</a></nav>
   </div>
 </header>
 
@@ -80,74 +92,155 @@
 <nav class="crumb"><a href="../">ホーム</a> › <a href="./">ゲームルール解説</a> › オリンピック</nav>
 
 <article>
-<h1>ゴルフ「オリンピック」のルールと計算方法</h1>
-<p class="updated">SQORE編集部</p>
+<h1>ゴルフ「オリンピック」のルールと点数計算</h1>
+<p class="updated">SQORE編集部 ｜ 2026年8月14日更新</p>
 
-<p class="intro">オリンピックは、<strong>グリーンに乗ってから1パットでカップインすると「メダル」を獲得できる</strong>ゴルフの定番ゲームです。カップから遠い人ほど高いメダルがもらえるため、ロングパットが入ると大逆転。パットが上手い人が有利になる、実力差が出にくい人気ゲームです。アプリの計算をブラウザで試したい方は<a href="../app/olympic/">1ホールおためしデモ</a>をどうぞ。</p>
+<p class="intro">オリンピックは、<strong>グリーンに乗ってから1パットでカップインすると「メダル」を獲得できる</strong>ゴルフの定番ゲームです。カップから遠い人ほど高いメダルなので、ロングパットが入ると一気に逆転。「おはじき」と呼ばれることもあります。このページでは<strong>配点・精算の計算式・早見表・3人の場合</strong>までまとめています。</p>
 
 <h2>基本ルール</h2>
 <ol>
-  <li>全員がグリーンに乗ったら、<strong>カップから遠い順</strong>にメダルの色を割り当てます（遠い人ほど上位のメダル）。</li>
+  <li>全員がグリーンに乗ったら、<strong>カップから遠い順</strong>にメダルを割り当てます（遠い人ほど上位のメダル）。</li>
   <li>4人なら遠い順に<strong>金・銀・銅・鉄</strong>。</li>
-  <li>自分に割り当てられたメダルは、<strong>1パットでカップインしたときだけ獲得</strong>できます。</li>
+  <li>割り当てられたメダルは、<strong>1パットでカップインしたときだけ獲得</strong>できます。2パット以上なら0点です。</li>
   <li>グリーンの外から直接カップイン（チップイン）した場合は最高位の<strong>ダイヤモンド</strong>です。</li>
 </ol>
 
-<h2>メダルの点数</h2>
+<h2>メダルの配点</h2>
 <div class="table-scroll">
 <table>
-  <tr><th>メダル</th><th>条件</th><th>点数の例</th></tr>
-  <tr><td>ダイヤ</td><td>グリーン外から直接カップイン</td><td>50点</td></tr>
-  <tr><td>金</td><td>1番遠い位置から1パット</td><td>40点</td></tr>
-  <tr><td>銀</td><td>2番目に遠い位置から1パット</td><td>30点</td></tr>
-  <tr><td>銅</td><td>3番目から1パット</td><td>20点</td></tr>
-  <tr><td>鉄</td><td>1番近い位置から1パット</td><td>10点</td></tr>
+  <tr><th>メダル</th><th>条件</th><th>点数</th></tr>
+  <tr><td>ダイヤモンド</td><td>グリーン外から直接カップイン</td><td>5点</td></tr>
+  <tr><td>金</td><td>1番遠い位置から1パット</td><td>4点</td></tr>
+  <tr><td>銀</td><td>2番目に遠い位置から1パット</td><td>3点</td></tr>
+  <tr><td>銅</td><td>3番目に遠い位置から1パット</td><td>2点</td></tr>
+  <tr><td>鉄</td><td>1番近い位置から1パット</td><td>1点</td></tr>
 </table>
 </div>
-<p class="note">点数は仲間内の取り決めで自由に変えられます。上の「50/40/30/20/10」が現在よく使われる配点です。</p>
+<p class="note">これが最も広く使われている配点です。比率を変えずに「ダイヤ50・金40・銀30・銅20・鉄10」と10倍で運用する仲間内もあります（点数が大きいほうが盛り上がる、という理由です）。どちらでも順位と勝ち負けは変わりません。</p>
 
-<h2>3人でやる場合</h2>
-<p>3人の場合は<strong>「鉄」を抜くだけ</strong>が標準です。遠い順に金・銀・銅を割り当て、点数はそのまま（ダイヤ50・金40・銀30・銅20）にします。</p>
-
-<h2>よくあるローカルルール</h2>
-<ul>
-  <li><strong>3パット減点</strong> — 3パット以上した人はマイナス（例: −10点）。パットの緊張感が一気に増します。</li>
-  <li><strong>バーディ・イーグル加点</strong> — スコアの好プレーにもボーナスを付ける方式。</li>
-  <li><strong>ニアピン加点</strong> — PAR3でワンオンして最もピンに近い人に加点。</li>
-  <li><strong>達成ポイント制</strong> — メダルではなく、バーディやニアピンなどの「達成」に点を付ける方式もあります。</li>
-</ul>
-
-<h2>清算のしかた</h2>
-<p>ラウンド終了時に各自の獲得ポイントを合計し、全員のポイント差で清算します。この集計が意外と面倒で、「誰が何点だっけ？」と揉めるのがオリンピックあるあるです。</p>
+<h2>点数の精算方法（計算式）</h2>
+<p>オリンピックは<strong>取った人が、取らなかった人からもらう</strong>ゲームです。18ホールを終えたら各自の合計点を出して、次の式で精算します。</p>
 
 <div class="example">
-  <p class="ttl">SQOREならメダルをタップするだけ</p>
-  <p>iPhoneアプリの<a href="../">SQORE</a>なら、ホールごとに取ったメダルをタップするだけでポイントを自動計算。メダルの点数は自由にカスタムでき、3パット減点・ニアピン加点・達成ポイント制にも対応。途中経過も最終結果も自動で出ます。ラスベガスなど他のゲームとの同時進行もOK。</p>
+  <p class="ttl">精算の式</p>
+  <p><strong>（自分の合計点 × 人数）−（全員の合計点）</strong></p>
+  <p class="note" style="margin-top:8px">「（自分の合計点 × 自分以外の人数）−（自分以外の合計点）」と書いても結果は同じです。</p>
+</div>
+
+<div class="example">
+  <p class="ttl">計算例（4人・全員の合計26点）</p>
+  <p>Aさん12点／Bさん8点／Cさん5点／Dさん1点　→ 合計26点</p>
+  <p style="margin-top:8px">
+  Aさん: 12×4−26＝<strong>+22</strong><br>
+  Bさん: 8×4−26＝<strong>+6</strong><br>
+  Cさん: 5×4−26＝<strong>−6</strong><br>
+  Dさん: 1×4−26＝<strong>−22</strong></p>
+  <p class="note" style="margin-top:8px">4人ぶんを足すと 22+6−6−22＝0。オリンピックの精算は必ず合計ゼロになるので、ここが合っていなければどこかで計算を間違えています。</p>
+</div>
+
+<h2>1ホールぶんの早見表</h2>
+<p>そのホールで<strong>1人だけがメダルを取った</strong>場合の精算です。取った人は「点数×（人数−1）」、取らなかった人はそれぞれ「−点数」になります。</p>
+<div class="table-scroll">
+<table>
+  <tr><th>取ったメダル</th><th>4人：取った人</th><th>4人：他の3人</th><th>3人：取った人</th><th>3人：他の2人</th></tr>
+  <tr><td>ダイヤモンド（5点）</td><td>+15</td><td>各 −5</td><td>+10</td><td>各 −5</td></tr>
+  <tr><td>金（4点）</td><td>+12</td><td>各 −4</td><td>+8</td><td>各 −4</td></tr>
+  <tr><td>銀（3点）</td><td>+9</td><td>各 −3</td><td>+6</td><td>各 −3</td></tr>
+  <tr><td>銅（2点）</td><td>+6</td><td>各 −2</td><td>+4</td><td>各 −2</td></tr>
+  <tr><td>鉄（1点）</td><td>+3</td><td>各 −1</td><td colspan="2">3人では鉄なし</td></tr>
+</table>
+</div>
+<p class="note">2人以上がメダルを取ったホールは、上の式にまとめて入れれば同じ結果になります。ホールごとに精算せず、18ホールの合計点でまとめて計算するほうが早くて間違いません。</p>
+
+<h2>3人でやる場合</h2>
+<p>3人の場合は<strong>「鉄」を抜くだけ</strong>が標準です。遠い順に金・銀・銅を割り当て、点数は4人のときと同じ<strong>金4・銀3・銅2</strong>のまま変えません。人数が減ったぶん点数まで下げてしまうと、1ホールの重みが変わってしまうためです。</p>
+<p>精算の式も同じで、人数のところを3にするだけです。</p>
+
+<h2>昇格（金が決められなかったとき）</h2>
+<p>金の権利を持つ人が1パットで決められず、しかも<strong>そのボールが鉄の人より近くに寄った</strong>場合、銀が金へ、銅が銀へ、鉄が銅へ<strong>繰り上がる</strong>ルールです。「寄せただけの人が得をしないように」という趣旨で、採用するかどうかは仲間内の取り決めです。</p>
+
+<h2>よくあるローカルルール</h2>
+<p>オリンピックは追加ルールの多いゲームです。よく使われるものを、加点と減点に分けて挙げます。全部入れると煩雑なので、2〜3個に絞るのが実用的です。</p>
+
+<h3>加点のルール</h3>
+<div class="table-scroll">
+<table>
+  <tr><th>名前</th><th>内容</th><th>点数の例</th></tr>
+  <tr><td>ニアピン賞</td><td>PAR3でワンオンし、最もピンに近かった人</td><td>+3点</td></tr>
+  <tr><td>砂イチ</td><td>バンカーから直接グリーンに乗せて1パット</td><td>+3点</td></tr>
+  <tr><td>竿イチ</td><td>ピンより遠い位置から宣言して1パットで沈める</td><td>+3点</td></tr>
+  <tr><td>バーディ賞</td><td>そのホールをバーディで上がる</td><td>+3点</td></tr>
+  <tr><td>イーグル賞</td><td>そのホールをイーグルで上がる</td><td>+15点</td></tr>
+  <tr><td>ホールインワン賞</td><td>ホールインワン</td><td>+30点</td></tr>
+  <tr><td>フォーカード</td><td>同じメダルを4回そろえる</td><td>その合計を追加</td></tr>
+  <tr><td>ストレート</td><td>金・銀・銅・鉄を1つずつそろえる</td><td>+10点（ダイヤ込みなら+15点）</td></tr>
+</table>
+</div>
+
+<h3>減点のルール</h3>
+<div class="table-scroll">
+<table>
+  <tr><th>名前</th><th>内容</th><th>点数の例</th></tr>
+  <tr><td>3パット減点</td><td>3パット以上した人</td><td>−3点</td></tr>
+  <tr><td>くず鉄</td><td>1番近い「鉄」の人が1パットで外す</td><td>−1点</td></tr>
+  <tr><td>消しゴム</td><td>ニアピンを取った人より、グリーンを外した人が同スコア以上で上がると、ニアピンの権利が消える</td><td>ニアピン無効</td></tr>
+  <tr><td>なめイチ</td><td>カップを舐めて入らなかった</td><td>−1点</td></tr>
+  <tr><td>逆オリンピック</td><td>3パットした人に、金−1・銀−2・銅−3・鉄−4のマイナスを付ける</td><td>−1〜−4点</td></tr>
+</table>
+</div>
+<p class="note">「消しゴム」は地域や仲間内によって「火消し」とも呼ばれます。どちらもニアピンの権利を打ち消すルールです。取り消されたぶんを次のPAR3に持ち越して2倍にする「二階建て」を足すこともあります。</p>
+
+<div class="example">
+  <p class="ttl">計算がややこしくなるのは、ここから</p>
+  <p>メダルだけなら暗算でも足せますが、ニアピン加点・3パット減点・フォーカードあたりを入れ始めると、途中経過が誰にも分からなくなります。「誰が何点だっけ？」で毎回止まるのがオリンピックあるあるです。</p>
+</div>
+
+<h2>アプリならメダルをタップするだけ</h2>
+<div class="app-shot">
+  <div>
+    <p class="ttl">押した瞬間に、点数も精算も出る</p>
+    <p>iPhoneアプリの<a href="../">SQORE</a>なら、そのホールで取ったメダルを各自の行でタップするだけ。上の精算の式はアプリが勝手にやるので、暗算も電卓も要りません。誰かが取ったメダルは他の人の選択肢から自動で消えます。</p>
+    <p class="cap">配点は自由に変更でき、3パット減点・ニアピン加点・達成ポイント方式にも対応。ラスベガスなど他のゲームとの同時進行もできます。</p>
+  </div>
+  <img src="../assets/game_olympic.webp" alt="オリンピックのメダル(ダイヤ・金・銀・銅・鉄)を各プレイヤーの行でタップして選ぶSQOREのスコア画面" loading="lazy" width="450" height="978">
 </div>
 
 <h2>よくある質問</h2>
 <div class="faq">
   <details>
+    <summary>点数計算はどうやる？</summary>
+    <p>18ホール終了後に各自の合計点を出し、「（自分の合計点 × 人数）−（全員の合計点）」で精算します。全員のぶんを足すと必ず0になります。</p>
+  </details>
+  <details>
     <summary>3人の場合はどうする？</summary>
-    <p>「鉄」を抜いて金・銀・銅だけにするのが標準です。点数はそのまま変えません。</p>
+    <p>「鉄」を抜いて金・銀・銅だけにするのが標準です。点数は4人のときと同じまま変えません。</p>
   </details>
   <details>
     <summary>ダイヤモンドとは？</summary>
-    <p>グリーンの外から直接カップインさせた場合の最高得点（チップインと同じ概念）です。金より高い点数を付けます。</p>
+    <p>グリーンの外から直接カップインさせた場合の最高得点（チップインと同じ概念）で、金より高い5点を付けるのが一般的です。</p>
   </details>
   <details>
     <summary>2パット目が入ったらどうなる？</summary>
     <p>メダルがもらえるのは1パット目だけです。2パット以降は何も起きません（3パットは減点ルールを入れている場合のみマイナス）。</p>
+  </details>
+  <details>
+    <summary>「おはじき」と同じもの？</summary>
+    <p>同じゲームです。グリーン上でメダルを取り合う様子から「おはじき」と呼ぶ地域があります。</p>
+  </details>
+  <details>
+    <summary>全員が1パットで沈めたら？</summary>
+    <p>全員が自分のメダルの点数を獲得します。式に入れれば自動的に差し引きされるので、そのまま合計してください。</p>
   </details>
 </div>
 
 <div class="related">
   <h2>他のゲームのルールを見る</h2>
   <ul>
-    <li><a href="../app/olympic/">オリンピック計算アプリSQORE<small>配点・3パット減点も自動</small></a></li>
     <li><a href="las-vegas.html">ラスベガス<small>2人1組×2チームで2桁の数字を作って勝負</small></a></li>
     <li><a href="nassau.html">ナッソー / ピンポンパン<small>前半・後半・トータルの3本勝負</small></a></li>
     <li><a href="hole-best.html">ホールベスト<small>各ホールの1位がポイント獲得</small></a></li>
+    <li><a href="dracon-nearpin.html">ドラコン・ニアピン<small>PAR5の最長ドライブとPAR3のピン最接近</small></a></li>
+    <li><a href="../app/olympic/">オリンピックの1ホールおためしデモ<small>アプリと同じ画面をブラウザで試せます</small></a></li>
     <li><a href="./">ゲームルール解説の一覧へ</a></li>
   </ul>
 </div>
@@ -155,6 +248,7 @@
 <div class="cta">
   <p class="ttl">オリンピックの計算、もう暗算しなくてOK</p>
   <p>SQOREはオリンピック・ラスベガスなど定番ゲームのポイントを自動計算する無料アプリです。</p>
+  <p class="score-note">ゲームをしない日は<a href="../score/">スコアアプリとして</a>そのまま使えます。いま打つホールの自分の平均スコアやOB率も出ます。</p>
   <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
     <span class="apple"></span>
     <span><small>Download on the</small>App Store</span>
@@ -168,6 +262,7 @@
     <span>© 株式会社クレア</span>
     <a href="../">SQOREトップ</a>
     <a href="./">ゲームルール解説</a>
+    <a href="../score/">スコア管理</a>
     <a href="../guide/">使い方</a>
     <a href="../support/">サポート</a>
     <a href="../privacy/">プライバシーポリシー</a>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2596e0">
+<title>SQOREのスコア管理機能｜握り抜きの普段のラウンドでも使えます</title>
+<meta name="description" content="SQOREは握りの計算アプリとして知られていますが、ゲームをしない普段のラウンドのスコア管理アプリとしても使えます。いま打つホールの自分の平均スコアとOB率の自動表示、パーオン率などの分析、紙のスコアカードの写真からの取り込み、iCloud同期まで、スコア機能をまとめて紹介します。">
+<link rel="canonical" href="https://sqore-golf.com/score/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SQORE">
+<meta property="og:title" content="SQOREのスコア管理機能">
+<meta property="og:description" content="握り抜きの普段のラウンドでも使えるスコアアプリとしてのSQORE。ホール別の過去成績、プレー分析、紙スコアカードの取り込みまで。">
+<meta property="og:url" content="https://sqore-golf.com/score/">
+<meta property="og:image" content="https://sqore-golf.com/assets/og_1200x630.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6777357472">
+<link rel="apple-touch-icon" href="../assets/icon_180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_32.png">
+<link rel="icon" type="image/png" sizes="180x180" href="../assets/favicon_180.png">
+<link rel="stylesheet" href="../rules/rules.css">
+<style>
+  .feature { display: flex; gap: 26px; align-items: center; background: #fff; border-radius: 16px; padding: 24px; margin: 18px 0; box-shadow: 0 3px 14px rgba(11,92,171,.07); }
+  .feature.flip { flex-direction: row-reverse; }
+  .feature .shots { display: flex; gap: 14px; flex: none; }
+  .feature .shots img { width: 165px; border-radius: 14px; box-shadow: 0 6px 18px rgba(11,92,171,.18); }
+  .feature h2 { border: none; padding: 0; margin: 0 0 10px; font-size: 19px; }
+  .feature p { font-size: 14px; color: var(--gray); }
+  .feature p + p { margin-top: 8px; }
+  .feature .badge { display: inline-block; background: var(--blue); color: #fff; font-size: 11px; font-weight: 800; letter-spacing: .06em; border-radius: 999px; padding: 3px 12px; margin-bottom: 10px; }
+  .feature .badge.free { background: #2f9e5f; }
+  .feature .badge.prem { background: #b8860b; }
+  .plainlist { list-style: none; padding: 0; display: grid; gap: 10px; margin: 18px 0; }
+  .plainlist li { background: #fff; border-radius: 12px; padding: 14px 18px; font-size: 14px; box-shadow: 0 3px 14px rgba(11,92,171,.07); }
+  .plainlist li strong { color: var(--blue-deep); display: block; margin-bottom: 2px; }
+  @media (max-width: 620px) {
+    .feature, .feature.flip { flex-direction: column; }
+    .feature .shots img { width: min(150px, 40vw); }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "SQORE", "item": "https://sqore-golf.com/" },
+    { "@type": "ListItem", "position": 2, "name": "スコア管理機能" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="../assets/icon_180.png" alt="SQOREアイコン">
+    <a href="../">SQORE</a>
+    <span class="tag">ポイント自動計算アプリ</span>
+    <nav class="topnav"><a href="../guide/">使い方</a><a href="../rules/">ルール解説</a><a href="../support/">サポート</a><a href="https://apps.apple.com/jp/app/id6777357472">アプリ入手</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+<nav class="crumb"><a href="../">ホーム</a> › スコア管理機能</nav>
+
+<article>
+<h1>握り抜きの、普段のラウンドでも使えます</h1>
+<p class="updated">SQORE編集部 ｜ 2026年8月14日更新</p>
+
+<p class="intro">SQOREはオリンピックやラスベガスの<a href="../rules/">ポイント計算</a>で知られていますが、<strong>ゲームをしない日のスコア管理アプリとしても、そのまま使えます</strong>。「スコアのみ」で始めれば握りの設定は一切出てきません。このページでは、スコア側の機能だけをまとめました。</p>
+
+<div class="feature">
+  <div>
+    <span class="badge">SQOREならでは</span>
+    <h2>いま打つホールの、自分の過去成績が出る</h2>
+    <p>同じゴルフ場を回ると、スコア画面にそのホールの<strong>自分の平均スコアとOB率</strong>が自動で出ます。「ここはいつも叩いてる」が数字で分かるので、クラブ選びと攻め方が変わります。</p>
+    <p>設定は要りません。ラウンドを保存していけば、次に同じコースへ行ったときに勝手に表示されます。タップすれば過去のラウンドを1つずつ、打数・パット・使ったクラブ・OBまでホール単位で遡れます（履歴の閲覧はプレミアム）。</p>
+  </div>
+  <div class="shots">
+    <img src="../assets/ss8.webp" alt="いま打つホールの平均スコアとOB率をスコア画面に自動表示するSQOREの画面" loading="lazy" width="415" height="900">
+    <img src="../assets/ss9.webp" alt="同じホールの過去の打数・パット・使用クラブ・OBを遡れるSQOREのホール履歴画面" loading="lazy" width="415" height="900">
+  </div>
+</div>
+
+<div class="feature flip">
+  <div>
+    <h2>記録するだけで、プレーが分析される</h2>
+    <p>ティーショットの方向（キープ／左／右／オーバー／ショート）、OB・ペナルティ、ガードバンカー、使用クラブを、その場でワンタップ。付けておくと<strong>パーオン率・ボギーオン率・リカバリー率・サンドセーブ率</strong>が自動で出ます。</p>
+    <p>平均パットはパーオン時とボギーオン時で分けて表示。Par3・Par4・Par5別の平均スコアも出るので、どこで損しているかがはっきりします。細かい記録が面倒な日は、打数だけ入れて飛ばしても構いません。</p>
+  </div>
+  <div class="shots">
+    <img src="../assets/ss6.webp" alt="ティーショットの方向やOB・ガードバンカーをワンタップで記録するSQOREの詳細入力画面" loading="lazy" width="415" height="900">
+    <img src="../assets/ss7.webp" alt="パーオン率・リカバリー率・サンドセーブ率・平均パットを分析するSQOREの画面" loading="lazy" width="415" height="900">
+  </div>
+</div>
+
+<div class="feature">
+  <div>
+    <h2>コースを選べば、PARは自動</h2>
+    <p>全国2,000以上のゴルフ場に対応。GPSで近くのコースを出すか、名前で検索してチェックインすれば、<strong>各ホールのPARが自動でセット</strong>されます。毎回PARを打ち込む必要はありません。</p>
+  </div>
+  <div class="shots">
+    <img src="../assets/ss3.webp" alt="GPSまたは名前でゴルフ場を検索するSQOREの画面" loading="lazy" width="415" height="900">
+  </div>
+</div>
+
+<div class="feature flip">
+  <div>
+    <h2>4人ぶんの入力が、片手で終わる</h2>
+    <p>打数は＋−のタップで入れるだけ。同伴者ぶんもまとめて1画面に並ぶので、プレー中に何度も画面を切り替える必要がありません。</p>
+    <p>握りをやる日は、この入力がそのままポイント計算にもなります。<strong>スコアの記録とゲームの集計を二度打ちしなくていい</strong>のが、他のアプリとの一番大きな違いです。</p>
+  </div>
+  <div class="shots">
+    <img src="../assets/ss1.webp" alt="4人ぶんの打数をワンタップで入力するSQOREのスコア画面" loading="lazy" width="415" height="900">
+  </div>
+</div>
+
+<h2>そのほかのスコア機能</h2>
+<ul class="plainlist">
+  <li><strong>紙のスコアカードから取り込む</strong>昔のラウンドは、紙のスコアカードを撮るだけ。写真から数字を読み取って下書きを作るので、違うところだけ直して保存できます。手書きの読み取りは完璧ではないので、あくまで入力を楽にするための機能です。</li>
+  <li><strong>フォトスコアカードで共有</strong>その日の写真とスコアを1枚の画像にして、そのままLINEなどに送れます。</li>
+  <li><strong>年別の成績集計</strong>自分の成績も、いつものメンバーの成績も年ごとに自動でまとまります（プレミアム）。</li>
+  <li><strong>iCloudで同期・バックアップ</strong>記録はiCloudに同期されるので、機種変更しても残ります。全データをファイルに書き出して復元することもできます。</li>
+  <li><strong>ラウンド中はロック画面に途中経過</strong>ライブアクティビティ対応。アプリを開かなくても今の状況が見えます。</li>
+  <li><strong>広告は一切なし</strong>プレー中に広告が割り込むことはありません。</li>
+</ul>
+
+<h2>料金</h2>
+<p>スコアの記録・詳細入力・プレー分析・握りの計算は<strong>すべて無料</strong>で使えます。プレミアム（月額）にすると、いつものグループとメンバーの保存、自分とメンバーの成績集計、ホール別の過去履歴の閲覧が使えます。</p>
+<p class="note">くわしくは<a href="../#pricing">トップページの料金</a>をご覧ください。</p>
+
+<h2>よくある質問</h2>
+<div class="faq">
+  <details>
+    <summary>握りをやらなくても使える？</summary>
+    <p>使えます。ラウンド開始時に「スコアのみ」を選べば、ゲームの設定画面は出てきません。スコアと詳細の記録、分析だけを使う形になります。</p>
+  </details>
+  <details>
+    <summary>同伴者のスコアも記録できる？</summary>
+    <p>できます。1画面に全員ぶんが並ぶので、まとめて入力できます。自分だけ記録する設定にも切り替えられます。</p>
+  </details>
+  <details>
+    <summary>過去に他のアプリで付けていた成績は引き継げる？</summary>
+    <p>これまでのラウンド数と累計の成績を初期値として入れておけます。紙のスコアカードが残っていれば、写真から1ラウンドずつ取り込むこともできます。</p>
+  </details>
+  <details>
+    <summary>同伴者が使っていなくても記録できる？</summary>
+    <p>できます。同伴者はアプリを入れている必要はありません。名前を入れれば、その人ぶんのスコアもまとめて記録できます。</p>
+  </details>
+</div>
+
+<div class="related">
+  <h2>あわせて読む</h2>
+  <ul>
+    <li><a href="../guide/">SQOREの使い方<small>チェックインから清算まで6ステップ</small></a></li>
+    <li><a href="../rules/">ゲームルール解説<small>オリンピック・ラスベガス・ナッソーなど定番の遊び方</small></a></li>
+    <li><a href="../">SQOREトップ<small>アプリの全体像と料金</small></a></li>
+  </ul>
+</div>
+
+<div class="cta">
+  <p class="ttl">スコアだけでも、握りをやる日も、これ1つ</p>
+  <p>SQOREはゴルフのスコア記録・分析とゲームのポイント計算がまとまった無料アプリです。</p>
+  <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
+    <span class="apple"></span>
+    <span><small>Download on the</small>App Store</span>
+  </a>
+</div>
+</article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 株式会社クレア</span>
+    <a href="../">SQOREトップ</a>
+    <a href="../rules/">ゲームルール解説</a>
+    <a href="../score/">スコア管理</a>
+    <a href="../guide/">使い方</a>
+    <a href="../support/">サポート</a>
+    <a href="../privacy/">プライバシーポリシー</a>
+  </div>
+</footer>
+
+<div class="dl-bar">
+  <img src="../assets/icon_180.png" alt="">
+  <span class="txt"><b>SQORE</b>ゴルフのポイント自動計算</span>
+  <a class="get" href="https://apps.apple.com/jp/app/id6777357472">入手</a>
+</div>
+<script>
+/* ヘッダーの出し入れ。下スクロールで隠し、上スクロールで戻す。 */
+(function () {
+  var h = document.querySelector('header.site');
+  if (!h) return;
+  var last = 0;
+  addEventListener('scroll', function () {
+    var y = window.scrollY > 0 ? window.scrollY : 0;
+    if (y > last && y > 140) h.classList.add('hide');
+    else if (y < last) h.classList.remove('hide');
+    last = y;
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
