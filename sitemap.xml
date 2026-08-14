@@ -17,6 +17,16 @@
     </video:video>
   </url>
   <url>
+    <loc>https://sqore-golf.com/score/compare.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sqore-golf.com/score/bogey-on.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sqore-golf.com/score/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
