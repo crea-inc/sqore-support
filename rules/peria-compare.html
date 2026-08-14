@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2596e0">
+<title>ペリア・新ペリア・新新ペリアの違い｜どれが一番「運ゲー」なのかを実測しました</title>
+<meta name="description" content="ペリア・新ペリア（ダブルペリア）・新新ペリアの違いを、計算式と実測データで解説。3方式の平均ハンデは完全に同じで、違うのはブレだけです。ペリアのブレは新ペリアのちょうど2倍。コンペ2万回のシミュレーションで、それぞれの優勝率がどう変わるかも出しました。">
+<link rel="canonical" href="https://sqore-golf.com/rules/peria-compare.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SQORE">
+<meta property="og:title" content="ペリア・新ペリア・新新ペリアの違い">
+<meta property="og:description" content="平均ハンデは3方式とも同じ。違うのはブレだけ。ペリアのブレは新ペリアのちょうど2倍でした。">
+<meta property="og:url" content="https://sqore-golf.com/rules/peria-compare.html">
+<meta property="og:image" content="https://sqore-golf.com/assets/og_1200x630.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6777357472">
+<link rel="apple-touch-icon" href="../assets/icon_180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_32.png">
+<link rel="icon" type="image/png" sizes="180x180" href="../assets/favicon_180.png">
+<link rel="stylesheet" href="rules.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ペリア・新ペリア・新新ペリアの違い",
+  "inLanguage": "ja",
+  "datePublished": "2026-08-14",
+  "dateModified": "2026-08-14",
+  "author": { "@type": "Organization", "name": "株式会社クレア" },
+  "publisher": { "@type": "Organization", "name": "SQORE" },
+  "mainEntityOfPage": "https://sqore-golf.com/rules/peria-compare.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "SQORE", "item": "https://sqore-golf.com/" },
+    { "@type": "ListItem", "position": 2, "name": "ゲームルール解説", "item": "https://sqore-golf.com/rules/" },
+    { "@type": "ListItem", "position": 3, "name": "ペリア方式の比較" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ペリアと新ペリアの違いは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "隠しホールの数だけです。ペリアは6ホール（合計を3倍）、新ペリア（ダブルペリア）は12ホール（1.5倍）です。どちらも18ホールぶんに換算してからパーを引き、0.8を掛けるため、平均のハンデは完全に同じになります。違うのはハンデのブレの大きさで、隠しホールが少ないペリアのほうが運の要素が強くなります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "新新ペリア方式とは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "隠しホールを9ホールにして、その合計を2倍する方式です。ハンデ＝(隠し9ホールの合計×2−コースのパー)×0.8で計算します。隠しホールの数がペリア（6）と新ペリア（12）の中間なので、運の量もちょうど中間になります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ペリア・新ペリア・新新ペリアで有利不利はありますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "平均のハンデは3方式とも同じなので、どれを選んでも「実力の反映度」は変わりません。変わるのはハンデのブレの大きさだけです。実測すると、ハンデのブレはペリアが新ペリアのちょうど2倍、新新ペリアが約1.4倍でした。上手い人はブレの小さい新ペリアが有利、スコアが安定しない人はブレの大きいペリアのほうが逆転の目が出ます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ダブルペリアと新ペリアは違うものですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "同じものです。隠しホールがペリア方式の6ホールの倍の12ホールなので「ダブルペリア」、新しい方式という意味で「新ペリア」と呼ばれます。現在のコンペで最も多く使われている方式です。" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="../assets/icon_180.png" alt="SQOREアイコン">
+    <a href="../">SQORE</a>
+    <span class="tag">ポイント自動計算アプリ</span>
+    <nav class="topnav"><a href="../guide/">使い方</a><a href="../score/">スコア管理</a><a href="./">ルール解説</a><a href="../support/">サポート</a><a href="https://apps.apple.com/jp/app/id6777357472">アプリ入手</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+<nav class="crumb"><a href="../">ホーム</a> › <a href="./">ゲームルール解説</a> › ペリア方式の比較</nav>
+
+<article>
+<h1>ペリア・新ペリア・新新ペリアの違い</h1>
+<p class="updated">SQORE編集部 ｜ 2026年8月14日更新</p>
+
+<p class="intro">この3つの違いは<strong>隠しホールの数だけ</strong>です。そして意外に思われるかもしれませんが、<strong>3方式の平均ハンデは完全に同じ</strong>になります。違うのは<strong>ハンデのブレ（運の量）だけ</strong>。実際に測ってみると、ハンデのブレは<strong>ペリアが新ペリアのちょうど2倍</strong>でした。この記事では、その理由と、コンペの結果がどう変わるかを数字で示します。</p>
+
+<h2>3方式の計算式</h2>
+<div class="table-scroll">
+<table>
+  <tr><th>方式</th><th>隠しホール</th><th>計算式</th></tr>
+  <tr><td><strong>ペリア</strong></td><td>6ホール</td><td>（隠し6ホールの合計 <strong>×3</strong> − パー）× 0.8</td></tr>
+  <tr><td><strong>新新ペリア</strong></td><td>9ホール</td><td>（隠し9ホールの合計 <strong>×2</strong> − パー）× 0.8</td></tr>
+  <tr><td><strong>新ペリア</strong><br>（ダブルペリア）</td><td>12ホール</td><td>（隠し12ホールの合計 <strong>×1.5</strong> − パー）× 0.8</td></tr>
+</table>
+</div>
+<p>倍率がバラバラに見えますが、意味は同じです。<strong>6×3＝18、9×2＝18、12×1.5＝18</strong>。どれも「隠しホールのスコアを18ホールぶんに換算する」ための数字です。そこからコースのパーを引き、最後に0.8を掛ける——ここは3方式とも共通です。</p>
+<p class="note">「ダブルペリア」は新ペリアの別名です。ペリアの隠しホール6の倍（＝12）だから「ダブル」。歴史的にはペリア → 新ペリア → 新新ペリアの順に登場しました。</p>
+
+<h2>平均のハンデは、3方式とも同じ</h2>
+<p>ここが一番よく誤解されているところです。仮に全ホールを均等に<strong>1ホールあたり m 打オーバー</strong>で回ったとして、3方式に入れてみます。</p>
+<div class="table-scroll">
+<table>
+  <tr><th>1ホールの平均オーバー</th><th>グロス</th><th>ペリア</th><th>新新ペリア</th><th>新ペリア</th></tr>
+  <tr><td>±0</td><td>72</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+  <tr><td>+0.5</td><td>81</td><td>7.2</td><td>7.2</td><td>7.2</td></tr>
+  <tr><td>+1.0</td><td>90</td><td>14.4</td><td>14.4</td><td>14.4</td></tr>
+  <tr><td>+1.5</td><td>99</td><td>21.6</td><td>21.6</td><td>21.6</td></tr>
+  <tr><td>+2.0</td><td>108</td><td>28.8</td><td>28.8</td><td>28.8</td></tr>
+</table>
+</div>
+<p><strong>1打も違いません。</strong>18ホールぶんに換算している以上、平均的には同じ答えが出るのは当然です。</p>
+<p>つまり「<strong>ペリアは実力が出にくく、新ペリアは実力が出やすい</strong>」という説明は、正確ではありません。実力の反映度（＝0.8を掛けて残る2割）は<a href="new-peria.html">新ペリアの記事</a>で見たとおりで、3方式とも同じです。</p>
+
+<h2>では何が違うのか：ブレだけが違う</h2>
+<p>違いは<strong>ハンデのブレ</strong>です。隠しホールが少ないほど、たまたまどのホールが選ばれたかでハンデが大きく動きます。</p>
+<p>同じスコアカードのまま、隠しホールの抽選だけを何度も振り直して、ハンデが何打ぶれるかを測りました。</p>
+<div class="table-scroll">
+<table>
+  <tr><th>その日のグロス</th><th>ペリア</th><th>新新ペリア</th><th>新ペリア</th></tr>
+  <tr><td>80</td><td>±4.8打</td><td>±3.6打</td><td>±2.5打</td></tr>
+  <tr><td>90</td><td>±5.8打</td><td>±4.0打</td><td>±2.9打</td></tr>
+  <tr><td>100</td><td>±6.5打</td><td>±4.7打</td><td>±3.4打</td></tr>
+  <tr><td>110</td><td>±6.9打</td><td>±4.8打</td><td>±3.5打</td></tr>
+</table>
+</div>
+<div class="example">
+  <p class="ttl">ブレの比率はきれいな数字になる</p>
+  <p><strong>ペリア : 新新ペリア : 新ペリア ＝ 2.00 : 1.41 : 1.00</strong></p>
+  <p class="note" style="margin-top:8px">ペリアのブレは新ペリアの<strong>ちょうど2倍</strong>、新新ペリアは<strong>約1.4倍（√2倍）</strong>です。上の実測値（5.8 : 4.0 : 2.9）とも一致します。隠しホールが少ないほど「あなたの実力」の推定が雑になる、というだけの話です。</p>
+</div>
+<p>同じ90で回っても、ペリアならハンデが14.4を中心に±5.8打も動きます。<strong>ハンデが9になる日もあれば20になる日もある</strong>ということです。新ペリアなら±2.9打なので、動いても11〜17程度に収まります。</p>
+
+<h2>コンペの結果はこう変わる</h2>
+<p>16人のコンペを2万回シミュレートして、3方式それぞれの優勝率を出しました。同じ参加者・同じスコアで、集計方式だけを変えています。</p>
+<div class="table-scroll">
+<table>
+  <tr><th>その日のグロス</th><th>ペリア</th><th>新新ペリア</th><th>新ペリア</th></tr>
+  <tr><td>70〜74</td><td>15.9%</td><td>27.5%</td><td><strong>42.7%</strong></td></tr>
+  <tr><td>75〜79</td><td>13.3%</td><td>18.9%</td><td>28.0%</td></tr>
+  <tr><td>80〜84</td><td>10.6%</td><td>13.7%</td><td>16.5%</td></tr>
+  <tr><td>85〜89</td><td>8.9%</td><td>9.7%</td><td>9.5%</td></tr>
+  <tr><td>90〜94</td><td>7.4%</td><td>6.7%</td><td>5.2%</td></tr>
+  <tr><td>95〜99</td><td>6.0%</td><td>4.7%</td><td>2.7%</td></tr>
+  <tr><td>100〜104</td><td>4.5%</td><td>2.8%</td><td>1.3%</td></tr>
+  <tr><td>105〜109</td><td>3.2%</td><td>1.6%</td><td>0.5%</td></tr>
+  <tr><td>110〜114</td><td><strong>1.7%</strong></td><td>0.7%</td><td>0.1%</td></tr>
+  <tr><td>115〜119</td><td>0.8%</td><td>0.2%</td><td>ほぼ0%</td></tr>
+  <tr><td>120〜124</td><td>0.3%</td><td>ほぼ0%</td><td>ほぼ0%</td></tr>
+  <tr><th>優勝者の平均グロス</th><th>90.4</th><th>87.1</th><th>83.7</th></tr>
+</table>
+</div>
+
+<p>ペリアの列は<strong>上から下までなだらか</strong>です。70台前半でも15.9%しか勝てない代わりに、110台でも1.7%の目があります。新ペリアの列は<strong>上に極端に偏って</strong>いて、70台前半が42.7%、110台はほぼゼロ。</p>
+<p><strong>優勝者の平均グロスは、ペリア90.4・新新ペリア87.1・新ペリア83.7。</strong>方式を変えるだけで、優勝者の顔ぶれが7打ぶん変わります。</p>
+
+<div class="example">
+  <p class="ttl">よく言われる説は、結論としては正しい</p>
+  <p>「ペリアは運の要素が強すぎるので新ペリアが作られ、新ペリアは実力が出すぎるので新新ペリアが作られた」——この説明は<strong>結論としては合っています</strong>。ただし理由は「実力の反映度が違うから」ではなく、<strong>平均は同じで、ブレの大きさだけが違うから</strong>です。</p>
+</div>
+
+<h2>幹事はどれを選べばいいか</h2>
+<div class="table-scroll">
+<table>
+  <tr><th>こういう会なら</th><th>向いている方式</th><th>理由</th></tr>
+  <tr><td>実力差が大きい・初心者が多い</td><td><strong>ペリア</strong></td><td>ブレが大きく、誰にでも目がある。ただし「実力どおりにならない」不満は出やすい</td></tr>
+  <tr><td>迷ったら</td><td><strong>新ペリア</strong></td><td>現在の主流。ゴルフ場が対応していることも多く、説明が要らない</td></tr>
+  <tr><td>実力が近い・競技志向</td><td><strong>新ペリア</strong></td><td>ブレが小さく、良いスコアが報われる</td></tr>
+  <tr><td>その中間が欲しい</td><td><strong>新新ペリア</strong></td><td>ブレがちょうど中間。ただし知らない人が多く、説明が要る</td></tr>
+</table>
+</div>
+<p class="note">なお、どの方式でも<strong>隠しホールの1ホールはダブルパーで頭打ち</strong>にするのが標準です。これを外すと大叩きした人のハンデが青天井になり、特にブレの大きいペリアでは結果が荒れます。</p>
+
+<h2>アプリなら方式を選ぶだけ</h2>
+<div class="app-shot">
+  <div>
+    <p class="ttl">隠しホールの抽選も計算も自動</p>
+    <p>iPhoneアプリの<a href="../">SQORE</a>は新ペリア方式に対応しています。チェックインで「新ペリ」を選んでおけば、隠しホール12ホールの抽選からハンデ計算、順位付けまで自動です。</p>
+    <p class="cap">抽選は「日付＋ゴルフ場名」で決まるので、同じ日に同じコースを記録していれば誰の端末でも同じ12ホールが選ばれます。幹事が1台で入力しても、各自が別々に入力しても順位が揃います。</p>
+  </div>
+  <img src="../assets/game_newperia.webp" alt="新ペリア方式の順位・ハンデ・ネットと抽選された隠しホールを自動計算したSQOREの新ペリ結果画面" loading="lazy" width="450" height="548">
+</div>
+
+<h2>よくある質問</h2>
+<div class="faq">
+  <details>
+    <summary>ペリアと新ペリアの違いは？</summary>
+    <p>隠しホールの数だけです。ペリアは6ホール（×3）、新ペリアは12ホール（×1.5）。平均のハンデは同じで、ペリアのほうがハンデのブレが2倍大きくなります。</p>
+  </details>
+  <details>
+    <summary>ダブルペリアと新ペリアは同じ？</summary>
+    <p>同じものです。ペリアの隠しホール6の倍だから「ダブルペリア」、新しい方式だから「新ペリア」。呼び方が2つあるだけです。</p>
+  </details>
+  <details>
+    <summary>新新ペリアはあまり見かけないけど？</summary>
+    <p>現在の主流は新ペリアです。新新ペリアはブレがちょうど中間になる方式ですが、知らない参加者が多いので、採用するなら事前の説明が要ります。</p>
+  </details>
+  <details>
+    <summary>どの方式が一番公平？</summary>
+    <p>「公平」の定義によります。平均のハンデはどれも同じなので、実力の扱いに差はありません。良いスコアが報われるのが公平だと考えるなら新ペリア、誰にでも目があるのが公平だと考えるならペリアです。</p>
+  </details>
+</div>
+
+<div class="related">
+  <h2>あわせて読む</h2>
+  <ul>
+    <li><a href="new-peria.html">新ペリア方式は本当に「誰でも優勝できる」のか<small>3万回シミュレーションで優勝率を実測</small></a></li>
+    <li><a href="nearpin.html">ニアピンの定義<small>ホールインワンは対象？ コンペで揉めるポイント</small></a></li>
+    <li><a href="dracon-nearpin.html">ドラコン・ニアピン<small>コンペの定番。取れる条件とキャリーの扱い</small></a></li>
+    <li><a href="./">ゲームルール解説の一覧へ</a></li>
+  </ul>
+</div>
+
+<div class="cta">
+  <p class="ttl">新ペリの集計、幹事がやらなくてOK</p>
+  <p>SQOREは隠しホールの抽選からハンデ計算・順位付けまで自動で行う無料アプリです。</p>
+  <p class="score-note">ゲームをしない日は<a href="../score/">スコアアプリとして</a>そのまま使えます。いま打つホールの自分の平均スコアやOB率も出ます。</p>
+  <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
+    <span class="apple"></span>
+    <span><small>Download on the</small>App Store</span>
+  </a>
+</div>
+
+<h2>この記事の検証方法</h2>
+<p class="note">ハンデのブレは、同じスコアカードに対して隠しホールの抽選だけを400通り振り直し、それをスコアカード60枚ぶん繰り返した標準偏差の平均です。優勝率は16人のコンペを2万回シミュレートし、同じ参加者・同じスコアに対して集計方式だけを差し替えて比較しました。1ホールのスコアは「パーからの打数」の離散分布から発生させ、ラウンド間の標準偏差が実際のゴルファーに近い3〜7打に収まるよう調整しています。ブレの理論比（2.00 : 1.41 : 1.00）は、各ナイン9ホールから非復元で抽出することによる有限母集団修正を含めて計算した値で、実測値と一致しました。パー72・各ナインがPAR3を2つ・PAR4を5つ・PAR5を2つ持つ標準的なコースを前提としています。</p>
+</article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 株式会社クレア</span>
+    <a href="../">SQOREトップ</a>
+    <a href="./">ゲームルール解説</a>
+    <a href="../score/">スコア管理</a>
+    <a href="../guide/">使い方</a>
+    <a href="../support/">サポート</a>
+    <a href="../privacy/">プライバシーポリシー</a>
+  </div>
+</footer>
+
+<div class="dl-bar">
+  <img src="../assets/icon_180.png" alt="">
+  <span class="txt"><b>SQORE</b>ゴルフのポイント自動計算</span>
+  <a class="get" href="https://apps.apple.com/jp/app/id6777357472">入手</a>
+</div>
+<script>
+/* ヘッダーの出し入れ。下スクロールで隠し、上スクロールで戻す。 */
+(function () {
+  var h = document.querySelector('header.site');
+  if (!h) return;
+  var last = 0;
+  addEventListener('scroll', function () {
+    var y = window.scrollY > 0 ? window.scrollY : 0;
+    if (y > last && y > 140) h.classList.add('hide');
+    else if (y < last) h.classList.remove('hide');
+    last = y;
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
