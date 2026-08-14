@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2596e0">
+<title>新ペリア方式は本当に「誰でも優勝できる」のか｜3万回シミュレーションで検証</title>
+<meta name="description" content="新ペリア方式（ダブルペリア）で本当に勝てるのは誰なのかを、コンペ3万回のシミュレーションで検証しました。新ペリアはグロス差の80%を消しますが、残り20%は消えません。スコア帯ごとの優勝率、運が効く仕組み、「隠しホールにPAR3とPAR5が1つずつ入る」「パー合計は48」という思い込みが外れる確率まで、数字で示します。">
+<link rel="canonical" href="https://sqore-golf.com/rules/new-peria.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SQORE">
+<meta property="og:title" content="新ペリア方式は本当に「誰でも優勝できる」のか">
+<meta property="og:description" content="コンペ3万回のシミュレーションで検証。新ペリアはグロス差の80%を消すが、残り20%は消えない。">
+<meta property="og:url" content="https://sqore-golf.com/rules/new-peria.html">
+<meta property="og:image" content="https://sqore-golf.com/assets/og_1200x630.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6777357472">
+<link rel="apple-touch-icon" href="../assets/icon_180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_32.png">
+<link rel="icon" type="image/png" sizes="180x180" href="../assets/favicon_180.png">
+<link rel="stylesheet" href="rules.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "新ペリア方式は本当に「誰でも優勝できる」のか",
+  "inLanguage": "ja",
+  "datePublished": "2026-08-14",
+  "dateModified": "2026-08-14",
+  "author": { "@type": "Organization", "name": "株式会社クレア" },
+  "publisher": { "@type": "Organization", "name": "SQORE" },
+  "mainEntityOfPage": "https://sqore-golf.com/rules/new-peria.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "SQORE", "item": "https://sqore-golf.com/" },
+    { "@type": "ListItem", "position": 2, "name": "ゲームルール解説", "item": "https://sqore-golf.com/rules/" },
+    { "@type": "ListItem", "position": 3, "name": "新ペリア方式の検証" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "新ペリア方式は誰でも優勝できますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "できません。新ペリアはグロス差の80%を消す方式で、残りの20%は消えません。同じ調子で回った場合、グロスが5打違うとネットは1打の差が残ります。16人のコンペを3万回シミュレーションしたところ、その日70台前半で回った人の優勝率は約42%、100台なら1%台でした。" }
+    },
+    {
+      "@type": "Question",
+      "name": "新ペリアで運が効くのはどこですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "叩いたホールが隠しホールに入るかどうかです。シミュレーションでは、優勝者は隠しホールで平均+0.85打、隠し以外で+0.26打と、隠しホールのほうを悪く回っていました。全参加者の平均では差が0.00打なので、この偏りがそのまま運の正体です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "隠しホールにはPAR3とPAR5が1つずつ入りますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "入るとは限りません。各ナインがPAR3を2つ・PAR4を5つ・PAR5を2つ持つ標準的なコースで9ホールから6ホールを抽選する場合、そのハーフでPAR3が1つ・PAR5が1つちょうど入る確率は23.8%です。前半・後半の両方でそうなる確率は5.7%しかありません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "隠しホールのパー合計は48になりますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "抽選で選ぶ場合、ちょうど48になるのは27.2%だけです。実際には44から52まで散らばります。ゴルフ場側が「パー合計が48になるように」隠しホールを指定する運用もあり、その場合は常に48になります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "隠しホールで大叩きするとハンデは無限に増えますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "増えません。1ホールの打数はダブルパー（PAR4なら8打）で頭打ちにするのが標準です。この上限があることで、大叩きした人がハンデだけを膨らませて逆転するのを抑えています。" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="../assets/icon_180.png" alt="SQOREアイコン">
+    <a href="../">SQORE</a>
+    <span class="tag">ポイント自動計算アプリ</span>
+    <nav class="topnav"><a href="../guide/">使い方</a><a href="../score/">スコア管理</a><a href="./">ルール解説</a><a href="../support/">サポート</a><a href="https://apps.apple.com/jp/app/id6777357472">アプリ入手</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+<nav class="crumb"><a href="../">ホーム</a> › <a href="./">ゲームルール解説</a> › 新ペリア方式の検証</nav>
+
+<article>
+<h1>新ペリア方式は本当に「誰でも優勝できる」のか</h1>
+<p class="updated">SQORE編集部 ｜ 2026年8月14日更新</p>
+
+<p class="intro">新ペリア（ダブルペリア）は「初心者でも優勝できる方式」と言われます。<strong>これは半分だけ正しい表現です。</strong>新ペリアは<strong>グロス差の80%を消しますが、残りの20%は消しません</strong>。だから上手い人のほうが構造的に有利で、そのうえで「叩いたホールが隠しに入ったか」という運が乗ります。このページでは、その仕組みを数式で示したうえで、<strong>コンペを3万回シミュレーション</strong>して実際の優勝率を出しました。</p>
+
+<h2>まず、計算式のおさらい</h2>
+<p>新ペリアは18ホールのうち<strong>12ホール（前半9から6・後半9から6）を「隠しホール」</strong>として、そのスコアからハンデを自動で作る方式です。</p>
+<div class="example">
+  <p class="ttl">新ペリアの式</p>
+  <p><strong>ハンデ ＝（隠しホール12ホールの合計 × 1.5 − コースのパー）× 0.8</strong><br>
+  <strong>ネット ＝ グロス − ハンデ</strong></p>
+  <p class="note" style="margin-top:8px">隠しホールの1ホールぶんの打数は<strong>ダブルパー（PAR4なら8打）で頭打ち</strong>にするのが標準です。12ホールを1.5倍するのは、18ホールぶんに換算するためです（12×1.5＝18）。</p>
+</div>
+
+<h2>核心：新ペリアはグロス差の「80%」しか消さない</h2>
+<p>ここが新ペリアのすべてです。仮に全ホールを均等に<strong>1ホールあたり m 打オーバー</strong>で回ったとして、式に入れてみます。</p>
+<div class="table-scroll">
+<table>
+  <tr><th>1ホールの平均オーバー</th><th>グロス</th><th>ハンデ</th><th>ネット</th></tr>
+  <tr><td>±0（パー）</td><td>72</td><td>0.0</td><td><strong>72.0</strong></td></tr>
+  <tr><td>+0.5</td><td>81</td><td>7.2</td><td><strong>73.8</strong></td></tr>
+  <tr><td>+1.0</td><td>90</td><td>14.4</td><td><strong>75.6</strong></td></tr>
+  <tr><td>+1.5</td><td>99</td><td>21.6</td><td><strong>77.4</strong></td></tr>
+  <tr><td>+2.0</td><td>108</td><td>28.8</td><td><strong>79.2</strong></td></tr>
+</table>
+</div>
+<p>グロスが18打増えるごとに、ネットは3.6打しか増えません。<strong>3.6 ÷ 18 ＝ 0.2</strong>。つまり──</p>
+
+<div class="example">
+  <p class="ttl">新ペリアの本質</p>
+  <p><strong>グロスが5打違えば、ネットに1打の差が残る。</strong></p>
+  <p class="note" style="margin-top:8px">グロス90の人とグロス100の人では、ネットで2打の差がつきます。この差は運では埋まりません。</p>
+</div>
+
+<p>なぜこうなるのか。犯人は式の最後の<strong>「×0.8」</strong>です。もしこれが×1.0だったら、上の表のネットは全員ぴったり72になります。つまり<strong>完全な運ゲーになる</strong>。0.8を掛けているのは、実力差をあえて2割だけ残すためです。</p>
+<p class="note">「新ペリアはハンデを出しすぎない」とよく言われるのは、この0.8のことです。上手い人が不当に沈まないようにする、よくできた設計になっています。</p>
+
+<h2>3万回シミュレーションしてみた</h2>
+<p>では実際の優勝率はどうなるのか。<strong>16人のコンペを3万回</strong>コンピュータ上で開催して数えました。参加者の実力は平均グロス97・標準偏差11でばらつかせ、1ホールごとのスコアは実際のゴルファーに近い分布（ラウンド間のブレが3〜7打に収まるよう調整）から発生させています。</p>
+
+<div class="table-scroll">
+<table>
+  <tr><th>その日のグロス</th><th>優勝率</th><th>全員均等なら6.2%なので</th></tr>
+  <tr><td>70〜74</td><td><strong>41.9%</strong></td><td>6.7倍</td></tr>
+  <tr><td>75〜79</td><td><strong>27.4%</strong></td><td>4.4倍</td></tr>
+  <tr><td>80〜84</td><td><strong>17.1%</strong></td><td>2.7倍</td></tr>
+  <tr><td>85〜89</td><td>9.5%</td><td>1.5倍</td></tr>
+  <tr><td>90〜94</td><td>5.2%</td><td>0.8倍</td></tr>
+  <tr><td>95〜99</td><td>2.7%</td><td>0.4倍</td></tr>
+  <tr><td>100〜104</td><td>1.3%</td><td>0.2倍</td></tr>
+  <tr><td>105〜109</td><td>0.5%</td><td>0.1倍</td></tr>
+  <tr><td>110〜114</td><td>0.1%</td><td>ほぼゼロ</td></tr>
+</table>
+</div>
+<p><strong>優勝者の平均グロスは83.7</strong>でした。「誰でも優勝できる」と言われる新ペリアでも、実際に優勝しているのは<strong>その日80台前半で回った人</strong>です。100を叩いて優勝する可能性は1%台、110台ならほぼありません。</p>
+<p class="note">参加者の実力分布を変えれば数字は動きますが、「上手い人ほど有利」という順序は変わりません。これは前章のとおり式から決まっているためです。</p>
+
+<h2>では「運」はどこにあるのか</h2>
+<p>実力だけで決まるなら、そもそもコンペになりません。運が入り込むのは<strong>「叩いたホールが隠しホールに入るかどうか」</strong>の一点です。</p>
+
+<div class="table-scroll">
+<table>
+  <tr><th></th><th>隠しホールの平均オーバー</th><th>隠し以外の平均オーバー</th><th>差</th></tr>
+  <tr><td><strong>優勝した人</strong></td><td>+0.85</td><td>+0.26</td><td><strong>+0.59</strong></td></tr>
+  <tr><td>参加者全員</td><td>+1.39</td><td>+1.39</td><td>±0.00</td></tr>
+</table>
+</div>
+
+<p>優勝者は<strong>隠しホールのほうを悪く回っています</strong>。隠しホールで叩けばハンデが増え、隠れていないホールでまとめればグロスが守られる。この偏りが起きた人が勝つ、というのが新ペリアの構造です。全参加者の平均では差がゼロなので、この偏りは完全に<strong>抽選の運</strong>です。</p>
+<p class="note">逆に言えば「隠しホールをきれいにパーで回ってしまった」日は、ハンデがつかず勝てません。「調子が良かったのに入賞できなかった」の正体はこれです。</p>
+
+<h2>よくある思い込み①「ハーフにPAR3とPAR5が1つずつ入る」</h2>
+<p>「隠しホールは前半にPAR3が1つ、PAR5が1つ入るようになっている」と思っている人がいますが、<strong>抽選である以上そんな保証はありません</strong>。</p>
+<p>各ナインがPAR3を2つ・PAR4を5つ・PAR5を2つ持つ標準的なコースで、9ホールから6ホールを選ぶ場合を厳密に数えました。</p>
+<div class="table-scroll">
+<table>
+  <tr><th></th><th>確率</th></tr>
+  <tr><td>前半の隠し6ホールに、PAR3が1つ・PAR5が1つ ちょうど入る</td><td>23.8%</td></tr>
+  <tr><td>後半の隠し6ホールに、PAR3が1つ・PAR5が1つ ちょうど入る</td><td>23.8%</td></tr>
+  <tr><td><strong>前半・後半の両方でそうなる</strong></td><td><strong>5.7%</strong></td></tr>
+</table>
+</div>
+<p><strong>約94%の確率で、その想定は外れます。</strong>ちなみに前半の隠し6ホールに入るPAR3の数は、0個が8.3%・1個が50.0%・<strong>2個が41.7%</strong>です。PAR3が2つとも隠れることは珍しくありません。</p>
+
+<h2>よくある思い込み②「隠しホールのパー合計は48」</h2>
+<p>「隠し12ホールのパー合計は48」という説明もよく見かけますが、これも<strong>抽選なら成り立ちません</strong>。</p>
+<div class="table-scroll">
+<table>
+  <tr><th>隠し12ホールのパー合計</th><th>確率</th></tr>
+  <tr><td>44 / 52</td><td>各 0.4%</td></tr>
+  <tr><td>45 / 51</td><td>各 3.1%</td></tr>
+  <tr><td>46 / 50</td><td>各 11.1%</td></tr>
+  <tr><td>47 / 49</td><td>各 21.8%</td></tr>
+  <tr><td><strong>48（ちょうど）</strong></td><td><strong>27.2%</strong></td></tr>
+</table>
+</div>
+<p>ちょうど48になるのは<strong>4回に1回程度</strong>です。パー合計が49や50になれば、その日は全員のハンデが少し出やすくなります。</p>
+<p class="note">ただし、ゴルフ場やコンペの主催者が<strong>「パーの合計が48になるように」12ホールを指定する</strong>運用もあります。その場合は毎回48で固定です。抽選なのか指定なのかで話が変わるので、気になるなら幹事に確認してください。</p>
+
+<h2>ダブルパー上限は「大叩きの逆転」を抑えている</h2>
+<p>隠しホールの1ホールをダブルパーで頭打ちにする標準ルールを、外すとどうなるか。同じ条件で比べました。</p>
+<div class="table-scroll">
+<table>
+  <tr><th>その日のグロス</th><th>上限あり（標準）</th><th>上限なし</th></tr>
+  <tr><td>70〜74</td><td>41.9%</td><td>38.8%</td></tr>
+  <tr><td>85〜89</td><td>9.5%</td><td>8.7%</td></tr>
+  <tr><td>100〜104</td><td>1.3%</td><td><strong>2.3%</strong></td></tr>
+  <tr><td>105〜109</td><td>0.5%</td><td><strong>1.6%</strong></td></tr>
+  <tr><td>110〜114</td><td>0.1%</td><td><strong>1.1%</strong></td></tr>
+</table>
+</div>
+<p>上限を外すと、100以上を叩いた人の優勝率が<strong>2〜10倍</strong>に跳ね上がります。1ホールで10打も打てばそのぶんハンデが青天井に増えるためです。<strong>ダブルパー上限は、大叩きがそのままハンデに化けるのを止める装置</strong>だと分かります。</p>
+
+<h2>実力が拮抗すると、一気に運ゲーになる</h2>
+<p>ここまでは実力差が大きい一般的なコンペ（標準偏差11）の話です。参加者の実力が近い場合（標準偏差3）はこうなります。</p>
+<div class="table-scroll">
+<table>
+  <tr><th>その日のグロス</th><th>実力差が大きいコンペ</th><th>実力が拮抗したコンペ</th></tr>
+  <tr><td>85〜89</td><td>9.5%</td><td>12.7%</td></tr>
+  <tr><td>90〜94</td><td>5.2%</td><td>7.4%</td></tr>
+  <tr><td>95〜99</td><td>2.7%</td><td>4.0%</td></tr>
+</table>
+</div>
+<p>差が縮まり、フラットに近づきます。<strong>実力が近いメンバーで新ペリアをやると、ほぼ隠しホールの引き勝負</strong>になるということです。「新ペリアは運ゲー」という感想と「実力どおり」という感想が両方あるのは、参加者の顔ぶれが違うからです。</p>
+
+<h2>結局、どうすれば勝てるのか</h2>
+<p>身も蓋もない結論ですが、<strong>普通に良いスコアで回ることが最大の攻略法</strong>です。グロス5打の改善はネット1打の改善として確実に効きます。運の部分は抽選なので、こちらから触れる余地はありません。</p>
+<p>なお「隠しホールで意図的に叩けばハンデが増える」のは式のうえでは事実ですが、<strong>ダブルパーで頭打ちになるうえ、増えたハンデの8割しか手元に残らず、叩いたぶんはグロスにそのまま乗ります</strong>。差し引きで得になる場面はほとんどありません。何より、それはコンペの趣旨から外れます。</p>
+
+<div class="example">
+  <p class="ttl">実際にあった1例</p>
+  <p>下の画面は、同じ組の4人の結果です。<strong>グロス最少は佐藤さんの85でしたが、順位は3位</strong>。優勝したのはグロス86の山田さんでした。隠しホールの引きが1打の差を作っています。</p>
+  <p class="note" style="margin-top:8px">このときの隠しホールのパー合計は<strong>47</strong>で、後半の隠し6ホールには<strong>PAR3が2つ</strong>入っていました。上で見た「思い込みが外れるケース」がそのまま起きています。</p>
+</div>
+
+<h2>アプリなら隠しホールの抽選も集計も自動</h2>
+<div class="app-shot">
+  <div>
+    <p class="ttl">打数を入れるだけで、順位まで出る</p>
+    <p>iPhoneアプリの<a href="../">SQORE</a>は、チェックインで「新ペリ」を選んでおけば、隠しホールの抽選からハンデ計算、順位付けまで自動で行います。上の式を手で計算する必要はありません。</p>
+    <p class="cap">抽選は「日付＋ゴルフ場名」で決まるため、同じ日に同じコースを記録していれば<strong>誰の端末でも同じ12ホール</strong>が選ばれます。幹事が1台で入力しても、各自が別々に入力しても順位が揃います。ダブルパー上限にも対応しています。</p>
+  </div>
+  <img src="../assets/game_newperia.webp" alt="新ペリア方式の順位・ハンデ・ネットと抽選された隠しホールを自動計算したSQOREの新ペリ結果画面" loading="lazy" width="450" height="548">
+</div>
+
+<h2>よくある質問</h2>
+<div class="faq">
+  <details>
+    <summary>新ペリアは誰でも優勝できる？</summary>
+    <p>できません。グロス差の80%は消えますが、残り20%は消えません。グロスが5打違うとネットに1打の差が残ります。シミュレーションでも優勝者の平均グロスは83.7でした。</p>
+  </details>
+  <details>
+    <summary>新ペリアとダブルペリアは違うもの？</summary>
+    <p>同じものです。隠しホールが12ホール（ペリア方式の6ホールの倍）なので「ダブルペリア」、新しい方式という意味で「新ペリア」と呼ばれます。</p>
+  </details>
+  <details>
+    <summary>隠しホールで大叩きすると得？</summary>
+    <p>ほとんど得になりません。1ホールはダブルパーで頭打ちですし、増えたハンデは0.8倍されて8割しか残らない一方、叩いた打数はグロスに丸ごと乗ります。</p>
+  </details>
+  <details>
+    <summary>ハンデに上限はある？</summary>
+    <p>式そのものに上限はありません。コンペによっては「ハンデの上限は36まで」といった独自の上限を設けることがあります。上限を設けるかどうかで高スコアの人の勝ちやすさが変わるので、幹事は事前に決めておいてください。</p>
+  </details>
+  <details>
+    <summary>ハーフ（9ホール）でも新ペリアはできる？</summary>
+    <p>本来の新ペリアは18ホール前提です。9ホールでやる場合は隠しホールを6ホールにして換算の倍率を変えるなど、独自の取り決めが必要になります。</p>
+  </details>
+</div>
+
+<div class="related">
+  <h2>あわせて読む</h2>
+  <ul>
+    <li><a href="./">ゲームルール解説の一覧<small>オリンピック・ラスベガス・ナッソーなど定番の握り</small></a></li>
+    <li><a href="nearpin.html">ニアピンの定義<small>ホールインワンは対象？ コンペで揉めるポイント</small></a></li>
+    <li><a href="dracon-nearpin.html">ドラコン・ニアピン<small>コンペの定番。取れる条件とキャリーの扱い</small></a></li>
+    <li><a href="../score/">SQOREのスコア管理機能<small>握り抜きの普段のラウンドでも使えます</small></a></li>
+  </ul>
+</div>
+
+<div class="cta">
+  <p class="ttl">新ペリの集計、幹事がやらなくてOK</p>
+  <p>SQOREは隠しホールの抽選からハンデ計算・順位付けまで自動で行う無料アプリです。</p>
+  <p class="score-note">ゲームをしない日は<a href="../score/">スコアアプリとして</a>そのまま使えます。いま打つホールの自分の平均スコアやOB率も出ます。</p>
+  <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
+    <span class="apple"></span>
+    <span><small>Download on the</small>App Store</span>
+  </a>
+</div>
+
+<h2>この記事の検証方法</h2>
+<p class="note">優勝率は、16人のコンペを3万回シミュレートして集計しました。1ホールのスコアは「パーからの打数」の離散分布から発生させ、ラウンド間の標準偏差が実際のゴルファーに近い3〜7打に収まるよう調整しています。ハンデ計算はSQOREアプリの実装と同じ式（隠しホール12・ダブルパー上限・×1.5・×0.8）を使用しました。隠しホールのPAR構成の確率は、シミュレーションではなく組み合わせを全通り数えた厳密値です（各ナインがPAR3を2つ・PAR4を5つ・PAR5を2つ持つ標準的なパー72コースを前提）。参加者の実力分布を変えると優勝率の絶対値は動きますが、「グロス差の20%が残る」という関係は式から決まるため変わりません。</p>
+</article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 株式会社クレア</span>
+    <a href="../">SQOREトップ</a>
+    <a href="./">ゲームルール解説</a>
+    <a href="../score/">スコア管理</a>
+    <a href="../guide/">使い方</a>
+    <a href="../support/">サポート</a>
+    <a href="../privacy/">プライバシーポリシー</a>
+  </div>
+</footer>
+
+<div class="dl-bar">
+  <img src="../assets/icon_180.png" alt="">
+  <span class="txt"><b>SQORE</b>ゴルフのポイント自動計算</span>
+  <a class="get" href="https://apps.apple.com/jp/app/id6777357472">入手</a>
+</div>
+<script>
+/* ヘッダーの出し入れ。下スクロールで隠し、上スクロールで戻す。 */
+(function () {
+  var h = document.querySelector('header.site');
+  if (!h) return;
+  var last = 0;
+  addEventListener('scroll', function () {
+    var y = window.scrollY > 0 ? window.scrollY : 0;
+    if (y > last && y > 140) h.classList.add('hide');
+    else if (y < last) h.classList.remove('hide');
+    last = y;
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
