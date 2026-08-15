@@ -258,9 +258,12 @@
   .read-col ul { list-style: none; margin: 0; padding: 0; }
   .read-col li { margin: 0; border-bottom: 1px solid #eef1f5; }
   .read-col li:last-child { border-bottom: 0; }
-  .read-col a { display: block; padding: 9px 0; font-size: 14px; font-weight: 700; color: var(--ink); text-decoration: none; line-height: 1.55; }
-  .read-col a:hover { color: var(--blue); }
-  .read-col a span { display: block; font-size: 12px; font-weight: 400; color: var(--gray); margin-top: 2px; }
+  .read-col a { display: grid; grid-template-columns: 96px 1fr; column-gap: 12px; align-items: center; padding: 10px 0; text-decoration: none; }
+  .read-col a img { grid-row: 1 / 3; width: 96px; height: 50px; object-fit: cover; border-radius: 7px; background: #eaf3fc; }
+  .read-col a .rt, .read-col a .rd { grid-column: 2; }
+  .read-col a .rt { display: block; font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.5; }
+  .read-col a .rd { display: block; font-size: 12px; font-weight: 400; color: var(--gray); margin-top: 2px; line-height: 1.5; }
+  .read-col a:hover .rt { color: var(--blue); }
 
   /* features */
   .feats { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 36px; }
@@ -588,29 +591,35 @@
       <div class="read-col">
         <h3>ゲームのルール解説</h3>
         <ul>
-          <li><a href="rules/las-vegas.html">ラスベガス<span>2桁の作り方・バーディ倍・反転・キャリー</span></a></li>
-          <li><a href="rules/las-vegas-3players.html">ラスベガスを3人でやる方法<span>ゴースト・1対多数・ローテーション</span></a></li>
-          <li><a href="rules/olympic.html">オリンピック<span>金銀銅鉄の配点と精算の式</span></a></li>
-          <li><a href="rules/nassau.html">ナッソー<span>ピンポンパンと呼ばれる理由</span></a></li>
-          <li><a href="rules/hole-best.html">ホールベスト<span>最少打数がポイント・同点キャリー</span></a></li>
-          <li><a href="rules/hebi.html">へび（スネーク）<span>3パットで移動する罰ゲーム</span></a></li>
-          <li><a href="rules/honest-john.html">オネストジョン<span>申告スコアに近い人が勝つ</span></a></li>
-          <li><a href="rules/dracon-nearpin.html">ドラコン・ニアピン<span>誰も取れなかったときの扱い</span></a></li>
-          <li><a href="rules/nearpin.html">ニアピンはどこまでが対象か<span>ホールインワンは入るのか</span></a></li>
+          <li><a href="rules/las-vegas.html"><img src="assets/og/og_las-vegas_th.webp" alt="ラスベガスの2桁の数字の作り方の図" loading="lazy" width="640" height="336"><span class="rt">ラスベガス</span><span class="rd">2桁の作り方・バーディ倍・反転・キャリー</span></a></li>
+          <li><a href="rules/las-vegas-3players.html"><img src="assets/og/og_las-vegas-3players_th.webp" alt="3人＋ゴーストで2対2にする図" loading="lazy" width="640" height="336"><span class="rt">ラスベガスを3人でやる方法</span><span class="rd">ゴースト・1対多数・ローテーション</span></a></li>
+          <li><a href="rules/olympic.html"><img src="assets/og/og_olympic_th.webp" alt="金4・銀3・銅2・鉄1の配点図" loading="lazy" width="640" height="336"><span class="rt">オリンピック</span><span class="rd">金銀銅鉄の配点と精算の式</span></a></li>
+          <li><a href="rules/nassau.html"><img src="assets/og/og_nassau_th.webp" alt="前半・後半・トータルの3本勝負の図" loading="lazy" width="640" height="336"><span class="rt">ナッソー</span><span class="rd">ピンポンパンと呼ばれる理由</span></a></li>
+          <li><a href="rules/hole-best.html"><img src="assets/og/og_hole-best_th.webp" alt="単独最少打数がポイントを取る図" loading="lazy" width="640" height="336"><span class="rt">ホールベスト</span><span class="rd">最少打数がポイント・同点キャリー</span></a></li>
+          <li><a href="rules/hebi.html"><img src="assets/og/og_hebi_th.webp" alt="育つへびの倍率が上がっていく図" loading="lazy" width="640" height="336"><span class="rt">へび（スネーク）</span><span class="rd">3パットで移動する罰ゲーム</span></a></li>
+          <li><a href="rules/honest-john.html"><img src="assets/og/og_honest-john_th.webp" alt="申告スコアと実際のスコアの差の図" loading="lazy" width="640" height="336"><span class="rt">オネストジョン</span><span class="rd">申告スコアに近い人が勝つ</span></a></li>
+          <li><a href="rules/dracon-nearpin.html"><img src="assets/og/og_dracon-nearpin_th.webp" alt="ドラコン・ニアピンとキャリーの図" loading="lazy" width="640" height="336"><span class="rt">ドラコン・ニアピン</span><span class="rd">誰も取れなかったときの扱い</span></a></li>
+          <li><a href="rules/nearpin.html"><img src="assets/og/og_nearpin_th.webp" alt="ピンからの距離を比べる図" loading="lazy" width="640" height="336"><span class="rt">ニアピンはどこまでが対象か</span><span class="rd">ホールインワンは入るのか</span></a></li>
         </ul>
       </div>
 
       <div class="read-col">
         <h3>コンペ・新ペリア</h3>
         <ul>
-          <li><a href="rules/new-peria.html">新ペリアは本当に「誰でも優勝できる」のか<span>3万回シミュレーションで検証</span></a></li>
-          <li><a href="rules/peria-compare.html">ペリア・新ペリア・新新ペリアの違い<span>平均ハンデは同じ。違うのはブレの大きさ</span></a></li>
+          <li><a href="rules/new-peria.html"><img src="assets/og/og_new-peria_th.webp" alt="グロス差の80%が消え20%が残る図" loading="lazy" width="640" height="336"><span class="rt">新ペリアは本当に「誰でも優勝できる」のか</span><span class="rd">3万回シミュレーションで検証</span></a></li>
+          <li><a href="rules/peria-compare.html"><img src="assets/og/og_peria-compare_th.webp" alt="隠しホール6・9・12の比較図" loading="lazy" width="640" height="336"><span class="rt">ペリア・新ペリア・新新ペリアの違い</span><span class="rd">平均ハンデは同じ。違うのはブレの大きさ</span></a></li>
         </ul>
         <h3 style="margin-top:18px">スコア管理</h3>
         <ul>
-          <li><a href="score/compare.html">ゴルフスコア管理アプリの違い<span>GDO・楽天・GN+・SQOREを公式情報で比較</span></a></li>
-          <li><a href="score/bogey-on.html">ボギーオン率とは<span>パーオン率より先に見るべき理由</span></a></li>
-          <li><a href="score/">SQOREのスコア管理機能<span>記録できることと分析できること</span></a></li>
+          <li><a href="score/compare.html"><img src="assets/og/og_score-compare_th.webp" alt="GDO・楽天・GN+・SQOREの比較図" loading="lazy" width="640" height="336"><span class="rt">ゴルフスコア管理アプリの違い</span><span class="rd">GDO・楽天・GN+・SQOREを公式情報で比較</span></a></li>
+          <li><a href="score/bogey-on.html"><img src="assets/og/og_bogey-on_th.webp" alt="ボギーオン率7割で80台の目安の図" loading="lazy" width="640" height="336"><span class="rt">ボギーオン率とは</span><span class="rd">パーオン率より先に見るべき理由</span></a></li>
+          <li><a href="score/"><img src="assets/og/og_score_th.webp" alt="パーオン率・ボギーオン率などの分析指標の図" loading="lazy" width="640" height="336"><span class="rt">SQOREのスコア管理機能</span><span class="rd">記録できることと分析できること</span></a></li>
+        </ul>
+        <h3 style="margin-top:18px">一覧とデモ</h3>
+        <ul>
+          <li><a href="rules/"><img src="assets/og/og_rules-index_th.webp" alt="12ゲームに対応するルール解説一覧の図" loading="lazy" width="640" height="336"><span class="rt">ゲームルール解説の一覧</span><span class="rd">オリンピック・ラスベガスなど定番12種</span></a></li>
+          <li><a href="guide/"><img src="assets/og/og_guide_th.webp" alt="チェックインから清算まで6ステップの図" loading="lazy" width="640" height="336"><span class="rt">使い方ガイド</span><span class="rd">チェックインから清算まで6ステップ</span></a></li>
+          <li><a href="app/las-vegas-olympic/"><img src="assets/og/og_app-both_th.webp" alt="ラスベガスとオリンピックを同時進行する図" loading="lazy" width="640" height="336"><span class="rt">2ゲーム同時進行のデモ</span><span class="rd">アプリと同じ画面をブラウザで試せます</span></a></li>
         </ul>
       </div>
 

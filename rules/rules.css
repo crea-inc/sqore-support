@@ -132,11 +132,13 @@ th { background: #eaf3fc; color: var(--blue-deep); font-size: 13px; }
 /* rules index cards */
 .rule-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin: 24px 0; }
 .rule-cards a {
-  background: #fff; border-radius: 14px; padding: 18px 20px; text-decoration: none; color: var(--ink);
-  border-top: 3px solid var(--blue); box-shadow: 0 3px 14px rgba(11,92,171,.07);
+  background: #fff; border-radius: 14px; padding: 0 0 18px; text-decoration: none; color: var(--ink);
+  border-top: 3px solid var(--blue); box-shadow: 0 3px 14px rgba(11,92,171,.07); overflow: hidden;
 }
+.rule-cards img { width: 100%; height: auto; display: block; background: #eaf3fc; }
+.rule-cards h2, .rule-cards p { padding: 0 20px; }
 .rule-cards a:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(11,92,171,.14); }
-.rule-cards h2 { border: none; padding: 0; margin: 0 0 4px; font-size: 17px; color: var(--blue-deep); }
+.rule-cards h2 { border: none; margin: 14px 0 4px; font-size: 17px; color: var(--blue-deep); }
 .rule-cards p { font-size: 13px; color: var(--gray); }
 
 footer { background: #0d2c47; color: rgba(255,255,255,.75); padding: 30px 0; font-size: 13px; margin-top: 56px; }
