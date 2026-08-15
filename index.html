@@ -223,6 +223,17 @@
   .game .more:hover { text-decoration: underline; }
   .games-note { text-align: center; color: var(--gray); font-size: 14px; margin-top: 24px; }
 
+  /* 読みもの */
+  .reads { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-top: 32px; }
+  .read-col { background: #fff; border-radius: 16px; padding: 20px 22px; box-shadow: 0 4px 18px rgba(11,92,171,.08); border-top: 3px solid var(--blue); }
+  .read-col h3 { font-size: 16px; color: var(--blue-deep); margin-bottom: 10px; }
+  .read-col ul { list-style: none; margin: 0; padding: 0; }
+  .read-col li { margin: 0; border-bottom: 1px solid #eef1f5; }
+  .read-col li:last-child { border-bottom: 0; }
+  .read-col a { display: block; padding: 9px 0; font-size: 14px; font-weight: 700; color: var(--ink); text-decoration: none; line-height: 1.55; }
+  .read-col a:hover { color: var(--blue); }
+  .read-col a span { display: block; font-size: 12px; font-weight: 400; color: var(--gray); margin-top: 2px; }
+
   /* features */
   .feats { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 36px; }
   .feat {
@@ -369,7 +380,7 @@
   <nav class="topnav">
     <span class="brand"><img src="assets/icon_180.png" alt="">SQORE</span>
     <a href="guide/">使い方</a>
-    <a href="score/">スコア管理</a><a href="rules/">ルール解説</a>
+    <a href="score/">スコア管理</a><a href="rules/">ルール解説</a><a href="#reads">読みもの</a>
     <a href="#pricing">料金</a>
     <a href="#faq">FAQ</a>
     <a href="support/">サポート</a>
@@ -537,6 +548,46 @@
       <a class="more" href="score/compare.html">ゴルフスコア管理アプリの違いを見る →</a>
       &nbsp;&nbsp;<a class="more" href="score/">SQOREのスコア管理機能 →</a>
     </p>
+  </div>
+</section>
+
+<section id="reads" style="padding-top:0">
+  <div class="wrap">
+    <h2>ルールと数字の<span class="accent">読みもの</span></h2>
+    <p class="lead">仲間内のゲームのルールと、コンペのハンデ計算を、実際に数えて確かめた記事です。</p>
+    <div class="reads">
+
+      <div class="read-col">
+        <h3>ゲームのルール解説</h3>
+        <ul>
+          <li><a href="rules/las-vegas.html">ラスベガス<span>2桁の作り方・バーディ倍・反転・キャリー</span></a></li>
+          <li><a href="rules/las-vegas-3players.html">ラスベガスを3人でやる方法<span>ゴースト・1対多数・ローテーション</span></a></li>
+          <li><a href="rules/olympic.html">オリンピック<span>金銀銅鉄の配点と精算の式</span></a></li>
+          <li><a href="rules/nassau.html">ナッソー<span>ピンポンパンと呼ばれる理由</span></a></li>
+          <li><a href="rules/hole-best.html">ホールベスト<span>最少打数がポイント・同点キャリー</span></a></li>
+          <li><a href="rules/hebi.html">へび（スネーク）<span>3パットで移動する罰ゲーム</span></a></li>
+          <li><a href="rules/honest-john.html">オネストジョン<span>申告スコアに近い人が勝つ</span></a></li>
+          <li><a href="rules/dracon-nearpin.html">ドラコン・ニアピン<span>誰も取れなかったときの扱い</span></a></li>
+          <li><a href="rules/nearpin.html">ニアピンはどこまでが対象か<span>ホールインワンは入るのか</span></a></li>
+        </ul>
+      </div>
+
+      <div class="read-col">
+        <h3>コンペ・新ペリア</h3>
+        <ul>
+          <li><a href="rules/new-peria.html">新ペリアは本当に「誰でも優勝できる」のか<span>3万回シミュレーションで検証</span></a></li>
+          <li><a href="rules/peria-compare.html">ペリア・新ペリア・新新ペリアの違い<span>平均ハンデは同じ。違うのはブレの大きさ</span></a></li>
+        </ul>
+        <h3 style="margin-top:18px">スコア管理</h3>
+        <ul>
+          <li><a href="score/compare.html">ゴルフスコア管理アプリの違い<span>GDO・楽天・GN+・SQOREを公式情報で比較</span></a></li>
+          <li><a href="score/bogey-on.html">ボギーオン率とは<span>パーオン率より先に見るべき理由</span></a></li>
+          <li><a href="score/">SQOREのスコア管理機能<span>記録できることと分析できること</span></a></li>
+        </ul>
+      </div>
+
+    </div>
+    <p class="games-note"><a class="more" href="rules/" style="font-weight:700; color:var(--blue); text-decoration:none">ゲームルール解説の一覧を見る →</a></p>
   </div>
 </section>
 
