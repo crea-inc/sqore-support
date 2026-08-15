@@ -7,7 +7,7 @@
 ## 基本情報
 
 - 名称: SQORE（読み: スコア）
-- プラットフォーム: iOS（iPhone）。Android版は開発中で未提供
+- プラットフォーム: iOS（iPhone）。Android版は準備中で、まもなく公開予定
 - 価格: 基本機能は無料。プレミアム（いつものグループ・メンバー保存、自分とメンバーの成績集計、ホールごとの自分の履歴閲覧）は月額100円のサブスクリプション
 - App Store: https://apps.apple.com/jp/app/id6777357472
 - 公式サイト: https://sqore-golf.com/

@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#2596e0">
 <title>ゴルフ「へび（スネーク）」のルールと計算方法｜3パットで回ってくる罰ゲーム</title>
-<meta name="description" content="ゴルフの罰ゲーム「へび（スネーク）」のルールを解説。3パットした人に「へび」が移り、ラウンド終了時に持っていた人が全員にポイントを払います。育つへび、前半・後半で分ける方式などのバリエーションと計算の自動化を紹介します。">
+<meta name="description" content="へび（スネーク）は3パットした人にへびが移り、最後に持っていた人が全員に払う罰ゲーム。20万ラウンド数えたところ、通しでやると一番3パットした人が払うのは51%だけでした。">
 <link rel="canonical" href="https://sqore-golf.com/rules/hebi.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="SQORE">
 <meta property="og:title" content="ゴルフ「へび（スネーク）」のルールと計算方法">
-<meta property="og:description" content="3パットで「へび」が移動、最後に持っていた人が支払い。緊張感が倍増する罰ゲーム。">
+<meta property="og:description" content="へび（スネーク）は3パットした人にへびが移り、最後に持っていた人が全員に払う罰ゲーム。20万ラウンド数えたところ、通しでやると一番3パットした人が払うのは51%だけでした。">
 <meta property="og:url" content="https://sqore-golf.com/rules/hebi.html">
 <meta property="og:image" content="https://sqore-golf.com/assets/og_1200x630.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -27,7 +27,7 @@
   "inLanguage": "ja",
   "author": { "@type": "Organization", "name": "株式会社クレア" },
     "datePublished": "2026-07-05",
-    "dateModified": "2026-08-14",
+    "dateModified": "2026-08-15",
   "publisher": { "@type": "Organization", "name": "SQORE" },
   "mainEntityOfPage": "https://sqore-golf.com/rules/hebi.html"
 }
@@ -55,6 +55,16 @@
     },
     {
       "@type": "Question",
+      "name": "へびはパットが下手な人が損するゲームですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "そうとも言い切れません。4人ラウンドを20万回シミュレーションしたところ、18ホール通しでやった場合に「その日いちばん3パットが多かった人」が払うのは51.3%でした（偶然なら25%）。残り半分は、たまたま終盤に3パットした別の人が全額を払っています。払った人の23.4%は3パットが1回だけでした。前半・後半で分ける設定にすると、最多3パットの人が払う割合は78.0%まで上がります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "育つへびは平均でどのくらいの倍率になりますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "1ホールの3パット率を10%として、18ホール通しなら平均4.9倍で×4以上が8割を占めました。前半・後半で分けると平均2.6倍に収まります。1人10ptの設定でも×5になれば他の3人に50ptずつ、合計150ptを1人で払うことになるので、通しでやるときは基本ポイントを控えめにするのが無難です。" }
+    },
+    {
+      "@type": "Question",
       "name": "「育つへび」とは何ですか？",
       "acceptedAnswer": { "@type": "Answer", "text": "へびの保持者が切り替わるたびに支払いの倍率が上がっていく方式です。誰かが3パットするたびにへびが育っていくので、終盤のショートパットの緊張感が跳ね上がります。" }
     }
@@ -78,7 +88,7 @@
 
 <article>
 <h1>ゴルフ「へび（スネーク）」のルールと計算方法</h1>
-<p class="updated">SQORE編集部 ｜ 2026年8月14日更新</p>
+<p class="updated">SQORE編集部 ｜ 2026年8月15日更新</p>
 
 <p class="intro">へび（スネーク）は、<strong>3パットした人に「へび」が移っていき、最後に持っていた人が全員にポイントを払う</strong>罰ゲームです。ゲームというより「地雷」。誰かがへびを持っている間は、全員のショートパットに異様な緊張感が生まれます。</p>
 
@@ -105,6 +115,144 @@
   そのまま18H終了 → <strong>自分が全員に20ptずつ支払い</strong></p>
 </div>
 
+<h2 id="count">数えてみた：へびを払うのは「その日いちばん3パットした人」か</h2>
+<p>へびは「パットが下手な人への罰ゲーム」だと思われがちです。本当にそうなのか、<strong>4人ラウンドを20万回</strong>シミュレーションして数えました。1ホールあたりの3パット率を5%・10%・15%と変えています（アマチュアの目安は10%前後、上手い人で5%前後）。</p>
+
+<div class="table-scroll">
+<table>
+  <tr><th>1ホールの3パット率</th><th>ハーフでへびが出ない確率</th><th>払った人の3パット回数</th><th>3パット1回だけで払った割合</th><th>1ラウンドの支払い総額</th></tr>
+  <tr><td>5%（上手い人）</td><td>15.9%</td><td>1.62回</td><td><strong>54.2%</strong></td><td>29.2pt</td></tr>
+  <tr><td>10%（平均的）</td><td>2.3%</td><td>2.43回</td><td>23.4%</td><td>51.4pt</td></tr>
+  <tr><td>15%（苦手）</td><td>0.3%</td><td>3.30回</td><td>8.8%</td><td>69.6pt</td></tr>
+</table>
+</div>
+<p class="note">1人10pt・4人・前後半別ONの設定。支払い総額は「払う人が他の3人にいくら渡すか」の1人あたり金額の合計です。</p>
+
+<h3>払った人の5人に1人は、3パットが1回だけ</h3>
+<p>平均的な3パット率10%でも、<strong>払った人の23.4%は、その日3パットを1回しかしていません</strong>。上手い人ばかりの組（5%）だと54.2%、つまり<strong>半分以上が「たった1回の3パット」で全額を払っています</strong>。</p>
+<p>そして「その日いちばん3パットが多かった人」が払う確率は、こうなりました。</p>
+<div class="table-scroll">
+<table>
+  <tr><th>やり方</th><th>最多3パットの人が払った割合</th><th>偶然ならこの割合</th></tr>
+  <tr><td>18ホール通し（払うのは1人）</td><td><strong>51.3%</strong></td><td>25%</td></tr>
+  <tr><td>前半・後半で分ける（払うのは最大2人）</td><td><strong>78.0%</strong></td><td>約44%</td></tr>
+</table>
+</div>
+<p>18ホール通しだと、<strong>その日いちばん3パットした人が払うのは半分だけ</strong>。残りの半分は、たまたま終盤に3パットした別の人が全額を持っていきます。<strong>へびは「一番下手な人」ではなく「最後に3パットした人」を罰するゲーム</strong>です。</p>
+
+<div class="example">
+  <p class="ttl">へびの本質</p>
+  <p><strong>前半に3パットを5回した人より、17番で1回した人のほうが払う。</strong></p>
+  <p class="note" style="margin-top:8px">だから終盤のショートパットに緊張が走るわけで、これは欠陥ではなくこのゲームの狙いそのものです。</p>
+</div>
+
+<h2 id="grow">「育つへび」は、思っているより育つ</h2>
+<p>保持者が別の人に移るたびに倍率が1つ上がる「育つへび」は、<strong>世間ではこれが基本形</strong>です。ただ、18ホール通しでやると想像以上に膨らみます。</p>
+
+<figure class="figure">
+<svg viewBox="0 0 700 306" role="img" aria-labelledby="hbt hbd" xmlns="http://www.w3.org/2000/svg">
+<title id="hbt">育つへびの倍率の分布</title>
+<desc id="hbd">前半・後半で分けると倍率は×1〜×3が中心（平均2.6倍）。18ホール通しでやると×4以上が8割を占め、平均4.9倍まで育つ。</desc>
+<rect width="700" height="306" fill="#ffffff"/>
+<line x1="62" y1="258.0" x2="676" y2="258.0" stroke="#eef1f5"/>
+<text x="54" y="262.0" text-anchor="end" font-size="11" fill="#6e6e73">0%</text>
+<line x1="62" y1="197.4" x2="676" y2="197.4" stroke="#eef1f5"/>
+<text x="54" y="201.4" text-anchor="end" font-size="11" fill="#6e6e73">10%</text>
+<line x1="62" y1="136.9" x2="676" y2="136.9" stroke="#eef1f5"/>
+<text x="54" y="140.9" text-anchor="end" font-size="11" fill="#6e6e73">20%</text>
+<line x1="62" y1="76.3" x2="676" y2="76.3" stroke="#eef1f5"/>
+<text x="54" y="80.3" text-anchor="end" font-size="11" fill="#6e6e73">30%</text>
+<rect x="76.0" y="142.9" width="26.3" height="115.1" fill="#1479d2" rx="3"/>
+<text x="89.2" y="136.9" text-anchor="middle" font-size="11" font-weight="700" fill="#1479d2">19%</text>
+<rect x="105.9" y="245.9" width="26.3" height="12.1" fill="#f0a500" rx="3"/>
+<text x="119.0" y="239.9" text-anchor="middle" font-size="11" font-weight="700" fill="#f0a500">2%</text>
+<text x="105.9" y="276.0" text-anchor="middle" font-size="12" fill="#1c1c1e">×1</text>
+<rect x="163.7" y="70.2" width="26.3" height="187.8" fill="#1479d2" rx="3"/>
+<text x="176.9" y="64.2" text-anchor="middle" font-size="11" font-weight="700" fill="#1479d2">31%</text>
+<rect x="193.6" y="215.6" width="26.3" height="42.4" fill="#f0a500" rx="3"/>
+<text x="206.7" y="209.6" text-anchor="middle" font-size="11" font-weight="700" fill="#f0a500">7%</text>
+<text x="193.6" y="276.0" text-anchor="middle" font-size="12" fill="#1c1c1e">×2</text>
+<rect x="251.5" y="88.4" width="26.3" height="169.6" fill="#1479d2" rx="3"/>
+<text x="264.6" y="82.4" text-anchor="middle" font-size="11" font-weight="700" fill="#1479d2">28%</text>
+<rect x="281.3" y="173.2" width="26.3" height="84.8" fill="#f0a500" rx="3"/>
+<text x="294.4" y="167.2" text-anchor="middle" font-size="11" font-weight="700" fill="#f0a500">14%</text>
+<text x="281.3" y="276.0" text-anchor="middle" font-size="12" fill="#1c1c1e">×3</text>
+<rect x="339.2" y="167.1" width="26.3" height="90.9" fill="#1479d2" rx="3"/>
+<text x="352.3" y="161.1" text-anchor="middle" font-size="11" font-weight="700" fill="#1479d2">15%</text>
+<rect x="369.0" y="130.8" width="26.3" height="127.2" fill="#f0a500" rx="3"/>
+<text x="382.2" y="124.8" text-anchor="middle" font-size="11" font-weight="700" fill="#f0a500">21%</text>
+<text x="369.0" y="276.0" text-anchor="middle" font-size="12" fill="#1c1c1e">×4</text>
+<rect x="426.9" y="227.7" width="26.3" height="30.3" fill="#1479d2" rx="3"/>
+<text x="440.0" y="221.7" text-anchor="middle" font-size="11" font-weight="700" fill="#1479d2">5%</text>
+<rect x="456.7" y="130.8" width="26.3" height="127.2" fill="#f0a500" rx="3"/>
+<text x="469.9" y="124.8" text-anchor="middle" font-size="11" font-weight="700" fill="#f0a500">21%</text>
+<text x="456.7" y="276.0" text-anchor="middle" font-size="12" fill="#1c1c1e">×5</text>
+<rect x="514.6" y="251.9" width="26.3" height="6.1" fill="#1479d2" rx="3"/>
+<text x="527.8" y="245.9" text-anchor="middle" font-size="11" font-weight="700" fill="#1479d2">1%</text>
+<rect x="544.4" y="155.0" width="26.3" height="103.0" fill="#f0a500" rx="3"/>
+<text x="557.6" y="149.0" text-anchor="middle" font-size="11" font-weight="700" fill="#f0a500">17%</text>
+<text x="544.4" y="276.0" text-anchor="middle" font-size="12" fill="#1c1c1e">×6</text>
+<rect x="632.1" y="149.0" width="26.3" height="109.0" fill="#f0a500" rx="3"/>
+<text x="645.3" y="143.0" text-anchor="middle" font-size="11" font-weight="700" fill="#f0a500">18%</text>
+<text x="632.1" y="276.0" text-anchor="middle" font-size="12" fill="#1c1c1e">×7以上</text>
+<line x1="62" y1="258" x2="676" y2="258" stroke="#c9d4e0" stroke-width="1.2"/>
+<rect x="62" y="18" width="12" height="12" fill="#1479d2" rx="2"/>
+<text x="80" y="29" font-size="12" font-weight="700" fill="#1479d2">前半・後半で分ける（平均2.6倍）</text>
+<rect x="300" y="18" width="12" height="12" fill="#f0a500" rx="2"/>
+<text x="318" y="29" font-size="12" font-weight="700" fill="#c98000">18ホール通し（平均4.9倍）</text>
+<text x="350" y="296" text-anchor="middle" font-size="11" fill="#6e6e73">4人・1ホールの3パット率10%・20万ラウンドぶんの集計</text>
+</svg>
+<figcaption>18ホール通しだと<strong>×4以上が8割</strong>。平均4.9倍まで育ちます。前半・後半で分けると平均2.6倍に収まります。</figcaption>
+</figure>
+
+<p>「1人10ptなら大したことない」と思って始めても、<strong>×5で4人ラウンドなら、他の3人に50ptずつ＝合計150pt</strong>を1人でかぶります。通しでやるなら、基本ptは控えめにしておくのが無難です。</p>
+
+<h2 id="split">前半・後半で分けると、何が変わるのか</h2>
+<p>ハーフごとにへびをリセットする方式は定番ですが、数字で見ると<strong>「総額は変わらないが、1人に集中しなくなる」</strong>のが効果です。</p>
+<div class="table-scroll">
+<table>
+  <tr><th></th><th>18ホール通し</th><th>前半・後半で分ける</th></tr>
+  <tr><td>1ラウンドの支払い総額</td><td>49.0pt</td><td>51.4pt</td></tr>
+  <tr><td>平均倍率</td><td><strong>4.9倍</strong></td><td>2.6倍</td></tr>
+  <tr><td>1人が払う側になる確率</td><td>25%</td><td><strong>43%</strong></td></tr>
+  <tr><td>最多3パットの人が払う割合</td><td>51.3%</td><td><strong>78.0%</strong></td></tr>
+</table>
+</div>
+<p>払う人が増えるぶん1回あたりが軽くなり、しかも<strong>「本当にパットが崩れた人が払う」精度は上がります</strong>。荒れすぎるのが嫌なら分ける、一撃の緊張感が欲しいなら通し、という選び方になります。</p>
+
+<h3>パットの上手さは、どれくらい効くのか</h3>
+<p>3パット率が5% / 10% / 10% / 15% の4人で回った場合です。</p>
+<div class="table-scroll">
+<table>
+  <tr><th>その人の3パット率</th><th>払う側になる確率</th><th>1ラウンドの平均支払い</th></tr>
+  <tr><td>5%</td><td>22%</td><td>6.4pt</td></tr>
+  <tr><td>10%</td><td>43%</td><td>12.6pt</td></tr>
+  <tr><td>15%</td><td><strong>61%</strong></td><td><strong>18.5pt</strong></td></tr>
+</table>
+</div>
+<p>パットが苦手な人は上手い人の<strong>約3倍</strong>払います。実力はちゃんと効いています。ただし61%止まりで、<strong>4割は払わずに逃げ切れる</strong>のがへびの救いです。</p>
+
+<h2 id="none">上手い人だけで回ると、へびが出ないことがある</h2>
+<p>3パット率5%の組では、<strong>ハーフの15.9%でへびが1度も発生しません</strong>。前半だけノーへびで終わる、ということが6回に1回起きる計算です。</p>
+<p>パットが上手いメンバーで盛り上げたいなら、へびの条件を<strong>「3パット」から「4パット以上」ではなく、「パーオンして3パット」や「1mを外したら」に変える</strong>会もあります。人数と腕前に合わせて、発生頻度を先に確かめておくと空振りしません。</p>
+
+<h2 id="decide">スタート前に決めておくこと</h2>
+<p>へびは判定がシンプルなぶん、境目で揉めます。1番ティーで確認しておく項目です。</p>
+<ul>
+  <li><strong>OK（コンシード）はどう数えるか</strong> — 2パット目でOKを出したら「2パット」。入れさせるなら実打数。どちらかを先に決めます</li>
+  <li><strong>グリーン外からのパターは1パットに数えるか</strong> — 数えないのが一般的です</li>
+  <li><strong>4パット以上も同じ扱いか</strong> — 「3パット以上で移動」が一般的。4パットで2つ育つ、とする会もあります</li>
+  <li><strong>同じホールで2人が3パットしたら</strong> — 後にホールアウトした人が持つのが自然です</li>
+  <li><strong>最終ホールの扱い</strong> — 18番の3パットは倍、とする盛り上げルール。入れるなら先に宣言を</li>
+  <li><strong>前半・後半で分けるか</strong> — 上の表のとおり、金額の重さが変わります</li>
+</ul>
+
+<div class="example">
+  <p class="ttl">SQOREでの扱い</p>
+  <p>アプリの<a href="../">SQORE</a>が設定として持っているのは、<strong>1人あたりの支払いpt</strong>（既定10pt）、<strong>育つへび</strong>（既定ON。別の人に移ったときだけ倍率+1で、同じ人が続けて3パットしても増えません）、<strong>前半・後半で別のへび</strong>（既定ON。9ホールなど18ホール未満のラウンドでは自動でOFF）、<strong>最終ホール保持者は×2</strong>（既定OFF）の4つです。前後半別のときは、前半の保持者と後半の保持者が<strong>それぞれ独立に支払います</strong>。</p>
+  <p class="note" style="margin-top:8px">へびは<strong>打数の入力が要りません</strong>。3パットした人をタップするだけで動きます。「パーオンして3パット」「1mを外したら」といった条件は判定しないので、その場のルールで誰をタップするか決めてください。倍率は手動で±調整もできます。</p>
+</div>
+
 <h2>アプリならへびの持ち主をタップするだけ</h2>
 <div class="app-shot">
   <div>
@@ -118,6 +266,14 @@
 <h2>よくある質問</h2>
 <div class="faq">
   <details>
+    <summary>へびはパットが下手な人が損するゲーム？</summary>
+    <p>そうとも言い切れません。20万ラウンドのシミュレーションでは、18ホール通しでやった場合、その日いちばん3パットが多かった人が払うのは51.3%でした。残り半分は、たまたま終盤に3パットした別の人です。払った人の2割は3パットが1回だけでした。前半・後半で分けると、最多3パットの人が払う割合は78.0%まで上がります。</p>
+  </details>
+  <details>
+    <summary>育つへびは平均でどのくらいの倍率になる？</summary>
+    <p>1ホールの3パット率を10%として、18ホール通しなら平均4.9倍（×4以上が8割）、前半・後半で分けるなら平均2.6倍でした。通しでやるときは基本ポイントを控えめにしておくと荒れません。</p>
+  </details>
+  <details>
     <summary>パットの記録が面倒では？</summary>
     <p>へびをやるならパット数の記録は必須です。アプリでスコアと一緒にパット数を付けておくと、へびの管理も平均パットの分析も同時にできて一石二鳥です。</p>
   </details>
@@ -126,6 +282,9 @@
     <p>OK（ギミー）を出したパットは入ったものとして数えるのが一般的です。へびが絡むホールではOKを出すかどうかも駆け引きになります。</p>
   </details>
 </div>
+
+<h2 id="method">この記事の検証方法</h2>
+<p class="note">4人ラウンドを20万回シミュレートして集計しました。1ホールごとに各プレイヤーが独立に3パットするものとし、その確率を5%・10%・15%と変えています（実際のラウンドではホールの難易度やグリーンの状態で前後します）。同じホールで複数人が3パットした場合は、そのうちの1人がランダムに保持者になるものとしました（実際には最後にホールアウトした人が持ちます）。倍率の計算はSQOREアプリの実装と同じで、<strong>保持者が別の人に移ったときだけ+1</strong>、同じ人が続けて3パットしても増えません。前半・後半で分ける設定では、前半の保持者と後半の保持者がそれぞれ独立に支払います。</p>
 
 <div class="related">
   <h2>あわせて読む</h2>

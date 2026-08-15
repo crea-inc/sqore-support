@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#2596e0">
 <title>ゴルフ「ホールベスト」のルールと計算方法｜各ホールの1位がポイント獲得</title>
-<meta name="description" content="ゴルフの全員参加ゲーム「ホールベスト」のルールを解説。各ホールで最少打数の人がポイントを獲得し、同点なら次のホールへキャリー。バーディ・イーグルのボーナスや3パット減点などのローカルルール、計算の自動化まで紹介します。">
+<meta name="description" content="ホールベストは各ホールの最少打数がポイントを取り、同点なら次へキャリーするゲーム。4人だと18ホール中9ホールしか勝者が出ません。キャリー設定で動く額が2倍変わります。">
 <link rel="canonical" href="https://sqore-golf.com/rules/hole-best.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="SQORE">
 <meta property="og:title" content="ゴルフ「ホールベスト」のルールと計算方法">
-<meta property="og:description" content="各ホールで一番良かった人がポイント獲得。同点キャリーで大逆転も。">
+<meta property="og:description" content="ホールベストは各ホールの最少打数がポイントを取り、同点なら次へキャリーするゲーム。4人だと18ホール中9ホールしか勝者が出ません。キャリー設定で動く額が2倍変わります。">
 <meta property="og:url" content="https://sqore-golf.com/rules/hole-best.html">
 <meta property="og:image" content="https://sqore-golf.com/assets/og_1200x630.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -27,7 +27,7 @@
   "inLanguage": "ja",
   "author": { "@type": "Organization", "name": "株式会社クレア" },
     "datePublished": "2026-07-05",
-    "dateModified": "2026-08-14",
+    "dateModified": "2026-08-15",
   "publisher": { "@type": "Organization", "name": "SQORE" },
   "mainEntityOfPage": "https://sqore-golf.com/rules/hole-best.html"
 }
@@ -55,6 +55,21 @@
     },
     {
       "@type": "Question",
+      "name": "ホールベストは4人でやると同点ばかりになりませんか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "なります。実力が近い4人でシミュレーションすると、単独ベストが出るのは18ホールのうち8.8ホールだけで、残りの50.9%は同点キャリーでした。2ホール以上続けて勝者が出ないことも23%あります。キャリーを持ち越す設定にしていないと、その半分のホールぶんのポイントが消えてしまい、1人あたりの獲得ポイントは41ptから22ptへ半減します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ホールベストは実力差があっても楽しめますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "チャンスはありますが互角ではありません。80打・90打・100打・110打の4人でシミュレーションすると、1ラウンドの獲得ポイントは105・37・18・9となり11倍の差がつきました。ただし110打の人でも18ホールで平均0.5回はベストを取り、4割の人は最低1回取れています。差を縮めたいならハンデを付けるのが最も効きます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ホールベストのキャリーに上限を付けるべきですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "上限3と上限なしで1人あたりの平均獲得ポイントは41ptと42ptでほとんど変わりませんでした。荒れ方を抑えたいなら上限3で十分です。SQOREは上限を超えたぶんを切り捨てず次のホールへ持ち越すため、ポイントが宙に浮くことはありません。最終18番に×3が乗っている確率は39%です。" }
+    },
+    {
+      "@type": "Question",
       "name": "ホールベストは何人からできますか？",
       "acceptedAnswer": { "@type": "Answer", "text": "2人から何人でもできます。ルールが単純なので初心者を交えたラウンドでも盛り上がりやすいゲームです。1対1で行う場合は「ホールマッチ」と呼ばれます。" }
     }
@@ -78,7 +93,7 @@
 
 <article>
 <h1>ゴルフ「ホールベスト」のルールと計算方法</h1>
-<p class="updated">SQORE編集部 ｜ 2026年8月14日更新</p>
+<p class="updated">SQORE編集部 ｜ 2026年8月15日更新</p>
 
 <p class="intro">ホールベストは、<strong>各ホールで最少打数だった人がそのホールのポイントを獲得する</strong>、いちばんシンプルな全員参加ゲームです。同点なら次のホールへ持ち越し（キャリー）。ルール説明が10秒で終わるので、初めての相手や初心者を交えたラウンドでも定番です。</p>
 
@@ -104,8 +119,87 @@
   <li><strong>キャリー上限</strong> — 持ち越しは3ホールまで、などの上限を決めて荒れすぎを防ぐ運用もあります。</li>
 </ul>
 
-<h2>ホールマッチ（1対1版）</h2>
+<h2 id="count">数えてみた：4人でやると、半分のホールは勝者が出ない</h2>
+<p>ホールベストで見落とされがちなのが<strong>同点の多さ</strong>です。4人で回ると、1ホールの打数はしょっちゅう並びます。実際どのくらいなのか、<strong>10万ラウンド</strong>シミュレーションして数えました。</p>
+
+<div class="table-scroll">
+<table>
+  <tr><th>人数と組み合わせ</th><th>単独ベストが出る確率</th><th>18ホール中、勝者が出るホール</th></tr>
+  <tr><td>4人・実力が近い（全員90前後）</td><td><strong>49.1%</strong></td><td>8.8ホール</td></tr>
+  <tr><td>4人・実力差あり（80/90/100/110）</td><td>55.5%</td><td>10.0ホール</td></tr>
+  <tr><td>3人・実力が近い</td><td>57.0%</td><td>10.3ホール</td></tr>
+</table>
+</div>
+<p>実力が近い4人だと<strong>18ホールのうち勝者が出るのは9ホールだけ</strong>。残りの半分は同点キャリーです。しかも<strong>2ホール以上続けて勝者が出ないことが23%</strong>あります。「なかなか決まらないな」という体感は、気のせいではありません。</p>
+<p class="note">人数が増えるほど同点は増えます。5人以上でやるなら、キャリーが常態化する前提で組み立ててください。</p>
+
+<h3>だから「キャリーをどう扱うか」で別のゲームになる</h3>
+<p>同点のポイントを次に持ち越さない設定にすると、その半分のホールぶんが<strong>そのまま消えます</strong>。</p>
+<div class="table-scroll">
+<table>
+  <tr><th>キャリーの設定</th><th>1人あたりの平均獲得pt</th><th>獲得時のプール</th></tr>
+  <tr><td>キャリーしない</td><td><strong>22pt</strong></td><td>いつも×1</td></tr>
+  <tr><td>キャリーする・上限3（SQORE既定）</td><td><strong>41pt</strong></td><td>×1:45% / ×2:25% / ×3:30%</td></tr>
+  <tr><td>キャリーする・上限なし</td><td>42pt</td><td>×1:52% / ×2:25% / ×3以上:23%</td></tr>
+</table>
+</div>
+<p>キャリーありは、なしの<strong>ほぼ2倍</strong>の額が動きます。同じ「1ホール10pt」でも、体感の重さがまったく違うということです。</p>
+<p><strong>上限3にしても、上限なしとの差はほとんどありません</strong>（41pt対42pt）。上限を外して×8や×10を狙うより、上限3で「終盤に必ず山場が来る」形のほうが扱いやすい。実際、<strong>最終18番に×3が乗っている確率は39%</strong>あります。</p>
+<p class="note">SQOREでは上限を超えたぶんは消えず、次のホールへ持ち越します（1ラウンドあたり1.44回発生）。上限で切り捨てると、そのホールぶんのポイントが宙に浮いてしまうためです。</p>
+
+<h2 id="skill">実力差はどれくらい出るのか</h2>
+<p>「1ホール単位だから初心者にもチャンス」とよく言われます。これも数えました。80打・90打・100打・110打の4人が同じ組で回った場合です。</p>
+
+<figure class="figure">
+<svg viewBox="0 0 700 292" role="img" aria-labelledby="hbt2 hbd2" xmlns="http://www.w3.org/2000/svg">
+<title id="hbt2">ホールベストの実力別の獲得ポイント</title>
+<desc id="hbd2">80打・90打・100打・110打の4人でホールベストをやると、獲得ポイントは105・37・18・9となり、上と下で11倍の差がつく。</desc>
+<rect width="700" height="292" fill="#ffffff"/>
+<text x="96" y="26" font-size="13" font-weight="700" fill="#1c1c1e">1ラウンドの獲得ポイント（1ホール10pt設定）</text>
+<text x="86" y="69.9" text-anchor="end" font-size="13" font-weight="700" fill="#1c1c1e">80打の人</text>
+<rect x="96" y="53.2" width="441.0" height="25.5" fill="#1479d2" rx="4"/>
+<text x="545.0" y="70.9" font-size="14" font-weight="800" fill="#0b5cab">105pt</text>
+<text x="595.0" y="70.9" font-size="11" fill="#6e6e73">ベスト 6.2回 / 18H</text>
+<text x="86" y="120.9" text-anchor="end" font-size="13" font-weight="700" fill="#1c1c1e">90打の人</text>
+<rect x="96" y="104.2" width="155.4" height="25.5" fill="#7fb0dd" rx="4"/>
+<text x="259.4" y="121.9" font-size="14" font-weight="800" fill="#0b5cab">37pt</text>
+<text x="309.4" y="121.9" font-size="11" fill="#6e6e73">ベスト 2.2回 / 18H</text>
+<text x="86" y="171.9" text-anchor="end" font-size="13" font-weight="700" fill="#1c1c1e">100打の人</text>
+<rect x="96" y="155.2" width="75.6" height="25.5" fill="#7fb0dd" rx="4"/>
+<text x="179.6" y="172.9" font-size="14" font-weight="800" fill="#0b5cab">18pt</text>
+<text x="229.6" y="172.9" font-size="11" fill="#6e6e73">ベスト 1.1回 / 18H</text>
+<text x="86" y="222.9" text-anchor="end" font-size="13" font-weight="700" fill="#1c1c1e">110打の人</text>
+<rect x="96" y="206.2" width="37.8" height="25.5" fill="#7fb0dd" rx="4"/>
+<text x="141.8" y="223.9" font-size="14" font-weight="800" fill="#0b5cab">9pt</text>
+<text x="191.8" y="223.9" font-size="11" fill="#6e6e73">ベスト 0.5回 / 18H</text>
+<text x="350" y="278" text-anchor="middle" font-size="11" fill="#6e6e73">キャリー上限3・トップ同点でキャリー（SQORE既定）・10万ラウンドぶんの平均</text>
+</svg>
+<figcaption>いちばん上といちばん下で<strong>11倍の差</strong>。ただし110打の人でも18ホールで0.5回はベストを取ります。</figcaption>
+</figure>
+
+<p><strong>チャンスはあるが、互角ではありません。</strong>ただし「1回も見せ場がない」という事態にはなりにくいゲームです。</p>
+<div class="table-scroll">
+<table>
+  <tr><th>その日のグロス</th><th>18ホールで1回以上ベストを取れる確率</th></tr>
+  <tr><td>80打</td><td>99.9%</td></tr>
+  <tr><td>90打</td><td>90.2%</td></tr>
+  <tr><td>100打</td><td>67.1%</td></tr>
+  <tr><td>110打</td><td><strong>42.1%</strong></td></tr>
+</table>
+</div>
+<p>110打で回った人でも<strong>4割は1回はベストを取ります</strong>。取れた1ホールにキャリーが乗っていれば、その1回で30pt入ることもあります。獲得の総額では大差がつきますが、盛り上がる瞬間は用意されている、という設計です。</p>
+<p>実力差がある組で成立させたいなら、<strong>ハンデを付ける</strong>のが一番効きます。それが嫌なら、バーディボーナスやニアピンで加点の機会を増やすか、1対1の<a href="#holematch">ホールマッチ</a>にして相手ごとに条件を調整してください。</p>
+<p class="note">実力が近い4人（全員90前後）でも、18ホールで1ptも取れない人が9.4%出ます。取れない日があるのは普通のことです。</p>
+
+<h2 id="holematch">ホールマッチ（1対1版）</h2>
 <p>ホールベストを<strong>1対1</strong>でやるのがホールマッチです。同じ組の特定の相手それぞれと対戦を立てれば、総当たりの同時進行もできます。</p>
+
+<div class="example">
+  <p class="ttl">SQOREでの扱い</p>
+  <p>アプリの<a href="../">SQORE</a>の既定は<strong>1ホール10pt・キャリーあり・上限3・トップが同点ならキャリー</strong>です。加点は<strong>バーディ+10・イーグル+20・ニアピン+10</strong>（ニアピンは取られなければキャリー）。<strong>ダブルパー減点と3パット減点は既定OFF</strong>で、使う会だけONにします。</p>
+  <p style="margin-top:8px">キャリーの発生条件は2通りから選べます。<strong>「トップが同点なら」</strong>（既定・上のシミュレーションもこれ）と、<strong>「全員が同点のときだけ」</strong>です。後者にすると同点でも2人までなら勝者なしで据え置きになり、キャリーはほとんど貯まりません。</p>
+  <p class="note" style="margin-top:8px">ハンデにも対応しています（半打単位。同じ打数ならハンデを持っている人が勝ち）。上限を超えたぶんは切り捨てず次ホールへ持ち越します。<strong>キャリー上限の「3ホールまで」といった数え方は会によって違う</strong>ので、初回は1ホールずつ倍率バーを見ながら合わせてください。</p>
+</div>
 
 <h2>アプリならキャリーの管理も自動</h2>
 <div class="app-shot">
@@ -121,13 +215,24 @@
 <div class="faq">
   <details>
     <summary>実力差があっても楽しめる？</summary>
-    <p>1ホール単位の勝負なので、トータルスコアで負けていても「このホールだけ」なら初心者にもチャンスがあります。ハンデを付けたい場合はホールマッチにして相手ごとに調整するのがおすすめです。</p>
+    <p>チャンスはありますが互角ではありません。80打・90打・100打・110打の4人でシミュレーションすると、獲得ポイントは105・37・18・9で11倍の差がつきました。ただし110打の人でも18ホールで平均0.5回はベストを取り、4割の人は最低1回取れています。差を縮めたいならハンデを付けるのが一番効きます。</p>
+  </details>
+  <details>
+    <summary>4人でやると同点ばかりにならない？</summary>
+    <p>なります。実力が近い4人だと、単独ベストが出るのは18ホールのうち8.8ホールだけで、残りの半分は同点キャリーです。2ホール以上続けて勝者が出ないことも23%あります。キャリーを持ち越す設定にしておかないと、その半分のホールぶんのポイントが消えてしまいます。</p>
+  </details>
+  <details>
+    <summary>キャリーに上限を付けるべき？</summary>
+    <p>上限3と上限なしで、1人あたりの平均獲得ポイントは41ptと42ptでほとんど変わりませんでした。荒れ方を抑えたいなら上限3で十分です。SQOREは上限を超えたぶんを切り捨てず次のホールへ持ち越すので、ポイントが宙に浮くことはありません。</p>
   </details>
   <details>
     <summary>何ポイントに設定するのがいい？</summary>
-    <p>1ホール10ポイント程度に設定して、他のゲームと並行して楽しむのが定番です。</p>
+    <p>1ホール10ポイント程度に設定して、他のゲームと並行して楽しむのが定番です。ただしキャリーありだと1人あたり1ラウンド40pt前後が動くので、キャリーなしのつもりで金額を決めると倍の重さになります。</p>
   </details>
 </div>
+
+<h2 id="method">この記事の検証方法</h2>
+<p class="note">4人（および3人）のラウンドを10万回シミュレートして集計しました。1ホールのスコアは「パーからの打数」の離散分布から発生させ、ラウンド間の標準偏差が実際のゴルファーに近い3〜7打に収まるよう調整しています。キャリーの計算はSQOREアプリの実装と同じで、<strong>トップが同点ならキャリー、プールは1+キャリー回数、上限を超えたぶんは次ホールへ持ち越し</strong>としました。ハンデ・バーディボーナス・ニアピンは付けていない素の状態での数字です。</p>
 
 <div class="related">
   <h2>あわせて読む</h2>
