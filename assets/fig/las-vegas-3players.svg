@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="268" viewBox="0 0 700 268" role="img" aria-labelledby="v3t v3d" xmlns="http://www.w3.org/2000/svg"><title id="v3t">ラスベガスを3人でやる3つの方法</title><desc id="v3d">ゴースト方式は架空の4人目を立てて2対2にする。1対多数は1人が残り全員と戦う。ローテーションは組み合わせを毎ホール変える。</desc><rect width="700" height="268" fill="#ffffff"/>
+<rect x="24" y="28" width="210" height="180" rx="14" fill="#f7fafd" stroke="#e3ebf3" stroke-width="2"/>
+<text x="129" y="54" text-anchor="middle" font-size="14" fill="#0b5cab" font-weight="700">ゴースト方式</text>
+<circle cx="77" cy="100" r="15" fill="#0b5cab"/>
+<circle cx="113" cy="100" r="15" fill="#0b5cab"/>
+<circle cx="151" cy="100" r="15" fill="#0b5cab"/>
+<circle cx="187" cy="100" r="15" stroke-dasharray="4 3" stroke="#9db8d0" stroke-width="2" fill="none"/>
+<text x="187" y="106" text-anchor="middle" font-size="14" fill="#9db8d0" font-weight="700">?</text>
+<text x="95" y="132" text-anchor="middle" font-size="11" fill="#6e6e73">チームA</text>
+<text x="169" y="132" text-anchor="middle" font-size="11" fill="#6e6e73">チームB</text>
+<text x="129" y="190" text-anchor="middle" font-size="11" fill="#6e6e73">架空の4人目を立てて2対2</text>
+<rect x="250" y="28" width="210" height="180" rx="14" fill="#f7fafd" stroke="#e3ebf3" stroke-width="2"/>
+<text x="355" y="54" text-anchor="middle" font-size="14" fill="#0b5cab" font-weight="700">1対多数</text>
+<circle cx="303" cy="100" r="15" fill="#c0392b"/>
+<text x="355" y="106" text-anchor="middle" font-size="13" fill="#6e6e73">対</text>
+<circle cx="385" cy="100" r="15" fill="#0b5cab"/>
+<circle cx="421" cy="100" r="15" fill="#0b5cab"/>
+<text x="303" y="132" text-anchor="middle" font-size="11" fill="#6e6e73">1人</text>
+<text x="403" y="132" text-anchor="middle" font-size="11" fill="#6e6e73">残り全員</text>
+<text x="355" y="190" text-anchor="middle" font-size="11" fill="#6e6e73">1人 対 残り全員</text>
+<rect x="476" y="28" width="210" height="180" rx="14" fill="#f7fafd" stroke="#e3ebf3" stroke-width="2"/>
+<text x="581" y="54" text-anchor="middle" font-size="14" fill="#0b5cab" font-weight="700">ローテーション</text>
+<circle cx="529" cy="100" r="15" fill="#0b5cab"/>
+<circle cx="565" cy="100" r="15" fill="#0b5cab"/>
+<circle cx="603" cy="100" r="15" fill="#5c6b7a"/>
+<path d="M519 126 A 62 30 0 0 0 613 126" fill="none" stroke="#f0a500" stroke-width="2.5"/>
+<path d="M605 120 L615 128 L605 133" fill="none" stroke="#f0a500" stroke-width="2.5"/>
+<text x="581" y="150" text-anchor="middle" font-size="11" fill="#6e6e73">1ホールごとに交代</text>
+<text x="581" y="190" text-anchor="middle" font-size="11" fill="#6e6e73">組み合わせを毎ホール変える</text>
+<text x="350" y="240" text-anchor="middle" font-size="12" fill="#6e6e73">どれを選んでも、ゴーストのスコアの決め方だけは先に決めておく必要があります</text>
+</svg>

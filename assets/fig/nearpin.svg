@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="312" viewBox="0 0 700 312" role="img" aria-labelledby="npt npd" xmlns="http://www.w3.org/2000/svg"><title id="npt">ニアピンの距離の測り方</title><desc id="npd">グリーン中央のピンからボールまでの距離を比べる。0.8メートルのAさんがニアピン。ホールインワンは距離ゼロだが扱いを先に決める。</desc><rect width="700" height="312" fill="#ffffff"/>
+<ellipse cx="300" cy="148" rx="170" ry="112" fill="#e8f5e9"/>
+<ellipse cx="300" cy="148" rx="170" ry="112" fill="none" stroke="#bfe0c2" stroke-width="2"/>
+<line x1="300" y1="148" x2="300" y2="92" stroke="#5c6b7a" stroke-width="3"/>
+<path d="M300 92 L334 102 L300 112 Z" fill="#c0392b"/>
+<circle cx="300" cy="148" r="6" fill="#3a3a3c"/>
+<line x1="300" y1="148" x2="204" y2="190" stroke="#0b5cab" stroke-width="2" stroke-dasharray="5 4"/>
+<circle cx="204" cy="190" r="8" fill="#fff" stroke="#0b5cab" stroke-width="2.5"/>
+<text x="204" y="216" text-anchor="middle" font-size="12" fill="#0b5cab" font-weight="700">Aさん 0.8m</text>
+<line x1="300" y1="148" x2="412" y2="124" stroke="#8c949e" stroke-width="2" stroke-dasharray="5 4"/>
+<circle cx="412" cy="124" r="8" fill="#fff" stroke="#8c949e" stroke-width="2.5"/>
+<text x="412" y="150" text-anchor="middle" font-size="12" fill="#8c949e" font-weight="700">Bさん 1.2m</text>
+<line x1="300" y1="148" x2="346" y2="232" stroke="#8c949e" stroke-width="2" stroke-dasharray="5 4"/>
+<circle cx="346" cy="232" r="8" fill="#fff" stroke="#8c949e" stroke-width="2.5"/>
+<text x="346" y="258" text-anchor="middle" font-size="12" fill="#8c949e" font-weight="700">Cさん 2.5m</text>
+<rect x="496" y="60" width="180" height="54" rx="12" fill="#eaf3fc"/>
+<text x="586" y="84" text-anchor="middle" font-size="13" fill="#0b5cab" font-weight="700">ニアピン</text>
+<text x="586" y="104" text-anchor="middle" font-size="13" fill="#1c1c1e">Aさん（0.8m）</text>
+<rect x="496" y="128" width="180" height="74" rx="12" fill="#fdf3d8"/>
+<text x="586" y="152" text-anchor="middle" font-size="13" fill="#7a5300" font-weight="700">ホールインワンは？</text>
+<text x="586" y="172" text-anchor="middle" font-size="11" fill="#7a5300">距離ゼロだが「別格」として</text>
+<text x="586" y="190" text-anchor="middle" font-size="11" fill="#7a5300">外す会もある。事前に決める</text>
+<text x="350" y="300" text-anchor="middle" font-size="12" fill="#6e6e73">ゴルフ規則にニアピンの定めはありません。どこまでを対象にするかは会ごとの取り決めです</text>
+</svg>

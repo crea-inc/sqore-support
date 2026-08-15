@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="292" viewBox="0 0 700 292" role="img" aria-labelledby="hbt2 hbd2" xmlns="http://www.w3.org/2000/svg">
+<title id="hbt2">ホールベストの実力別の獲得ポイント</title>
+<desc id="hbd2">80打・90打・100打・110打の4人でホールベストをやると、獲得ポイントは105・37・18・9となり、上と下で11倍の差がつく。</desc>
+<rect width="700" height="292" fill="#ffffff"/>
+<text x="96" y="26" font-size="13" font-weight="700" fill="#1c1c1e">1ラウンドの獲得ポイント（1ホール10pt設定）</text>
+<text x="86" y="69.9" text-anchor="end" font-size="13" font-weight="700" fill="#1c1c1e">80打の人</text>
+<rect x="96" y="53.2" width="441.0" height="25.5" fill="#1479d2" rx="4"/>
+<text x="545.0" y="70.9" font-size="14" font-weight="800" fill="#0b5cab">105pt</text>
+<text x="595.0" y="70.9" font-size="11" fill="#6e6e73">ベスト 6.2回 / 18H</text>
+<text x="86" y="120.9" text-anchor="end" font-size="13" font-weight="700" fill="#1c1c1e">90打の人</text>
+<rect x="96" y="104.2" width="155.4" height="25.5" fill="#7fb0dd" rx="4"/>
+<text x="259.4" y="121.9" font-size="14" font-weight="800" fill="#0b5cab">37pt</text>
+<text x="309.4" y="121.9" font-size="11" fill="#6e6e73">ベスト 2.2回 / 18H</text>
+<text x="86" y="171.9" text-anchor="end" font-size="13" font-weight="700" fill="#1c1c1e">100打の人</text>
+<rect x="96" y="155.2" width="75.6" height="25.5" fill="#7fb0dd" rx="4"/>
+<text x="179.6" y="172.9" font-size="14" font-weight="800" fill="#0b5cab">18pt</text>
+<text x="229.6" y="172.9" font-size="11" fill="#6e6e73">ベスト 1.1回 / 18H</text>
+<text x="86" y="222.9" text-anchor="end" font-size="13" font-weight="700" fill="#1c1c1e">110打の人</text>
+<rect x="96" y="206.2" width="37.8" height="25.5" fill="#7fb0dd" rx="4"/>
+<text x="141.8" y="223.9" font-size="14" font-weight="800" fill="#0b5cab">9pt</text>
+<text x="191.8" y="223.9" font-size="11" fill="#6e6e73">ベスト 0.5回 / 18H</text>
+<text x="350" y="278" text-anchor="middle" font-size="11" fill="#6e6e73">キャリー上限3・トップ同点でキャリー（SQORE既定）・10万ラウンドぶんの平均</text>
+</svg>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="306" viewBox="0 0 700 306" role="img" aria-labelledby="hbt hbd" xmlns="http://www.w3.org/2000/svg">
+<title id="hbt">育つへびの倍率の分布</title>
+<desc id="hbd">前半・後半で分けると倍率は×1〜×3が中心（平均2.6倍）。18ホール通しでやると×4以上が8割を占め、平均4.9倍まで育つ。</desc>
+<rect width="700" height="306" fill="#ffffff"/>
+<line x1="62" y1="258.0" x2="676" y2="258.0" stroke="#eef1f5"/>
+<text x="54" y="262.0" text-anchor="end" font-size="11" fill="#6e6e73">0%</text>
+<line x1="62" y1="197.4" x2="676" y2="197.4" stroke="#eef1f5"/>
+<text x="54" y="201.4" text-anchor="end" font-size="11" fill="#6e6e73">10%</text>
+<line x1="62" y1="136.9" x2="676" y2="136.9" stroke="#eef1f5"/>
+<text x="54" y="140.9" text-anchor="end" font-size="11" fill="#6e6e73">20%</text>
+<line x1="62" y1="76.3" x2="676" y2="76.3" stroke="#eef1f5"/>
+<text x="54" y="80.3" text-anchor="end" font-size="11" fill="#6e6e73">30%</text>
+<rect x="76.0" y="142.9" width="26.3" height="115.1" fill="#1479d2" rx="3"/>
+<text x="89.2" y="136.9" text-anchor="middle" font-size="11" font-weight="700" fill="#1479d2">19%</text>
+<rect x="105.9" y="245.9" width="26.3" height="12.1" fill="#f0a500" rx="3"/>
+<text x="119.0" y="239.9" text-anchor="middle" font-size="11" font-weight="700" fill="#f0a500">2%</text>
+<text x="105.9" y="276.0" text-anchor="middle" font-size="12" fill="#1c1c1e">×1</text>
+<rect x="163.7" y="70.2" width="26.3" height="187.8" fill="#1479d2" rx="3"/>
+<text x="176.9" y="64.2" text-anchor="middle" font-size="11" font-weight="700" fill="#1479d2">31%</text>
+<rect x="193.6" y="215.6" width="26.3" height="42.4" fill="#f0a500" rx="3"/>
+<text x="206.7" y="209.6" text-anchor="middle" font-size="11" font-weight="700" fill="#f0a500">7%</text>
+<text x="193.6" y="276.0" text-anchor="middle" font-size="12" fill="#1c1c1e">×2</text>
+<rect x="251.5" y="88.4" width="26.3" height="169.6" fill="#1479d2" rx="3"/>
+<text x="264.6" y="82.4" text-anchor="middle" font-size="11" font-weight="700" fill="#1479d2">28%</text>
+<rect x="281.3" y="173.2" width="26.3" height="84.8" fill="#f0a500" rx="3"/>
+<text x="294.4" y="167.2" text-anchor="middle" font-size="11" font-weight="700" fill="#f0a500">14%</text>
+<text x="281.3" y="276.0" text-anchor="middle" font-size="12" fill="#1c1c1e">×3</text>
+<rect x="339.2" y="167.1" width="26.3" height="90.9" fill="#1479d2" rx="3"/>
+<text x="352.3" y="161.1" text-anchor="middle" font-size="11" font-weight="700" fill="#1479d2">15%</text>
+<rect x="369.0" y="130.8" width="26.3" height="127.2" fill="#f0a500" rx="3"/>
+<text x="382.2" y="124.8" text-anchor="middle" font-size="11" font-weight="700" fill="#f0a500">21%</text>
+<text x="369.0" y="276.0" text-anchor="middle" font-size="12" fill="#1c1c1e">×4</text>
+<rect x="426.9" y="227.7" width="26.3" height="30.3" fill="#1479d2" rx="3"/>
+<text x="440.0" y="221.7" text-anchor="middle" font-size="11" font-weight="700" fill="#1479d2">5%</text>
+<rect x="456.7" y="130.8" width="26.3" height="127.2" fill="#f0a500" rx="3"/>
+<text x="469.9" y="124.8" text-anchor="middle" font-size="11" font-weight="700" fill="#f0a500">21%</text>
+<text x="456.7" y="276.0" text-anchor="middle" font-size="12" fill="#1c1c1e">×5</text>
+<rect x="514.6" y="251.9" width="26.3" height="6.1" fill="#1479d2" rx="3"/>
+<text x="527.8" y="245.9" text-anchor="middle" font-size="11" font-weight="700" fill="#1479d2">1%</text>
+<rect x="544.4" y="155.0" width="26.3" height="103.0" fill="#f0a500" rx="3"/>
+<text x="557.6" y="149.0" text-anchor="middle" font-size="11" font-weight="700" fill="#f0a500">17%</text>
+<text x="544.4" y="276.0" text-anchor="middle" font-size="12" fill="#1c1c1e">×6</text>
+<rect x="632.1" y="149.0" width="26.3" height="109.0" fill="#f0a500" rx="3"/>
+<text x="645.3" y="143.0" text-anchor="middle" font-size="11" font-weight="700" fill="#f0a500">18%</text>
+<text x="632.1" y="276.0" text-anchor="middle" font-size="12" fill="#1c1c1e">×7以上</text>
+<line x1="62" y1="258" x2="676" y2="258" stroke="#c9d4e0" stroke-width="1.2"/>
+<rect x="62" y="18" width="12" height="12" fill="#1479d2" rx="2"/>
+<text x="80" y="29" font-size="12" font-weight="700" fill="#1479d2">前半・後半で分ける（平均2.6倍）</text>
+<rect x="300" y="18" width="12" height="12" fill="#f0a500" rx="2"/>
+<text x="318" y="29" font-size="12" font-weight="700" fill="#c98000">18ホール通し（平均4.9倍）</text>
+<text x="350" y="296" text-anchor="middle" font-size="11" fill="#6e6e73">4人・1ホールの3パット率10%・20万ラウンドぶんの集計</text>
+</svg>

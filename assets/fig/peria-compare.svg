@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="268" viewBox="0 0 700 268" role="img" aria-labelledby="pct pcd" xmlns="http://www.w3.org/2000/svg"><title id="pct">ペリア3方式の隠しホール数</title><desc id="pcd">ペリアは6ホール、新新ペリアは9ホール、新ペリアは12ホールを隠す。隠す数が多いほどハンデのブレは小さい。</desc><rect width="700" height="268" fill="#ffffff"/>
+<text x="168" y="72" text-anchor="end" font-size="14" fill="#0b5cab" font-weight="700">ペリア</text>
+<text x="168" y="90" text-anchor="end" font-size="11" fill="#6e6e73">6ホール × 3</text>
+<rect x="180" y="50" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="206" y="50" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="232" y="50" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="258" y="50" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="284" y="50" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="310" y="50" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="336" y="50" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="362" y="50" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="388" y="50" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="414" y="50" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="440" y="50" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="466" y="50" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="492" y="50" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="518" y="50" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="544" y="50" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="570" y="50" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="596" y="50" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="622" y="50" width="22" height="30" rx="6" fill="#eef1f5"/>
+<text x="414.0" y="101" text-anchor="middle" font-size="11" fill="#6e6e73">ブレは新ペリアの 2.00 倍</text>
+<text x="168" y="138" text-anchor="end" font-size="14" fill="#0b5cab" font-weight="700">新新ペリア</text>
+<text x="168" y="156" text-anchor="end" font-size="11" fill="#6e6e73">9ホール × 2</text>
+<rect x="180" y="116" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="206" y="116" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="232" y="116" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="258" y="116" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="284" y="116" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="310" y="116" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="336" y="116" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="362" y="116" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="388" y="116" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="414" y="116" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="440" y="116" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="466" y="116" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="492" y="116" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="518" y="116" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="544" y="116" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="570" y="116" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="596" y="116" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="622" y="116" width="22" height="30" rx="6" fill="#eef1f5"/>
+<text x="414.0" y="167" text-anchor="middle" font-size="11" fill="#6e6e73">1.41 倍</text>
+<text x="168" y="204" text-anchor="end" font-size="14" fill="#0b5cab" font-weight="700">新ペリア</text>
+<text x="168" y="222" text-anchor="end" font-size="11" fill="#6e6e73">12ホール × 1.5</text>
+<rect x="180" y="182" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="206" y="182" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="232" y="182" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="258" y="182" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="284" y="182" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="310" y="182" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="336" y="182" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="362" y="182" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="388" y="182" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="414" y="182" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="440" y="182" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="466" y="182" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="492" y="182" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="518" y="182" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="544" y="182" width="22" height="30" rx="6" fill="#eef1f5"/>
+<rect x="570" y="182" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="596" y="182" width="22" height="30" rx="6" fill="#0b5cab"/>
+<rect x="622" y="182" width="22" height="30" rx="6" fill="#eef1f5"/>
+<text x="414.0" y="233" text-anchor="middle" font-size="11" fill="#1c1c1e">1.00（基準）</text>
+<rect x="180" y="244" width="22" height="16" rx="5" fill="#0b5cab"/>
+<text x="214" y="257" text-anchor="start" font-size="11" fill="#6e6e73">＝ 隠しホール</text>
+<text x="560" y="257" text-anchor="end" font-size="11" fill="#1c1c1e" font-weight="700">平均ハンデは3方式とも同じ</text>
+</svg>

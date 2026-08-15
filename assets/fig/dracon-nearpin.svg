@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="236" viewBox="0 0 700 236" role="img" aria-labelledby="dnt dnd" xmlns="http://www.w3.org/2000/svg"><title id="dnt">ニアピンのキャリーの流れ</title><desc id="dnd">4番PAR3で誰も乗らず、7番も誰も乗らず、12番で乗った人が3ホール分をまとめて獲得する。</desc><rect width="700" height="236" fill="#ffffff"/>
+<rect x="48" y="44" width="176" height="116" rx="14" fill="#eaf3fc"/>
+<text x="136" y="74" text-anchor="middle" font-size="15" fill="#0b5cab" font-weight="700">4H</text>
+<text x="136" y="104" text-anchor="middle" font-size="13" fill="#1c1c1e">誰も乗らず</text>
+<rect x="70" y="116" width="132" height="30" rx="10" fill="#fff"/>
+<text x="136" y="136" text-anchor="middle" font-size="12" fill="#6e6e73" font-weight="700">キャリー</text>
+<path d="M234 102 L256 102" stroke="#f0a500" stroke-width="3"/>
+<path d="M248 95 L258 102 L248 109" fill="none" stroke="#f0a500" stroke-width="3"/>
+<rect x="260" y="44" width="176" height="116" rx="14" fill="#eaf3fc"/>
+<text x="348" y="74" text-anchor="middle" font-size="15" fill="#0b5cab" font-weight="700">7H</text>
+<text x="348" y="104" text-anchor="middle" font-size="13" fill="#1c1c1e">誰も乗らず</text>
+<rect x="282" y="116" width="132" height="30" rx="10" fill="#fff"/>
+<text x="348" y="136" text-anchor="middle" font-size="12" fill="#6e6e73" font-weight="700">キャリー</text>
+<path d="M446 102 L468 102" stroke="#f0a500" stroke-width="3"/>
+<path d="M460 95 L470 102 L460 109" fill="none" stroke="#f0a500" stroke-width="3"/>
+<rect x="472" y="44" width="176" height="116" rx="14" fill="#0b5cab"/>
+<text x="560" y="74" text-anchor="middle" font-size="15" fill="#fff" font-weight="700">12H</text>
+<text x="560" y="104" text-anchor="middle" font-size="13" fill="#fff">乗った！</text>
+<rect x="494" y="116" width="132" height="30" rx="10" fill="#f0a500"/>
+<text x="560" y="136" text-anchor="middle" font-size="12" fill="#7a5300" font-weight="700">3ホール分を獲得</text>
+<text x="350" y="192" text-anchor="middle" font-size="13" fill="#1c1c1e">誰も条件を満たさなければ、そのホールのポイントは次のPAR3へ持ち越し</text>
+<text x="350" y="218" text-anchor="middle" font-size="11" fill="#6e6e73">何ホール分まで貯めるか、最後まで誰も取れなかったらどうするかは先に決めておきます</text>
+</svg>
