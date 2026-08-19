@@ -62,7 +62,7 @@
   "@type": "SoftwareApplication",
   "name": "SQORE",
   "alternateName": "スコア",
-  "description": "ゴルフの握り（オリンピック・ラスベガス・ナッソー・ホールベストなど、仲間内でポイントを競う定番ゲーム）を自動計算するiPhoneアプリ。スコア記録・成績集計・iCloud同期に対応。",
+  "description": "ゴルフの握り（オリンピック・ラスベガス・ナッソー・ホールベストなど、仲間内でポイントを競う定番ゲーム）を自動計算するiPhoneアプリ。スコア記録・成績集計・iCloud同期・GPSマップでの距離計測に対応。",
   "operatingSystem": "iOS",
   "applicationCategory": "SportsApplication",
   "inLanguage": "ja",
@@ -91,7 +91,7 @@
       "name": "SQOREは無料で使えますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "スコア入力・ゲームのポイント自動計算・清算（最終結果）・フォトスコアカードなどの基本機能は無料で使えます。いつものグループやメンバーの保存、成績集計、ホールごとの自分の履歴は月額100円のプレミアムで利用できます。"
+        "text": "スコア入力・ゲームのポイント自動計算・清算（最終結果）・フォトスコアカードなどの基本機能は無料で使えます。いつものグループやメンバーの保存、成績集計、ホールごとの自分の履歴、GPSマップの距離計測は月額100円のプレミアムで利用できます。"
       }
     },
     {
@@ -124,6 +124,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "できます。ティーショットの方向・OB・ガードバンカーなどをワンタップで記録すると、パーオン率・ボギーオン率・リカバリー率・サンドセーブ率・パーオン時とボギーオン時の平均パット・Par別の平均スコアを確認できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "コースの距離は測れますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "プレミアムのGPSマップで測れます。スコア画面の「GPS」を押すと、いま回っているホールの衛星写真が開き、グリーンや狙う場所をタップすると、いま立っている場所からそこまでの距離がヤードで表示されます。コースごとの事前ダウンロードは不要です。グリーンまでの残り距離が自動で表示されるコースマップ型のナビではなく、測りたい場所を自分でタップする方式です。"
       }
     },
     {
@@ -315,6 +323,10 @@
     .hole-hist-text h3 { font-size: 21px; }
     .hole-hist-shots img { width: min(160px, 44vw); }
   }
+
+  /* GPSマップ(写真は1枚だけなので大きめに) */
+  .gps-shot img { width: 250px; border-radius: 22px; box-shadow: 0 12px 32px rgba(11,92,171,.25); }
+  @media (max-width: 600px) { .gps-shot img { width: min(210px, 56vw); } }
 
   /* screenshots */
   .shots-sec { background: linear-gradient(175deg, var(--blue) 0%, var(--blue-deep) 100%); color: #fff; }
@@ -551,6 +563,25 @@
   </div>
 </section>
 
+<section id="gps" style="padding-top:0">
+  <div class="wrap">
+    <h2>GPSで<span class="accent">狙う場所までの距離</span>がわかる</h2>
+    <p class="lead">スコア画面の「GPS」を押すと、いま回っているホールの衛星写真が開きます。</p>
+    <div class="score-inner">
+      <div class="score-shots gps-shot">
+        <img src="assets/ss10.webp" alt="衛星写真の上でタップした地点までの距離をヤードで表示するSQOREのGPSマップ画面" loading="lazy" width="415" height="900">
+      </div>
+      <ul class="score-list">
+        <li><strong>タップしたところまでの距離が出る。</strong>グリーンでも、刻む地点でも、池の手前でも。測りたい場所をタップするだけでヤードが出ます。</li>
+        <li><strong>向いている方向が上。</strong>マップを開くと自分が画面の下、打つ方向が上を向くので、見たままの向きで距離を測れます。</li>
+        <li><strong>コースの事前ダウンロードは不要。</strong>衛星写真をそのまま使うので、対応コースかどうかを気にせず開けます。</li>
+        <li><strong>プレミアムに含まれます。</strong>月額¥100の中に入っていて、距離計測だけの追加料金はありません。</li>
+      </ul>
+    </div>
+    <p class="games-note" style="margin-top:24px">グリーンまでの残り距離が自動で出るコースマップ型のナビではありません。測りたい場所を自分でタップする方式です。</p>
+  </div>
+</section>
+
 <section id="score" style="padding-top:0">
   <div class="wrap">
     <h2>ゴルフスコア管理アプリとしても<span class="accent">本格派</span></h2>
@@ -659,6 +690,7 @@
     <img src="assets/ss7.webp" alt="スコアの詳細分析画面" loading="lazy" width="415" height="900">
     <img src="assets/ss8.webp" alt="いま打つホールの過去の平均スコアとOB率を表示する画面" loading="lazy" width="415" height="900">
     <img src="assets/ss9.webp" alt="ホールごとの過去の記録を遡れる履歴画面" loading="lazy" width="415" height="900">
+    <img src="assets/ss10.webp" alt="衛星写真でタップした地点までの距離を表示するGPSマップ画面" loading="lazy" width="415" height="900">
   </div>
 </section>
 
@@ -686,6 +718,7 @@
           <li>自分とグループの成績集計</li>
           <li>年別の成績切り替え</li>
           <li>ホールごとの自分の履歴（過去の打数・パット・ポイント）</li>
+          <li>GPSマップの距離計測</li>
         </ul>
       </div>
     </div>
@@ -698,7 +731,7 @@
     <div class="faq">
       <details>
         <summary>SQOREは無料で使えますか？</summary>
-        <p>スコア入力・ゲームのポイント自動計算・清算（最終結果）・フォトスコアカードなどの基本機能は無料で使えます。いつものグループやメンバーの保存、成績集計、ホールごとの自分の履歴は月額¥100のプレミアムで利用できます。</p>
+        <p>スコア入力・ゲームのポイント自動計算・清算（最終結果）・フォトスコアカードなどの基本機能は無料で使えます。いつものグループやメンバーの保存、成績集計、ホールごとの自分の履歴、GPSマップの距離計測は月額¥100のプレミアムで利用できます。</p>
       </details>
       <details>
         <summary>握りのポイント計算にも使えますか？</summary>
@@ -715,6 +748,10 @@
       <details>
         <summary>スコアの分析はできますか？</summary>
         <p>できます。ティーショットの方向・OB・ガードバンカーなどをワンタップで記録すると、パーオン率・ボギーオン率・リカバリー率・サンドセーブ率・パーオン時とボギーオン時の平均パット・Par別の平均スコアを確認できます。</p>
+      </details>
+      <details>
+        <summary>コースの距離は測れますか？</summary>
+        <p>プレミアムのGPSマップで測れます。スコア画面の「GPS」を押すと、いま回っているホールの衛星写真が開き、グリーンや狙う場所をタップすると、いま立っている場所からそこまでの距離がヤードで出ます。コースごとの事前ダウンロードは不要です。なお、グリーンまでの残り距離が自動で表示されるコースマップ型のナビではなく、測りたい場所を自分でタップする方式です。</p>
       </details>
       <details>
         <summary>機種変更したらデータはどうなりますか？</summary>
