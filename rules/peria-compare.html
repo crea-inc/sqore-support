@@ -83,7 +83,7 @@
     <img src="../assets/icon_180.png" alt="SQOREアイコン">
     <a href="../">SQORE</a>
     <span class="tag">ポイント自動計算アプリ</span>
-    <nav class="topnav"><a href="../guide/">使い方</a><a href="../score/">スコア管理</a><a href="./">ルール解説</a><a href="../support/">サポート</a><a href="https://apps.apple.com/jp/app/id6777357472">アプリ入手</a></nav>
+    <nav class="topnav"><a href="../guide/">使い方</a><a href="../score/">スコア管理</a><a href="./">ルール解説</a><a href="../support/">サポート</a><a class="appget" href="https://apps.apple.com/jp/app/id6777357472">アプリ入手</a></nav>
   </div>
 </header>
 
@@ -258,7 +258,7 @@
 <div class="app-shot">
   <div>
     <p class="ttl">隠しホールの抽選も計算も自動</p>
-    <p>iPhoneアプリの<a href="../">SQORE</a>は新ペリア方式に対応しています。チェックインで「新ペリ」を選んでおけば、隠しホール12ホールの抽選からハンデ計算、順位付けまで自動です。</p>
+    <p>iPhone・Androidアプリの<a href="../">SQORE</a>は新ペリア方式に対応しています。チェックインで「新ペリ」を選んでおけば、隠しホール12ホールの抽選からハンデ計算、順位付けまで自動です。</p>
     <p class="cap">抽選は「日付＋ゴルフ場名」で決まるので、同じ日に同じコースを記録していれば誰の端末でも同じ12ホールが選ばれます。幹事が1台で入力しても、各自が別々に入力しても順位が揃います。</p>
     <p class="cap"><strong>対応しているのは新ペリアだけ</strong>です。ペリア（隠し6ホール）と新新ペリア（隠し9ホール）には対応していません。現在のコンペで使われているのがほぼ新ペリアのためで、この2つでやる場合は手計算になります。</p>
   </div>
@@ -300,10 +300,16 @@
   <p class="ttl">新ペリの集計、幹事がやらなくてOK</p>
   <p>SQOREは隠しホールの抽選からハンデ計算・順位付けまで自動で行う無料アプリです。</p>
   <p class="score-note">ゲームをしない日は<a href="../score/">スコアアプリとして</a>そのまま使えます。いま打つホールの自分の平均スコアやOB率も出ます。</p>
-  <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
-    <span class="apple"></span>
-    <span><small>Download on the</small>App Store</span>
-  </a>
+  <div class="store-btns">
+    <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
+      <span class="apple"></span>
+      <span><small>Download on the</small>App Store</span>
+    </a>
+    <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.sqore.app">
+      <span class="gplay" aria-hidden="true"><svg viewBox="0 0 512 512" width="22" height="22"><path fill="currentColor" d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg></span>
+      <span><small>GET IT ON</small>Google Play</span>
+    </a>
+  </div>
 </div>
 
 <h2>この記事の検証方法</h2>
@@ -342,5 +348,6 @@
   }, { passive: true });
 })();
 </script>
+<script>(function(){if(!/Android/i.test(navigator.userAgent))return;var u='https://play.google.com/store/apps/details?id=com.sqore.app';Array.prototype.forEach.call(document.querySelectorAll('.dl-bar a.get,a.appget'),function(a){a.href=u;});})();</script>
 </body>
 </html>

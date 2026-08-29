@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#2596e0">
 <title>SQORE｜ゴルフの握り（オリンピック・ラスベガス・ナッソー）をポイント自動計算する無料アプリ</title>
-<meta name="description" content="ゴルフの握り（オリンピック・ラスベガス・ナッソーなど12種類）のポイントを自動計算する無料iPhoneアプリ。ワンタップ入力で途中経過も清算も自動。普通のスコア管理アプリとしても使えます。">
+<meta name="description" content="ゴルフの握り（オリンピック・ラスベガス・ナッソーなど12種類）のポイントを自動計算する無料iPhone・Androidアプリ。ワンタップ入力で途中経過も清算も自動。普通のスコア管理アプリとしても使えます。">
 <link rel="canonical" href="https://sqore-golf.com/">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SQORE">
 <meta property="og:title" content="SQORE｜ゴルフの握りをポイント自動計算する無料アプリ">
-<meta property="og:description" content="ゴルフの握り（オリンピック・ラスベガス・ナッソーなど12種類）のポイントを自動計算する無料iPhoneアプリ。ワンタップ入力で途中経過も清算も自動。普通のスコア管理アプリとしても使えます。">
+<meta property="og:description" content="ゴルフの握り（オリンピック・ラスベガス・ナッソーなど12種類）のポイントを自動計算する無料iPhone・Androidアプリ。ワンタップ入力で途中経過も清算も自動。普通のスコア管理アプリとしても使えます。">
 <meta property="og:url" content="https://sqore-golf.com/">
 <meta property="og:image" content="https://sqore-golf.com/assets/og_1200x630.png">
 <meta property="og:image:width" content="1200">
@@ -62,12 +62,15 @@
   "@type": "SoftwareApplication",
   "name": "SQORE",
   "alternateName": "スコア",
-  "description": "ゴルフの握り（オリンピック・ラスベガス・ナッソー・ホールベストなど、仲間内でポイントを競う定番ゲーム）を自動計算するiPhoneアプリ。スコア記録・成績集計・iCloud同期・GPSマップでの距離計測に対応。",
-  "operatingSystem": "iOS",
+  "description": "ゴルフの握り（オリンピック・ラスベガス・ナッソー・ホールベストなど、仲間内でポイントを競う定番ゲーム）を自動計算するiPhone・Androidアプリ。スコア記録・成績集計・iCloud同期（iPhone）・GPSマップでの距離計測に対応。",
+  "operatingSystem": "iOS, ANDROID",
   "applicationCategory": "SportsApplication",
   "inLanguage": "ja",
   "url": "https://sqore-golf.com/",
-  "installUrl": "https://apps.apple.com/jp/app/id6777357472",
+  "installUrl": [
+    "https://apps.apple.com/jp/app/id6777357472",
+    "https://play.google.com/store/apps/details?id=com.sqore.app"
+  ],
   "image": "https://sqore-golf.com/assets/icon_512.png",
   "offers": {
     "@type": "Offer",
@@ -139,7 +142,7 @@
       "name": "機種変更したらデータはどうなりますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "iCloud同期に対応しているため、新しいiPhoneで同じApple IDにサインインしてSQOREをインストールすれば、ラウンド履歴や成績が自動で引き継がれます。"
+        "text": "iPhoneはiCloud同期に対応しているため、新しい端末で同じApple IDにサインインしてSQOREをインストールすれば、ラウンド履歴や成績が自動で引き継がれます。Androidは全データをファイルに書き出して、新しい端末で読み込めば引き継げます。"
       }
     },
     {
@@ -147,7 +150,7 @@
       "name": "Android版はありますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Android版は現在準備中で、まもなく公開予定です。公開までは iPhone（iOS）版のみのご提供となります。"
+        "text": "あります。Google Playで公開中です。対応ゲームも計算も清算もiPhone版と同じです（iCloud同期はiPhone版のみで、Androidはファイル書き出しでデータを引き継ぎます）。"
       }
     }
   ]
@@ -233,7 +236,11 @@
   }
   .store-btn:hover { transform: scale(1.04); }
   .store-btn .apple { font-size: 24px; line-height: 1; }
+  .store-btn .gplay { display: inline-flex; line-height: 0; }
+  .store-btn .gplay svg { width: 22px; height: 22px; display: block; }
   .store-btn small { display: block; font-size: 11px; font-weight: 400; opacity: .8; text-align: left; }
+  .store-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+  .store-btns .store-btn { margin-top: 0; }
   .hero .phone {
     width: min(320px, 78vw); margin: 40px auto -80px;
     border-radius: 36px; box-shadow: 0 24px 60px rgba(0,0,0,.4);
@@ -409,6 +416,8 @@
     .hero .appname { font-size: 32px; }
     .hero h1 { font-size: 21px; }
     h2 { font-size: 23px; }
+    .store-btns { gap: 8px; }
+    .store-btn { padding: 11px 16px; font-size: 16px; }
   }
 
   /* mobile: ヘッダーを固定し、下スクロールで隠す/上スクロールで出す(常時占有しない) */
@@ -439,16 +448,22 @@
     <img class="icon" src="assets/icon_192.png" alt="ゴルフポイント自動計算アプリSQOREのアイコン" width="96" height="96">
     <p class="appname">SQORE</p>
     <h1>ゴルフの握りを<br><em>自動計算</em>で超簡単に</h1>
-    <p class="sub">オリンピック・ラスベガス・ナッソー・ホールベストなど、仲間内でポイントを競う定番ゲームに多数対応の無料iPhoneアプリ</p>
+    <p class="sub">オリンピック・ラスベガス・ナッソー・ホールベストなど、仲間内でポイントを競う定番ゲームに多数対応の無料iPhone・Androidアプリ</p>
     <div class="badges">
       <span>入力はワンタップ</span>
       <span>途中経過もすぐ</span>
       <span>清算まで一発</span>
     </div>
-    <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
-      <span class="apple"></span>
-      <span><small>Download on the</small>App Store</span>
-    </a>
+    <div class="store-btns">
+      <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
+        <span class="apple"></span>
+        <span><small>Download on the</small>App Store</span>
+      </a>
+      <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.sqore.app">
+        <span class="gplay" aria-hidden="true"><svg viewBox="0 0 512 512" width="22" height="22"><path fill="currentColor" d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg></span>
+        <span><small>GET IT ON</small>Google Play</span>
+      </a>
+    </div>
     <img class="phone" src="assets/ss1.webp" alt="SQOREのスコア入力画面。打数をワンタップで入力しゲームのポイントを自動計算" loading="eager" width="415" height="900">
   </div>
 </header>
@@ -457,7 +472,7 @@
 <section id="about" style="padding-bottom:0">
   <div class="wrap" style="max-width:760px; text-align:center">
     <h2>SQORE（スコア）とは</h2>
-    <p style="margin-top:16px; font-size:15px; color:var(--gray)">SQOREは、ゴルフの握り（オリンピック・ラスベガス・ナッソーなど、仲間内でポイントを競う定番のゲーム）を自動計算する無料のiPhoneアプリです。打数をワンタップで入力するだけで、途中経過の表示から清算（最終結果）までぜんぶ自動。スコア記録・成績集計・iCloud同期にも対応した、ラウンドがもっと盛り上がるゴルフスコア管理アプリです。</p>
+    <p style="margin-top:16px; font-size:15px; color:var(--gray)">SQOREは、ゴルフの握り（オリンピック・ラスベガス・ナッソーなど、仲間内でポイントを競う定番のゲーム）を自動計算する無料のiPhone・Androidアプリです。打数をワンタップで入力するだけで、途中経過の表示から清算（最終結果）までぜんぶ自動。スコア記録・成績集計・iCloud同期（iPhone）にも対応した、ラウンドがもっと盛り上がるゴルフスコア管理アプリです。</p>
   </div>
 </section>
 
@@ -556,8 +571,8 @@
       </div>
       <div class="feat">
         <div class="emoji">☁️</div>
-        <h3>iCloudで安心</h3>
-        <p>データはiCloudに自動同期。機種変更してもラウンド履歴はそのまま引き継げます。</p>
+        <h3>機種変更しても安心</h3>
+        <p>iPhoneはiCloudに自動同期。Androidはデータをファイルに書き出して、新しい端末で復元できます。</p>
       </div>
     </div>
   </div>
@@ -755,11 +770,11 @@
       </details>
       <details>
         <summary>機種変更したらデータはどうなりますか？</summary>
-        <p>iCloud同期に対応しているため、新しいiPhoneで同じApple IDにサインインしてSQOREをインストールすれば、ラウンド履歴や成績が自動で引き継がれます。</p>
+        <p>iPhoneはiCloud同期に対応しているため、新しい端末で同じApple IDにサインインしてSQOREをインストールすれば、ラウンド履歴や成績が自動で引き継がれます。Androidは全データをファイルに書き出して、新しい端末で読み込めば引き継げます。</p>
       </details>
       <details>
         <summary>Android版はありますか？</summary>
-        <p>Android版は現在準備中で、まもなく公開予定です。公開までは iPhone（iOS）版のみのご提供となります。</p>
+        <p>あります。Google Playで公開中です。対応ゲームも計算も清算もiPhone版と同じです（iCloud同期はiPhone版のみで、Androidはファイル書き出しでデータを引き継ぎます）。</p>
       </details>
     </div>
   </div>
@@ -769,10 +784,16 @@
   <div class="wrap">
     <h2>次のラウンドから、計算はSQOREに。</h2>
     <p>無料ではじめられます。</p>
-    <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
-      <span class="apple"></span>
-      <span><small>Download on the</small>App Store</span>
-    </a>
+    <div class="store-btns">
+      <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
+        <span class="apple"></span>
+        <span><small>Download on the</small>App Store</span>
+      </a>
+      <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.sqore.app">
+        <span class="gplay" aria-hidden="true"><svg viewBox="0 0 512 512" width="22" height="22"><path fill="currentColor" d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg></span>
+        <span><small>GET IT ON</small>Google Play</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -807,5 +828,6 @@
   }, { passive: true });
 })();
 </script>
+<script>(function(){if(!/Android/i.test(navigator.userAgent))return;var u='https://play.google.com/store/apps/details?id=com.sqore.app';Array.prototype.forEach.call(document.querySelectorAll('.dl-bar a.get,a.appget'),function(a){a.href=u;});})();</script>
 </body>
 </html>

@@ -88,7 +88,7 @@
     <img src="../assets/icon_180.png" alt="SQOREアイコン">
     <a href="../">SQORE</a>
     <span class="tag">ポイント自動計算アプリ</span>
-    <nav class="topnav"><a href="../guide/">使い方</a><a href="../score/">スコア管理</a><a href="./">ルール解説</a><a href="../support/">サポート</a><a href="https://apps.apple.com/jp/app/id6777357472">アプリ入手</a></nav>
+    <nav class="topnav"><a href="../guide/">使い方</a><a href="../score/">スコア管理</a><a href="./">ルール解説</a><a href="../support/">サポート</a><a class="appget" href="https://apps.apple.com/jp/app/id6777357472">アプリ入手</a></nav>
   </div>
 </header>
 
@@ -228,7 +228,7 @@
 <div class="app-shot">
   <div>
     <p class="ttl">どの取り決めでも、そのまま入れられる</p>
-    <p>iPhoneアプリの<a href="../">SQORE</a>は、そのホールでニアピンを取った人を選ぶ方式です。ホールインワンを認めるかどうかのような取り決めはコンペごとに違うので、<strong>アプリ側で勝手に判定せず、決めたとおりに入れられる</strong>ようにしてあります。</p>
+    <p>iPhone・Androidアプリの<a href="../">SQORE</a>は、そのホールでニアピンを取った人を選ぶ方式です。ホールインワンを認めるかどうかのような取り決めはコンペごとに違うので、<strong>アプリ側で勝手に判定せず、決めたとおりに入れられる</strong>ようにしてあります。</p>
     <p class="cap">誰も取らなければ次のPAR3へ自動でキャリーし、何ホール分が乗っているかも表示されます。<a href="olympic.html">オリンピック</a>のホールインワン加点はニアピン加点と別項目なので、両方付けることも片方だけにすることもできます。</p>
   </div>
   <img src="../assets/game_nearpin.webp" alt="ニアピンを取った人を選ぶだけでポイントを集計するSQOREのスコア画面" loading="lazy" width="450" height="978">
@@ -274,10 +274,16 @@
   <p class="ttl">ニアピンもドラコンも、タップするだけ</p>
   <p>SQOREはニアピン・ドラコン・ラスベガス・オリンピックなどのポイントを自動計算する無料アプリです。</p>
   <p class="score-note">ゲームをしない日は<a href="../score/">スコアアプリとして</a>そのまま使えます。いま打つホールの自分の平均スコアやOB率も出ます。</p>
-  <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
-    <span class="apple"></span>
-    <span><small>Download on the</small>App Store</span>
-  </a>
+  <div class="store-btns">
+    <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
+      <span class="apple"></span>
+      <span><small>Download on the</small>App Store</span>
+    </a>
+    <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.sqore.app">
+      <span class="gplay" aria-hidden="true"><svg viewBox="0 0 512 512" width="22" height="22"><path fill="currentColor" d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg></span>
+      <span><small>GET IT ON</small>Google Play</span>
+    </a>
+  </div>
 </div>
 </article>
 </div>
@@ -313,5 +319,6 @@
   }, { passive: true });
 })();
 </script>
+<script>(function(){if(!/Android/i.test(navigator.userAgent))return;var u='https://play.google.com/store/apps/details?id=com.sqore.app';Array.prototype.forEach.call(document.querySelectorAll('.dl-bar a.get,a.appget'),function(a){a.href=u;});})();</script>
 </body>
 </html>

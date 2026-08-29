@@ -66,7 +66,7 @@
     <img src="../assets/icon_180.png" alt="SQOREアイコン">
     <a href="../">SQORE</a>
     <span class="tag">ポイント自動計算アプリ</span>
-    <nav class="topnav"><a href="./">使い方</a><a href="../score/">スコア管理</a><a href="../rules/">ルール解説</a><a href="../support/">サポート</a><a href="https://apps.apple.com/jp/app/id6777357472">アプリ入手</a></nav>
+    <nav class="topnav"><a href="./">使い方</a><a href="../score/">スコア管理</a><a href="../rules/">ルール解説</a><a href="../support/">サポート</a><a class="appget" href="https://apps.apple.com/jp/app/id6777357472">アプリ入手</a></nav>
   </div>
 </header>
 
@@ -121,7 +121,7 @@
 <div class="step">
   <div>
     <h2><span class="num">6</span>あとから履歴・成績・分析を見る</h2>
-    <p>保存したラウンドはホームの<span class="btn-name">履歴を見る</span>からいつでも見返せます。自分やグループの成績は年別に自動集計。詳細を記録していれば、パーオン率・平均パットなどの分析も貯まっていきます。データはiCloudに同期されるので機種変更しても安心です。</p>
+    <p>保存したラウンドはホームの<span class="btn-name">履歴を見る</span>からいつでも見返せます。自分やグループの成績は年別に自動集計。詳細を記録していれば、パーオン率・平均パットなどの分析も貯まっていきます。データはiPhoneならiCloudに同期、Androidならファイルに書き出して復元できるので、機種変更しても安心です。</p>
   </div>
   <img src="../assets/ss7.webp" alt="パーオン率などの分析画面" loading="lazy" width="415" height="900">
 </div>
@@ -146,10 +146,16 @@
 <div class="cta">
   <p class="ttl">まずは次のラウンドで使ってみてください</p>
   <p>基本機能は無料。ダウンロードしてチェックインするだけです。</p>
-  <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
-    <span class="apple"></span>
-    <span><small>Download on the</small>App Store</span>
-  </a>
+  <div class="store-btns">
+    <a class="store-btn" href="https://apps.apple.com/jp/app/id6777357472">
+      <span class="apple"></span>
+      <span><small>Download on the</small>App Store</span>
+    </a>
+    <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.sqore.app">
+      <span class="gplay" aria-hidden="true"><svg viewBox="0 0 512 512" width="22" height="22"><path fill="currentColor" d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg></span>
+      <span><small>GET IT ON</small>Google Play</span>
+    </a>
+  </div>
 </div>
 </article>
 </div>
@@ -184,5 +190,6 @@
   }, { passive: true });
 })();
 </script>
+<script>(function(){if(!/Android/i.test(navigator.userAgent))return;var u='https://play.google.com/store/apps/details?id=com.sqore.app';Array.prototype.forEach.call(document.querySelectorAll('.dl-bar a.get,a.appget'),function(a){a.href=u;});})();</script>
 </body>
 </html>
