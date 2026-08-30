@@ -106,21 +106,18 @@ th { background: #eaf3fc; color: var(--blue-deep); font-size: 13px; }
 .cta p { font-size: 14px; opacity: .95; margin-top: 6px; }
 .cta .score-note { font-size: 13px; opacity: .88; margin-top: 10px; }
 .cta .score-note a { color: #fff; text-decoration: underline; font-weight: 700; }
-.store-btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: #111; color: #fff; text-decoration: none;
-  border-radius: 12px; padding: 10px 24px; margin-top: 16px;
-  font-size: 15px; font-weight: 700;
-}
-.store-btn .apple { font-size: 20px; line-height: 1; }
-.store-btn .gplay { display: inline-flex; line-height: 0; }
-.store-btn .gplay svg { width: 19px; height: 19px; display: block; }
-.store-btn small { display: block; font-size: 10px; font-weight: 400; opacity: .8; text-align: left; }
-.store-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
-.store-btns .store-btn { margin-top: 0; }
+/* 公式ストアバッジ。Google の PNG は上下に透過余白(250px 中 192px が実バッジ)が
+   焼き込まれているため、表示高さは Apple の 250/192 倍にして見た目の高さを揃える */
+.store-btns { display: flex; gap: 14px; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 16px; }
+.store-badge { display: inline-block; text-decoration: none; transition: transform .15s ease; }
+.store-badge:hover { transform: scale(1.04); }
+.store-badge img { display: block; width: auto; }
+.store-badge-apple img { height: 44px; }
+.store-badge-google img { height: 57px; }
 @media (max-width: 600px) {
-  .store-btns { gap: 8px; }
-  .store-btn { padding: 9px 14px; font-size: 14px; }
+  .store-btns { gap: 10px; }
+  .store-badge-apple img { height: 40px; }
+  .store-badge-google img { height: 52px; }
 }
 
 .faq details { background: #fff; border-radius: 12px; padding: 14px 18px; margin: 10px 0; box-shadow: 0 3px 14px rgba(11,92,171,.07); }
