@@ -182,3 +182,7 @@ footer a:hover { text-decoration: underline; }
   }
   body { padding-bottom: 92px; }
 }
+
+.nw{white-space:nowrap}
+.table-scroll table.wide { min-width: 620px; }
+.rule-cards.solo img { height: 240px; }
