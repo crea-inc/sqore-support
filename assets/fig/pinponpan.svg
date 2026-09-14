@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="340" viewBox="0 0 700 340" role="img" aria-labelledby="ppt ppd" xmlns="http://www.w3.org/2000/svg"><title id="ppt">本来のピンポンパンの点の取り方</title><desc id="ppd">1ホールごとに、最初にグリーンにオンした人がピン、全員オンの時点で最もピンに近い人がポン、最初にカップインした人がパンで、それぞれ1点。18ホールの合計点で競う。</desc><rect width="700" height="340" fill="#ffffff"/>
+<text x="25" y="26" font-size="14" fill="#1c1c1e" font-weight="700">本来のピンポンパン ― 1ホールで3点が動く</text>
+<rect x="25.0" y="44" width="200" height="205" rx="16" fill="#e9f6ea" stroke="#cfe7d1"/>
+<ellipse cx="125.0" cy="102" rx="58" ry="30" fill="#cdeccf"/>
+<line x1="125.0" y1="102" x2="125.0" y2="62" stroke="#6e6e73" stroke-width="2"/>
+<path d="M125.0 62 L147.0 70 L125.0 78 Z" fill="#d9534f"/>
+<path d="M59.0 56 Q73.0 74 99.0 100" fill="none" stroke="#2f7d33" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="99.0" cy="103" r="7" fill="#ffffff" stroke="#6e6e73" stroke-width="2"/>
+<text x="125.0" y="172" text-anchor="middle" font-size="30" font-weight="700" fill="#2f7d33">ピン</text>
+<text x="125.0" y="196" text-anchor="middle" font-size="12" fill="#1c1c1e">最初にグリーンに</text>
+<text x="125.0" y="212" text-anchor="middle" font-size="12" fill="#1c1c1e">オンした人</text>
+<rect x="89.0" y="220" width="72" height="22" rx="11" fill="#ffffff" stroke="#cfe7d1"/>
+<text x="125.0" y="235" text-anchor="middle" font-size="12" font-weight="700" fill="#2f7d33">+1点</text>
+<rect x="252.5" y="44" width="200" height="205" rx="16" fill="#eaf3fb" stroke="#cfe0f0"/>
+<ellipse cx="352.5" cy="102" rx="58" ry="30" fill="#cdeccf"/>
+<line x1="352.5" y1="102" x2="352.5" y2="62" stroke="#6e6e73" stroke-width="2"/>
+<path d="M352.5 62 L374.5 70 L352.5 78 Z" fill="#d9534f"/>
+<circle cx="318.5" cy="116" r="7" fill="#ffffff" stroke="#b0b3b8" stroke-width="2"/>
+<line x1="352.5" y1="102" x2="376.5" y2="94" stroke="#0b5cab" stroke-width="2" stroke-dasharray="3 3"/>
+<circle cx="376.5" cy="94" r="8" fill="#ffffff" stroke="#0b5cab" stroke-width="3"/>
+<text x="352.5" y="172" text-anchor="middle" font-size="30" font-weight="700" fill="#0b5cab">ポン</text>
+<text x="352.5" y="196" text-anchor="middle" font-size="12" fill="#1c1c1e">全員オンの時点で</text>
+<text x="352.5" y="212" text-anchor="middle" font-size="12" fill="#1c1c1e">いちばんピンに近い人</text>
+<rect x="316.5" y="220" width="72" height="22" rx="11" fill="#ffffff" stroke="#cfe0f0"/>
+<text x="352.5" y="235" text-anchor="middle" font-size="12" font-weight="700" fill="#0b5cab">+1点</text>
+<rect x="480.0" y="44" width="200" height="205" rx="16" fill="#fdf3d8" stroke="#f0e0b6"/>
+<ellipse cx="580.0" cy="102" rx="58" ry="30" fill="#cdeccf"/>
+<line x1="580.0" y1="102" x2="580.0" y2="62" stroke="#6e6e73" stroke-width="2"/>
+<path d="M580.0 62 L602.0 70 L580.0 78 Z" fill="#d9534f"/>
+<ellipse cx="580.0" cy="106" rx="15" ry="7" fill="#3a3a3c"/>
+<circle cx="580.0" cy="86" r="8" fill="#ffffff" stroke="#6e6e73" stroke-width="2"/>
+<line x1="566.0" y1="74" x2="569.0" y2="80" stroke="#8a6100" stroke-width="2"/>
+<line x1="594.0" y1="74" x2="591.0" y2="80" stroke="#8a6100" stroke-width="2"/>
+<text x="580.0" y="172" text-anchor="middle" font-size="30" font-weight="700" fill="#8a6100">パン</text>
+<text x="580.0" y="196" text-anchor="middle" font-size="12" fill="#1c1c1e">最初にカップイン</text>
+<text x="580.0" y="212" text-anchor="middle" font-size="12" fill="#1c1c1e">した人</text>
+<rect x="544.0" y="220" width="72" height="22" rx="11" fill="#ffffff" stroke="#f0e0b6"/>
+<text x="580.0" y="235" text-anchor="middle" font-size="12" font-weight="700" fill="#8a6100">+1点</text>
+<rect x="25" y="266" width="650" height="56" rx="14" fill="#f2f5f9"/>
+<text x="350" y="290" text-anchor="middle" font-size="13" fill="#1c1c1e" font-weight="700">1ホールにつき3点。18ホール終了時点の合計点がいちばん多い人の勝ち</text>
+<text x="350" y="310" text-anchor="middle" font-size="12" fill="#6e6e73">「前半・後半・トータルの3本勝負（ナッソー）」をピンポンパンと呼ぶ場合は、まったく別のゲームです</text></svg>

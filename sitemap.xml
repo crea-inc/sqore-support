@@ -3,7 +3,7 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://sqore-golf.com/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <video:video>
@@ -25,7 +25,7 @@
   </url>
   <url>
     <loc>https://sqore-golf.com/score/bogey-on.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -67,31 +67,37 @@
   </url>
   <url>
     <loc>https://sqore-golf.com/rules/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sqore-golf.com/rules/olympic.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sqore-golf.com/rules/las-vegas.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sqore-golf.com/rules/nassau.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sqore-golf.com/rules/pinponpan.html</loc>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sqore-golf.com/rules/hole-best.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -121,7 +127,7 @@
   </url>
   <url>
     <loc>https://sqore-golf.com/rules/nearpin.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -133,7 +139,7 @@
   </url>
   <url>
     <loc>https://sqore-golf.com/rules/honest-john.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
