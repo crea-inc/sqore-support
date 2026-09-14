@@ -24,6 +24,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sqore-golf.com/score/handicap.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sqore-golf.com/score/bogey-on.html</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>

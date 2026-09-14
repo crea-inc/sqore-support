@@ -1,0 +1,62 @@
+<svg width="700" height="352" viewBox="0 0 700 352" role="img" aria-labelledby="hct hcd" xmlns="http://www.w3.org/2000/svg">
+<title id="hct">20ラウンドのスコアディファレンシャルとハンディキャップインデックス</title>
+<desc id="hcd">20ラウンドぶんのスコアディファレンシャルのうち、良い8つだけの平均がハンディキャップインデックス16.5になる。平均スコアから72を引いた22.7とは6打離れている。</desc>
+<rect width="700" height="352" fill="#ffffff"/>
+<text x="52" y="20" font-size="13" fill="#1c1c1e" font-weight="700">20ラウンドのスコアディファレンシャル（青＝採用される良い8つ）</text>
+<line x1="52" y1="308" x2="683" y2="308" stroke="#d8d8dd" stroke-width="1.5"/>
+<line x1="52" y1="167.4" x2="683" y2="167.4" stroke="#c0392b" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="52" y1="248.9" x2="683" y2="248.9" stroke="#0b5cab" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="62" y="183.1" width="22" height="124.9" rx="3" fill="#d3d8de"/>
+<text x="73.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">1</text>
+<rect x="93" y="166.1" width="22" height="141.9" rx="3" fill="#d3d8de"/>
+<text x="104.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">2</text>
+<rect x="124" y="168.7" width="22" height="139.3" rx="3" fill="#d3d8de"/>
+<text x="135.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">3</text>
+<rect x="155" y="230.5" width="22" height="77.5" rx="3" fill="#2596e0"/>
+<text x="166.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">4</text>
+<rect x="186" y="237.0" width="22" height="71.0" rx="3" fill="#2596e0"/>
+<text x="197.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">5</text>
+<rect x="217" y="160.8" width="22" height="147.2" rx="3" fill="#d3d8de"/>
+<text x="228.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">6</text>
+<rect x="248" y="216.0" width="22" height="92.0" rx="3" fill="#d3d8de"/>
+<text x="259.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">7</text>
+<rect x="279" y="214.7" width="22" height="93.3" rx="3" fill="#d3d8de"/>
+<text x="290.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">8</text>
+<rect x="310" y="243.6" width="22" height="64.4" rx="3" fill="#2596e0"/>
+<text x="321.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">9</text>
+<rect x="341" y="292.2" width="22" height="15.8" rx="3" fill="#2596e0"/>
+<text x="352.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">10</text>
+<rect x="372" y="160.8" width="22" height="147.2" rx="3" fill="#d3d8de"/>
+<text x="383.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">11</text>
+<rect x="403" y="92.5" width="22" height="215.5" rx="3" fill="#d3d8de"/>
+<text x="414.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">12</text>
+<rect x="434" y="183.1" width="22" height="124.9" rx="3" fill="#d3d8de"/>
+<text x="445.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">13</text>
+<rect x="465" y="247.5" width="22" height="60.5" rx="3" fill="#2596e0"/>
+<text x="476.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">14</text>
+<rect x="496" y="191.0" width="22" height="117.0" rx="3" fill="#d3d8de"/>
+<text x="507.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">15</text>
+<rect x="527" y="171.3" width="22" height="136.7" rx="3" fill="#d3d8de"/>
+<text x="538.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">16</text>
+<rect x="558" y="242.3" width="22" height="65.7" rx="3" fill="#2596e0"/>
+<text x="569.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">17</text>
+<rect x="589" y="229.1" width="22" height="78.9" rx="3" fill="#2596e0"/>
+<text x="600.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">18</text>
+<rect x="620" y="271.2" width="22" height="36.8" rx="3" fill="#2596e0"/>
+<text x="631.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">19</text>
+<rect x="651" y="183.1" width="22" height="124.9" rx="3" fill="#d3d8de"/>
+<text x="662.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">20</text>
+<line x1="54" y1="36" x2="84" y2="36" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="6 4"/>
+<text x="92" y="40" font-size="11.5" fill="#c0392b" font-weight="700">俗説「平均スコア − 72」＝ 22.7</text>
+<line x1="54" y1="58" x2="84" y2="58" stroke="#0b5cab" stroke-width="2.5" stroke-dasharray="6 4"/>
+<text x="92" y="62" font-size="11.5" fill="#0b5cab" font-weight="700">実際のハンディキャップインデックス ＝ 16.5</text>
+<text x="166.0" y="226.5" text-anchor="middle" font-size="9.5" fill="#0b5cab" font-weight="700">17.9</text>
+<text x="197.0" y="233.0" text-anchor="middle" font-size="9.5" fill="#0b5cab" font-weight="700">17.4</text>
+<text x="321.0" y="239.6" text-anchor="middle" font-size="9.5" fill="#0b5cab" font-weight="700">16.9</text>
+<text x="352.0" y="288.2" text-anchor="middle" font-size="9.5" fill="#0b5cab" font-weight="700">13.2</text>
+<text x="476.0" y="243.5" text-anchor="middle" font-size="9.5" fill="#0b5cab" font-weight="700">16.6</text>
+<text x="569.0" y="238.3" text-anchor="middle" font-size="9.5" fill="#0b5cab" font-weight="700">17.0</text>
+<text x="600.0" y="225.1" text-anchor="middle" font-size="9.5" fill="#0b5cab" font-weight="700">18.0</text>
+<text x="631.0" y="267.2" text-anchor="middle" font-size="9.5" fill="#0b5cab" font-weight="700">14.8</text>
+<text x="52" y="341" font-size="10.5" fill="#6e6e73">横軸はラウンド（古い順）。灰色の12ラウンドは計算に入らない。</text>
+</svg>

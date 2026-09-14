@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2596e0">
+<title>ゴルフのハンディキャップの計算方法｜20ラウンドで計算して検証した</title>
+<meta name="description" content="ゴルフのハンディキャップの計算方法を、JGAハンディキャップ規則の式で20ラウンド分シミュレーション。平均スコア−72との6.2打のズレ、廃止された0.96、コースハンディキャップの換算まで実測で検証します。">
+<link rel="canonical" href="https://sqore-golf.com/score/handicap.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SQORE">
+<meta property="og:title" content="ゴルフのハンディキャップの計算方法｜20ラウンドで計算して検証">
+<meta property="og:description" content="現行のJGAハンディキャップ規則の式で20ラウンドぶんを計算。平均スコア−72より6.2打も辛い理由、廃止された0.96、コースごとに7打変わるコースハンディキャップまで実測しました。">
+<meta property="og:url" content="https://sqore-golf.com/score/handicap.html">
+<meta property="og:image" content="https://sqore-golf.com/assets/og/og_handicap.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="20ラウンドのスコアディファレンシャルと、良い8つの平均で決まるハンディキャップインデックス">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6777357472">
+<link rel="apple-touch-icon" href="../assets/icon_180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_32.png">
+<link rel="icon" type="image/png" sizes="180x180" href="../assets/favicon_180.png">
+<link rel="stylesheet" href="../rules/rules.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "image": "https://sqore-golf.com/assets/og/og_handicap.png",
+  "headline": "ゴルフのハンディキャップの計算方法",
+  "inLanguage": "ja",
+  "datePublished": "2026-09-14",
+  "dateModified": "2026-09-14",
+  "author": { "@type": "Organization", "name": "株式会社クレア" },
+  "publisher": { "@type": "Organization", "name": "SQORE" },
+  "mainEntityOfPage": "https://sqore-golf.com/score/handicap.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "SQORE", "item": "https://sqore-golf.com/" },
+    { "@type": "ListItem", "position": 2, "name": "スコア管理機能", "item": "https://sqore-golf.com/score/" },
+    { "@type": "ListItem", "position": 3, "name": "ハンディキャップの計算方法" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ゴルフのハンディキャップはどうやって計算しますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "2段階です。まず1ラウンドごとに、スコアディファレンシャル＝（113÷スロープレーティング）×（調整グロススコア−コースレーティング−PCC調整値）を出します。次に、直近20ラウンドぶんのスコアディファレンシャルのうち良い8つを平均した数値が、ハンディキャップインデックスになります。20ラウンドに満たない場合は、枚数に応じて採用枚数と調整値が決まります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "「平均スコア − 72」がハンディキャップではないのですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "違います。実際に20ラウンドを計算したところ、平均グロス94.7のプレーヤーのハンディキャップインデックスは16.5でした。平均から72を引いた22.7とは6.2打の差があります。良い8つしか採用されないこと、コースレーティングはパーより高いことが多いこと、この2つで数字が下がります。平均スコアから引く方式では、実力より甘いハンデになります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "0.96を掛ける計算はもう使わないのですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "現行のハンディキャップ規則には0.96は出てきません。良い8つの平均がそのままハンディキャップインデックスです。ただし同じ20スコアで旧方式（良い10の平均×0.96）と比べると差は16.3と16.5で0.2しかなく、シミュレーションでも差は±0.5打の範囲でした。数字はほとんど変わらないので、古い解説を読んでしまっても致命傷にはなりません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "大叩きしたラウンドはハンディキャップにどう影響しますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "ほとんど影響しません。20ラウンドのうち良い8つしか使わないので、悪いラウンドは採用されないからです。実際にシミュレーションの21ラウンド目として調整グロス104、115を入れてもハンディキャップインデックスは16.5のまま動きませんでした。逆に、自己ベスト級の82を入れると15.6まで下がります。ハンディキャップは良い日だけでできています。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ハンディキャップインデックスとコースハンディキャップの違いは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "ハンディキャップインデックスはコースに依存しない実力の数値、コースハンディキャップはその日そのティーで実際にもらう打数です。コースハンディキャップ＝ハンディキャップインデックス×（スロープレーティング÷113）＋（コースレーティング−パー）で換算します。インデックス16.5でも、試算したコースでは14から20まで6打の幅が出ました。" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="../assets/icon_180.png" alt="SQOREアイコン">
+    <a href="../">SQORE</a>
+    <span class="tag">ポイント自動計算アプリ</span>
+    <nav class="topnav"><a href="../guide/">使い方</a><a href="./">スコア管理</a><a href="../rules/">ルール解説</a><a href="../support/">サポート</a><a class="appget" href="https://apps.apple.com/jp/app/id6777357472">アプリ入手</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+<nav class="crumb"><a href="../">ホーム</a> › <a href="./">スコア管理機能</a> › ハンディキャップの計算方法</nav>
+
+<article>
+<h1>ゴルフのハンディキャップの計算方法</h1>
+<p class="updated">SQORE編集部 ｜ 2026年9月14日更新</p>
+
+<p class="intro">ハンディキャップは<strong>「平均スコア − 72」ではありません</strong>。20ラウンドぶんのスコアを現行の式に通してみたところ、平均グロス<strong>94.7</strong>のプレーヤーのハンディキャップインデックスは<strong>16.5</strong>。平均から72を引いた22.7とは<strong>6.2打</strong>違いました。この記事では、JGA『ハンディキャップ規則』（2024年1月施行）の式をそのまま使って20ラウンドを計算し、よく言われる3つの通説を実測で確かめます。</p>
+
+<h2>まず、現行の計算式</h2>
+<p>計算は2段階です。<strong>1ラウンドごとに1つの数値を出し、その履歴からハンディキャップインデックスを決める</strong>という順番になります。</p>
+
+<div class="example">
+  <p class="ttl">① 1ラウンドごとの「スコアディファレンシャル」</p>
+  <p><strong>（113 ÷ スロープレーティング）×（調整グロススコア − コースレーティング − PCC調整値）</strong></p>
+  <p>小数第1位まで（小数第2位を四捨五入）。<br>PCC調整値は当日のコンディションによる自動調整で、−1.0〜+3.0の範囲。通常は0です。</p>
+</div>
+
+<div class="example">
+  <p class="ttl">② 20ラウンドたまったあとの「ハンディキャップインデックス」</p>
+  <p><strong>直近20ラウンドのスコアディファレンシャルのうち、良い8つの平均</strong>（規則5.2b）</p>
+  <p>0.96のような係数は掛けません。上限は54.0（規則5.3）。更新はスコアを提出した翌日、またはできるだけ速やかに（規則5.4）。</p>
+</div>
+
+<p>式に出てくる用語は、そろえて覚えておくと迷いません。</p>
+<div class="table-scroll">
+<table>
+  <tr><th class="nw">用語</th><th>意味</th></tr>
+  <tr><td class="nw"><strong>コースレーティング</strong></td><td>スクラッチプレーヤー（ハンデ0相当）がそのティーから回ったときの期待スコア。72.8のように小数で表されます。パーとは別物で、パー72のコースでもティーによって69台から73台まで幅があります。</td></tr>
+  <tr><td class="nw"><strong>スロープレーティング</strong></td><td>スクラッチではないプレーヤーにとっての相対的な難しさ。標準が<strong>113</strong>で、数字が大きいほど難しいコースです。式に113が出てくるのはこのためです。</td></tr>
+  <tr><td class="nw"><strong>調整グロススコア</strong></td><td>各ホールに<strong>ネットダブルボギー</strong>の上限をかけたあとのスコア。1ホールの大叩きがハンデを壊さないための仕組みです（後述）。</td></tr>
+  <tr><td class="nw"><strong>PCC調整値</strong></td><td>その日そのコースで提出されたスコア全体の傾向から自動計算される補正。−1.0〜+3.0（規則5.6）。</td></tr>
+</table>
+</div>
+
+<p>20ラウンドたまっていないときは、枚数ごとに採用枚数と調整値が決まっています（規則5.2a）。</p>
+<div class="table-scroll">
+<table>
+  <tr><th class="nw">提出枚数</th><th class="nw">採用する枚数</th><th class="nw">調整</th></tr>
+  <tr><td>3</td><td>良い1つ</td><td>−2.0</td></tr>
+  <tr><td>4</td><td>良い1つ</td><td>−1.0</td></tr>
+  <tr><td>5</td><td>良い1つ</td><td>なし</td></tr>
+  <tr><td>6</td><td>良い2つの平均</td><td>−1.0</td></tr>
+  <tr><td>7・8</td><td>良い2つの平均</td><td>なし</td></tr>
+  <tr><td>9〜11</td><td>良い3つの平均</td><td>なし</td></tr>
+  <tr><td>12〜14</td><td>良い4つの平均</td><td>なし</td></tr>
+  <tr><td>15・16</td><td>良い5つの平均</td><td>なし</td></tr>
+  <tr><td>17・18</td><td>良い6つの平均</td><td>なし</td></tr>
+  <tr><td>19</td><td>良い7つの平均</td><td>なし</td></tr>
+  <tr><td>20</td><td>良い8つの平均</td><td>なし</td></tr>
+</table>
+</div>
+<p class="note">3枚から出せます。「20ラウンド回らないと始まらない」わけではありません。</p>
+
+<h2>20ラウンドで計算してみた</h2>
+<p>実際にやってみます。パー72の5コースを回る、<strong>平均グロス94.7</strong>のプレーヤーを想定しました。コースレーティングとスロープレーティングは、日本のコースにありそうな範囲で設定しています。</p>
+
+<div class="table-scroll">
+<table>
+  <tr><th class="nw">コース</th><th class="nw">コースレーティング</th><th class="nw">スロープレーティング</th></tr>
+  <tr><td class="nw">A</td><td>70.2</td><td>118</td></tr>
+  <tr><td class="nw">B</td><td>71.4</td><td>124</td></tr>
+  <tr><td class="nw">C</td><td>72.8</td><td>131</td></tr>
+  <tr><td class="nw">D</td><td>69.6</td><td>113</td></tr>
+  <tr><td class="nw">E</td><td>71.9</td><td>127</td></tr>
+</table>
+</div>
+
+<p>この5コースを20ラウンド回った結果が次の表です。★が付いた8つが、ハンディキャップインデックスに採用されるラウンドです。</p>
+
+<div class="table-scroll">
+<table class="wide">
+  <tr><th class="nw">＃</th><th class="nw">コース</th><th class="nw">CR／スロープ</th><th class="nw">グロス</th><th class="nw">調整グロス</th><th class="nw">ディファレンシャル</th></tr>
+  <tr><td>1</td><td class="nw">B</td><td class="nw">71.4／124</td><td>95</td><td>95</td><td>21.5</td></tr>
+  <tr><td>2</td><td class="nw">A</td><td class="nw">70.2／118</td><td>97</td><td>94</td><td>22.8</td></tr>
+  <tr><td>3</td><td class="nw">C</td><td class="nw">72.8／131</td><td>101</td><td>99</td><td>22.6</td></tr>
+  <tr><td>4</td><td class="nw">B</td><td class="nw">71.4／124</td><td>93</td><td>91</td><td><strong>17.9 ★</strong></td></tr>
+  <tr><td>5</td><td class="nw">D</td><td class="nw">69.6／113</td><td>87</td><td>87</td><td><strong>17.4 ★</strong></td></tr>
+  <tr><td>6</td><td class="nw">E</td><td class="nw">71.9／127</td><td>99</td><td>98</td><td>23.2</td></tr>
+  <tr><td>7</td><td class="nw">A</td><td class="nw">70.2／118</td><td>92</td><td>90</td><td>19.0</td></tr>
+  <tr><td>8</td><td class="nw">C</td><td class="nw">72.8／131</td><td>96</td><td>95</td><td>19.1</td></tr>
+  <tr><td>9</td><td class="nw">B</td><td class="nw">71.4／124</td><td>91</td><td>90</td><td><strong>16.9 ★</strong></td></tr>
+  <tr><td>10</td><td class="nw">A</td><td class="nw">70.2／118</td><td>86</td><td>84</td><td><strong>13.2 ★</strong></td></tr>
+  <tr><td>11</td><td class="nw">E</td><td class="nw">71.9／127</td><td>98</td><td>98</td><td>23.2</td></tr>
+  <tr><td>12</td><td class="nw">D</td><td class="nw">69.6／113</td><td>102</td><td>98</td><td>28.4</td></tr>
+  <tr><td>13</td><td class="nw">B</td><td class="nw">71.4／124</td><td>96</td><td>95</td><td>21.5</td></tr>
+  <tr><td>14</td><td class="nw">C</td><td class="nw">72.8／131</td><td>93</td><td>92</td><td><strong>16.6 ★</strong></td></tr>
+  <tr><td>15</td><td class="nw">A</td><td class="nw">70.2／118</td><td>92</td><td>92</td><td>20.9</td></tr>
+  <tr><td>16</td><td class="nw">B</td><td class="nw">71.4／124</td><td>96</td><td>96</td><td>22.4</td></tr>
+  <tr><td>17</td><td class="nw">E</td><td class="nw">71.9／127</td><td>96</td><td>91</td><td><strong>17.0 ★</strong></td></tr>
+  <tr><td>18</td><td class="nw">A</td><td class="nw">70.2／118</td><td>91</td><td>89</td><td><strong>18.0 ★</strong></td></tr>
+  <tr><td>19</td><td class="nw">C</td><td class="nw">72.8／131</td><td>90</td><td>90</td><td><strong>14.8 ★</strong></td></tr>
+  <tr><td>20</td><td class="nw">B</td><td class="nw">71.4／124</td><td>103</td><td>95</td><td>21.5</td></tr>
+</table>
+</div>
+
+<p>★の8つは <strong>13.2・14.8・16.6・16.9・17.0・17.4・17.9・18.0</strong>。合計131.8を8で割って16.475、四捨五入して<strong>ハンディキャップインデックスは16.5</strong>です。</p>
+
+<figure class="figure">
+<svg viewBox="0 0 700 352" role="img" aria-labelledby="hct hcd" xmlns="http://www.w3.org/2000/svg">
+<title id="hct">20ラウンドのスコアディファレンシャルとハンディキャップインデックス</title>
+<desc id="hcd">20ラウンドぶんのスコアディファレンシャルのうち、良い8つだけの平均がハンディキャップインデックス16.5になる。平均スコアから72を引いた22.7とは6打離れている。</desc>
+<rect width="700" height="352" fill="#ffffff"/>
+<text x="52" y="20" font-size="13" fill="#1c1c1e" font-weight="700">20ラウンドのスコアディファレンシャル（青＝採用される良い8つ）</text>
+<line x1="52" y1="308" x2="683" y2="308" stroke="#d8d8dd" stroke-width="1.5"/>
+<line x1="52" y1="167.4" x2="683" y2="167.4" stroke="#c0392b" stroke-width="2" stroke-dasharray="6 4"/>
+<line x1="52" y1="248.9" x2="683" y2="248.9" stroke="#0b5cab" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="62" y="183.1" width="22" height="124.9" rx="3" fill="#d3d8de"/>
+<text x="73.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">1</text>
+<rect x="93" y="166.1" width="22" height="141.9" rx="3" fill="#d3d8de"/>
+<text x="104.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">2</text>
+<rect x="124" y="168.7" width="22" height="139.3" rx="3" fill="#d3d8de"/>
+<text x="135.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">3</text>
+<rect x="155" y="230.5" width="22" height="77.5" rx="3" fill="#2596e0"/>
+<text x="166.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">4</text>
+<rect x="186" y="237.0" width="22" height="71.0" rx="3" fill="#2596e0"/>
+<text x="197.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">5</text>
+<rect x="217" y="160.8" width="22" height="147.2" rx="3" fill="#d3d8de"/>
+<text x="228.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">6</text>
+<rect x="248" y="216.0" width="22" height="92.0" rx="3" fill="#d3d8de"/>
+<text x="259.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">7</text>
+<rect x="279" y="214.7" width="22" height="93.3" rx="3" fill="#d3d8de"/>
+<text x="290.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">8</text>
+<rect x="310" y="243.6" width="22" height="64.4" rx="3" fill="#2596e0"/>
+<text x="321.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">9</text>
+<rect x="341" y="292.2" width="22" height="15.8" rx="3" fill="#2596e0"/>
+<text x="352.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">10</text>
+<rect x="372" y="160.8" width="22" height="147.2" rx="3" fill="#d3d8de"/>
+<text x="383.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">11</text>
+<rect x="403" y="92.5" width="22" height="215.5" rx="3" fill="#d3d8de"/>
+<text x="414.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">12</text>
+<rect x="434" y="183.1" width="22" height="124.9" rx="3" fill="#d3d8de"/>
+<text x="445.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">13</text>
+<rect x="465" y="247.5" width="22" height="60.5" rx="3" fill="#2596e0"/>
+<text x="476.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">14</text>
+<rect x="496" y="191.0" width="22" height="117.0" rx="3" fill="#d3d8de"/>
+<text x="507.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">15</text>
+<rect x="527" y="171.3" width="22" height="136.7" rx="3" fill="#d3d8de"/>
+<text x="538.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">16</text>
+<rect x="558" y="242.3" width="22" height="65.7" rx="3" fill="#2596e0"/>
+<text x="569.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">17</text>
+<rect x="589" y="229.1" width="22" height="78.9" rx="3" fill="#2596e0"/>
+<text x="600.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">18</text>
+<rect x="620" y="271.2" width="22" height="36.8" rx="3" fill="#2596e0"/>
+<text x="631.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">19</text>
+<rect x="651" y="183.1" width="22" height="124.9" rx="3" fill="#d3d8de"/>
+<text x="662.0" y="322" text-anchor="middle" font-size="9" fill="#8e8e93">20</text>
+<line x1="54" y1="36" x2="84" y2="36" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="6 4"/>
+<text x="92" y="40" font-size="11.5" fill="#c0392b" font-weight="700">俗説「平均スコア − 72」＝ 22.7</text>
+<line x1="54" y1="58" x2="84" y2="58" stroke="#0b5cab" stroke-width="2.5" stroke-dasharray="6 4"/>
+<text x="92" y="62" font-size="11.5" fill="#0b5cab" font-weight="700">実際のハンディキャップインデックス ＝ 16.5</text>
+<text x="166.0" y="226.5" text-anchor="middle" font-size="9.5" fill="#0b5cab" font-weight="700">17.9</text>
+<text x="197.0" y="233.0" text-anchor="middle" font-size="9.5" fill="#0b5cab" font-weight="700">17.4</text>
+<text x="321.0" y="239.6" text-anchor="middle" font-size="9.5" fill="#0b5cab" font-weight="700">16.9</text>
+<text x="352.0" y="288.2" text-anchor="middle" font-size="9.5" fill="#0b5cab" font-weight="700">13.2</text>
+<text x="476.0" y="243.5" text-anchor="middle" font-size="9.5" fill="#0b5cab" font-weight="700">16.6</text>
+<text x="569.0" y="238.3" text-anchor="middle" font-size="9.5" fill="#0b5cab" font-weight="700">17.0</text>
+<text x="600.0" y="225.1" text-anchor="middle" font-size="9.5" fill="#0b5cab" font-weight="700">18.0</text>
+<text x="631.0" y="267.2" text-anchor="middle" font-size="9.5" fill="#0b5cab" font-weight="700">14.8</text>
+<text x="52" y="341" font-size="10.5" fill="#6e6e73">横軸はラウンド（古い順）。灰色の12ラウンドは計算に入らない。</text>
+</svg>
+<figcaption>20ラウンドのうち、ハンディキャップに使われるのは青い8つだけ。灰色の12ラウンドは1打も効いていません。</figcaption>
+</figure>
+
+<p class="note">シミュレーションの前提：ホールごとのスコアを乱数で生成し、PCC調整値は0、ネットダブルボギーのハンディキャップストロークはパーの大きいホールから順に配分しています（実際のコースではホールごとに定められたハンディキャップ順に配分します）。</p>
+
+<h2>検証① 「平均スコア − 72」は6打も甘い</h2>
+<p>このプレーヤーの平均グロスは94.7。よく言われる「平均スコアからパーを引く」だと<strong>22.7</strong>ですが、実際のハンディキャップインデックスは<strong>16.5</strong>。<strong>6.2打も違います</strong>。</p>
+<p>理由は2つです。</p>
+<ul>
+  <li><strong>良い8つしか採用されない。</strong>20ラウンドの平均ではなく、上位40%の平均です。規則5の理念には「プレーヤーの実証された技量を示すべき」とあり、平均的な日ではなく<strong>力を出せた日</strong>のほうに基準を置いています。「だいたいこのくらいで回る」ではなく「調子が良ければこのくらいで回れる」という数値です。</li>
+  <li><strong>基準はパーではなくコースレーティング。</strong>パー72でもコースレーティングは69.6〜72.8。基準がパーより高いコースでは、同じグロスでもディファレンシャルは小さくなります。</li>
+</ul>
+<p>プレーヤーの実力を変えて同じ計算を4,000回ずつ繰り返すと、ズレは一定ではなく<strong>スコアが悪い人ほど大きく</strong>なりました。</p>
+
+<div class="table-scroll">
+<table class="wide">
+  <tr><th class="nw">平均グロス</th><th class="nw">平均 − 72</th><th class="nw">実際のHDCPインデックス</th><th class="nw">ズレ</th></tr>
+  <tr><td>80</td><td>8.0</td><td>2.4</td><td>5.6</td></tr>
+  <tr><td>85</td><td>13.1</td><td>6.9</td><td>6.2</td></tr>
+  <tr><td>90</td><td>18.1</td><td>11.4</td><td>6.7</td></tr>
+  <tr><td>95</td><td>23.2</td><td>16.1</td><td>7.2</td></tr>
+  <tr><td>100</td><td>28.0</td><td>20.4</td><td>7.6</td></tr>
+  <tr><td>105</td><td>33.2</td><td>25.0</td><td>8.2</td></tr>
+</table>
+</div>
+<p class="note">平均グロスは実測値。各行4,000回試行の平均。コースは上記5つからランダムに選択。</p>
+<p>ざっくり言えば、<strong>平均スコアから72を引いた数より6〜8打小さいあたり</strong>が実際のハンディキャップインデックスです。プライベートコンペで「平均110だからハンデ38ね」とやると、その人はかなり得をします。</p>
+
+<h2>検証② 「0.96を掛ける」はもう規則に無い（けれど数字は変わらない）</h2>
+<p>日本語で「ハンディキャップ 計算」を調べると、いまも<strong>「ディファレンシャルの平均に0.96を掛ける」「良い10枚を使う」</strong>と書いたページが上位に出てきます。これは<strong>WHS（ワールドハンディキャップシステム）に移行する前のJGA/USGAハンディキャップ規定</strong>の式です。WHSは2020年から、日本を含む世界共通のハンディキャップ規則として動いています。JGAのサイトにも当時の解説PDFが残っているので、混ざるのも無理はありません。</p>
+<p>では数字はどれだけ違うのか。同じ20ラウンドで両方を計算しました。</p>
+
+<div class="table-scroll">
+<table>
+  <tr><th class="nw">方式</th><th>計算</th><th class="nw">結果</th></tr>
+  <tr><td class="nw"><strong>現行（WHS）</strong></td><td>良い8つの平均 16.475</td><td class="nw"><strong>16.5</strong></td></tr>
+  <tr><td class="nw">旧方式</td><td>良い10の平均 16.99 × 0.96 ＝ 16.3104（小数第2位切り捨て）</td><td class="nw">16.3</td></tr>
+</table>
+</div>
+
+<p><strong>0.2しか違いません。</strong>実力を変えて繰り返しても、差は±0.5打の範囲に収まりました。</p>
+
+<div class="table-scroll">
+<table class="wide">
+  <tr><th class="nw">平均グロス</th><th class="nw">現行（良い8つ）</th><th class="nw">旧方式（良い10×0.96）</th><th class="nw">差</th></tr>
+  <tr><td>80</td><td>2.4</td><td>2.9</td><td>+0.5</td></tr>
+  <tr><td>85</td><td>6.9</td><td>7.3</td><td>+0.4</td></tr>
+  <tr><td>90</td><td>11.4</td><td>11.6</td><td>+0.2</td></tr>
+  <tr><td>95</td><td>16.1</td><td>16.1</td><td>±0.0</td></tr>
+  <tr><td>100</td><td>20.4</td><td>20.3</td><td>−0.1</td></tr>
+  <tr><td>105</td><td>25.0</td><td>24.7</td><td>−0.3</td></tr>
+</table>
+</div>
+<p class="note">旧方式は上手い人ほど甘く、スコアが悪い人ほど辛く出ます。ただしどちらも1打未満です。</p>
+
+<p>つまり<strong>0.96そのものは大した問題ではない</strong>ということです。古い解説を読んで困るのは、係数ではなくこちらの5点です。</p>
+<div class="table-scroll">
+<table class="wide">
+  <tr><th class="nw">項目</th><th class="nw">旧（WHS移行前）</th><th class="nw">現行</th></tr>
+  <tr><td class="nw">採用枚数</td><td>20枚中 良い10枚</td><td>20枚中 良い8つ</td></tr>
+  <tr><td class="nw">係数</td><td>平均 × 0.96</td><td>なし（平均そのまま）</td></tr>
+  <tr><td class="nw">大叩きの処理</td><td>ストロークコントロール（ESC）</td><td>ネットダブルボギー</td></tr>
+  <tr><td class="nw">更新</td><td>毎月1日</td><td>スコア提出の翌日</td></tr>
+  <tr><td class="nw">コースハンデ換算</td><td>インデックス × スロープ ÷ 113</td><td>＋（コースレーティング − パー）が付く</td></tr>
+</table>
+</div>
+<p>最後の行が、実は一番ズレます。あとで見ます。</p>
+
+<h2>検証③ 大叩きしてもハンデはほとんど上がらない</h2>
+<p>「大叩きするとハンデが上がる」と思われがちですが、<strong>良い8つしか使わない</strong>以上、悪いラウンドは採用されません。先ほどの20ラウンドに21ラウンド目を足して（いちばん古い1ラウンド目が抜けます）、インデックスがどう動くか見ます。</p>
+
+<div class="table-scroll">
+<table class="wide">
+  <tr><th class="nw">21ラウンド目</th><th class="nw">ディファレンシャル</th><th class="nw">新しいHDCPインデックス</th><th class="nw">変化</th></tr>
+  <tr><td class="nw">コースAで調整グロス82</td><td>11.3</td><td><strong>15.6</strong></td><td><strong>−0.9</strong></td></tr>
+  <tr><td class="nw">コースAで調整グロス88</td><td>17.0</td><td>16.4</td><td>−0.1</td></tr>
+  <tr><td class="nw">コースBで調整グロス94</td><td>20.6</td><td>16.5</td><td>±0.0</td></tr>
+  <tr><td class="nw">コースBで調整グロス104</td><td>29.7</td><td>16.5</td><td>±0.0</td></tr>
+  <tr><td class="nw">コースBで調整グロス115</td><td>39.7</td><td>16.5</td><td>±0.0</td></tr>
+</table>
+</div>
+
+<p>104でも115でも<strong>まったく動きません</strong>。ハンディキャップは良い日だけでできていて、悪い日は記録に残るだけです。逆に、自己ベスト級を1回出すと一気に0.9下がります。<strong>下がるのは速く、上がるのは遅い</strong>のが現行システムの性格です。</p>
+<p>「じゃあ調子を落としたら永遠に辛いハンデのままか」というと、そこには別の仕組みがあります。</p>
+<div class="table-scroll">
+<table>
+  <tr><th class="nw">仕組み</th><th>内容</th></tr>
+  <tr><td class="nw"><strong>ローハンディキャップインデックス</strong></td><td>過去365日でいちばん低かったインデックス（規則5.7）。これが基準になります。</td></tr>
+  <tr><td class="nw"><strong>ソフトキャップ</strong></td><td>ローハンディキャップインデックスより3.0を超えて上がろうとすると、超えた分の増加を50%に抑えます（規則5.8）。</td></tr>
+  <tr><td class="nw"><strong>ハードキャップ</strong></td><td>ソフトキャップ適用後も、ローハンディキャップインデックス＋5.0が上限。ここで止まります（規則5.8）。</td></tr>
+</table>
+</div>
+<p class="note">下がるほうには制限がありません。1年前の好調時の数字が、その後1年ぶん自分を縛ります。</p>
+
+<h2>ここが一番ズレる：コースハンディキャップ</h2>
+<p>ハンディキャップインデックスは<strong>コースに依存しない実力の数値</strong>です。その日実際にもらう打数は、プレーするコースとティーごとに換算します。</p>
+
+<div class="example">
+  <p class="ttl">コースハンディキャップ（規則6.1a）</p>
+  <p><strong>ハンディキャップインデックス ×（スロープレーティング ÷ 113）＋（コースレーティング − パー）</strong></p>
+  <p>整数に四捨五入します。</p>
+</div>
+
+<p>インデックス16.5を、さきほどの5コースで換算するとこうなります。</p>
+<div class="table-scroll">
+<table class="wide">
+  <tr><th class="nw">コース</th><th class="nw">CR／スロープ</th><th class="nw">コースハンディキャップ</th><th class="nw">（CR−パー）を落とすと</th></tr>
+  <tr><td class="nw">D</td><td class="nw">69.6／113</td><td><strong>14</strong></td><td>16（+2）</td></tr>
+  <tr><td class="nw">A</td><td class="nw">70.2／118</td><td><strong>15</strong></td><td>17（+2）</td></tr>
+  <tr><td class="nw">B</td><td class="nw">71.4／124</td><td><strong>18</strong></td><td>18（±0）</td></tr>
+  <tr><td class="nw">E</td><td class="nw">71.9／127</td><td><strong>18</strong></td><td>19（+1）</td></tr>
+  <tr><td class="nw">C</td><td class="nw">72.8／131</td><td><strong>20</strong></td><td>19（−1）</td></tr>
+</table>
+</div>
+
+<p><strong>同じ16.5でも14から20まで6打の幅</strong>が出ます。インデックスだけを見て「私はハンデ16だから」と言っても、その日何打もらうかは決まりません。</p>
+<p>そして、古い式のまま<strong>（コースレーティング − パー）を足していない</strong>解説がまだ多く残っています。この項を落とすと、やさしいコースで<strong>2打多くもらってしまう</strong>ことになります。ハンデは辛いほうに間違えるのはまだしも、甘いほうに間違えると同伴者に説明できません。</p>
+
+<h2>ネットダブルボギー（1ホールの上限）</h2>
+<p>調整グロススコアに使う上限です。1ホールの大叩きでハンディキャップが壊れないようにする仕組みで、旧システムのストロークコントロール（ESC）に代わるものです。</p>
+
+<div class="example">
+  <p class="ttl">1ホールの上限</p>
+  <p><strong>パー ＋ 2 ＋ そのホールで受けるハンディキャップストローク</strong></p>
+  <p>上限を超えたホールの数に制限はありません。何ホールでも切り下げます。</p>
+</div>
+
+<p>シミュレーションの20ラウンド目がいい例です。グロス103でしたが、調整グロスは95。<strong>8打削れています</strong>。</p>
+<div class="table-scroll">
+<table>
+  <tr><th class="nw">ホール</th><th class="nw">パー</th><th class="nw">実際</th><th class="nw">上限</th><th class="nw">記録</th></tr>
+  <tr><td>6番</td><td>4</td><td>9</td><td>7</td><td><strong>7</strong></td></tr>
+  <tr><td>15番</td><td>4</td><td>13</td><td>7</td><td><strong>7</strong></td></tr>
+</table>
+</div>
+<p class="note">このラウンドのコースハンディキャップは19なので、パー4のホールは4＋2＋1＝7が上限。15番で13を打っても、ハンディキャップの計算には7としか入りません。</p>
+<p>20ラウンド全体では、グロス平均94.7に対して調整グロス平均は92.95。<strong>平均1.75打</strong>削れ、20ラウンド中14ラウンドで調整が入りました。</p>
+
+<h2>公式ハンディキャップを持っていない場合</h2>
+<p>ここまでの計算は、JGAの<strong>J-sys</strong>に加盟ゴルフ場・団体を通じてスコアを提出することで、自動的に処理されます。個人で正式なハンディキャップインデックスを取るには、まずその窓口を持つことになります。</p>
+<p>持っていない仲間内のコンペでは、当日のスコアだけでハンデを作る<strong>新ペリア方式</strong>が定番です。こちらは考え方がまったく違い、ハンディキャップインデックスのように実力を積み上げるものではありません。</p>
+<div class="example">
+  <p class="ttl">新ペリアとの違い</p>
+  <p>ハンディキャップインデックスは<strong>20ラウンドの履歴</strong>から実力を出す。新ペリアは<strong>その日の12ホール</strong>だけから即席で作る。だから新ペリアは運の要素が大きく、上手い人が勝ちにくくなります。→ <a href="../rules/new-peria.html">新ペリアは本当に「誰でも優勝できる」のか</a></p>
+</div>
+<p>どちらにしても、元になるのは自分のスコア履歴です。20ラウンドぶんのグロスと、回ったコースが手元に残っていれば、この記事の式でいつでも自分の数値を試算できます。</p>
+
+<h2>よくある質問</h2>
+<div class="faq">
+  <details>
+    <summary>ゴルフのハンディキャップはどうやって計算しますか？</summary>
+    <p>2段階です。まず1ラウンドごとに、スコアディファレンシャル＝（113÷スロープレーティング）×（調整グロススコア−コースレーティング−PCC調整値）を出します。次に、直近20ラウンドぶんのスコアディファレンシャルのうち良い8つを平均した数値が、ハンディキャップインデックスになります。20ラウンドに満たない場合は、枚数に応じて採用枚数と調整値が決まります。</p>
+  </details>
+  <details>
+    <summary>「平均スコア − 72」がハンディキャップではないのですか？</summary>
+    <p>違います。実際に20ラウンドを計算したところ、平均グロス94.7のプレーヤーのハンディキャップインデックスは16.5でした。平均から72を引いた22.7とは6.2打の差があります。良い8つしか採用されないこと、コースレーティングはパーより高いことが多いこと、この2つで数字が下がります。平均スコアから引く方式では、実力より甘いハンデになります。</p>
+  </details>
+  <details>
+    <summary>0.96を掛ける計算はもう使わないのですか？</summary>
+    <p>現行のハンディキャップ規則には0.96は出てきません。良い8つの平均がそのままハンディキャップインデックスです。ただし同じ20スコアで旧方式（良い10の平均×0.96）と比べると差は16.3と16.5で0.2しかなく、シミュレーションでも差は±0.5打の範囲でした。数字はほとんど変わらないので、古い解説を読んでしまっても致命傷にはなりません。</p>
+  </details>
+  <details>
+    <summary>大叩きしたラウンドはハンディキャップにどう影響しますか？</summary>
+    <p>ほとんど影響しません。20ラウンドのうち良い8つしか使わないので、悪いラウンドは採用されないからです。実際にシミュレーションの21ラウンド目として調整グロス104、115を入れてもハンディキャップインデックスは16.5のまま動きませんでした。逆に、自己ベスト級の82を入れると15.6まで下がります。ハンディキャップは良い日だけでできています。</p>
+  </details>
+  <details>
+    <summary>ハンディキャップインデックスとコースハンディキャップの違いは何ですか？</summary>
+    <p>ハンディキャップインデックスはコースに依存しない実力の数値、コースハンディキャップはその日そのティーで実際にもらう打数です。コースハンディキャップ＝ハンディキャップインデックス×（スロープレーティング÷113）＋（コースレーティング−パー）で換算します。インデックス16.5でも、試算したコースでは14から20まで6打の幅が出ました。</p>
+  </details>
+</div>
+
+<div class="related">
+  <h2>あわせて読む</h2>
+  <ul>
+    <li><a href="bogey-on.html">ボギーオン率とは<small>パーオン率より先に見るべき理由とスコア別の目安</small></a></li>
+    <li><a href="../rules/new-peria.html">新ペリアは本当に「誰でも優勝できる」のか<small>3万回シミュレーションで検証。優勝の45.9%は70台前半</small></a></li>
+    <li><a href="../rules/peria-compare.html">ペリア・新ペリア・新新ペリアの違い<small>変わるのは隠しホールの数だけ。平均ハンデは同じ</small></a></li>
+    <li><a href="./">SQOREのスコア管理機能<small>記録できることと分析できること</small></a></li>
+    <li><a href="compare.html">ゴルフスコア管理アプリの違い<small>GDO・楽天・GN+・SQOREを各社の公式情報で比較</small></a></li>
+    <li><a href="../course/sauna-gaikiyoku.html">サウナで外気浴までできるゴルフ場<small>関東134施設を確認。行けるのは8コース</small></a></li>
+  </ul>
+</div>
+
+<div class="cta">
+  <p class="ttl">ハンデの元になるのは、20ラウンドぶんのスコア</p>
+  <p>SQOREはラウンドを全部残せる無料アプリです。コースを選べばPARは自動、紙のスコアカードは写真から取り込めます。</p>
+  <div class="store-btns">
+    <a class="store-badge store-badge-apple" href="https://apps.apple.com/jp/app/id6777357472">
+      <img src="../assets/badge_appstore_ja.svg" alt="App Store からダウンロード" width="136" height="50">
+    </a>
+    <a class="store-badge store-badge-google" href="https://play.google.com/store/apps/details?id=com.sqore.app">
+      <img src="../assets/badge_googleplay_ja.png" alt="Google Play で手に入れよう" width="168" height="65">
+    </a>
+  </div>
+</div>
+
+<p class="note">出典：JGA『ハンディキャップ規則』（2024年1月施行）。旧方式の記述はJGA/USGAハンディキャップ規定の解説資料によります。本記事のシミュレーションは編集部が同規則の式を実装して計算したもので、公式なハンディキャップの査定ではありません。</p>
+</article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 株式会社クレア</span>
+    <a href="../">SQOREトップ</a>
+    <a href="../rules/">ゲームルール解説</a>
+    <a href="./">スコア管理</a>
+    <a href="../course/">ゴルフ場選び</a>
+    <a href="../guide/">使い方</a>
+    <a href="../support/">サポート</a>
+    <a href="../privacy/">プライバシーポリシー</a>
+  </div>
+</footer>
+
+<div class="dl-bar">
+  <img src="../assets/icon_180.png" alt="">
+  <span class="txt"><b>SQORE</b>ゴルフのポイント自動計算</span>
+  <a class="get" href="https://apps.apple.com/jp/app/id6777357472">入手</a>
+</div>
+<script>
+/* ヘッダーの出し入れ。下スクロールで隠し、上スクロールで戻す。 */
+(function () {
+  var h = document.querySelector('header.site');
+  if (!h) return;
+  var last = 0;
+  addEventListener('scroll', function () {
+    var y = window.scrollY > 0 ? window.scrollY : 0;
+    if (y > last && y > 140) h.classList.add('hide');
+    else if (y < last) h.classList.remove('hide');
+    last = y;
+  }, { passive: true });
+})();
+</script>
+<script>(function(){if(!/Android/i.test(navigator.userAgent))return;var u='https://play.google.com/store/apps/details?id=com.sqore.app';Array.prototype.forEach.call(document.querySelectorAll('.dl-bar a.get,a.appget'),function(a){a.href=u;});})();</script>
+</body>
+</html>
