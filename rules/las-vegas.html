@@ -45,9 +45,9 @@
   "step": [
     { "@type": "HowToStep", "name": "チーム分け", "text": "4人を2人1組×2チームに分けます。打順の1・4番手と2・3番手で組むのが定番です。" },
     { "@type": "HowToStep", "name": "2桁の数字を作る", "text": "各チームは2人の打数を並べて2桁の数字を作ります。小さい打数が10の位、大きい打数が1の位です（4打と5打なら45）。" },
-    { "@type": "HowToStep", "name": "差をポイントにする", "text": "両チームの数字の差がそのホールで動くポイントです（45と56なら11ポイント）。勝ったチームの2人がそれぞれ獲得し、負けたチームの2人がそれぞれ失います。" },
+    { "@type": "HowToStep", "name": "差をポイントにする", "text": "両チームの数字の差がそのホールで動くポイントです（45と56なら11pt）。勝ったチームの2人がそれぞれ獲得し、負けたチームの2人がそれぞれ失います。" },
     { "@type": "HowToStep", "name": "特別ルールを適用する", "text": "バーディが出たら相手チームの数字を反転（45→54）または倍、ダブルパーを叩いたら自チームの数字を反転、引き分けは次のホールに倍率をキャリーします。" },
-    { "@type": "HowToStep", "name": "清算する", "text": "18ホールぶんのポイントを合計します。各ホールがゼロサムなので、全員の合計は常に0になります。" }
+    { "@type": "HowToStep", "name": "精算する", "text": "18ホールぶんのポイントを合計します。各ホールがゼロサムなので、全員の合計は常に0になります。" }
   ]
 }
 </script>
@@ -75,7 +75,7 @@
     {
       "@type": "Question",
       "name": "ラスベガスは3人でもできますか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "できます。架空の4人目（ゴースト）を立てて2対2にするのが一般的です。ゴーストのスコアはボギー固定・ダブルボギー固定・平均スコアからのランダムなどの方式があります。アプリのSQOREは3人ラウンドのゴースト設定に対応しています。" }
+      "acceptedAnswer": { "@type": "Answer", "text": "できます。架空の4人目（ゴースト）を立てて2対2にするのが一般的です。ゴーストのスコアはボギー固定・ダブルボギー固定・ホールごとに抽選（ルーレット）などの方式があります。アプリのSQOREは3人ラウンドのゴースト設定に対応しています。" }
     },
     {
       "@type": "Question",
@@ -117,17 +117,18 @@
   <p class="ttl">計算例（PAR4）</p>
   <p>チームA: 4打と5打 → <strong>45</strong><br>
   チームB: 5打と6打 → <strong>56</strong><br>
-  差は 56 − 45 = <strong>11</strong>。チームAの2人がそれぞれ11ポイントずつ獲得（＝チームBの2人がそれぞれ11ポイントずつ失う）。</p>
+  差は 56 − 45 = <strong>11</strong>。チームAの2人がそれぞれ11ptずつ獲得（＝チームBの2人がそれぞれ11ptずつ失う）。</p>
 </div>
 
 <div class="example">
   <p class="ttl">SQOREでの扱い</p>
-  <p>アプリの<a href="../">SQORE</a>は得点方式を3つから選べます。<strong>既定は「1の位は勝ちのみ5pt」</strong>で、10の位の差はそのまま点にし、1の位の差は勝った側に固定で5ptだけ乗せる方式です。</p>
-  <p class="note" style="margin-top:8px">上で説明した「2桁の数字の差をそのまま点にする」古典的な形は<strong>「1ptで計算」</strong>を選べば同じになります。ほかに10の位の差だけを見る「10の位だけ」もあります。1の位まで丸ごと点にすると1ホールの振れ幅が大きくなりすぎるため、既定を固定点にしてあります。仲間内の流儀に合わせて変えてください。</p>
+  <p>アプリの<a href="../">SQORE</a>は得点方式を3つから選べます。<strong>既定は「1の位は勝ちのみ5pt」</strong>で、10の位の差1つにつき10pt、1の位は差の大きさに関係なく、10の位で勝った側が1の位でも小さければ5ptだけ乗せる方式です（10の位が同じなら、1の位が小さい側に5pt）。</p>
+  <p style="margin-top:8px">例：45対56なら10の位の差1×10＝10pt、1の位も5対6で勝っているので＋5pt＝<strong>15pt</strong>。46対55のように1の位で負けていれば10ptだけです。</p>
+  <p class="note" style="margin-top:8px">上で説明した「2桁の数字の差をそのままptにする」古典的な形は<strong>「1ptで計算」</strong>を選べば同じになります。ほかに10の位の差だけを見る「10の位だけ」もあります。1の位の差まで丸ごとptにすると1ホールの振れ幅が大きくなりすぎるため、既定を固定点にしてあります。仲間内の流儀に合わせて変えてください。</p>
 </div>
 
 <figure class="figure">
-<svg viewBox="0 0 700 270" role="img" aria-labelledby="lvt lvd" xmlns="http://www.w3.org/2000/svg"><title id="lvt">ラスベガスの2桁の数字の作り方</title><desc id="lvd">自分4打と相棒5打で45、相手チームは5打と6打で56。差の11点が動く。</desc><rect width="700" height="270" fill="#ffffff"/>
+<svg viewBox="0 0 700 270" role="img" aria-labelledby="lvt lvd" xmlns="http://www.w3.org/2000/svg"><title id="lvt">ラスベガスの2桁の数字の作り方</title><desc id="lvd">自分4打と相棒5打で45、相手チームは5打と6打で56。差の11ptが動く。</desc><rect width="700" height="270" fill="#ffffff"/>
 <text x="160" y="32" text-anchor="middle" font-size="13" fill="#6e6e73">自分たちのチーム</text>
 <rect x="40" y="44" width="100" height="64" rx="12" fill="#eaf3fc"/>
 <text x="90" y="88" text-anchor="middle" font-size="30" fill="#0b5cab" font-weight="700">4</text>
@@ -152,7 +153,7 @@
 <text x="540" y="228" text-anchor="middle" font-size="11" fill="#6e6e73">小さい数字が十の位</text>
 <line x1="380" y1="60" x2="380" y2="215" stroke="#eef1f5" stroke-width="2"/>
 <rect x="258" y="238" width="184" height="26" rx="10" fill="#f0a500"/>
-<text x="350" y="257" text-anchor="middle" font-size="14" fill="#7a5300" font-weight="700">差の 11 点が動く</text>
+<text x="350" y="257" text-anchor="middle" font-size="14" fill="#7a5300" font-weight="700">差の 11 pt が動く</text>
 </svg>
 <figcaption>2人の打数を並べて2桁を作ります。<strong>小さいほうが必ず十の位</strong>。あとは相手チームとの差が動くポイントです。</figcaption>
 </figure>
@@ -185,7 +186,7 @@
 <p>ハーフに1回など回数を決めて、<strong>宣言したホールの倍率を上げられる</strong>ルールです。負けているチームの一発逆転手段として人気があります。</p>
 
 <h2>3人でやる場合 — ゴースト</h2>
-<p>3人のときは架空の4人目「ゴースト」を立てて2対2にします。ゴーストのスコアは<strong>ボギー固定／ダブルボギー固定／平均スコアからのランダム／相方と同じ</strong>などの方式があります。</p>
+<p>3人のときは架空の4人目「ゴースト」を立てて2対2にします。ゴーストのスコアは<strong>ボギー固定／ダブルボギー固定／ホールごとに抽選（ルーレット）／相方と同じ</strong>などの方式があります。</p>
 
 <h2>アプリなら打数を入れるだけ</h2>
 <div class="app-shot">
@@ -198,23 +199,23 @@
 </div>
 
 <h2>18ホール通しの計算例</h2>
-<p>実際の1ラウンドを通して見ると流れがつかめます。A・Dチーム vs B・Cチーム、<strong>数字の差=1打1pt・バーディで相手反転・ダブルパーで自チーム反転・ダブルパーカット・引き分けはキャリー</strong>という定番設定の例です（ポイントは検証済みの自動計算によるものです）。</p>
+<p>実際の1ラウンドを通して見ると流れがつかめます。A・Dチーム vs B・Cチーム、<strong>数字の差1につき1pt・バーディで相手反転・ダブルパーで自チーム反転・ダブルパーカット・引き分けはキャリー</strong>という定番設定の例です（ポイントは検証済みの自動計算によるものです）。</p>
 <div class="table-scroll">
 <table>
   <tr><th>H</th><th>PAR</th><th>A/B/C/Dの打数</th><th>数字</th><th>結果</th><th>A・D累計</th></tr>
   <tr><td>1</td><td>4</td><td>4・5・5・4</td><td>44 vs 55</td><td>A・D +11</td><td>+11</td></tr>
   <tr><td>2</td><td>4</td><td>5・5・4・4</td><td>45 vs 45</td><td>引き分け→キャリー</td><td>+11</td></tr>
   <tr><td>3</td><td>3</td><td>3・4・3・4</td><td>34 vs 34</td><td>引き分け→キャリー</td><td>+11</td></tr>
-  <tr><td>4</td><td>5</td><td>5・6・5・5</td><td>55 vs 56</td><td>差1×キャリー3 → A・D +3</td><td>+14</td></tr>
+  <tr><td>4</td><td>5</td><td>5・6・5・5</td><td>55 vs 56</td><td>差1×3倍（2ホール分持ち越し） → A・D +3</td><td>+14</td></tr>
   <tr><td>5</td><td>4</td><td><strong>3</strong>・5・4・4</td><td>34 vs 45</td><td>Aバーディで相手反転(45→54) → A・D +20</td><td>+34</td></tr>
   <tr><td>6</td><td>4</td><td>4・4・5・5</td><td>45 vs 45</td><td>引き分け→キャリー</td><td>+34</td></tr>
-  <tr><td>7</td><td>3</td><td>4・3・3・3</td><td>34 vs 33</td><td>差1×キャリー2 → B・C +2</td><td>+32</td></tr>
+  <tr><td>7</td><td>3</td><td>4・3・3・3</td><td>34 vs 33</td><td>差1×2倍（1ホール分持ち越し） → B・C +2</td><td>+32</td></tr>
   <tr><td>8</td><td>5</td><td>6・5・5・5</td><td>56 vs 55</td><td>B・C +1</td><td>+31</td></tr>
   <tr><td>9</td><td>4</td><td>4・4・4・<strong>8</strong></td><td>48 vs 44</td><td>Dダブルパーで自チーム反転(48→84) → B・C +40</td><td>−9</td></tr>
   <tr><td>10</td><td>4</td><td>4・4・5・4</td><td>44 vs 45</td><td>A・D +1</td><td>−8</td></tr>
   <tr><td>11</td><td>3</td><td>3・3・4・3</td><td>33 vs 34</td><td>A・D +1</td><td>−7</td></tr>
   <tr><td>12</td><td>5</td><td>5・5・5・5</td><td>55 vs 55</td><td>引き分け→キャリー</td><td>−7</td></tr>
-  <tr><td>13</td><td>4</td><td>4・6・5・4</td><td>44 vs 56</td><td>差12×キャリー2 → A・D +24</td><td>+17</td></tr>
+  <tr><td>13</td><td>4</td><td>4・6・5・4</td><td>44 vs 56</td><td>差12×2倍（1ホール分持ち越し） → A・D +24</td><td>+17</td></tr>
   <tr><td>14</td><td>4</td><td>5・4・4・5</td><td>55 vs 44</td><td>B・C +11</td><td>+6</td></tr>
   <tr><td>15</td><td>4</td><td>4・5・4・4</td><td>44 vs 45</td><td>A・D +1</td><td>+7</td></tr>
   <tr><td>16</td><td>3</td><td>4・3・4・<strong>2</strong></td><td>24 vs 34</td><td>Dバーディで相手反転(34→43) → A・D +19</td><td>+26</td></tr>
@@ -222,7 +223,7 @@
   <tr><td>18</td><td>4</td><td>4・4・4・4</td><td>44 vs 44</td><td>引き分け</td><td>+37</td></tr>
 </table>
 </div>
-<p>最終清算は <strong>AとDが各+37pt、BとCが各−37pt</strong>（ゼロサム）。9Hのダブルパー反転で一気に40pt動いて逆転され、13Hのキャリー×2で取り返す——という浮き沈みがラスベガスの醍醐味です。この計算を自分でやるのは大変なので、アプリの<a href="../app/las-vegas/">SQORE</a>に任せるのがおすすめです。</p>
+<p>最終精算は <strong>AとDが各+37pt、BとCが各−37pt</strong>（ゼロサム）。9Hのダブルパー反転で一気に40pt動いて逆転され、13Hのキャリー×2で取り返す——という浮き沈みがラスベガスの醍醐味です。この計算を自分でやるのは大変なので、アプリの<a href="../app/las-vegas/">SQORE</a>に任せるのがおすすめです。</p>
 
 <h2>よくある質問</h2>
 <div class="faq">
