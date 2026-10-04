@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2596e0">
+<title>自宅から車で◯分以内のゴルフ場を探す｜空き枠のあるプランだけを出すSQOREのゴルフ場検索</title>
+<meta name="description" content="SQOREのゴルフ場検索は、自宅や駅・住所から「車で60分以内」のように所要時間で絞り、楽天GORAに空き枠のあるプランだけを出します。所要時間はプレー日の朝5時出発で計算。プランを押すとそのまま予約ページへ。無料で使えます。">
+<link rel="canonical" href="https://sqore-golf.com/course/search/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SQORE">
+<meta property="og:title" content="自宅から車で◯分以内のゴルフ場を、空き枠つきで探す">
+<meta property="og:description" content="SQOREのゴルフ場検索は、自宅や駅・住所から「車で60分以内」のように所要時間で絞り、楽天GORAに空き枠のあるプランだけを出します。所要時間はプレー日の朝5時出発で計算。プランを押すとそのまま予約ページへ。無料で使えます。">
+<meta property="og:url" content="https://sqore-golf.com/course/search/">
+<meta property="og:image" content="https://sqore-golf.com/assets/og/og_course-search.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="自宅を中心に車で60分以内の円を描き、円の中にある空き枠つきのゴルフ場を旗で示した図">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6777357472">
+<link rel="apple-touch-icon" href="../../assets/icon_180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon_32.png">
+<link rel="icon" type="image/png" sizes="180x180" href="../../assets/favicon_180.png">
+<link rel="stylesheet" href="../../rules/rules.css">
+<style>
+  .plainlist { list-style: none; padding: 0; display: grid; gap: 10px; margin: 18px 0; }
+  .plainlist li { background: #fff; border-radius: 12px; padding: 14px 18px; font-size: 14px; box-shadow: 0 3px 14px rgba(11,92,171,.07); }
+  .plainlist li strong { color: var(--blue-deep); display: block; margin-bottom: 2px; }
+  .steps { margin: 14px 0 18px; padding-left: 22px; }
+  .steps li { font-size: 15px; margin: 8px 0; line-height: 1.8; }
+  .shot-row { display: flex; gap: 16px; justify-content: center; align-items: flex-start; flex-wrap: wrap; margin: 18px 0; }
+  .shot-row figure { margin: 0; width: 195px; text-align: center; }
+  .shot-row img { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 6px 18px rgba(11,92,171,.18); }
+  .shot-row figcaption { font-size: 12px; color: var(--gray); margin-top: 8px; line-height: 1.6; }
+  .shot-wide { max-width: 415px; margin: 18px auto; text-align: center; }
+  .shot-wide img { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 6px 18px rgba(11,92,171,.18); }
+  .shot-wide figcaption { font-size: 12px; color: var(--gray); margin-top: 8px; }
+  .score-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; max-width: 720px; margin: 14px auto 0; }
+  .score-links a { display: grid; grid-template-columns: 96px 1fr; column-gap: 12px; align-items: center; padding: 12px 16px; text-decoration: none; text-align: left; background: #fff; border-radius: 14px; box-shadow: 0 4px 18px rgba(11,92,171,.08); border-top: 3px solid var(--blue); }
+  .score-links a img { grid-row: 1 / 3; width: 104px; height: 56px; object-fit: contain; border-radius: 7px; background: #f4f8fc; padding: 3px; }
+  .score-links a .rt, .score-links a .rd { grid-column: 2; }
+  .score-links a .rt { display: block; font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.5; }
+  .score-links a .rd { display: block; font-size: 12px; font-weight: 400; color: var(--gray); margin-top: 2px; line-height: 1.5; }
+  .score-links a:hover .rt { color: var(--blue); }
+  @media (max-width: 560px) {
+    .shot-row figure { width: min(160px, 42vw); }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "自宅から車で◯分以内のゴルフ場を、空き枠つきで探す",
+  "url": "https://sqore-golf.com/course/search/",
+  "description": "SQOREのゴルフ場検索は、自宅や駅・住所から「車で60分以内」のように所要時間で絞り、楽天GORAに空き枠のあるプランだけを出します。所要時間はプレー日の朝5時出発で計算。プランを押すとそのまま予約ページへ。無料で使えます。",
+  "image": "https://sqore-golf.com/assets/og/og_course-search.png",
+  "inLanguage": "ja",
+  "datePublished": "2026-10-04",
+  "dateModified": "2026-10-04",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "SQORE",
+    "url": "https://sqore-golf.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "株式会社クレア",
+    "url": "https://sqore-golf.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "SQOREで自宅から車で◯分以内のゴルフ場を、空き枠つきで探す",
+  "image": "https://sqore-golf.com/assets/og/og_course-search.png",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "ゴルフ場検索を開く", "text": "トップの「ゴルフ場検索」を押すと、条件画面が開きます。" },
+    { "@type": "HowToStep", "position": 2, "name": "出発する場所を決める", "text": "「自宅」を押すとメニューが出ます。「自宅の設定…」で自宅を登録するか、「住所・駅名を入れる…」で駅名を入れて「この場所にする」を押します。" },
+    { "@type": "HowToStep", "position": 3, "name": "車で何分以内かを決める", "text": "「から車で」のスライダーで「◯分以内」を決めます。30分から180分まで、10分刻みです。" },
+    { "@type": "HowToStep", "position": 4, "name": "エリアと時間帯を選ぶ", "text": "「エリア」「スタート時間帯」を選びます。何も選ばないと指定なしです。人数や料金は「詳しい条件」の中にあります。" },
+    { "@type": "HowToStep", "position": 5, "name": "検索する", "text": "「この条件でさがす」を押すと、ゴルフ場が数件ずつ順に出てきます。" },
+    { "@type": "HowToStep", "position": 6, "name": "お気に入りに入れる", "text": "行の♡を押すと、次から一覧のいちばん上にまとまります。" },
+    { "@type": "HowToStep", "position": 7, "name": "予約ページを開く", "text": "プランを押すと、楽天GORAの予約ページが開きます。「もっとプランを見る」で他のプランも見られます。" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "ゴルフ場検索は無料ですか？", "acceptedAnswer": { "@type": "Answer", "text": "無料です。検索もお気に入りも、プレミアムに入らずに使えます。" } },
+    { "@type": "Question", "name": "現在地から探せますか？", "acceptedAnswer": { "@type": "Answer", "text": "出発する場所は、自宅か、入力した駅名・住所です。自宅は「自宅の設定…」から、現在地でも住所でも登録できます。" } },
+    { "@type": "Question", "name": "予約はSQOREでしますか？", "acceptedAnswer": { "@type": "Answer", "text": "予約は楽天GORAのページで行います。プランを押すと、そのプランの予約ページが開きます。" } },
+    { "@type": "Question", "name": "海外のゴルフ場も出ますか？", "acceptedAnswer": { "@type": "Answer", "text": "検索で出るのは国内のゴルフ場です。海外のゴルフ場は、ラウンドを始めるときのコース選択で選べます。" } },
+    { "@type": "Question", "name": "検索した日の渋滞は入りますか？", "acceptedAnswer": { "@type": "Answer", "text": "入りません。プレー日の朝5時に出発した場合の時間です。プレー日が今日で、もう5時を過ぎているときは、いま出発した場合の時間になります。" } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "SQORE", "item": "https://sqore-golf.com/" },
+    { "@type": "ListItem", "position": 2, "name": "ゴルフ場選び", "item": "https://sqore-golf.com/course/" },
+    { "@type": "ListItem", "position": 3, "name": "ゴルフ場検索" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="../../assets/icon_180.png" alt="SQOREアイコン">
+    <a href="../../">SQORE</a>
+    <span class="tag">ポイント自動計算アプリ</span>
+    <nav class="topnav"><a href="../../guide/">使い方</a><a href="../../score/">スコア管理</a><a href="../../rules/">ルール解説</a><a href="../../support/">サポート</a><a class="appget" href="https://apps.apple.com/jp/app/id6777357472">アプリ入手</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+<nav class="crumb"><a href="../../">ホーム</a> › <a href="../">ゴルフ場選び</a> › ゴルフ場検索</nav>
+
+<article>
+<h1>自宅から車で◯分以内のゴルフ場を、空き枠つきで探す</h1>
+
+<p class="intro">行けるゴルフ場は、距離ではなく「朝、車で何分か」で決まります。SQOREのゴルフ場検索は、自宅や駅・住所を起点に車の所要時間で絞り、<strong>プレー日に空き枠のあるプランだけ</strong>を並べます。無料です。</p>
+
+<figure class="figure">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="700" height="400" role="img" aria-label="自宅を中心に車で30分・60分・90分の円を描き、60分以内の円の中にある空き枠つきのゴルフ場だけを旗で示した図"><rect width="700" height="400" fill="#f4f8fc"/><circle cx="350" cy="206" r="182" fill="none" stroke="#b8c4d2" stroke-width="2" stroke-dasharray="6 7"/><circle cx="350" cy="206" r="124" fill="#dcecfb" stroke="#1479d2" stroke-width="3.5"/><circle cx="350" cy="206" r="62" fill="#c4def7" stroke="#1479d2" stroke-width="1.5" stroke-dasharray="4 5"/><line x1="190" y1="111" x2="190" y2="77" stroke="#c3ccd7" stroke-width="3" stroke-linecap="round"/><path d="M191.5 77 L212 84 L191.5 91 Z" fill="#d5dbe3"/><ellipse cx="190" cy="111" rx="9" ry="3" fill="#c3ccd7" opacity=".35"/><line x1="520" y1="86" x2="520" y2="52" stroke="#c3ccd7" stroke-width="3" stroke-linecap="round"/><path d="M521.5 52 L542 59 L521.5 66 Z" fill="#d5dbe3"/><ellipse cx="520" cy="86" rx="9" ry="3" fill="#c3ccd7" opacity=".35"/><line x1="555" y1="276" x2="555" y2="242" stroke="#c3ccd7" stroke-width="3" stroke-linecap="round"/><path d="M556.5 242 L577 249 L556.5 256 Z" fill="#d5dbe3"/><ellipse cx="555" cy="276" rx="9" ry="3" fill="#c3ccd7" opacity=".35"/><line x1="145" y1="301" x2="145" y2="267" stroke="#c3ccd7" stroke-width="3" stroke-linecap="round"/><path d="M146.5 267 L167 274 L146.5 281 Z" fill="#d5dbe3"/><ellipse cx="145" cy="301" rx="9" ry="3" fill="#c3ccd7" opacity=".35"/><line x1="410" y1="384" x2="410" y2="350" stroke="#c3ccd7" stroke-width="3" stroke-linecap="round"/><path d="M411.5 350 L432 357 L411.5 364 Z" fill="#d5dbe3"/><ellipse cx="410" cy="384" rx="9" ry="3" fill="#c3ccd7" opacity=".35"/><line x1="110" y1="176" x2="110" y2="142" stroke="#c3ccd7" stroke-width="3" stroke-linecap="round"/><path d="M111.5 142 L132 149 L111.5 156 Z" fill="#d5dbe3"/><ellipse cx="110" cy="176" rx="9" ry="3" fill="#c3ccd7" opacity=".35"/><line x1="618" y1="186" x2="618" y2="152" stroke="#c3ccd7" stroke-width="3" stroke-linecap="round"/><path d="M619.5 152 L640 159 L619.5 166 Z" fill="#d5dbe3"/><ellipse cx="618" cy="186" rx="9" ry="3" fill="#c3ccd7" opacity=".35"/><line x1="230" y1="376" x2="230" y2="342" stroke="#c3ccd7" stroke-width="3" stroke-linecap="round"/><path d="M231.5 342 L252 349 L231.5 356 Z" fill="#d5dbe3"/><ellipse cx="230" cy="376" rx="9" ry="3" fill="#c3ccd7" opacity=".35"/><line x1="262" y1="166" x2="262" y2="132" stroke="#0b5cab" stroke-width="3" stroke-linecap="round"/><path d="M263.5 132 L284 139 L263.5 146 Z" fill="#e5322d"/><ellipse cx="262" cy="166" rx="9" ry="3" fill="#0b5cab" opacity=".35"/><line x1="372" y1="122" x2="372" y2="88" stroke="#0b5cab" stroke-width="3" stroke-linecap="round"/><path d="M373.5 88 L394 95 L373.5 102 Z" fill="#e5322d"/><ellipse cx="372" cy="122" rx="9" ry="3" fill="#0b5cab" opacity=".35"/><line x1="442" y1="258" x2="442" y2="224" stroke="#0b5cab" stroke-width="3" stroke-linecap="round"/><path d="M443.5 224 L464 231 L443.5 238 Z" fill="#e5322d"/><ellipse cx="442" cy="258" rx="9" ry="3" fill="#0b5cab" opacity=".35"/><line x1="310" y1="298" x2="310" y2="264" stroke="#0b5cab" stroke-width="3" stroke-linecap="round"/><path d="M311.5 264 L332 271 L311.5 278 Z" fill="#e5322d"/><ellipse cx="310" cy="298" rx="9" ry="3" fill="#0b5cab" opacity=".35"/><line x1="398" y1="250" x2="398" y2="216" stroke="#0b5cab" stroke-width="3" stroke-linecap="round"/><path d="M399.5 216 L420 223 L399.5 230 Z" fill="#e5322d"/><ellipse cx="398" cy="250" rx="9" ry="3" fill="#0b5cab" opacity=".35"/><line x1="250" y1="256" x2="250" y2="222" stroke="#0b5cab" stroke-width="3" stroke-linecap="round"/><path d="M251.5 222 L272 229 L251.5 236 Z" fill="#e5322d"/><ellipse cx="250" cy="256" rx="9" ry="3" fill="#0b5cab" opacity=".35"/><path d="M326 208 L350 184 L374 208 L368 208 L368 232 L332 232 L332 208 Z" fill="#0b5cab" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><rect x="344" y="216" width="12" height="16" rx="2" fill="#fff"/><rect x="442" y="110" width="120" height="40" rx="20" fill="#1479d2"/><text x="502" y="138" text-anchor="middle" font-family="Hiragino Sans, Hiragino Kaku Gothic ProN, sans-serif" font-size="22" font-weight="800" fill="#fff">60分以内</text></svg>
+  <figcaption>自宅を真ん中に、車で何分の円を描くイメージです。<strong>「60分以内」なら内側の円の中で、空き枠のあるゴルフ場だけ</strong>が出ます。円の外や、空きの無いゴルフ場は出ません。</figcaption>
+</figure>
+
+<h2>できること</h2>
+<ul class="plainlist">
+  <li><strong>車で◯分以内で絞る</strong>自宅や駅・住所から、車で30分〜180分以内（10分刻み）で探せます。</li>
+  <li><strong>所要時間はプレー日の朝5時出発で測る</strong>結果の行には「車で◯分・◯km」と出ます。</li>
+  <li><strong>空き枠のあるプランだけが出る</strong>楽天GORAで、その日に予約できるプランだけを並べます。</li>
+  <li><strong>プランを押すと予約ページが開く</strong>予約は楽天GORAのページで行います。</li>
+  <li><strong>お気に入りは一覧のいちばん上に</strong>行の♡を押したゴルフ場は、次から「お気に入り」として上にまとまります。</li>
+</ul>
+
+<h2>使い方</h2>
+<ol class="steps">
+  <li>トップの「ゴルフ場検索」を押す → 条件画面が開く</li>
+  <li>「自宅」を押す → メニューが出る。「自宅の設定…」で自宅を登録するか、「住所・駅名を入れる…」で駅名（例「名古屋駅」）を入れて「この場所にする」を押す</li>
+  <li>「から車で」のスライダーで「◯分以内」を決める</li>
+  <li>「エリア」「スタート時間帯」を選ぶ（何も選ばないと指定なし）。人数・料金などは「詳しい条件」の中</li>
+  <li>「この条件でさがす」を押す → ゴルフ場が数件ずつ順に出てくる</li>
+  <li>行の♡を押す → 次から一覧のいちばん上にまとまる</li>
+  <li>プランを押す → 楽天GORAの予約ページが開く（「もっとプランを見る」で他のプランも見られる）</li>
+</ol>
+
+<div class="shot-row">
+  <figure>
+    <img src="../../assets/ss_search3.webp" alt="トップ画面にある「ゴルフ場検索」ボタン" loading="lazy" width="415" height="902">
+    <figcaption>トップの「ゴルフ場検索」</figcaption>
+  </figure>
+  <figure>
+    <img src="../../assets/ss_search1.webp" alt="出発する場所と「車で60分以内」、プレー日・エリアなどを選ぶゴルフ場検索の条件画面" loading="lazy" width="415" height="902">
+    <figcaption>条件画面（この例は駅から60分以内）</figcaption>
+  </figure>
+</div>
+
+<figure class="shot-wide">
+  <img src="../../assets/ss_search2.webp" alt="空き枠のあるゴルフ場が車で近い順に並び、各行に車で何分・何kmと出る結果画面" loading="lazy" width="415" height="222">
+  <figcaption>結果画面。ゴルフ場ごとに「車で◯分・◯km」が出ます</figcaption>
+</figure>
+
+<h2>他の予約サイトの検索と違うところ</h2>
+<ul class="plainlist">
+  <li><strong>所要時間はプレー日の朝5時出発で測る</strong>スタートに間に合うよう出る時間帯で測るので、渋滞する夕方の所要時間になりません。</li>
+  <li><strong>空き枠が無いゴルフ場は出ない</strong>近くても、その日に予約できるプランが無ければ一覧に入りません。</li>
+  <li><strong>予約はGORA、当日はSQORE</strong>予約は楽天GORAで済ませ、ラウンド当日のスコアと握り（＝仲間内でポイントを競う定番ゲーム）の計算はSQOREで行います。</li>
+</ul>
+
+<h2>条件で絞れること</h2>
+<p>「プレー日」「エリア」「スタート時間帯」は条件画面に、ほかは「詳しい条件」の中にあります。項目名はアプリの表示のままです。</p>
+<div class="table-scroll">
+<table>
+  <tr><th>項目</th><th>選べること</th></tr>
+  <tr><td>プレー日</td><td>回る日（最初は明日）</td></tr>
+  <tr><td>エリア</td><td>都道府県。複数選べる</td></tr>
+  <tr><td>スタート時間帯</td><td>スタートの時間帯</td></tr>
+  <tr><td>人数</td><td>回る人数</td></tr>
+  <tr><td>プレースタイル</td><td>セルフ・キャディ付 など</td></tr>
+  <tr><td>プラン内容</td><td>昼食付・1ドリンク付 など</td></tr>
+  <tr><td>除外</td><td>「オープンコンペを除く」「レッスンを除く」など</td></tr>
+  <tr><td>ゴルフ場の設備</td><td>「サウナあり」「練習場あり」など</td></tr>
+  <tr><td>コース</td><td>丘陵・林間 などの種類</td></tr>
+  <tr><td>料金</td><td>料金の下限・料金の上限（1人あたりの総額）</td></tr>
+  <tr><td>ゴルフ場名</td><td>名前で絞る</td></tr>
+</table>
+</div>
+<p class="note">サウナのあるゴルフ場には、結果に「サウナイキタイ」の印が付きます。外気浴まで揃うコースは<a href="../sauna-gaikiyoku.html">関東のゴルフ場サウナの記事</a>で1件ずつ確かめています。</p>
+
+<h2>よくある質問</h2>
+<div class="faq">
+  <details>
+    <summary>ゴルフ場検索は無料ですか？</summary>
+    <p>無料です。検索もお気に入りも、プレミアムに入らずに使えます。</p>
+  </details>
+  <details>
+    <summary>現在地から探せますか？</summary>
+    <p>出発する場所は、自宅か、入力した駅名・住所です。自宅は「自宅の設定…」から、現在地でも住所でも登録できます。</p>
+  </details>
+  <details>
+    <summary>予約はSQOREでしますか？</summary>
+    <p>予約は楽天GORAのページで行います。プランを押すと、そのプランの予約ページが開きます。</p>
+  </details>
+  <details>
+    <summary>海外のゴルフ場も出ますか？</summary>
+    <p>検索で出るのは国内のゴルフ場です。海外のゴルフ場は、ラウンドを始めるときのコース選択で選べます。</p>
+  </details>
+  <details>
+    <summary>検索した日の渋滞は入りますか？</summary>
+    <p>入りません。プレー日の朝5時に出発した場合の時間です。プレー日が今日で、もう5時を過ぎているときは、いま出発した場合の時間になります。</p>
+  </details>
+</div>
+
+<h2>ラウンド当日はSQOREで</h2>
+<p>予約したら、当日のスコアと握りの計算はアプリでまとめて済みます。</p>
+<div class="score-links">
+  <a href="../../score/"><img src="../../assets/og/og_score_th.webp" alt="パーオン率・ボギーオン率などの分析指標の図" loading="lazy" width="640" height="336"><span class="rt">SQOREのスコア管理機能</span><span class="rd">記録できることと分析できること</span></a>
+  <a href="../../rules/"><img src="../../assets/og/og_rules-index_th.webp" alt="ゴルフの握り・ゲームルール解説の一覧の図" loading="lazy" width="640" height="336"><span class="rt">握り・ゲームのルール解説</span><span class="rd">オリンピック・ラスベガス・ナッソーなど</span></a>
+</div>
+
+<div class="related">
+  <h2>あわせて読む</h2>
+  <ul>
+    <li><a href="../sauna-gaikiyoku.html">サウナで外気浴までできるゴルフ場<small>関東1都6県の134施設を確認。予約して行けるのは8コース</small></a></li>
+    <li><a href="../../score/">SQOREのスコア管理機能<small>記録できることと分析できること</small></a></li>
+    <li><a href="../../rules/">ゴルフの握り・ゲームルール解説の一覧<small>オリンピック・ラスベガス・ナッソーなど定番の遊び方</small></a></li>
+    <li><a href="../../guide/">SQOREの使い方<small>チェックインからラウンドの記録まで6ステップ</small></a></li>
+  </ul>
+</div>
+
+<div class="cta">
+  <p class="ttl">ゴルフ場検索はSQOREのアプリで</p>
+  <p>トップの「ゴルフ場検索」から、車で◯分以内・空き枠つきで探せます。ラウンド当日は、打数を入れるだけでスコアも握りのポイントも自動計算です。</p>
+  <div class="store-btns">
+    <a class="store-badge store-badge-apple" href="https://apps.apple.com/jp/app/id6777357472">
+      <img src="../../assets/badge_appstore_ja.svg" alt="App Store からダウンロード" width="136" height="50" loading="lazy" decoding="async">
+    </a>
+    <a class="store-badge store-badge-google" href="https://play.google.com/store/apps/details?id=com.sqore.app">
+      <img src="../../assets/badge_googleplay_ja.png" alt="Google Play で手に入れよう" width="168" height="65" loading="lazy" decoding="async">
+    </a>
+  </div>
+</div>
+</article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 株式会社クレア</span>
+    <a href="../../">SQOREトップ</a>
+    <a href="../../rules/">ゲームルール解説</a>
+    <a href="../../score/">スコア管理</a>
+    <a href="../">ゴルフ場選び</a>
+    <a href="../../guide/">使い方</a>
+    <a href="../../support/">サポート</a>
+    <a href="../../privacy/">プライバシーポリシー</a>
+  </div>
+</footer>
+
+<div class="dl-bar">
+  <img src="../../assets/icon_180.png" alt="">
+  <span class="txt"><b>SQORE</b>ゴルフのポイント自動計算</span>
+  <a class="get" href="https://apps.apple.com/jp/app/id6777357472">入手</a>
+</div>
+<script>
+/* ヘッダーの出し入れ。下スクロールで隠し、上スクロールで戻す。 */
+(function () {
+  var h = document.querySelector('header.site');
+  if (!h) return;
+  var last = 0;
+  addEventListener('scroll', function () {
+    var y = window.scrollY > 0 ? window.scrollY : 0;
+    if (y > last && y > 140) h.classList.add('hide');
+    else if (y < last) h.classList.remove('hide');
+    last = y;
+  }, { passive: true });
+})();
+</script>
+<script>(function(){if(!/Android/i.test(navigator.userAgent))return;var u='https://play.google.com/store/apps/details?id=com.sqore.app';Array.prototype.forEach.call(document.querySelectorAll('.dl-bar a.get,a.appget'),function(a){a.href=u;});})();</script>
+</body>
+</html>
