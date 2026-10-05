@@ -114,6 +114,14 @@
 <style>
   /* 機能比較表: SQOREの列を色で分け、記号は色で見分ける */
   table.cmp { font-size: 13px; }
+  /* 項目名の行をスクロール中も上に残す。角の丸めはセル側で行う（表のoverflow:hiddenがあると貼り付かないため） */
+  table.cmp { overflow: visible; border-collapse: separate; border-spacing: 0; }
+  .table-scroll:has(> table.cmp) { overflow: visible; }  /* 320px幅でもはみ出さないので横スクロール箱を外す */
+  table.cmp tr:first-child th { position: sticky; top: var(--sticky-top, 0px); z-index: 2; transition: top .25s ease; box-shadow: 0 2px 6px rgba(11,92,171,.12); }
+  table.cmp tr:first-child th:first-child { border-top-left-radius: 10px; }
+  table.cmp tr:first-child th:last-child { border-top-right-radius: 10px; }
+  table.cmp tr:last-child td:first-child { border-bottom-left-radius: 10px; }
+  table.cmp tr:last-child td:last-child { border-bottom-right-radius: 10px; }
   table.cmp th, table.cmp td { text-align: center; padding: 8px 6px; vertical-align: middle; }
   table.cmp th:first-child, table.cmp td:first-child { text-align: left; padding-left: 12px; font-weight: 700; color: var(--ink); width: 34%; }
   table.cmp th.sq, table.cmp td.sq { background: #eef6ff; }
@@ -394,7 +402,15 @@
     if (y > last && y > 140) h.classList.add('hide');
     else if (y < last) h.classList.remove('hide');
     last = y;
+    stick();
   }, { passive: true });
+  /* スマホでは見出し帯が出ている間、比較表の項目名をその下にずらす */
+  var mq = matchMedia('(max-width: 640px)');
+  function stick() {
+    var top = mq.matches && !h.classList.contains('hide') ? h.offsetHeight : 0;
+    document.documentElement.style.setProperty('--sticky-top', top + 'px');
+  }
+  stick();
 })();
 </script>
 <script>(function(){if(!/Android/i.test(navigator.userAgent))return;var u='https://play.google.com/store/apps/details?id=com.sqore.app';Array.prototype.forEach.call(document.querySelectorAll('.dl-bar a.get,a.appget'),function(a){a.href=u;});})();</script>
