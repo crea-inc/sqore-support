@@ -86,6 +86,14 @@
     },
     {
       "@type": "Question",
+      "name": "自分のスコアだけ付けるなら、どのアプリが楽？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "自分1人のスコアだけなら、自分を中心に表示して数字を直接押すアプリのほうが少しだけ手早く入れられます。SQOREは打数を＋−で動かすので、パー4で7なら4から＋を3回押します。そのかわりSQOREは同じ組の4人を1画面で入れられ、同伴者のぶんで画面を切り替えずに済みます。いま立っているホールの過去の成績がスコア画面に出るのもSQOREだけです。"
+      }
+    },
+    {
+      "@type": "Question",
       "name": "SQOREにできないことは？",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -103,6 +111,27 @@
   ]
 }
 </script>
+<style>
+  /* 機能比較表: SQOREの列を色で分け、記号は色で見分ける */
+  table.cmp { font-size: 13px; }
+  table.cmp th, table.cmp td { text-align: center; padding: 8px 6px; vertical-align: middle; }
+  table.cmp th:first-child, table.cmp td:first-child { text-align: left; padding-left: 12px; font-weight: 700; color: var(--ink); width: 34%; }
+  table.cmp th.sq, table.cmp td.sq { background: #eef6ff; }
+  table.cmp th.sq { background: var(--blue); color: #fff; }
+  table.cmp tr.grp td { background: #f4f7fb; color: var(--gray); font-size: 12px; font-weight: 700; text-align: left; padding: 5px 12px; }
+  table.cmp .o { color: #1a8a4a; font-weight: 700; font-size: 15px; }
+  table.cmp .t { color: #c27c00; font-weight: 700; font-size: 15px; }
+  table.cmp .x { color: #b9c0ca; font-size: 15px; }
+  table.cmp small { display: block; font-size: 11px; color: var(--gray); line-height: 1.4; margin-top: 2px; }
+  @media (max-width: 600px) {
+    table.cmp { font-size: 12px; table-layout: fixed; }
+    table.cmp th, table.cmp td { padding: 7px 3px; }
+    table.cmp th:first-child, table.cmp td:first-child { padding-left: 8px; width: 30%; }
+    table.cmp th { font-size: 11px; }
+    table.cmp small { font-size: 10px; letter-spacing: -.02em; }
+  }
+  .cmp-legend { font-size: 12px; color: var(--gray); margin-top: -4px; }
+</style>
 </head>
 <body>
 
@@ -150,17 +179,43 @@
 </table>
 </div>
 
-<h2>4つとも共通してできること</h2>
-<p>ここは横並びです。どれも<strong>無料</strong>で使えます。</p>
-<ul>
-  <li><strong>スコア入力</strong> — 同伴者ぶんもまとめて記録できる</li>
-  <li><strong>ティーショットの結果の記録</strong> — 方向やキープしたかを残せる</li>
-  <li><strong>OB・バンカー・ペナルティの回数</strong></li>
-  <li><strong>パット数</strong></li>
-  <li><strong>スコアの分析</strong> — 平均スコア、パット数、フェアウェイキープ率など</li>
-  <li><strong>写真つきスコアカード</strong> — SNSや仲間への共有</li>
-  <li><strong>履歴の保存</strong> — 過去のラウンドの振り返り</li>
-</ul>
+<h2>機能の比較表</h2>
+<p>4つのアプリで、できることを1つの表にまとめました。</p>
+<div class="table-scroll">
+<table class="cmp">
+  <tr><th>機能</th><th>GDO</th><th>楽天</th><th>GN+</th><th class="sq">SQORE</th></tr>
+  <tr class="grp"><td colspan="5">スコア記録（4つとも無料）</td></tr>
+  <tr><td>スコア・パット・OB・ペナルティ</td><td><span class="o">○</span></td><td><span class="o">○</span></td><td><span class="o">○</span></td><td class="sq"><span class="o">○</span></td></tr>
+  <tr><td>ティーショットの記録</td><td><span class="o">○</span></td><td><span class="o">○</span></td><td><span class="o">○</span></td><td class="sq"><span class="o">○</span></td></tr>
+  <tr><td>分析（平均スコア・パット・フェアウェイキープ率など）</td><td><span class="o">○</span></td><td><span class="o">○</span></td><td><span class="o">○</span></td><td class="sq"><span class="o">○</span></td></tr>
+  <tr><td>写真つきスコアカード・履歴</td><td><span class="o">○</span></td><td><span class="o">○</span></td><td><span class="o">○</span></td><td class="sq"><span class="o">○</span></td></tr>
+  <tr class="grp"><td colspan="5">入力のしかた</td></tr>
+  <tr><td>同じ組の4人を1画面で入力</td><td><span class="x">－</span></td><td><span class="x">－</span></td><td><span class="x">－</span></td><td class="sq"><span class="o">○</span></td></tr>
+  <tr><td>いま立っているホールの過去の成績</td><td><span class="x">－</span></td><td><span class="x">－</span></td><td><span class="x">－</span></td><td class="sq"><span class="o">○</span><small>平均・OB率、当時のクラブや打数</small></td></tr>
+  <tr class="grp"><td colspan="5">距離・コース</td></tr>
+  <tr><td>残り距離が自動で出るコースマップ</td><td><span class="t">△</span><small>無料は4H目以降に制限。全機能は月300円</small></td><td><span class="o">○</span><small>完全無料</small></td><td><span class="t">△</span><small>有料。1ゴルフ場90日160円</small></td><td class="sq"><span class="x">×</span><small>タップで測るGPSマップ（月100円）</small></td></tr>
+  <tr class="grp"><td colspan="5">仲間・コンペ</td></tr>
+  <tr><td>大人数のコンペ集計</td><td><span class="o">○</span><small>新ペリアなどに対応</small></td><td><span class="o">○</span><small>リーダーボード</small></td><td><span class="o">○</span></td><td class="sq"><span class="x">×</span></td></tr>
+  <tr><td>「みんなの平均」との比較</td><td><span class="x">－</span></td><td><span class="x">－</span></td><td><span class="o">○</span></td><td class="sq"><span class="x">－</span></td></tr>
+  <tr class="grp"><td colspan="5">練習・その他</td></tr>
+  <tr><td>AIスイング解析</td><td><span class="x">－</span></td><td><span class="o">○</span></td><td><span class="o">○</span></td><td class="sq"><span class="x">×</span></td></tr>
+  <tr><td>Apple Watch</td><td><span class="x">－</span></td><td><span class="o">○</span></td><td><span class="o">○</span><small>月330円</small></td><td class="sq"><span class="x">×</span></td></tr>
+  <tr class="grp"><td colspan="5">握り（ゲーム）</td></tr>
+  <tr><td>握りのポイント計算</td><td><span class="x">－</span></td><td><span class="t">△</span><small>メダルなど（ベータ版）</small></td><td><span class="t">△</span><small>数値を手入力して集計</small></td><td class="sq"><span class="o">○</span><small>12種類をルールごと自動計算</small></td></tr>
+</table>
+</div>
+<p class="cmp-legend">○ある　△条件つき　× SQOREには無い　－ 公式情報で確認できなかったもの（2026年8月14日時点）</p>
+<h2>スコア入力の手間</h2>
+<p>SQOREは同じ組の4人を1画面に並べて入れます。そのぶん、自分1人だけを付ける日は、他のアプリのほうが少しだけ手早く入れられます。</p>
+<div class="table-scroll">
+<table class="cmp">
+  <tr><th>場面</th><th class="sq">SQORE</th><th>自分1人を中心に入れるアプリ</th></tr>
+  <tr><td>同伴者のスコアを入れる</td><td class="sq"><span class="o">○</span><small>4人が1画面。切り替えなし</small></td><td><span class="t">△</span><small>1人ずつ画面を切り替える</small></td></tr>
+  <tr><td>自分のパー4で7（トリプルボギー）</td><td class="sq"><span class="t">△</span><small>4から＋を3回</small></td><td><span class="o">○</span><small>「7」をワンタップ</small></td></tr>
+  <tr><td>そのホールの過去の成績を見る</td><td class="sq"><span class="o">○</span><small>スコア画面に出る</small></td><td><span class="x">－</span></td></tr>
+</table>
+</div>
+<p class="note">4人ぶん付けるならSQORE、自分のスコアだけなら1人中心のアプリが少しだけ楽、という違いです。</p>
 <p class="note">「パーオン率が見られるのはどれか」といった細かい違いを気にする方もいますが、実用上はどれも足ります。<a href="bogey-on.html">ボギーオン率の記事</a>で触れたような指標も、複数のアプリが出しています。</p>
 
 <h2>そこだけのこと</h2>
@@ -260,6 +315,10 @@
   <details>
     <summary>コンペの集計ができるアプリは？</summary>
     <p>GDOのコンペ機能は「新ペリアなどさまざまなコンペルールにも対応」と公式に明記されています。楽天とGN+にもリーダーボードやコンペ機能があります。SQOREには大人数のコンペを集計する機能はありません。</p>
+  </details>
+  <details>
+    <summary>自分のスコアだけ付けるなら、どのアプリが楽？</summary>
+    <p>自分1人のスコアだけなら、自分を中心に表示して数字を直接押すアプリのほうが少しだけ手早く入れられます。SQOREは打数を＋−で動かすので、パー4で7なら4から＋を3回押します。そのかわりSQOREは同じ組の4人を1画面で入れられ、同伴者のぶんで画面を切り替えずに済みます。いま立っているホールの過去の成績がスコア画面に出るのもSQOREだけです。</p>
   </details>
   <details>
     <summary>SQOREにできないことは？</summary>
