@@ -298,16 +298,31 @@
   .accent { color: var(--blue); }
   #games h2 .accent { white-space: nowrap; }
 
-  /* games */
+  /* games: 1枚ずつ写真を暗くして敷き、白い字を載せる */
   .games { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 36px; }
   .game {
-    background: #fff; border-radius: 16px; padding: 20px 22px;
-    box-shadow: 0 4px 18px rgba(11,92,171,.08); border-top: 3px solid var(--blue);
+    position: relative; overflow: hidden; isolation: isolate;
+    border-radius: 18px; padding: 22px 22px 18px; min-height: 250px; background: #1d2a22;
+    box-shadow: 0 6px 20px rgba(0,0,0,.14);
+    display: flex; flex-direction: column; align-items: flex-start;
+    transition: transform .2s, box-shadow .2s;
   }
-  .game h3 { font-size: 17px; color: var(--blue-deep); }
-  .game p { font-size: 14px; color: var(--gray); margin-top: 6px; }
-  .game .more { display: inline-block; margin-top: 8px; padding-block: 3px; font-size: 13px; font-weight: 700; color: var(--blue); text-decoration: none; }
-  .game .more:hover { text-decoration: underline; }
+  .game:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,.22); }
+  .game .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform .4s; }
+  .game:hover .bg { transform: scale(1.04); }
+  .game::before { content: ""; position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(180deg, rgba(0,0,0,.48) 0%, rgba(0,0,0,.62) 55%, rgba(0,0,0,.8) 100%); }
+  .game h3 { font-size: 19px; color: #fff; line-height: 1.35; text-shadow: 0 1px 6px rgba(0,0,0,.4); }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+  .tags span { font-size: 11px; font-weight: 700; color: #fff; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.28); border-radius: 999px; padding: 1px 9px; }
+  .tags span.y { background: rgba(255,214,90,.25); border-color: rgba(255,214,90,.55); color: #ffe7a3; }
+  .game p { font-size: 14px; color: rgba(255,255,255,.9); margin-top: 12px; flex: 1; text-shadow: 0 1px 4px rgba(0,0,0,.35); }
+  .game .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .game .more { display: inline-flex; align-items: center; padding: 6px 13px; border-radius: 999px; font-size: 13px; font-weight: 700;
+    color: var(--blue-deep); background: #fff; text-decoration: none; }
+  .game .more:hover { background: #e6f1fc; }
+  .game .more.demo { color: #fff; background: var(--blue); }
+  .game .more.demo:hover { background: var(--blue-deep); }
   .games-note { text-align: center; color: var(--gray); font-size: 14px; margin-top: 24px; }
 
   /* 読みもの */
@@ -531,7 +546,7 @@
     </div>
     <div class="phones">
       <div class="ph ph-back"><img src="assets/hero_stats.webp" alt="SQOREのメンバー成績画面。いつものメンバーとのポイント合計を一覧表示" width="640" height="1353"></div>
-      <div class="ph ph-front"><img src="assets/hero_score.webp" alt="SQOREのスコア入力画面。打数をワンタップで入力しゲームのポイントを自動計算" width="640" height="1337" loading="eager"></div>
+      <div class="ph ph-front"><img src="assets/hero_score.webp" alt="SQOREのスコア入力画面。打数をワンタップで入力しゲームのポイントを自動計算" width="640" height="1337" loading="eager" fetchpriority="high"></div>
       <div class="float-card float-games"><b>12種類</b>の定番ゲームに対応</div>
       <div class="float-card float-auto"><b>+180pt</b>計算はぜんぶ自動</div>
     </div>
@@ -539,6 +554,7 @@
   <svg class="hero-wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,8 480,8 720,28 C960,48 1200,58 1440,24 L1440,64 L0,64 Z" fill="#f5f7fa"/></svg>
 </header>
 <div class="hero-spacer"></div>
+<main>
 
 <section id="about" style="padding-bottom:0">
   <div class="wrap" style="max-width:760px; text-align:center">
@@ -553,58 +569,68 @@
     <p class="lead">オリンピックもラスベガスも、面倒な握りのポイント計算はぜんぶSQOREにおまかせ。複数ゲームの同時進行もOK。</p>
     <div class="games">
       <div class="game">
-        <h3>ラスベガス</h3>
+        <img class="bg" src="assets/games/lasvegas.webp" alt="" width="720" height="540" loading="lazy" decoding="async">
+        <div class="game-head"><div><h3>ラスベガス</h3><div class="tags"><span>4人</span><span>チーム戦</span></div></div></div>
         <p>2人組×2チームの定番ゲーム。各組の打数を2桁の数字にして、チームの差をポイント化します。</p>
-        <a class="more" href="rules/las-vegas.html">ラスベガスの詳しいルール →</a>
-        <a class="more" href="app/las-vegas/">ラスベガスのおためしデモ →</a>
+        <div class="links"><a class="more" href="rules/las-vegas.html" aria-label="ラスベガスの詳しいルール">詳しいルール →</a><a class="more demo" href="app/las-vegas/" aria-label="ラスベガスのデモを試す">デモを試す →</a></div>
       </div>
       <div class="game">
-        <h3>オリンピック</h3>
-        <p>ホールごとの順位や達成でポイントを加算。3パット減点などの細かい設定もできます。</p>
-        <a class="more" href="rules/olympic.html">オリンピックの詳しいルール →</a>
-        <a class="more" href="app/olympic/">オリンピックのおためしデモ →</a>
+        <img class="bg" src="assets/games/olympic.webp" alt="" width="720" height="540" loading="lazy" decoding="async">
+        <div class="game-head"><div><h3>オリンピック</h3><div class="tags"><span>個人戦</span><span>加点式</span></div></div></div>
+        <p>1パットで沈めた人がメダルを取り、その点数を他の全員から受け取ります。3パット減点などの細かい設定もできます。</p>
+        <div class="links"><a class="more" href="rules/olympic.html" aria-label="オリンピックの詳しいルール">詳しいルール →</a><a class="more demo" href="app/olympic/" aria-label="オリンピックのデモを試す">デモを試す →</a></div>
       </div>
       <div class="game">
-        <h3>ナッソー</h3>
-        <p>個人1対1のマッチ。前半・後半・トータルそれぞれで勝敗を付け、ハンデも設定できます。「ピンポンパン」と呼ばれることも。</p>
-        <a class="more" href="rules/nassau.html">ナッソーの詳しいルール →</a>
+        <img class="bg" src="assets/games/nassau.webp" alt="" width="720" height="540" loading="lazy" decoding="async">
+        <div class="game-head"><div><h3>ナッソー</h3><div class="tags"><span>1対1</span><span>3本勝負</span></div></div></div>
+        <p>個人1対1のマッチ。前半・後半・トータルそれぞれで勝敗を付け、ハンデも設定できます。「ピンポンパン」と呼ばれることもありますが、本来は別のゲームです。</p>
+        <div class="links"><a class="more" href="rules/nassau.html" aria-label="ナッソーの詳しいルール">詳しいルール →</a></div>
       </div>
       <div class="game">
-        <h3>ホールベスト</h3>
+        <img class="bg" src="assets/games/holebest.webp" alt="" width="720" height="540" loading="lazy" decoding="async">
+        <div class="game-head"><div><h3>ホールベスト</h3><div class="tags"><span>個人戦</span><span>ホールごと</span></div></div></div>
         <p>そのホールで一番良かった人がポイントを獲得。同点なら次のホールへキャリーします。</p>
-        <a class="more" href="rules/hole-best.html">ホールベストの詳しいルール →</a>
+        <div class="links"><a class="more" href="rules/hole-best.html" aria-label="ホールベストの詳しいルール">詳しいルール →</a></div>
       </div>
       <div class="game">
-        <h3>ホールマッチ</h3>
+        <img class="bg" src="assets/games/holematch.webp" alt="" width="720" height="540" loading="lazy" decoding="async">
+        <div class="game-head"><div><h3>ホールマッチ</h3><div class="tags"><span>1対1</span><span>ホールごと</span></div></div></div>
         <p>同じ組の選んだ相手それぞれと1対1で対戦。ルールはホールベストと同じです。</p>
       </div>
       <div class="game">
-        <h3>ストローク勝負</h3>
+        <img class="bg" src="assets/games/stroke.webp" alt="" width="720" height="540" loading="lazy" decoding="async">
+        <div class="game-head"><div><h3>ストローク勝負</h3><div class="tags"><span>1対1</span><span>合計打数</span></div></div></div>
         <p>選んだ相手と総打数（ネット）の1対1。相手ごとにハンデと勝者ポイントを設定できます。</p>
       </div>
       <div class="game">
-        <h3>1対多数 ラスベガス / ホールベスト</h3>
+        <img class="bg" src="assets/games/vs.webp" alt="" width="720" height="540" loading="lazy" decoding="async">
+        <div class="game-head"><div><h3>1対多数 ラスベガス / ホールベスト</h3><div class="tags"><span>3人向け</span><span>1人vs全員</span></div></div></div>
         <p>3人ラウンドなどで1人 vs 残り全員の勝負。ベスト打数勝負と、2桁数字で勝負するラス式を選べます。</p>
+        <div class="links"><a class="more" href="rules/las-vegas-3players.html" aria-label="1対多数 ラスベガス / ホールベストの詳しいルール">詳しいルール →</a></div>
       </div>
       <div class="game">
-        <h3>へび</h3>
+        <img class="bg" src="assets/games/hebi.webp" alt="" width="720" height="540" loading="lazy" decoding="async">
+        <div class="game-head"><div><h3>へび</h3><div class="tags"><span class="y">罰ゲーム</span><span class="y">追加ルール</span></div></div></div>
         <p>3パットなどで「へび」の保持者が移っていく罰ゲーム。ラウンド終了時に持っていた人がポイントを失います。</p>
-        <a class="more" href="rules/hebi.html">へびの詳しいルール →</a>
+        <div class="links"><a class="more" href="rules/hebi.html" aria-label="へびの詳しいルール">詳しいルール →</a></div>
       </div>
       <div class="game">
-        <h3>ドラコン</h3>
+        <img class="bg" src="assets/games/dracon.webp" alt="" width="720" height="540" loading="lazy" decoding="async">
+        <div class="game-head"><div><h3>ドラコン</h3><div class="tags"><span>PAR5</span><span class="y">追加ルール</span></div></div></div>
         <p>パー5のドラコンをポイントに反映。出なかった場合に次のパー5へキャリーする設定も。</p>
-        <a class="more" href="rules/dracon-nearpin.html">ドラコンの詳しいルール →</a>
+        <div class="links"><a class="more" href="rules/dracon-nearpin.html" aria-label="ドラコンの詳しいルール">詳しいルール →</a></div>
       </div>
       <div class="game">
-        <h3>ニアピン</h3>
+        <img class="bg" src="assets/games/nearpin.webp" alt="" width="720" height="540" loading="lazy" decoding="async">
+        <div class="game-head"><div><h3>ニアピン</h3><div class="tags"><span>PAR3</span><span class="y">追加ルール</span></div></div></div>
         <p>ニアピンもポイントとして自動集計。ラスベガスとの組み合わせにも対応。</p>
-        <a class="more" href="rules/dracon-nearpin.html">ニアピンの詳しいルール →</a>
+        <div class="links"><a class="more" href="rules/dracon-nearpin.html" aria-label="ニアピンの詳しいルール">詳しいルール →</a></div>
       </div>
       <div class="game">
-        <h3>オネストジョン</h3>
+        <img class="bg" src="assets/games/honest.webp" alt="" width="720" height="540" loading="lazy" decoding="async">
+        <div class="game-head"><div><h3>オネストジョン</h3><div class="tags"><span>個人戦</span><span>申告制</span></div></div></div>
         <p>スタート前に申告した合計スコアに近い人ほど勝ち。上手い下手に関係なく楽しめます。</p>
-        <a class="more" href="rules/honest-john.html">オネストジョンの詳しいルール →</a>
+        <div class="links"><a class="more" href="rules/honest-john.html" aria-label="オネストジョンの詳しいルール">詳しいルール →</a></div>
       </div>
     </div>
     <p class="games-note">バーディで反転・倍などのローカルルール、ペナルティ計算や手動ポイントにも対応。各ゲームの遊び方は<a href="rules/" style="color:var(--blue); font-weight:700">ルール解説</a>へ。<a href="app/las-vegas-olympic/" style="color:var(--blue); font-weight:700">ラスベガス×オリンピックの同時進行デモ</a>もブラウザで試せます。<br>もちろん打数だけつける「スコアのみ」で、普通のゴルフスコア管理アプリとしても使えます。</p>
@@ -648,7 +674,7 @@
       <div class="feat">
         <div class="emoji">🚩</div>
         <h3>スタートホールの確認</h3>
-        <p>ラウンドを始めるときに、どのコースから回るかを「スタートホール」の画面で確かめてから始められます。</p>
+        <p>ラウンドを始めるときに、OUT（1番）とIN（10番）のどちらから回るかを「スタートホール」の画面で確かめてから始められます。</p>
       </div>
       <div class="feat">
         <div class="emoji">✖️</div>
@@ -707,7 +733,7 @@
 <section id="score" style="padding-top:0">
   <div class="wrap">
     <h2>ゴルフスコア管理アプリとしても<span class="accent">本格派</span></h2>
-    <p class="lead">ゲームの計算だけじゃない。スコア記録と分析は、専用アプリ以上を目指しました。</p>
+    <p class="lead">ゲームの計算だけじゃない。スコア記録と分析もこれ1本でできます。</p>
     <div class="hole-hist">
       <div class="hole-hist-text">
         <h3>いま打つホールの<br><span class="accent">自分の過去の成績</span>が<br>その場で見える</h3>
@@ -735,7 +761,7 @@
         <img src="assets/ss7.webp" alt="パーオン率・リカバリー率・サンドセーブ率・平均パットを分析するSQOREの画面" loading="lazy" width="415" height="900">
       </div>
     </div>
-    <p class="games-note" style="margin-top:28px">GDO・楽天・GN+と何が違うのか、各社の公式情報で比べました。</p>
+    <p class="games-note" style="margin-top:28px">GDO・楽天・GN+（ゴルフネットワークプラス）と何が違うのか、各社の公式情報で比べました。</p>
     <div class="score-links">
       <a href="score/compare.html"><img src="assets/og/og_score-compare_th.webp" alt="GDO・楽天・GN+・SQOREの比較図" loading="lazy" width="640" height="336"><span class="rt">ゴルフスコア管理アプリの違い</span><span class="rd">GDO・楽天・GN+・SQOREを公式情報で比較</span></a>
       <a href="score/"><img src="assets/og/og_score_th.webp" alt="パーオン率・ボギーオン率などの分析指標の図" loading="lazy" width="640" height="336"><span class="rt">SQOREのスコア管理機能</span><span class="rd">記録できることと分析できること</span></a>
@@ -755,8 +781,8 @@
           <li><a href="rules/las-vegas.html"><img src="assets/fig/las-vegas.svg" alt="ラスベガスの2桁の数字の作り方の図" loading="lazy" width="700" height="270"><span class="rt">ラスベガス</span><span class="rd">2桁の作り方・バーディ倍・反転・キャリー</span></a></li>
           <li><a href="rules/las-vegas-3players.html"><img src="assets/fig/las-vegas-3players.svg" alt="3人＋ゴーストで2対2にする図" loading="lazy" width="700" height="268"><span class="rt">ラスベガスを3人でやる方法</span><span class="rd">ゴースト・1対多数・ローテーション</span></a></li>
           <li><a href="rules/olympic.html"><img src="assets/fig/olympic.svg" alt="金4・銀3・銅2・鉄1の配点図" loading="lazy" width="700" height="266"><span class="rt">オリンピック</span><span class="rd">配点と計算方法・早見表・火消し</span></a></li>
-          <li><a href="rules/nassau.html"><img src="assets/fig/nassau.svg" alt="前半・後半・トータルの3本勝負の図" loading="lazy" width="700" height="250"><span class="rt">ナッソー</span><span class="rd">ピンポンパンと呼ばれる理由</span></a></li>
-          <li><a href="rules/pinponpan.html"><img src="assets/fig/pinponpan.svg" alt="ピン・ポン・パンでそれぞれ1点が動く図" loading="lazy" width="700" height="340"><span class="rt">ピンポンパン</span><span class="rd">呼び名が指すゲームは2つある</span></a></li>
+          <li><a href="rules/nassau.html"><img src="assets/fig/nassau.svg" alt="前半・後半・トータルの3本勝負の図" loading="lazy" width="700" height="250"><span class="rt">ナッソー</span><span class="rd">前半・後半・トータルの3本勝負</span></a></li>
+          <li><a href="rules/pinponpan.html"><img src="assets/fig/pinponpan.svg" alt="ピン・ポン・パンでそれぞれ1点が動く図" loading="lazy" width="700" height="340"><span class="rt">ピンポンパン</span><span class="rd">ピン・ポン・パンで1ホール3点</span></a></li>
           <li><a href="rules/hole-best.html"><img src="assets/fig/hole-best.svg" alt="単独最少打数がポイントを取る図" loading="lazy" width="700" height="292"><span class="rt">ホールベスト</span><span class="rd">最少打数がポイント・同点キャリー</span></a></li>
           <li><a href="rules/hebi.html"><img src="assets/fig/hebi.svg" alt="育つへびの倍率が上がっていく図" loading="lazy" width="700" height="306"><span class="rt">へび（スネーク）</span><span class="rd">3パットで移動する罰ゲーム</span></a></li>
           <li><a href="rules/honest-john.html"><img src="assets/fig/honest-john.svg" alt="申告スコアと実際のスコアの差の図" loading="lazy" width="700" height="286"><span class="rt">オネストジョン</span><span class="rd">申告スコアに近い人が勝つ</span></a></li>
@@ -768,7 +794,7 @@
       <div class="read-col">
         <h3>コンペ・新ペリア</h3>
         <ul>
-          <li><a href="rules/new-peria.html"><img src="assets/fig/new-peria.svg" alt="グロス差の80%が消え20%が残る図" loading="lazy" width="700" height="348"><span class="rt">新ペリアは本当に「誰でも優勝できる」のか</span><span class="rd">3万回シミュレーションで検証</span></a></li>
+          <li><a href="rules/new-peria.html"><img src="assets/fig/new-peria.svg" alt="グロス差の80%が消え20%が残る図" loading="lazy" width="700" height="348"><span class="rt">新ペリア方式のルールとハンデ計算</span><span class="rd">「誰でも優勝できる」のか3万回で検証</span></a></li>
           <li><a href="rules/peria-compare.html"><img src="assets/fig/peria-compare.svg" alt="隠しホール6・9・12の比較図" loading="lazy" width="700" height="268"><span class="rt">ペリア・新ペリア・新新ペリアの違い</span><span class="rd">平均ハンデは同じ。違うのはブレの大きさ</span></a></li>
         </ul>
         <h3 style="margin-top:18px">スコア管理</h3>
@@ -780,7 +806,7 @@
         </ul>
         <h3 style="margin-top:18px">ゴルフ場選び</h3>
         <ul>
-          <li><a href="course/search/"><img src="assets/fig/course-search.svg" alt="自宅から車で60分以内の円と、空き枠のあるゴルフ場の旗の図" loading="lazy" width="700" height="400"><span class="rt">車で◯分以内のゴルフ場を探す</span><span class="rd">空き枠のあるプランだけを出すゴルフ場検索</span></a></li>
+          <li><a href="course/search/"><img src="assets/fig/course-search.svg" alt="自宅から車で60分以内の円と、空き枠のあるゴルフ場の旗の図" loading="lazy" width="700" height="400"><span class="rt">車で60分以内のゴルフ場を探す</span><span class="rd">空き枠のあるプランだけを出すゴルフ場検索</span></a></li>
           <li><a href="course/sauna-gaikiyoku.html"><img src="assets/fig/sauna-gaikiyoku.svg" alt="関東のゴルフ場サウナ134施設のうち外気浴まで揃うのは11施設という内訳図" loading="lazy" width="700" height="400"><span class="rt">サウナで外気浴までできるゴルフ場</span><span class="rd">関東134施設を確認。行けるのは8コース</span></a></li>
         </ul>
         <h3 style="margin-top:18px">一覧とデモ</h3>
@@ -800,7 +826,7 @@
   <div class="wrap">
     <h2>15秒でわかる<span class="accent">SQORE</span></h2>
     <p class="lead">実際の操作の流れを動画でチェック（音は出ません）</p>
-    <video autoplay muted loop playsinline preload="metadata" poster="assets/video_thumb.jpg" width="720" height="1280"
+    <video controls muted playsinline preload="none" poster="assets/video_thumb.jpg" width="720" height="1280"
            title="15秒でわかるSQORE｜ゴルフの握りをポイント自動計算">
       <source src="assets/sqore_ad_15s.mp4" type="video/mp4">
     </video>
@@ -852,7 +878,7 @@
           <li>ホールごとの自分の履歴（過去の打数・パット・ポイント）</li>
           <li>GPSマップの距離計測</li>
           <li>ラウンドの天気と天気別の平均スコア</li>
-          <li>メンバー相性</li>
+          <li>メンバー相性（一緒に回った相手との対戦成績）</li>
         </ul>
       </div>
     </div>
@@ -917,6 +943,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="wrap">
