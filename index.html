@@ -228,36 +228,68 @@
 
   /* ===== Hero ===== */
   .hero {
-    background: linear-gradient(175deg, #2596e0 0%, var(--blue) 45%, var(--blue-deep) 100%);
-    color: #fff; text-align: center; padding: 0 0 0; overflow: hidden;
+    position: relative; color: #fff; overflow: hidden; isolation: isolate;
+    background: #1b2a1b url(assets/hero_bg_pc.webp) center 60% / cover no-repeat;
   }
-  .hero .icon {
-    width: 96px; height: 96px; border-radius: 22px; margin: 44px auto 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.3);
+  /* 写真の上に黒を重ねて文字を読ませる(左=濃い・右=写真が見える) */
+  .hero::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background:
+      radial-gradient(120% 90% at 0% 0%, rgba(0,0,0,.78) 0%, rgba(0,0,0,.62) 42%, rgba(0,0,0,.25) 75%, rgba(0,0,0,.08) 100%);
   }
-  .hero .appname { font-size: 40px; letter-spacing: .08em; font-weight: 800; }
-  .hero h1 { font-size: 26px; font-weight: 800; margin-top: 14px; line-height: 1.45; }
+  .hero-grid {
+    display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 24px;
+    max-width: 1080px; margin: 0 auto; padding: 56px 24px 0;
+  }
+  .hero-copy { padding-bottom: 96px; }
+  .hero .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: .04em;
+    background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.35); backdrop-filter: blur(8px);
+    padding: 6px 14px 6px 6px; border-radius: 999px;
+  }
+  .hero .eyebrow img { width: 24px; height: 24px; border-radius: 6px; }
+  .hero h1 { font-size: 46px; font-weight: 900; margin-top: 20px; line-height: 1.3; letter-spacing: .01em; text-shadow: 0 2px 18px rgba(0,30,70,.35); }
   .hero h1 em { font-style: normal; color: var(--yellow); }
-  .hero .sub { margin-top: 12px; font-size: 15px; opacity: .95; }
-  .badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+  .hero .sub { margin-top: 18px; font-size: 16px; line-height: 1.8; opacity: .95; max-width: 30em; }
+  .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
   .badges span {
-    background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.45);
+    background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.4); backdrop-filter: blur(8px);
     border-radius: 999px; padding: 6px 16px; font-size: 14px; font-weight: 600;
   }
   .badges span::before { content: "✓ "; color: var(--yellow); font-weight: 800; }
   /* 公式ストアバッジ。Google の PNG は上下に透過余白(250px 中 192px が実バッジ)が
      焼き込まれているため、表示高さは Apple の 250/192 倍にして見た目の高さを揃える */
-  .store-btns { display: flex; gap: 16px; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 28px; }
+  .store-btns { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 30px; }
   .store-badge { display: inline-block; text-decoration: none; transition: transform .15s ease; }
   .store-badge:hover { transform: scale(1.04); }
   .store-badge img { display: block; width: auto; }
   .store-badge-apple img { height: 50px; }
   .store-badge-google img { height: 65px; }
-  .hero .phone {
-    width: min(320px, 78vw); margin: 40px auto -80px;
-    border-radius: 36px; box-shadow: 0 24px 60px rgba(0,0,0,.4);
+
+  /* 端末2台(奥=成績・手前=スコア入力)。下端はヒーローの底で切る */
+  .phones { position: relative; height: 600px; align-self: end; }
+  .ph {
+    position: absolute; bottom: -40px; overflow: hidden; background: #fff;
+    border: 11px solid #0e1116; border-bottom: 0; border-radius: 46px 46px 0 0;
+    box-shadow: 0 30px 70px rgba(0,20,50,.55);
   }
-  .hero-spacer { height: 110px; }
+  .ph img { display: block; width: 100%; height: auto; }
+  .ph-back { width: 250px; left: 4%; bottom: 10px; transform: rotate(-7deg); opacity: .96; }
+  .ph-front { width: 290px; right: 6%; z-index: 2; }
+  .float-card {
+    position: absolute; z-index: 3; color: #10263f; background: rgba(255,255,255,.92); backdrop-filter: blur(12px);
+    border-radius: 16px; padding: 12px 16px; box-shadow: 0 14px 36px rgba(0,25,60,.28); font-size: 13px; line-height: 1.5;
+  }
+  .float-card b { display: block; font-size: 22px; font-weight: 900; color: var(--blue); line-height: 1.2; }
+  .float-games { right: -7%; top: 96px; }
+  .float-auto { left: -6%; bottom: 120px; }
+  .float-auto b { color: #b8860b; }
+
+  /* 下端の波でページ本体へつなぐ */
+  @media (max-width: 1180px) { .float-games { right: 0; top: 40px; } }
+  .hero-wave path { fill: var(--bg); }
+  .hero-wave { position: absolute; left: 0; right: 0; bottom: -1px; height: 64px; z-index: 4; display: block; width: 100%; }
+  .hero-spacer { height: 8px; }
 
   /* ===== Sections ===== */
   section { padding: 64px 0; }
@@ -425,8 +457,6 @@
   footer a:hover { text-decoration: underline; }
 
   @media (max-width: 600px) {
-    .hero .appname { font-size: 32px; }
-    .hero h1 { font-size: 21px; }
     h2 { font-size: 23px; }
     .store-btns { gap: 10px; }
     .store-badge-apple img { height: 44px; }
@@ -444,6 +474,26 @@
     .topnav.hide { transform: translateY(-115%); }
     .hero { padding-top: 44px; }
   }
+  @media (max-width: 860px) {
+    .hero { background-image: url(assets/hero_bg_sp.webp); background-position: center 70%; }
+    .hero::before { background: linear-gradient(180deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.60) 48%, rgba(0,0,0,.22) 78%, rgba(0,0,0,.10) 100%); }
+    .hero-grid { grid-template-columns: 1fr; text-align: center; padding: 36px 16px 0; gap: 0; }
+    .hero-copy { padding-bottom: 28px; }
+    .hero h1 { font-size: 32px; }
+    .hero .sub { font-size: 14px; margin-inline: auto; }
+    .badges, .store-btns { justify-content: center; }
+    .phones { height: 430px; max-width: 380px; width: 100%; margin: 0 auto; }
+    .ph-back { width: 180px; left: 0; bottom: 0; border-width: 8px; border-radius: 34px 34px 0 0; }
+    .ph-front { width: 220px; right: 2%; border-width: 8px; border-radius: 36px 36px 0 0; }
+    .float-card { padding: 9px 12px; font-size: 11px; border-radius: 12px; }
+    .float-card b { font-size: 17px; }
+    .float-games { right: -2%; top: 0; }
+    .float-auto { left: -2%; bottom: 70px; top: auto; }
+    .hero-wave { height: 40px; }
+  }
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 28px; }
+  }
 </style>
 </head>
 <body>
@@ -460,26 +510,33 @@
     <a href="#faq">FAQ</a>
     <a href="support/">サポート</a>
   </nav>
-  <div class="wrap">
-    <img class="icon" src="assets/icon_192.png" alt="ゴルフポイント自動計算アプリSQOREのアイコン" width="96" height="96">
-    <p class="appname">SQORE</p>
-    <h1>ゴルフの握りを<br><em>自動計算</em>で超簡単に</h1>
-    <p class="sub">オリンピック・ラスベガス・ナッソー・ホールベストなど、仲間内でポイントを競う定番ゲームに多数対応の無料iPhone・Androidアプリ</p>
-    <div class="badges">
-      <span>入力はワンタップ</span>
-      <span>途中経過もすぐ</span>
-      <span>精算まで一発</span>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><img src="assets/icon_180.png" alt="" width="24" height="24">SQORE（スコア）</span>
+      <h1>ゴルフの握りを<br><em>自動計算</em>で超簡単に</h1>
+      <p class="sub">オリンピック・ラスベガス・ナッソー・ホールベストなど、仲間内でポイントを競う定番ゲームに多数対応の無料iPhone・Androidアプリ</p>
+      <div class="badges">
+        <span>入力はワンタップ</span>
+        <span>途中経過もすぐ</span>
+        <span>精算まで一発</span>
+      </div>
+      <div class="store-btns">
+        <a class="store-badge store-badge-apple" href="https://apps.apple.com/jp/app/id6777357472">
+          <img src="assets/badge_appstore_ja.svg" alt="App Store からダウンロード" width="136" height="50">
+        </a>
+        <a class="store-badge store-badge-google" href="https://play.google.com/store/apps/details?id=com.sqore.app">
+          <img src="assets/badge_googleplay_ja.png" alt="Google Play で手に入れよう" width="168" height="65">
+        </a>
+      </div>
     </div>
-    <div class="store-btns">
-      <a class="store-badge store-badge-apple" href="https://apps.apple.com/jp/app/id6777357472">
-        <img src="assets/badge_appstore_ja.svg" alt="App Store からダウンロード" width="136" height="50">
-      </a>
-      <a class="store-badge store-badge-google" href="https://play.google.com/store/apps/details?id=com.sqore.app">
-        <img src="assets/badge_googleplay_ja.png" alt="Google Play で手に入れよう" width="168" height="65">
-      </a>
+    <div class="phones">
+      <div class="ph ph-back"><img src="assets/hero_stats.webp" alt="SQOREのメンバー成績画面。いつものメンバーとのポイント合計を一覧表示" width="640" height="1353"></div>
+      <div class="ph ph-front"><img src="assets/hero_score.webp" alt="SQOREのスコア入力画面。打数をワンタップで入力しゲームのポイントを自動計算" width="640" height="1337" loading="eager"></div>
+      <div class="float-card float-games"><b>12種類</b>の定番ゲームに対応</div>
+      <div class="float-card float-auto"><b>+180pt</b>計算はぜんぶ自動</div>
     </div>
-    <img class="phone" src="assets/ss1.webp" alt="SQOREのスコア入力画面。打数をワンタップで入力しゲームのポイントを自動計算" loading="eager" width="415" height="900">
   </div>
+  <svg class="hero-wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,8 480,8 720,28 C960,48 1200,58 1440,24 L1440,64 L0,64 Z" fill="#f5f7fa"/></svg>
 </header>
 <div class="hero-spacer"></div>
 
