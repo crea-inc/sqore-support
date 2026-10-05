@@ -509,6 +509,26 @@
   @media (max-width: 600px) {
     .hero h1 { font-size: 28px; }
   }
+/* 動き。端末で「視差効果を減らす」をオンにしている人には出さない */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  .ph-front { animation: sq-rise .9s cubic-bezier(.2, .8, .2, 1) both; }
+  .ph-back { animation: sq-rise .9s .12s cubic-bezier(.2, .8, .2, 1) both; }
+  .float-card { animation: sq-pop-in .5s cubic-bezier(.2, 1.4, .4, 1) both, sq-float 6s ease-in-out infinite; }
+  .float-games { animation-delay: .55s, 1.3s; }
+  .float-auto { animation-delay: .75s, 2.2s; }
+  .store-badge:active { transform: scale(.97); }
+  .game:active { transform: translateY(-1px) scale(.99); }
+  .game .more { transition: background-color .15s, transform .12s ease; }
+  .game .more:active { transform: scale(.96); }
+  .faq summary { transition: color .15s; }
+  .faq summary:hover { color: var(--blue); }
+  .faq details > :not(summary) { animation: sq-open .28s ease both; }
+}
+@keyframes sq-rise { from { translate: 0 70px; } }
+@keyframes sq-pop-in { from { opacity: 0; scale: .85; } }
+@keyframes sq-float { 50% { translate: 0 -6px; } }
+@keyframes sq-open { from { opacity: 0; transform: translateY(-4px); } }
 </style>
 </head>
 <body>

@@ -195,3 +195,29 @@ footer a:hover { text-decoration: underline; }
 .score-links a .rt { display: block; font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.5; }
 .score-links a .rd { display: block; font-size: 12px; font-weight: 400; color: var(--gray); margin-top: 2px; line-height: 1.5; }
 .score-links a:hover .rt { color: var(--blue); }
+
+/* 動き。端末で「視差効果を減らす」をオンにしている人には出さない */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  .faq summary { transition: color .15s; }
+  .faq summary:hover { color: var(--blue); }
+  .faq details > :not(summary) { animation: sq-open .28s ease both; }
+  .related a { transition: background-color .15s, transform .2s ease; }
+  .related a:hover { transform: translateX(3px); }
+  .rule-cards a { transition: transform .2s ease, box-shadow .2s ease; }
+  a.appget, .dl-bar a.get, .calcbtn, .step, .mtile { transition: transform .12s ease, background-color .15s, opacity .2s, border-color .15s; }
+  a.appget:active, .dl-bar a.get:active, .calcbtn:active { transform: scale(.97); }
+  .step:active { transform: scale(.88); }
+  .mtile:active { transform: scale(.93); }
+  /* アプリ画面のデモ */
+  .stamp.show { animation: sq-fade .18s ease both; }
+  .stamp.show .card { animation: sq-pop .45s cubic-bezier(.2, 1.5, .4, 1) both; }
+  .mtile.sel .disc, .mtile.sel .gem { animation: sq-bump .35s ease; }
+  .bump { animation: sq-bump .32s ease; }
+  .flash { animation: sq-flash .8s ease; }
+}
+@keyframes sq-open { from { opacity: 0; transform: translateY(-4px); } }
+@keyframes sq-fade { from { opacity: 0; } }
+@keyframes sq-pop { from { opacity: 0; transform: scale(.6) rotate(-9deg); } 60% { opacity: 1; } to { transform: scale(1) rotate(-2deg); } }
+@keyframes sq-bump { 40% { transform: scale(1.28); } }
+@keyframes sq-flash { from { background-color: #fff3c4; } }
