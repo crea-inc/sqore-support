@@ -465,6 +465,7 @@
   .cta { background: linear-gradient(175deg, #2596e0, var(--blue-deep)); color: #fff; text-align: center; }
   .cta h2 { color: #fff; }
   .cta p { margin-top: 10px; opacity: .9; }
+  .cta .store-btns { justify-content: center; }
 
   footer { background: #0d2c47; color: rgba(255,255,255,.75); padding: 36px 0; font-size: 13px; }
   footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; justify-content: center; }
@@ -524,11 +525,15 @@
   .faq summary { transition: color .15s; }
   .faq summary:hover { color: var(--blue); }
   .faq details > :not(summary) { animation: sq-open .28s ease both; }
+  /* スクロールで画面に入ったら下からふわっと出す（印を付けるのはスクリプト） */
+  .rv { opacity: 0; }
+  .rv.in { opacity: 1; animation: sq-up .7s cubic-bezier(.2, .8, .2, 1) var(--d, 0s) backwards; }
 }
 @keyframes sq-rise { from { translate: 0 70px; } }
 @keyframes sq-pop-in { from { opacity: 0; scale: .85; } }
 @keyframes sq-float { 50% { translate: 0 -6px; } }
 @keyframes sq-open { from { opacity: 0; transform: translateY(-4px); } }
+@keyframes sq-up { from { opacity: 0; translate: 0 28px; } }
 </style>
 </head>
 <body>
@@ -983,6 +988,42 @@
   <span class="txt"><b>SQORE</b>ゴルフのポイント自動計算</span>
   <a class="get" href="https://apps.apple.com/jp/app/id6777357472">入手</a>
 </div>
+<script>
+/* 後半の各ブロックを、画面に入ったときに順に出す。動きを減らす設定の人には何もしない */
+(function () {
+  if (!('IntersectionObserver' in window) || !matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
+  var sel = 'section:not(.cta) h2, section .lead, .game, .feat, .score-inner > *, .hole-hist > *, .score-links a, .read-col, .plan, .faq details, .shots, .video-sec video, .games-note, .cta .wrap > *';
+  var vh = innerHeight;
+  var io = new IntersectionObserver(function (es) {
+    var n = 0;
+    es.filter(function (e) { return e.isIntersecting; })
+      .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top || a.boundingClientRect.left - b.boundingClientRect.left; })
+      .forEach(function (e) {
+        e.target.style.setProperty('--d', Math.min(n++ * 0.07, 0.42) + 's');
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  var els = [];
+  document.querySelectorAll(sel).forEach(function (el) {
+    if (el.closest('.hero') || el.getBoundingClientRect().top < vh) return;
+    el.classList.add('rv');
+    els.push(el);
+    io.observe(el);
+  });
+  /* 勢いよく飛ばして画面より上に通り過ぎたものは、動かさずにそのまま出す */
+  addEventListener('scroll', function () {
+    els = els.filter(function (el) {
+      if (el.classList.contains('in')) return false;
+      if (el.getBoundingClientRect().bottom > 0) return true;
+      el.style.animation = 'none';
+      el.classList.add('in');
+      io.unobserve(el);
+      return false;
+    });
+  }, { passive: true });
+})();
+</script>
 <script>
 /* ヘッダーの出し入れ。下スクロールで隠し、上スクロールで戻す。 */
 (function () {
