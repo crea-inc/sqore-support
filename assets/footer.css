@@ -1,0 +1,22 @@
+/* 全ページ共通のフッター。色はサイトの紺(#0d2c47)のまま。 */
+footer.sf { background: #0d2c47; color: rgba(255,255,255,.7); font-size: 13px; line-height: 1.7; margin-top: 56px; padding: 48px 0 0; }
+.sf-in { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 260px 1fr; gap: 32px 56px; }
+.sf-logo { display: inline-flex; align-items: center; gap: 10px; color: #fff; font-weight: 800; font-size: 18px; letter-spacing: .06em; text-decoration: none; }
+.sf-logo img { width: 36px; height: 36px; border-radius: 9px; display: block; }
+.sf-brand p { margin: 14px 0 0; font-size: 12.5px; line-height: 1.8; color: rgba(255,255,255,.62); }
+.sf-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px 24px; }
+.sf-h { margin: 0 0 10px; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .04em; }
+footer.sf ul { list-style: none; margin: 0; padding: 0; display: block; }
+footer.sf li { margin: 0; padding: 0; font-size: 13px; }
+footer.sf li a { display: inline-block; padding: 4px 0; color: rgba(255,255,255,.7); text-decoration: none; background: none; box-shadow: none; border-radius: 0; font-weight: 400; font-size: 13px; }
+footer.sf li a:hover { color: #fff; text-decoration: underline; background: none; }
+.sf-bottom { margin-top: 40px; border-top: 1px solid rgba(255,255,255,.12); padding: 18px 24px; text-align: center; font-size: 12px; color: rgba(255,255,255,.5); }
+@media (max-width: 860px) {
+  .sf-in { grid-template-columns: 1fr; }
+  .sf-cols { grid-template-columns: repeat(2, 1fr); }
+}
+/* スマホは画面下の入手バーの分だけ紺を下に伸ばす(本文側の余白を紺で埋める) */
+@media (max-width: 640px) {
+  footer.sf { padding-top: 40px; }
+  body:has(.dl-bar) .sf-bottom { padding-bottom: 110px; margin-bottom: -92px; }
+}

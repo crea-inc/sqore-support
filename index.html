@@ -471,10 +471,6 @@
   .cta p { margin-top: 10px; opacity: .9; }
   .cta .store-btns { justify-content: center; }
 
-  footer { background: #0d2c47; color: rgba(255,255,255,.75); padding: 36px 0; font-size: 13px; }
-  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; justify-content: center; }
-  footer a { color: #fff; text-decoration: none; display: inline-block; padding-block: 3px; }
-  footer a:hover { text-decoration: underline; }
 
   @media (max-width: 600px) {
     h2 { font-size: 23px; }
@@ -539,6 +535,7 @@
 @keyframes sq-open { from { opacity: 0; transform: translateY(-4px); } }
 @keyframes sq-up { from { opacity: 0; translate: 0 28px; } }
 </style>
+<link rel="stylesheet" href="assets/footer.css">
 </head>
 <body>
 
@@ -951,17 +948,51 @@
 
 </main>
 
-<footer>
-  <div class="wrap">
-    <span>© 株式会社クレア</span>
-    <a href="guide/">使い方</a>
-    <a href="rules/">ゲームルール解説</a>
-    <a href="score/">スコア管理</a>
-    <a href="course/">ゴルフ場選び</a>
-    <a href="column/">コラム</a>
-    <a href="support/">サポート</a>
-    <a href="privacy/">プライバシーポリシー</a>
+<footer class="sf" style="margin-top:0">
+  <div class="sf-in">
+    <div class="sf-brand">
+      <a class="sf-logo" href="./"><img src="assets/icon_180.png" alt="" width="36" height="36" loading="lazy">SQORE</a>
+      <p>ゴルフの握りのポイントとスコアを、打数を入れるだけで自動計算する無料アプリ。iPhone・Android対応。</p>
+    </div>
+    <nav class="sf-cols" aria-label="サイト内のページ">
+      <div>
+        <p class="sf-h">アプリ</p>
+        <ul>
+          <li><a href="guide/">使い方</a></li>
+          <li><a href="score/">スコア管理</a></li>
+          <li><a href="course/search/">ゴルフ場検索</a></li>
+          <li><a href="app/las-vegas-olympic/">2ゲーム同時進行のデモ</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="sf-h">ゲームのルール</p>
+        <ul>
+          <li><a href="rules/">ルール解説の一覧</a></li>
+          <li><a href="rules/las-vegas.html">ラスベガス</a></li>
+          <li><a href="rules/olympic.html">オリンピック</a></li>
+          <li><a href="rules/nassau.html">ナッソー</a></li>
+          <li><a href="rules/new-peria.html">新ペリア</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="sf-h">コラム</p>
+        <ul>
+          <li><a href="column/">コラムの一覧</a></li>
+          <li><a href="score/handicap.html">ハンディキャップの計算</a></li>
+          <li><a href="score/bogey-on.html">ボギーオンとは</a></li>
+          <li><a href="course/">ゴルフ場選び</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="sf-h">サポート</p>
+        <ul>
+          <li><a href="support/">サポート・お問い合わせ</a></li>
+          <li><a href="privacy/">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
+  <div class="sf-bottom">© 株式会社クレア</div>
 </footer>
 
 <div class="dl-bar">
