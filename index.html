@@ -324,6 +324,10 @@
   .game .more.demo { color: #fff; background: var(--blue); }
   .game .more.demo:hover { background: var(--blue-deep); }
   .games-note { text-align: center; color: var(--gray); font-size: 14px; margin-top: 24px; }
+  .games-points { list-style: none; margin-top: 28px; max-width: 760px; display: grid; gap: 8px; }
+  .games-points li { position: relative; padding-left: 20px; font-size: 15px; line-height: 1.75; color: #3a3a3c; }
+  .games-points li::before { content: ""; position: absolute; left: 4px; top: .7em; width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
+  .games-points a { color: var(--blue); font-weight: 700; }
 
   /* 読みもの */
   .reads { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-top: 32px; }
@@ -658,7 +662,11 @@
         <div class="links"><a class="more" href="rules/honest-john.html" aria-label="オネストジョンの詳しいルール">詳しいルール →</a></div>
       </div>
     </div>
-    <p class="games-note">バーディで反転・倍などのローカルルール、ペナルティ計算や手動ポイントにも対応。各ゲームの遊び方は<a href="rules/" style="color:var(--blue); font-weight:700">ルール解説</a>へ。<a href="app/las-vegas-olympic/" style="color:var(--blue); font-weight:700">ラスベガス×オリンピックの同時進行デモ</a>もブラウザで試せます。<br>もちろん打数だけつける「スコアのみ」で、普通のゴルフスコア管理アプリとしても使えます。</p>
+    <ul class="games-points">
+      <li>バーディで反転・倍などのローカルルール、ペナルティ計算や手動ポイントにも対応。</li>
+      <li>各ゲームの遊び方は<a href="rules/">ルール解説</a>へ。<a href="app/las-vegas-olympic/">ラスベガス×オリンピックの同時進行デモ</a>もブラウザで試せます。</li>
+      <li>打数だけつける「スコアのみ」で、普通のゴルフスコア管理アプリとしても使えます。</li>
+    </ul>
   </div>
 </section>
 
@@ -992,7 +1000,7 @@
 /* 後半の各ブロックを、画面に入ったときに順に出す。動きを減らす設定の人には何もしない */
 (function () {
   if (!('IntersectionObserver' in window) || !matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
-  var sel = 'section:not(.cta) h2, section .lead, .game, .feat, .score-inner > *, .hole-hist > *, .score-links a, .read-col, .plan, .faq details, .shots, .video-sec video, .games-note, .cta .wrap > *';
+  var sel = 'section:not(.cta) h2, section .lead, .game, .feat, .score-inner > *, .hole-hist > *, .score-links a, .read-col, .plan, .faq details, .shots, .video-sec video, .games-note, .games-points, .cta .wrap > *';
   var vh = innerHeight;
   var io = new IntersectionObserver(function (es) {
     var n = 0;
