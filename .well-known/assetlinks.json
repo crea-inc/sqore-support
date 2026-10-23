@@ -3,6 +3,6 @@
   "target": {
     "namespace": "android_app",
     "package_name": "com.sqore.app",
-    "sha256_cert_fingerprints": ["PLACEHOLDER"]
+    "sha256_cert_fingerprints": ["F0:B0:F9:3E:81:18:1A:E3:1D:47:1E:4C:E0:A8:E7:CB:8B:33:D3:4D:FC:89:95:00:1B:09:D3:FD:0A:52:07:95"]
   }
 }]
