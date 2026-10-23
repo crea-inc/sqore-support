@@ -75,12 +75,8 @@
   } else if (isIOS) {
     btn.href = 'sqore://rules?d=' + encodeURIComponent(token);
     btn.hidden = false;
-    // アプリが入っていなくて何も起きなかった時は App Store へ
-    btn.addEventListener('click', function () {
-      setTimeout(function () {
-        if (!document.hidden) location.href = 'https://apps.apple.com/jp/app/id6777357472';
-      }, 1500);
-    });
+    // 自動では App Store へ飛ばさない。iOS の Safari は sqore:// を開く前に確認を出すので、
+    // 時間で飛ばすとアプリが入っていてもストアへ行ってしまう。ボタンと下のストアのバッジを並べたままにする。
   } else {
     document.getElementById('pc').hidden = false;
   }
