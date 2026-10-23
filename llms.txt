@@ -122,4 +122,5 @@
 
 ### その他
 - [サポート](https://sqore-golf.com/support/): よくある質問・お問い合わせ
+- [ルールを受け取る](https://sqore-golf.com/r/): 同じ組の人がアプリから送ったゲームのルール（QR・リンク）をSQOREのアプリで開くための受け口。リンクの中身だけで動き、単体で読む内容はない
 - [プライバシーポリシー](https://sqore-golf.com/privacy/)

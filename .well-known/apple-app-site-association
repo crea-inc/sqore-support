@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["QKK3M6SJB2.com.sqore.app"],
+        "components": [
+          { "/": "/r", "comment": "ルール共有" },
+          { "/": "/r/*", "comment": "ルール共有" }
+        ]
+      }
+    ]
+  }
+}

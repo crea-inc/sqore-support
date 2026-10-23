@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2596e0">
+<title>ルールを受け取る - SQORE</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="同じ組の人から届いたゴルフのゲームのルールを、SQOREのアプリで開きます。">
+<meta name="apple-itunes-app" content="app-id=6777357472">
+<link rel="apple-touch-icon" href="/assets/icon_180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_32.png?v=5">
+<link rel="icon" type="image/png" sizes="180x180" href="/assets/favicon_180.png?v=5">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+         margin: 0; line-height: 1.7; color: #1c1c1e; background: #f5f7fa; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 480px; margin: 0 auto; padding: 48px 16px 64px; text-align: center; }
+  .icon { width: 88px; height: 88px; border-radius: 20px; box-shadow: 0 6px 20px rgba(11,92,171,.18); }
+  h1 { font-size: 24px; margin: 20px 0 8px; }
+  .lead { color: #6e6e73; font-size: 15px; margin: 0 0 28px; }
+  .open { display: block; width: 100%; padding: 16px; border-radius: 14px; background: #1479d2; color: #fff;
+          font-size: 18px; font-weight: 700; text-decoration: none; box-shadow: 0 6px 18px rgba(20,121,210,.3); }
+  .open:active { opacity: .85; }
+  .note { color: #6e6e73; font-size: 13px; margin: 28px 0 12px; }
+  .badges { display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .badges img { height: 44px; width: auto; display: block; }
+  .error { background: #fff; border-radius: 12px; padding: 16px; color: #c0392b; font-weight: 700; font-size: 15px;
+           box-shadow: 0 3px 14px rgba(11,92,171,.07); }
+  [hidden] { display: none !important; }
+  .home { display: inline-block; margin-top: 32px; color: #1479d2; font-size: 14px; text-decoration: none; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <img class="icon" src="/assets/icon_180.png" alt="SQORE">
+  <h1>SQOREでルールを受け取る</h1>
+  <p class="lead" id="lead">同じ組の人が決めたゲームのルールを開きます。</p>
+
+  <a class="open" id="open" href="#" hidden>アプリで開く</a>
+  <p class="error" id="broken" hidden>このリンクは読み取れません。送った人にもう一度出してもらってください。</p>
+  <p class="lead" id="pc" hidden>スマートフォンでこのリンクを開いてください。</p>
+
+  <p class="note">アプリが入っていないときは、ストアから入れてもう一度このリンクを開いてください。</p>
+  <div class="badges">
+    <a href="https://apps.apple.com/jp/app/id6777357472"><img src="/assets/badge_appstore_ja.svg" alt="App Storeからダウンロード"></a>
+    <a href="https://play.google.com/store/apps/details?id=com.sqore.app"><img src="/assets/badge_googleplay_ja.png" alt="Google Playで手に入れよう"></a>
+  </div>
+  <a class="home" href="/">SQOREのトップへ</a>
+</main>
+<script>
+(function () {
+  // 開いたまま別のリンクを開くと # だけ変わって読み直されないので、その時は読み直す
+  window.addEventListener('hashchange', function () { location.reload(); });
+  // リンクの中身は # の後ろ(サーバーには送られない)。自動ではアプリを開かず、ボタンを押した時だけ開く。
+  var token = location.hash.slice(1);
+  var ok = /^v\d+\.[A-Za-z0-9_-]+$/.test(token);
+  var ua = navigator.userAgent;
+  var isAndroid = /Android/i.test(ua);
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var btn = document.getElementById('open');
+  if (!ok) {
+    document.getElementById('broken').hidden = false;
+    document.getElementById('lead').hidden = true;
+    return;
+  }
+  var meta = document.querySelector('meta[name=apple-itunes-app]');
+  if (meta) meta.content = 'app-id=6777357472, app-argument=' + location.href;
+  if (isAndroid) {
+    btn.href = 'intent://rules?d=' + encodeURIComponent(token) +
+      '#Intent;scheme=sqore;package=com.sqore.app;S.browser_fallback_url=' +
+      encodeURIComponent('https://play.google.com/store/apps/details?id=com.sqore.app') + ';end';
+    btn.hidden = false;
+  } else if (isIOS) {
+    btn.href = 'sqore://rules?d=' + encodeURIComponent(token);
+    btn.hidden = false;
+    // アプリが入っていなくて何も起きなかった時は App Store へ
+    btn.addEventListener('click', function () {
+      setTimeout(function () {
+        if (!document.hidden) location.href = 'https://apps.apple.com/jp/app/id6777357472';
+      }, 1500);
+    });
+  } else {
+    document.getElementById('pc').hidden = false;
+  }
+})();
+</script>
+</body>
+</html>
