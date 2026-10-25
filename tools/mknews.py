@@ -41,9 +41,13 @@ def load():
         assert DATE.match(it["date"]), f"date の形: {it['date']}"
         if "until" in it:
             assert DATE.match(it["until"]), f"until の形: {it['until']}"
+        if "banner" in it:
+            assert isinstance(it["banner"], bool), f"banner は true か false: {it['banner']}"
+        if "url" in it:
+            assert re.fullmatch(r"https://\S+", str(it["url"])), f"url は https:// から: {it['url']}"
         for k in ("below_ios", "below_android"):
             if k in it:
-                assert re.match(r"^\d+(\.\d+)*$", str(it[k])), f"{k} の形: {it[k]}"
+                assert re.fullmatch(r"\d+(\.\d+)*", str(it[k])), f"{k} の形: {it[k]}"
         assert it["id"] not in ids, f"id の重複: {it['id']}"
         ids.add(it["id"])
     return items
