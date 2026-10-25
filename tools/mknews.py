@@ -11,6 +11,9 @@ news.json はアプリ(iOS・Android)も読みに来る。中身はここだけ�
     until  : 任意 "yyyy-mm-dd"。この日を過ぎたら帯を出さない(一覧には残る)。
              サイトのトップは書き出した時点で判定するので、期限を過ぎたら一度走らせ直す
     url    : 任意。くわしいページへのリンク
+    below_ios / below_android : 任意 "2.6.5" の形。その版より古いアプリにだけ出す(更新のお願い用)。
+             アプリ 2.6.3 / 1.3.3 から効く。それより前の版は無視して全員に出すので注意。
+             サイトのお知らせページには出すが、トップの帯には出さない
 
 使い方: python3 tools/mknews.py
 """
@@ -38,6 +41,9 @@ def load():
         assert DATE.match(it["date"]), f"date の形: {it['date']}"
         if "until" in it:
             assert DATE.match(it["until"]), f"until の形: {it['until']}"
+        for k in ("below_ios", "below_android"):
+            if k in it:
+                assert re.match(r"^\d+(\.\d+)*$", str(it[k])), f"{k} の形: {it[k]}"
         assert it["id"] not in ids, f"id の重複: {it['id']}"
         ids.add(it["id"])
     return items
@@ -65,7 +71,8 @@ def render(items):
 
 def top_banner(items, today):
     """トップの帯: アプリの帯と同じ選び方(帯の印あり・期限内のうち一番新しいもの。同じ日なら上)。無ければ空。"""
-    open_ = [it for it in items if it.get("banner") and it.get("until", "9999-12-31") >= today]
+    open_ = [it for it in items if it.get("banner") and it.get("until", "9999-12-31") >= today
+             and "below_ios" not in it and "below_android" not in it]
     if not open_:
         return ""
     newest = max(it["date"] for it in open_)
