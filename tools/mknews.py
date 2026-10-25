@@ -7,8 +7,9 @@ news.json はアプリ(iOS・Android)も読みに来る。中身はここだけ�
     date   : "yyyy-mm-dd"
     title  : 見出し(アプリのホームの帯にもこのまま出る。短く)
     body   : 本文。改行で段落を分ける
-    banner : true ならアプリのホームに帯で1回出す(見る・×で既読)
-    until  : 任意 "yyyy-mm-dd"。この日を過ぎたら帯を出さない(一覧には残る)
+    banner : true ならアプリのホームに帯で1回出す(見る・×で既読)。サイトのトップにも帯で出す
+    until  : 任意 "yyyy-mm-dd"。この日を過ぎたら帯を出さない(一覧には残る)。
+             サイトのトップは書き出した時点で判定するので、期限を過ぎたら一度走らせ直す
     url    : 任意。くわしいページへのリンク
 
 使い方: python3 tools/mknews.py
@@ -22,6 +23,8 @@ import re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "news", "news.json")
 OUT = os.path.join(ROOT, "news", "index.html")
+TOP = os.path.join(ROOT, "index.html")
+TOPNEWS = re.compile(r"<!--TOPNEWS-->.*?<!--/TOPNEWS-->", re.S)
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
@@ -60,8 +63,31 @@ def render(items):
     return tpl.replace("<!--NEWS-->", body)
 
 
+def top_banner(items, today):
+    """トップの帯: アプリの帯と同じ選び方(帯の印あり・期限内のうち一番新しいもの。同じ日なら上)。無ければ空。"""
+    open_ = [it for it in items if it.get("banner") and it.get("until", "9999-12-31") >= today]
+    if not open_:
+        return ""
+    newest = max(it["date"] for it in open_)
+    it = next(it for it in open_ if it["date"] == newest)
+    e = html.escape
+    return (f'<a class="top-news" href="news/#{e(it["id"])}">'
+            f'<span class="top-news-label">お知らせ</span>'
+            f'<time datetime="{e(it["date"])}">{jp_date(it["date"])}</time>'
+            f'<span class="top-news-title">{e(it["title"])}</span>'
+            f'<span class="top-news-arrow" aria-hidden="true">›</span></a>')
+
+
 if __name__ == "__main__":
-    out = render(load())
+    items = load()
+    out = render(items)
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(out)
     print("wrote", os.path.relpath(OUT, ROOT))
+    today = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).date().isoformat()
+    top = open(TOP, encoding="utf-8").read()
+    assert len(TOPNEWS.findall(top)) == 1, "index.html に <!--TOPNEWS--><!--/TOPNEWS--> が無い"
+    top = TOPNEWS.sub(lambda m: "<!--TOPNEWS-->" + top_banner(items, today) + "<!--/TOPNEWS-->", top)
+    with open(TOP, "w", encoding="utf-8") as f:
+        f.write(top)
+    print("wrote index.html")

@@ -290,6 +290,14 @@
   .hero-wave path { fill: var(--bg); }
   .hero-wave { position: absolute; left: 0; right: 0; bottom: -1px; height: 64px; z-index: 4; display: block; width: 100%; }
   .hero-spacer { height: 8px; }
+  .top-news { display: flex; align-items: center; gap: 10px; max-width: 940px; margin: 8px auto 0; padding: 12px 16px; background: #fff; border: 1px solid #e3e8ef; border-radius: 12px; color: var(--ink); text-decoration: none; font-size: 15px; line-height: 1.5; }
+  .top-news:hover { border-color: var(--blue); }
+  .top-news-label { flex: none; font-size: 12px; font-weight: 700; color: #fff; background: var(--blue); border-radius: 6px; padding: 2px 8px; }
+  .top-news time { flex: none; color: var(--gray); font-size: 13px; }
+  .top-news-title { flex: 1; min-width: 0; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .top-news-arrow { flex: none; color: var(--gray); }
+  @media (max-width: 980px) { .top-news { margin: 8px 20px 0; } }
+  @media (max-width: 480px) { .top-news { margin: 8px 16px 0; flex-wrap: wrap; row-gap: 4px; } .top-news-title { flex-basis: 100%; order: 3; white-space: normal; } .top-news-arrow { margin-left: auto; } }
 
   /* ===== Sections ===== */
   section { padding: 64px 0; }
@@ -580,6 +588,7 @@
   <svg class="hero-wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,8 480,8 720,28 C960,48 1200,58 1440,24 L1440,64 L0,64 Z" fill="#f5f7fa"/></svg>
 </header>
 <div class="hero-spacer"></div>
+<!--TOPNEWS--><a class="top-news" href="news/#2026-10-25-gora-search"><span class="top-news-label">お知らせ</span><time datetime="2026-10-25">2026年10月25日</time><span class="top-news-title">ゴルフ場検索がつながりにくくなっています</span><span class="top-news-arrow" aria-hidden="true">›</span></a><!--/TOPNEWS-->
 <main>
 
 <section id="about" style="padding-bottom:0">
