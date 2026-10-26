@@ -26,6 +26,7 @@ import re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "news", "news.json")
 OUT = os.path.join(ROOT, "news", "index.html")
+SELF = "https://sqore-golf.com/news/"
 TOP = os.path.join(ROOT, "index.html")
 TOPNEWS = re.compile(r"<!--TOPNEWS-->.*?<!--/TOPNEWS-->", re.S)
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -63,7 +64,9 @@ def render(items):
     arts = []
     for it in items:
         paras = "\n".join(f"<p>{e(p)}</p>" for p in it["body"].split("\n") if p.strip())
-        link = f'\n<p><a href="{e(it["url"])}">くわしくはこちら</a></p>' if it.get("url") else ""
+        # アプリからお知らせページへ飛ばすための url は、ページ自身には出さない(自分へのリンクになる)
+        url = it.get("url", "")
+        link = f'\n<p><a href="{e(url)}">くわしくはこちら</a></p>' if url and not url.startswith(SELF) else ""
         arts.append(
             f'<article class="news" id="{e(it["id"])}">\n'
             f'<time datetime="{e(it["date"])}">{jp_date(it["date"])}</time>\n'
