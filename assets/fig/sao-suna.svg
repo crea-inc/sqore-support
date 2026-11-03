@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="330" viewBox="0 0 700 330" role="img" aria-labelledby="sst ssd" xmlns="http://www.w3.org/2000/svg">
+<title id="sst">竿の1パットと3パットのポイントの動き</title>
+<desc id="ssd">4人で1打10ポイントの場合。Aさんが1パットならB・C・Dさんから10ずつ受け取りAさん+30、ほかの3人は−10。Aさんが3パットならB・C・Dさんに10ずつ払いAさん−30、ほかの3人は+10。砂は出して1打なら各10、直接なら各20を全員から受け取る。</desc>
+<defs><marker id="ahr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0L10,5L0,10z" fill="#0b5cab"/></marker><marker id="ahp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0L10,5L0,10z" fill="#d0342c"/></marker></defs>
+<rect width="700" height="330" fill="#ffffff"/>
+<text x="170" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0b5cab">竿：1パット → 全員からもらう</text>
+<line x1="60" y1="190" x2="150" y2="130" stroke="#0b5cab" stroke-width="3" marker-end="url(#ahr)"/>
+<text x="85" y="164" text-anchor="middle" font-size="13" font-weight="700" fill="#0b5cab">10</text>
+<circle cx="60" cy="215" r="22" fill="#eef4fb" stroke="#c9d4e0" stroke-width="2"/>
+<text x="60" y="220" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1e">B</text>
+<text x="60" y="260" text-anchor="middle" font-size="14" font-weight="700" fill="#d0342c">−10</text>
+<line x1="170" y1="190" x2="170" y2="130" stroke="#0b5cab" stroke-width="3" marker-end="url(#ahr)"/>
+<text x="186" y="164" text-anchor="middle" font-size="13" font-weight="700" fill="#0b5cab">10</text>
+<circle cx="170" cy="215" r="22" fill="#eef4fb" stroke="#c9d4e0" stroke-width="2"/>
+<text x="170" y="220" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1e">C</text>
+<text x="170" y="260" text-anchor="middle" font-size="14" font-weight="700" fill="#d0342c">−10</text>
+<line x1="280" y1="190" x2="190" y2="130" stroke="#0b5cab" stroke-width="3" marker-end="url(#ahr)"/>
+<text x="255" y="164" text-anchor="middle" font-size="13" font-weight="700" fill="#0b5cab">10</text>
+<circle cx="280" cy="215" r="22" fill="#eef4fb" stroke="#c9d4e0" stroke-width="2"/>
+<text x="280" y="220" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1e">D</text>
+<text x="280" y="260" text-anchor="middle" font-size="14" font-weight="700" fill="#d0342c">−10</text>
+<circle cx="170" cy="100" r="26" fill="#0b5cab"/>
+<text x="170" y="105" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">A</text>
+<text x="210" y="106" font-size="15" font-weight="700" fill="#0b5cab">+30</text>
+<text x="130" y="106" text-anchor="end" font-size="12" fill="#6e6e73">1パット</text>
+<line x1="350" y1="20" x2="350" y2="270" stroke="#eef1f5" stroke-width="2"/>
+<text x="530" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#d0342c">竿：3パット → 全員に払う</text>
+<line x1="510" y1="130" x2="420" y2="190" stroke="#d0342c" stroke-width="3" marker-end="url(#ahp)"/>
+<text x="445" y="164" text-anchor="middle" font-size="13" font-weight="700" fill="#d0342c">10</text>
+<circle cx="420" cy="215" r="22" fill="#eef4fb" stroke="#c9d4e0" stroke-width="2"/>
+<text x="420" y="220" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1e">B</text>
+<text x="420" y="260" text-anchor="middle" font-size="14" font-weight="700" fill="#0b5cab">+10</text>
+<line x1="530" y1="130" x2="530" y2="190" stroke="#d0342c" stroke-width="3" marker-end="url(#ahp)"/>
+<text x="546" y="164" text-anchor="middle" font-size="13" font-weight="700" fill="#d0342c">10</text>
+<circle cx="530" cy="215" r="22" fill="#eef4fb" stroke="#c9d4e0" stroke-width="2"/>
+<text x="530" y="220" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1e">C</text>
+<text x="530" y="260" text-anchor="middle" font-size="14" font-weight="700" fill="#0b5cab">+10</text>
+<line x1="550" y1="130" x2="640" y2="190" stroke="#d0342c" stroke-width="3" marker-end="url(#ahp)"/>
+<text x="615" y="164" text-anchor="middle" font-size="13" font-weight="700" fill="#d0342c">10</text>
+<circle cx="640" cy="215" r="22" fill="#eef4fb" stroke="#c9d4e0" stroke-width="2"/>
+<text x="640" y="220" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1e">D</text>
+<text x="640" y="260" text-anchor="middle" font-size="14" font-weight="700" fill="#0b5cab">+10</text>
+<circle cx="530" cy="100" r="26" fill="#d0342c"/>
+<text x="530" y="105" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">A</text>
+<text x="570" y="106" font-size="15" font-weight="700" fill="#d0342c">−30</text>
+<text x="490" y="106" text-anchor="end" font-size="12" fill="#6e6e73">3パット</text>
+<rect x="20" y="284" width="660" height="36" rx="10" fill="#fff7e6"/>
+<text x="350" y="308" text-anchor="middle" font-size="14" font-weight="700" fill="#a06a00">砂：バンカーから出して1打 → 各10・直接入った → 各20 を全員からもらう</text>
+</svg>

@@ -3,7 +3,7 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://sqore-golf.com/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <video:video>
@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://sqore-golf.com/score/compare.html</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -103,7 +103,7 @@
   </url>
   <url>
     <loc>https://sqore-golf.com/rules/olympic.html</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -170,6 +170,12 @@
   <url>
     <loc>https://sqore-golf.com/rules/honest-john.html</loc>
     <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sqore-golf.com/rules/sao-suna.html</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
