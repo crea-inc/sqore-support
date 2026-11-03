@@ -12,7 +12,7 @@ import pathlib
 import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-APP_STORE_PT = ""  # App Store Connect の「キャンペーンリンクを作成」に出る pt= の数字
+APP_STORE_PT = "128704638"  # App Store Connect の「キャンペーンリンクを作成」に出る pt= の数字
 
 PLAY = "https://play.google.com/store/apps/details?id=com.sqore.app"
 PLAY_RE = re.compile(re.escape(PLAY) + r"(?:&amp;referrer=[^\"']*|&referrer=[^\"']*)?")
