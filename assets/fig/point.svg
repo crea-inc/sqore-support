@@ -1,42 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="700" height="318" viewBox="0 0 700 318" role="img" aria-labelledby="ptt ptd" xmlns="http://www.w3.org/2000/svg">
+<svg font-family="-apple-system,'Hiragino Sans',sans-serif" width="700" height="420" viewBox="0 0 700 420" role="img" aria-labelledby="ptt ptd" xmlns="http://www.w3.org/2000/svg">
 <title id="ptt">ポイント制の1ホールの計算</title>
 <desc id="ptd">4人でバーディ10点の設定。Aさんがバーディで10点、B・C・Dさんは0点。合計は10点。収支は「自分の点×4−合計」で、Aさん+30、ほかの3人は−10ずつ。</desc>
-<rect width="700" height="318" fill="#ffffff"/>
-<text x="40" y="34" font-size="15" font-weight="700" fill="#1c1c1e">① 役の点を各自が取る</text>
-<text x="420" y="34" font-size="15" font-weight="700" fill="#1c1c1e">② 全員との差で精算</text>
-<circle cx="62" cy="80" r="18" fill="#eef4fb" stroke="#c9d4e0" stroke-width="2"/>
-<text x="62" y="85" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1e">A</text>
-<text x="96" y="85" font-size="14" fill="#3a3a3c">バーディ</text>
-<rect x="180" y="66" width="120" height="28" rx="4" fill="#1479d2"/>
-<text x="310" y="85" font-size="14" font-weight="800" fill="#0b5cab">10点</text>
-<line x1="350" y1="80" x2="400" y2="80" stroke="#c9d4e0" stroke-width="2"/>
-<text x="420" y="85" font-size="13" fill="#6e6e73">10×4 − 10 =</text>
-<text x="560" y="86" font-size="20" font-weight="800" fill="#0b5cab">+30</text>
-<circle cx="62" cy="130" r="18" fill="#eef4fb" stroke="#c9d4e0" stroke-width="2"/>
-<text x="62" y="135" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1e">B</text>
-<text x="96" y="135" font-size="14" fill="#3a3a3c">パー</text>
-<rect x="180" y="116" width="6" height="28" rx="4" fill="#c9d4e0"/>
-<text x="196" y="135" font-size="14" font-weight="800" fill="#0b5cab">0点</text>
-<line x1="350" y1="130" x2="400" y2="130" stroke="#c9d4e0" stroke-width="2"/>
-<text x="420" y="135" font-size="13" fill="#6e6e73">0×4 − 10 =</text>
-<text x="560" y="136" font-size="20" font-weight="800" fill="#d0342c">−10</text>
-<circle cx="62" cy="180" r="18" fill="#eef4fb" stroke="#c9d4e0" stroke-width="2"/>
-<text x="62" y="185" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1e">C</text>
-<text x="96" y="185" font-size="14" fill="#3a3a3c">パー</text>
-<rect x="180" y="166" width="6" height="28" rx="4" fill="#c9d4e0"/>
-<text x="196" y="185" font-size="14" font-weight="800" fill="#0b5cab">0点</text>
-<line x1="350" y1="180" x2="400" y2="180" stroke="#c9d4e0" stroke-width="2"/>
-<text x="420" y="185" font-size="13" fill="#6e6e73">0×4 − 10 =</text>
-<text x="560" y="186" font-size="20" font-weight="800" fill="#d0342c">−10</text>
-<circle cx="62" cy="230" r="18" fill="#eef4fb" stroke="#c9d4e0" stroke-width="2"/>
-<text x="62" y="235" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1e">D</text>
-<text x="96" y="235" font-size="14" fill="#3a3a3c">ボギー</text>
-<rect x="180" y="216" width="6" height="28" rx="4" fill="#c9d4e0"/>
-<text x="196" y="235" font-size="14" font-weight="800" fill="#0b5cab">0点</text>
-<line x1="350" y1="230" x2="400" y2="230" stroke="#c9d4e0" stroke-width="2"/>
-<text x="420" y="235" font-size="13" fill="#6e6e73">0×4 − 10 =</text>
-<text x="560" y="236" font-size="20" font-weight="800" fill="#d0342c">−10</text>
-<rect x="20" y="268" width="660" height="38" rx="10" fill="#fff7e6"/>
-<text x="350" y="293" text-anchor="middle" font-size="14" font-weight="700" fill="#a06a00">収支 ＝ 自分の点 × 人数 − 全員の点の合計（4人なら合計10点）</text>
+<rect width="700" height="420" fill="#ffffff"/>
+<text x="30" y="40" font-size="24" font-weight="700" fill="#1c1c1e">① 役の点</text>
+<text x="380" y="40" font-size="24" font-weight="700" fill="#1c1c1e">② 収支（点×4 − 合計）</text>
+<rect x="20" y="70" width="660" height="58" rx="10" fill="#eef5fd"/>
+<circle cx="56" cy="99" r="20" fill="#ffffff" stroke="#c9d4e0" stroke-width="2"/>
+<text x="56" y="108" text-anchor="middle" font-size="24" font-weight="700" fill="#1c1c1e">A</text>
+<text x="92" y="109" font-size="26" fill="#3a3a3c">バーディ</text>
+<text x="300" y="109" text-anchor="end" font-size="28" font-weight="800" fill="#0b5cab">10点</text>
+<text x="380" y="109" font-size="24" fill="#6e6e73">10×4 − 10 =</text>
+<text x="665" y="111" text-anchor="end" font-size="34" font-weight="800" fill="#0b5cab">+30</text>
+<rect x="20" y="136" width="660" height="58" rx="10" fill="#f7f9fc"/>
+<circle cx="56" cy="165" r="20" fill="#ffffff" stroke="#c9d4e0" stroke-width="2"/>
+<text x="56" y="174" text-anchor="middle" font-size="24" font-weight="700" fill="#1c1c1e">B</text>
+<text x="92" y="175" font-size="26" fill="#3a3a3c">パー</text>
+<text x="300" y="175" text-anchor="end" font-size="28" font-weight="800" fill="#8e8e93">0点</text>
+<text x="380" y="175" font-size="24" fill="#6e6e73">0×4 − 10 =</text>
+<text x="665" y="177" text-anchor="end" font-size="34" font-weight="800" fill="#d0342c">−10</text>
+<rect x="20" y="202" width="660" height="58" rx="10" fill="#f7f9fc"/>
+<circle cx="56" cy="231" r="20" fill="#ffffff" stroke="#c9d4e0" stroke-width="2"/>
+<text x="56" y="240" text-anchor="middle" font-size="24" font-weight="700" fill="#1c1c1e">C</text>
+<text x="92" y="241" font-size="26" fill="#3a3a3c">パー</text>
+<text x="300" y="241" text-anchor="end" font-size="28" font-weight="800" fill="#8e8e93">0点</text>
+<text x="380" y="241" font-size="24" fill="#6e6e73">0×4 − 10 =</text>
+<text x="665" y="243" text-anchor="end" font-size="34" font-weight="800" fill="#d0342c">−10</text>
+<rect x="20" y="268" width="660" height="58" rx="10" fill="#f7f9fc"/>
+<circle cx="56" cy="297" r="20" fill="#ffffff" stroke="#c9d4e0" stroke-width="2"/>
+<text x="56" y="306" text-anchor="middle" font-size="24" font-weight="700" fill="#1c1c1e">D</text>
+<text x="92" y="307" font-size="26" fill="#3a3a3c">ボギー</text>
+<text x="300" y="307" text-anchor="end" font-size="28" font-weight="800" fill="#8e8e93">0点</text>
+<text x="380" y="307" font-size="24" fill="#6e6e73">0×4 − 10 =</text>
+<text x="665" y="309" text-anchor="end" font-size="34" font-weight="800" fill="#d0342c">−10</text>
+<rect x="20" y="340" width="660" height="66" rx="12" fill="#fff7e6"/>
+<text x="350" y="368" text-anchor="middle" font-size="22" font-weight="700" fill="#a06a00">収支 ＝ 自分の点 × 人数 − 全員の点の合計</text>
+<text x="350" y="394" text-anchor="middle" font-size="19" fill="#a06a00">（この例の合計は10点。4人の収支を足すと必ず0）</text>
 </svg>

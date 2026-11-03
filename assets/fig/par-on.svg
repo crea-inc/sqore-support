@@ -1,47 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="700" height="276" viewBox="0 0 700 276" role="img" aria-labelledby="pot pod" xmlns="http://www.w3.org/2000/svg">
+<svg font-family="-apple-system,'Hiragino Sans',sans-serif" width="700" height="400" viewBox="0 0 700 400" role="img" aria-labelledby="pot pod" xmlns="http://www.w3.org/2000/svg">
 <title id="pot">パーオンになる打数</title>
 <desc id="pod">PAR3は1打目、PAR4は2打目、PAR5は3打目までにグリーンに乗ればパーオン。そこから2パットでパーになる。</desc>
-<rect width="700" height="276" fill="#ffffff"/>
-<rect x="20" y="14" width="210" height="208" rx="12" fill="#f5f8fc" stroke="#e3e9f1"/>
-<text x="125" y="42" text-anchor="middle" font-size="15" font-weight="700" fill="#1c1c1e">PAR3（ショート）</text>
-<circle cx="68" cy="98" r="13" fill="#1479d2" stroke="#1479d2" stroke-width="2"/>
-<text x="68" y="103" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
-<circle cx="125" cy="98" r="13" fill="#ffffff" stroke="#7fb0dd" stroke-width="2"/>
-<text x="125" y="103" text-anchor="middle" font-size="13" font-weight="700" fill="#0b5cab">2</text>
-<circle cx="182" cy="98" r="13" fill="#ffffff" stroke="#7fb0dd" stroke-width="2"/>
-<text x="182" y="103" text-anchor="middle" font-size="13" font-weight="700" fill="#0b5cab">3</text>
-<text x="125" y="146" text-anchor="middle" font-size="14" font-weight="700" fill="#0b5cab">1打目までにオン</text>
-<text x="125" y="170" text-anchor="middle" font-size="12" fill="#6e6e73">白丸の2打 ＝ 2パット</text>
-<text x="125" y="200" text-anchor="middle" font-size="14" font-weight="800" fill="#1c1c1e">2パットでパー（3打）</text>
-<rect x="250" y="14" width="210" height="208" rx="12" fill="#f5f8fc" stroke="#e3e9f1"/>
-<text x="355" y="42" text-anchor="middle" font-size="15" font-weight="700" fill="#1c1c1e">PAR4（ミドル）</text>
-<circle cx="291" cy="98" r="13" fill="#1479d2" stroke="#1479d2" stroke-width="2"/>
-<text x="291" y="103" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
-<circle cx="334" cy="98" r="13" fill="#1479d2" stroke="#1479d2" stroke-width="2"/>
-<text x="334" y="103" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
-<circle cx="376" cy="98" r="13" fill="#ffffff" stroke="#7fb0dd" stroke-width="2"/>
-<text x="376" y="103" text-anchor="middle" font-size="13" font-weight="700" fill="#0b5cab">3</text>
-<circle cx="419" cy="98" r="13" fill="#ffffff" stroke="#7fb0dd" stroke-width="2"/>
-<text x="419" y="103" text-anchor="middle" font-size="13" font-weight="700" fill="#0b5cab">4</text>
-<text x="355" y="146" text-anchor="middle" font-size="14" font-weight="700" fill="#0b5cab">2打目までにオン</text>
-<text x="355" y="170" text-anchor="middle" font-size="12" fill="#6e6e73">白丸の2打 ＝ 2パット</text>
-<text x="355" y="200" text-anchor="middle" font-size="14" font-weight="800" fill="#1c1c1e">2パットでパー（4打）</text>
-<rect x="480" y="14" width="210" height="208" rx="12" fill="#f5f8fc" stroke="#e3e9f1"/>
-<text x="585" y="42" text-anchor="middle" font-size="15" font-weight="700" fill="#1c1c1e">PAR5（ロング）</text>
-<circle cx="517" cy="98" r="13" fill="#1479d2" stroke="#1479d2" stroke-width="2"/>
-<text x="517" y="103" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
-<circle cx="551" cy="98" r="13" fill="#1479d2" stroke="#1479d2" stroke-width="2"/>
-<text x="551" y="103" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
-<circle cx="585" cy="98" r="13" fill="#1479d2" stroke="#1479d2" stroke-width="2"/>
-<text x="585" y="103" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">3</text>
-<circle cx="619" cy="98" r="13" fill="#ffffff" stroke="#7fb0dd" stroke-width="2"/>
-<text x="619" y="103" text-anchor="middle" font-size="13" font-weight="700" fill="#0b5cab">4</text>
-<circle cx="653" cy="98" r="13" fill="#ffffff" stroke="#7fb0dd" stroke-width="2"/>
-<text x="653" y="103" text-anchor="middle" font-size="13" font-weight="700" fill="#0b5cab">5</text>
-<text x="585" y="146" text-anchor="middle" font-size="14" font-weight="700" fill="#0b5cab">3打目までにオン</text>
-<text x="585" y="170" text-anchor="middle" font-size="12" fill="#6e6e73">白丸の2打 ＝ 2パット</text>
-<text x="585" y="200" text-anchor="middle" font-size="14" font-weight="800" fill="#1c1c1e">2パットでパー（5打）</text>
-<rect x="20" y="232" width="660" height="34" rx="10" fill="#fff7e6"/>
-<text x="350" y="254" text-anchor="middle" font-size="14" font-weight="700" fill="#a06a00">判定式：打数 − パット数 ≦ パー − 2 ならパーオン</text>
+<rect width="700" height="400" fill="#ffffff"/>
+<circle cx="40" cy="26" r="11" fill="#1479d2"/><text x="58" y="34" font-size="21" fill="#3a3a3c">グリーンに乗るまで</text>
+<circle cx="276" cy="26" r="11" fill="#ffffff" stroke="#7fb0dd" stroke-width="2"/><text x="294" y="34" font-size="21" fill="#3a3a3c">2パット</text>
+<rect x="20" y="58" width="660" height="76" rx="12" fill="#f5f8fc" stroke="#e3e9f1"/>
+<text x="40" y="105" font-size="26" font-weight="800" fill="#1c1c1e">PAR3</text>
+<circle cx="150" cy="96" r="20" fill="#1479d2" stroke="#1479d2" stroke-width="2"/>
+<text x="150" y="104" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">1</text>
+<circle cx="200" cy="96" r="20" fill="#ffffff" stroke="#7fb0dd" stroke-width="2"/>
+<text x="200" y="104" text-anchor="middle" font-size="22" font-weight="700" fill="#0b5cab">2</text>
+<circle cx="250" cy="96" r="20" fill="#ffffff" stroke="#7fb0dd" stroke-width="2"/>
+<text x="250" y="104" text-anchor="middle" font-size="22" font-weight="700" fill="#0b5cab">3</text>
+<text x="665" y="105" text-anchor="end" font-size="26" font-weight="800" fill="#0b5cab">1打目までにオン</text>
+<rect x="20" y="146" width="660" height="76" rx="12" fill="#f5f8fc" stroke="#e3e9f1"/>
+<text x="40" y="193" font-size="26" font-weight="800" fill="#1c1c1e">PAR4</text>
+<circle cx="150" cy="184" r="20" fill="#1479d2" stroke="#1479d2" stroke-width="2"/>
+<text x="150" y="192" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">1</text>
+<circle cx="200" cy="184" r="20" fill="#1479d2" stroke="#1479d2" stroke-width="2"/>
+<text x="200" y="192" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">2</text>
+<circle cx="250" cy="184" r="20" fill="#ffffff" stroke="#7fb0dd" stroke-width="2"/>
+<text x="250" y="192" text-anchor="middle" font-size="22" font-weight="700" fill="#0b5cab">3</text>
+<circle cx="300" cy="184" r="20" fill="#ffffff" stroke="#7fb0dd" stroke-width="2"/>
+<text x="300" y="192" text-anchor="middle" font-size="22" font-weight="700" fill="#0b5cab">4</text>
+<text x="665" y="193" text-anchor="end" font-size="26" font-weight="800" fill="#0b5cab">2打目までにオン</text>
+<rect x="20" y="234" width="660" height="76" rx="12" fill="#f5f8fc" stroke="#e3e9f1"/>
+<text x="40" y="281" font-size="26" font-weight="800" fill="#1c1c1e">PAR5</text>
+<circle cx="150" cy="272" r="20" fill="#1479d2" stroke="#1479d2" stroke-width="2"/>
+<text x="150" y="280" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">1</text>
+<circle cx="200" cy="272" r="20" fill="#1479d2" stroke="#1479d2" stroke-width="2"/>
+<text x="200" y="280" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">2</text>
+<circle cx="250" cy="272" r="20" fill="#1479d2" stroke="#1479d2" stroke-width="2"/>
+<text x="250" y="280" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">3</text>
+<circle cx="300" cy="272" r="20" fill="#ffffff" stroke="#7fb0dd" stroke-width="2"/>
+<text x="300" y="280" text-anchor="middle" font-size="22" font-weight="700" fill="#0b5cab">4</text>
+<circle cx="350" cy="272" r="20" fill="#ffffff" stroke="#7fb0dd" stroke-width="2"/>
+<text x="350" y="280" text-anchor="middle" font-size="22" font-weight="700" fill="#0b5cab">5</text>
+<text x="665" y="281" text-anchor="end" font-size="26" font-weight="800" fill="#0b5cab">3打目までにオン</text>
+<rect x="20" y="330" width="660" height="56" rx="12" fill="#fff7e6"/>
+<text x="350" y="367" text-anchor="middle" font-size="24" font-weight="700" fill="#a06a00">打数 − パット数 ≦ パー − 2 ならパーオン</text>
 </svg>
