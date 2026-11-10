@@ -220,7 +220,7 @@
 .oc-pt input { width: 100%; min-width: 0; font-family: inherit; font-size: 16px; font-weight: 800; color: #1c1c1e; text-align: center; border: 1.5px solid #dde3ea; border-radius: 10px; padding: 5px 0; background: #f7f9fb; -moz-appearance: textfield; appearance: textfield; }
 .oc-pt input::-webkit-outer-spin-button, .oc-pt input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 .oc-pt input:focus { outline: none; border-color: var(--blue); background: #fff; }
-.oc-pnote { font-size: 11px; color: var(--gray); margin-top: 8px; text-align: center; line-height: 1.6; }
+.oc-pnote { font-size: 11px; color: var(--gray); margin-top: 8px; text-align: center; line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere; }
 .oc-ic { width: 14px; height: 14px; border-radius: 50%; flex: none; display: inline-block; }
 .oc-ic-d { border-radius: 2px; transform: rotate(45deg) scale(.82); background: #00a6d9; }
 .oc-ic-g { background: #d19b26; } .oc-ic-s { background: #8c949e; } .oc-ic-b { background: #b0713b; } .oc-ic-i { background: #3a3a3c; }
@@ -319,7 +319,7 @@
         <label class="oc-pt"><span><i class="oc-ic oc-ic-b"></i>銅</span><input type="number" inputmode="numeric" min="0" max="999" step="1" value="2" data-oc-pt="3"></label>
         <label class="oc-pt oc-iron"><span><i class="oc-ic oc-ic-i"></i>鉄</span><input type="number" inputmode="numeric" min="0" max="999" step="1" value="1" data-oc-pt="4"></label>
       </div>
-      <p class="oc-pnote">配点は会によって違います。変えられます。3人以下は鉄なしの4種です。</p>
+      <p class="oc-pnote">配点は会によって違います。変えられます。<br>アプリの初期値はこの10倍（50・40・30・20・10）で、結果の比率は同じです。3人以下は鉄なしの4種です。</p>
     </div>
     <p class="oc-sec">取ったメダルの数（押すと1枚ふえます）</p>
     <div class="oc-card" id="oc-players"></div>
@@ -440,7 +440,13 @@
     counts[i][m] = Math.max(0, Math.min(99, counts[i][m] + +b.getAttribute("data-oc-d")));
     stale(); draw();
   });
-  list.addEventListener("input", function () { stale(); draw(); });
+  // 名前は数字に関係ないので結果は消さず、結果の中の名前だけ書き換える
+  list.addEventListener("input", function () {
+    draw();
+    res.querySelectorAll(".oc-rname").forEach(function (el, i) {
+      if (el.firstChild && el.firstChild.nodeType === 3) el.firstChild.nodeValue = nameOf(i);
+    });
+  });
   app.querySelector(".oc-seg").addEventListener("click", function (e) {
     var b = e.target.closest("button[data-oc-n]");
     if (!b) return;
@@ -453,6 +459,9 @@
   });
 
   document.getElementById("oc-calc").addEventListener("click", function () {
+    // 欄の表示を計算に使う値(0〜999の整数)にそろえる
+    ptInputs.forEach(function (el) { el.value = toInt(el.value, 999); });
+    draw();
     var r = ocSettle(counts, pts(), n);
     if (r.medals === 0) {
       res.innerHTML = '<p class="oc-msg">メダルの数を入れてください</p>';
@@ -474,7 +483,8 @@
       });
     }
     res.hidden = false;
-    if (res.scrollIntoView) res.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (res.scrollIntoView) res.scrollIntoView({ block: "nearest", behavior: calm ? "auto" : "smooth" });
   });
 
   document.getElementById("oc-reset").addEventListener("click", function () {
