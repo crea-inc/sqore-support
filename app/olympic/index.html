@@ -92,6 +92,14 @@
         "@type": "Answer",
         "text": "消えません。iPhoneはiCloudで同期しているので同じApple IDの端末に引き継がれ、Androidはデータをファイルに書き出して復元できます。"
       }
+    },
+    {
+      "@type": "Question",
+      "name": "ラウンド後に、メダルの数だけで精算を計算できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "できます。このページの計算機に、取ったメダルの数を入れると全員の精算が出ます。ラウンド中にホールごとに自動で数えたいときはアプリを使います。"
+      }
     }
   ]
 }
@@ -187,6 +195,84 @@
 .demo-rules .dr:last-child { border-bottom: none; }
 .demo-rules .dr b { flex: none; width: 84px; color: var(--gray); font-weight: 700; }
 .demo-rules .dr span { color: #1c1c1e; }
+/* オリンピックの計算機(メダルの数→精算)。既存デモと名前がぶつからないよう、すべて oc- で始める */
+#calc { scroll-margin-top: 104px; }
+.oc-lead { margin-bottom: 16px; }
+.oc-app { max-width: 480px; margin: 0 auto; border-radius: 24px; overflow: hidden; background: #eef3f8; box-shadow: 0 14px 36px rgba(11,44,71,.18); }
+.oc-top { background: linear-gradient(180deg, #2596e0, #0b5cab); color: #fff; padding: 14px 16px 16px; }
+.oc-top-row { display: flex; align-items: center; gap: 10px; }
+.oc-top-t { line-height: 1.25; }
+.oc-top-t small { display: block; font-size: 10px; font-weight: 700; opacity: .85; letter-spacing: .08em; }
+.oc-top-t b { font-size: 18px; font-weight: 800; }
+.oc-seg { margin-left: auto; display: flex; background: rgba(255,255,255,.18); border-radius: 11px; padding: 3px; gap: 2px; }
+.oc-seg button { border: none; background: transparent; color: #fff; font-family: inherit; font-size: 13px; font-weight: 800; padding: 7px 12px; border-radius: 9px; cursor: pointer; line-height: 1.2; }
+.oc-seg button[aria-pressed="true"] { background: #fff; color: var(--blue-deep); box-shadow: 0 2px 6px rgba(0,0,0,.12); }
+.oc-sheet { padding: 12px; }
+.oc-card { background: #fff; border-radius: 14px; padding: 4px 12px; margin-bottom: 10px; }
+.oc-sec { font-size: 11px; font-weight: 700; color: #7c8794; margin: 8px 2px 4px; }
+.oc-pts { padding: 10px 12px 10px; }
+.oc-pts-g, .oc-mrow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; }
+.oc-app[data-oc-n="2"] .oc-pts-g, .oc-app[data-oc-n="3"] .oc-pts-g,
+.oc-app[data-oc-n="2"] .oc-mrow, .oc-app[data-oc-n="3"] .oc-mrow { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.oc-app[data-oc-n="2"] .oc-iron, .oc-app[data-oc-n="3"] .oc-iron { display: none; }
+.oc-pt { display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 0; margin: 0; }
+.oc-pt span { display: flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 800; color: #1c1c1e; white-space: nowrap; }
+.oc-pt input { width: 100%; min-width: 0; font-family: inherit; font-size: 16px; font-weight: 800; color: #1c1c1e; text-align: center; border: 1.5px solid #dde3ea; border-radius: 10px; padding: 5px 0; background: #f7f9fb; -moz-appearance: textfield; appearance: textfield; }
+.oc-pt input::-webkit-outer-spin-button, .oc-pt input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.oc-pt input:focus { outline: none; border-color: var(--blue); background: #fff; }
+.oc-pnote { font-size: 11px; color: var(--gray); margin-top: 8px; text-align: center; line-height: 1.6; }
+.oc-ic { width: 14px; height: 14px; border-radius: 50%; flex: none; display: inline-block; }
+.oc-ic-d { border-radius: 2px; transform: rotate(45deg) scale(.82); background: #00a6d9; }
+.oc-ic-g { background: #d19b26; } .oc-ic-s { background: #8c949e; } .oc-ic-b { background: #b0713b; } .oc-ic-i { background: #3a3a3c; }
+.oc-p { padding: 10px 0 12px; border-bottom: 1px solid #f0f2f5; }
+.oc-p:last-child { border-bottom: none; }
+.oc-p[hidden] { display: none; }
+.oc-prow { display: flex; align-items: center; gap: 9px; }
+.oc-badge { width: 24px; height: 24px; border-radius: 50%; background: #1479d2; color: #fff; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex: none; }
+.oc-name { flex: 1; min-width: 0; width: 100%; font-family: inherit; font-size: 16px; font-weight: 600; color: #1c1c1e; border: none; border-bottom: 1.5px dashed #d3dae3; border-radius: 0; background: transparent; padding: 2px 0; }
+.oc-name:focus { outline: none; border-bottom: 1.5px solid var(--blue); }
+.oc-sum { flex: none; font-size: 13px; font-weight: 800; color: #9aa3ad; min-width: 48px; text-align: right; white-space: nowrap; }
+.oc-sum.oc-on { color: var(--blue-deep); }
+.oc-mrow { margin-top: 8px; }
+.oc-m { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.oc-tile { position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; width: 100%; min-width: 0; padding: 7px 0 5px; border-radius: 12px; background: #f2f3f5; border: 2px solid transparent; font-family: inherit; cursor: pointer; color: #1c1c1e; touch-action: manipulation; }
+.oc-tile .oc-ml { font-size: 11px; font-weight: 800; line-height: 1.2; }
+.oc-tile .oc-n { font-size: 19px; font-weight: 800; line-height: 1.1; color: #b4bcc6; font-variant-numeric: tabular-nums; }
+.oc-tile::after { content: "+"; position: absolute; top: 2px; right: 6px; font-size: 12px; font-weight: 800; color: #9aa3ad; }
+.oc-tile.oc-has .oc-ml, .oc-tile.oc-has .oc-n, .oc-tile.oc-has::after { color: #fff; }
+.oc-tile.oc-has .oc-ic { background: #fff; }
+.oc-tile.oc-has[data-oc-m="0"] { background: #00a6d9; border-color: #00a6d9; }
+.oc-tile.oc-has[data-oc-m="1"] { background: #d19b26; border-color: #d19b26; }
+.oc-tile.oc-has[data-oc-m="2"] { background: #8c949e; border-color: #8c949e; }
+.oc-tile.oc-has[data-oc-m="3"] { background: #b0713b; border-color: #b0713b; }
+.oc-tile.oc-has[data-oc-m="4"] { background: #3a3a3c; border-color: #3a3a3c; }
+.oc-minus { width: 100%; min-width: 0; height: 30px; border: 1.5px solid #e3e8ee; background: #fff; border-radius: 9px; font-family: inherit; font-size: 17px; font-weight: 800; color: #7c8794; cursor: pointer; line-height: 1; touch-action: manipulation; }
+.oc-minus:disabled { opacity: .35; cursor: default; }
+.oc-calc { display: block; width: 100%; background: var(--blue); color: #fff; border: none; border-radius: 14px; padding: 14px; font-size: 16px; font-weight: 800; margin: 4px 0 10px; cursor: pointer; font-family: inherit; box-shadow: 0 4px 12px rgba(20,121,210,.28); }
+.oc-calc:active { background: var(--blue-deep); }
+.oc-res { background: #fff; border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; border: 2px solid var(--blue); }
+.oc-res[hidden] { display: none; }
+.oc-res-t { font-size: 13px; font-weight: 800; color: var(--blue-deep); margin-bottom: 4px; display: flex; justify-content: space-between; gap: 8px; }
+.oc-res-t span { font-size: 11px; font-weight: 700; color: #7c8794; }
+.oc-rrow { display: flex; align-items: center; gap: 9px; padding: 8px 0; border-bottom: 1px solid #f0f2f5; }
+.oc-rrow:last-of-type { border-bottom: none; }
+.oc-rname { flex: 1; min-width: 0; font-size: 15px; font-weight: 700; color: #1c1c1e; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; line-height: 1.3; }
+.oc-rname small { display: block; font-size: 11px; font-weight: 600; color: #7c8794; }
+.oc-rnet { flex: none; font-size: 20px; font-weight: 800; color: #9aa3ad; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.oc-rnet.oc-plus { color: var(--blue-deep); }
+.oc-rnet.oc-minusv { color: #c0392b; }
+.oc-rnet small { font-size: 12px; margin-left: 1px; }
+.oc-res-f { font-size: 11px; color: var(--gray); margin-top: 6px; text-align: center; line-height: 1.6; }
+.oc-msg { font-size: 14px; font-weight: 700; color: #c0392b; text-align: center; padding: 6px 0; }
+.oc-reset { display: block; margin: 0 auto 4px; background: none; border: none; color: #7c8794; font-family: inherit; font-size: 13px; font-weight: 700; padding: 8px 16px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.oc-go { max-width: 480px; margin: 16px auto 0; background: #fff; border-radius: 16px; padding: 18px 18px 20px; border-top: 3px solid var(--blue); box-shadow: 0 3px 14px rgba(11,92,171,.07); text-align: center; }
+.oc-go p { font-size: 14px; }
+.oc-go .oc-go-t { font-size: 15px; font-weight: 800; color: var(--blue-deep); margin-bottom: 4px; }
+@media (prefers-reduced-motion: no-preference) {
+  .oc-tile, .oc-minus, .oc-calc { transition: transform .12s ease, background-color .15s, border-color .15s; }
+  .oc-tile:active, .oc-minus:active, .oc-calc:active { transform: scale(.94); }
+  .oc-res:not([hidden]) { animation: sq-fade .2s ease both; }
+}
 </style>
 <link rel="stylesheet" href="../../assets/footer.css">
 </head>
@@ -210,6 +296,198 @@
 <p class="updated">iPhone・Android対応・基本無料</p>
 
 <p class="intro">オリンピックは、ゴルフの握り（＝仲間内でポイントを競う定番ゲーム）の1つです。全員がグリーンに乗ったらカップから遠い順に金・銀・銅・鉄を割り当て、1パットで沈めた人がそのメダルを取ります。グリーン外から直接カップインしたらダイヤ。取ったメダルの点数を他の全員から受け取ります。面倒なところは、メダルの点数を覚えておいて<strong>「取った人が他の全員からもらう」総当たりの精算</strong>を18ホールぶん積み上げるところ。SQOREなら、その場で<strong>メダルを選ぶだけ</strong>で、ポイントも精算も全部自動です。</p>
+
+<section id="calc">
+<h2>オリンピックの計算機｜メダルの数を入れるだけで精算</h2>
+<p class="oc-lead">ラウンドが終わったあと、取ったメダルの数を入れると、全員の精算がその場で出ます。式は<strong>（自分の合計点×人数）−全員の合計点</strong>です。</p>
+<div class="oc-app" id="oc-app" data-oc-n="4">
+  <div class="oc-top">
+    <div class="oc-top-row">
+      <div class="oc-top-t"><small>オリンピック</small><b>精算の計算</b></div>
+      <div class="oc-seg" role="group" aria-label="人数">
+        <button type="button" data-oc-n="2" aria-pressed="false">2人</button>
+        <button type="button" data-oc-n="3" aria-pressed="false">3人</button>
+        <button type="button" data-oc-n="4" aria-pressed="true">4人</button>
+      </div>
+    </div>
+  </div>
+  <div class="oc-sheet">
+    <p class="oc-sec">配点（1枚あたり）</p>
+    <div class="oc-card oc-pts">
+      <div class="oc-pts-g">
+        <label class="oc-pt"><span><i class="oc-ic oc-ic-d"></i>ダイヤ</span><input type="number" inputmode="numeric" min="0" max="999" step="1" value="5" data-oc-pt="0"></label>
+        <label class="oc-pt"><span><i class="oc-ic oc-ic-g"></i>金</span><input type="number" inputmode="numeric" min="0" max="999" step="1" value="4" data-oc-pt="1"></label>
+        <label class="oc-pt"><span><i class="oc-ic oc-ic-s"></i>銀</span><input type="number" inputmode="numeric" min="0" max="999" step="1" value="3" data-oc-pt="2"></label>
+        <label class="oc-pt"><span><i class="oc-ic oc-ic-b"></i>銅</span><input type="number" inputmode="numeric" min="0" max="999" step="1" value="2" data-oc-pt="3"></label>
+        <label class="oc-pt oc-iron"><span><i class="oc-ic oc-ic-i"></i>鉄</span><input type="number" inputmode="numeric" min="0" max="999" step="1" value="1" data-oc-pt="4"></label>
+      </div>
+      <p class="oc-pnote">配点は会によって違います。変えられます。3人以下は鉄なしの4種です。</p>
+    </div>
+    <p class="oc-sec">取ったメダルの数（押すと1枚ふえます）</p>
+    <div class="oc-card" id="oc-players"></div>
+    <button type="button" class="oc-calc" id="oc-calc">✓&nbsp;&nbsp;精算を計算する</button>
+    <div class="oc-res" id="oc-res" hidden aria-live="polite"></div>
+    <button type="button" class="oc-reset" id="oc-reset">リセット</button>
+  </div>
+</div>
+<div class="oc-go">
+  <p class="oc-go-t">ラウンド中に数えるなら、アプリで</p>
+  <p>アプリなら、ホールごとにメダルを押すだけで自動で数えます。スコアも残り、ラスベガスなど他のゲームも同時に計算できます。ゲームのポイント計算と精算は無料です。</p>
+  <div class="store-btns">
+    <a class="store-badge store-badge-apple" href="https://apps.apple.com/jp/app/id6777357472?pt=128704638&ct=app-olympic&mt=8">
+      <img src="../../assets/badge_appstore_ja.svg" alt="App Store からダウンロード" width="136" height="50" loading="lazy" decoding="async">
+    </a>
+    <a class="store-badge store-badge-google" href="https://play.google.com/store/apps/details?id=com.sqore.app&referrer=utm_source%3Dsqore-golf%26utm_medium%3Dweb%26utm_campaign%3Dapp-olympic">
+      <img src="../../assets/badge_googleplay_ja.png" alt="Google Play で手に入れよう" width="168" height="65" loading="lazy" decoding="async">
+    </a>
+  </div>
+</div>
+<script>
+"use strict";
+// オリンピックの計算機(メダルの数→精算)。既存の1ホールデモとは別の即時関数で、oc- のidとクラスだけを触る
+(function () {
+  // oc-settle-begin
+  function ocSettle(counts, pts, n) {
+    var kinds = n >= 4 ? 5 : 4;            // 3人以下は鉄なし
+    var totals = [], sum = 0, medals = 0;
+    for (var i = 0; i < n; i++) {
+      var t = 0;
+      for (var m = 0; m < kinds; m++) {
+        var c = counts[i][m] || 0;
+        medals += c;
+        t += c * pts[m];
+      }
+      totals.push(t);
+      sum += t;
+    }
+    return { totals: totals, nets: totals.map(function (t) { return t * n - sum; }), sum: sum, medals: medals };
+  }
+  // oc-settle-end
+
+  var app = document.getElementById("oc-app");
+  var list = document.getElementById("oc-players");
+  var res = document.getElementById("oc-res");
+  var NAMES = ["自分", "松本", "井上", "木村"];
+  var MEDALS = [
+    { lbl: "ダイヤ", ic: "d" }, { lbl: "金", ic: "g" }, { lbl: "銀", ic: "s" },
+    { lbl: "銅", ic: "b" }, { lbl: "鉄", ic: "i" },
+  ];
+  var n = 4;
+  var counts = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
+  var ptInputs = app.querySelectorAll("[data-oc-pt]");
+
+  function toInt(v, max) {
+    var x = Math.round(Number(v));
+    return isFinite(x) && x > 0 ? Math.min(x, max) : 0;
+  }
+  function pts() {
+    return Array.prototype.map.call(ptInputs, function (el) { return toInt(el.value, 999); });
+  }
+  function nameOf(i) {
+    var v = list.querySelector('[data-oc-name="' + i + '"]').value.trim();
+    return v || (i + 1) + "人目";
+  }
+  function signed(v) {
+    return v > 0 ? "+" + v : v < 0 ? "−" + -v : "±0";
+  }
+
+  list.innerHTML = NAMES.map(function (nm, i) {
+    return '<div class="oc-p" data-oc-p="' + i + '">' +
+      '<div class="oc-prow"><span class="oc-badge">' + (i + 1) + '</span>' +
+      '<input class="oc-name" type="text" maxlength="8" value="' + nm + '" data-oc-name="' + i + '" aria-label="' + (i + 1) + '人目の名前">' +
+      '<span class="oc-sum" data-oc-sum="' + i + '">0点</span></div>' +
+      '<div class="oc-mrow">' + MEDALS.map(function (md, m) {
+        return '<div class="oc-m' + (m === 4 ? " oc-iron" : "") + '">' +
+          '<button type="button" class="oc-tile" data-oc-p="' + i + '" data-oc-m="' + m + '" data-oc-d="1">' +
+          '<i class="oc-ic oc-ic-' + md.ic + '"></i><span class="oc-ml">' + md.lbl + '</span><span class="oc-n">0</span></button>' +
+          '<button type="button" class="oc-minus" data-oc-p="' + i + '" data-oc-m="' + m + '" data-oc-d="-1" disabled>−</button>' +
+          '</div>';
+      }).join("") + '</div></div>';
+  }).join("");
+
+  // 入力を変えたら、前の結果は消す(古い精算を見せない)
+  function stale() { res.hidden = true; res.innerHTML = ""; }
+
+  function draw() {
+    app.setAttribute("data-oc-n", String(n));
+    app.querySelectorAll(".oc-seg button").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(+b.getAttribute("data-oc-n") === n));
+    });
+    var p = pts(), kinds = n >= 4 ? 5 : 4;
+    for (var i = 0; i < 4; i++) {
+      var row = list.querySelector('.oc-p[data-oc-p="' + i + '"]');
+      row.hidden = i >= n;
+      var t = 0, nm = nameOf(i);
+      for (var m = 0; m < 5; m++) {
+        var c = counts[i][m];
+        if (m < kinds) t += c * p[m];
+        var tile = row.querySelector('.oc-tile[data-oc-m="' + m + '"]');
+        var minus = row.querySelector('.oc-minus[data-oc-m="' + m + '"]');
+        tile.classList.toggle("oc-has", c > 0);
+        tile.querySelector(".oc-n").textContent = c;
+        tile.setAttribute("aria-label", nm + "の" + MEDALS[m].lbl + "を1枚ふやす（いま" + c + "枚）");
+        minus.setAttribute("aria-label", nm + "の" + MEDALS[m].lbl + "を1枚へらす");
+        minus.disabled = c === 0;
+      }
+      var s = row.querySelector("[data-oc-sum]");
+      s.textContent = t + "点";
+      s.classList.toggle("oc-on", t > 0);
+    }
+  }
+
+  list.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-oc-d]");
+    if (!b || b.disabled) return;
+    var i = +b.getAttribute("data-oc-p"), m = +b.getAttribute("data-oc-m");
+    counts[i][m] = Math.max(0, Math.min(99, counts[i][m] + +b.getAttribute("data-oc-d")));
+    stale(); draw();
+  });
+  list.addEventListener("input", function () { stale(); draw(); });
+  app.querySelector(".oc-seg").addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-oc-n]");
+    if (!b) return;
+    n = +b.getAttribute("data-oc-n");
+    stale(); draw();
+  });
+  ptInputs.forEach(function (el) {
+    el.addEventListener("input", function () { stale(); draw(); });
+    el.addEventListener("change", function () { el.value = toInt(el.value, 999); });
+  });
+
+  document.getElementById("oc-calc").addEventListener("click", function () {
+    var r = ocSettle(counts, pts(), n);
+    if (r.medals === 0) {
+      res.innerHTML = '<p class="oc-msg">メダルの数を入れてください</p>';
+    } else {
+      var html = '<p class="oc-res-t">精算<span>全員の合計 ' + r.sum + '点・' + n + '人</span></p>';
+      for (var i = 0; i < n; i++) {
+        var v = r.nets[i];
+        html += '<div class="oc-rrow"><span class="oc-badge">' + (i + 1) + '</span>' +
+          '<span class="oc-rname"></span>' +
+          '<span class="oc-rnet' + (v > 0 ? " oc-plus" : v < 0 ? " oc-minusv" : "") + '">' + signed(v) + '<small>点</small></span></div>';
+      }
+      html += '<p class="oc-res-f">全員の精算を足すと、必ず0になります。</p>';
+      res.innerHTML = html;
+      res.querySelectorAll(".oc-rname").forEach(function (el, i) {
+        el.textContent = nameOf(i);
+        var sm = document.createElement("small");
+        sm.textContent = "合計 " + r.totals[i] + "点（" + r.totals[i] + "×" + n + "−" + r.sum + "）";
+        el.appendChild(sm);
+      });
+    }
+    res.hidden = false;
+    if (res.scrollIntoView) res.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  });
+
+  document.getElementById("oc-reset").addEventListener("click", function () {
+    counts.forEach(function (row) { for (var m = 0; m < 5; m++) row[m] = 0; });
+    stale(); draw();
+  });
+
+  draw();
+})();
+</script>
+</section>
 
 <div class="demo-wrap" id="demo">
   <p class="demo-cap">アプリの画面を1ホールぶん、そのまま動かせます<small>メダルを取った人のメダルをタップして「ポイント計算する」。ダイヤ（グリーン外から直接カップイン）は50ポイントを他の全員からもらえます</small></p>
@@ -350,6 +628,10 @@
   <details>
     <summary>機種変更したらデータは消えますか？</summary>
     <p>消えません。iPhoneはiCloudで同期しているので同じApple IDの端末に引き継がれ、Androidはデータをファイルに書き出して復元できます。</p>
+  </details>
+  <details>
+    <summary>ラウンド後に、メダルの数だけで精算を計算できますか？</summary>
+    <p>できます。<a href="#calc">このページの計算機</a>に、取ったメダルの数を入れると全員の精算が出ます。ラウンド中にホールごとに自動で数えたいときはアプリを使います。</p>
   </details>
 </div>
 
