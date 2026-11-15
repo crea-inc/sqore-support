@@ -13,7 +13,7 @@
   python3 tools/audit_links.py --check    # 問題のある行だけ（終了コード 1）
   python3 tools/audit_links.py course/search/   # 指定ページの被リンク元を列挙
 
-リダイレクト用のスタブ（meta refresh だけのページ）と 404.html は判定から外す。
+リダイレクト用のスタブ（meta refresh だけのページ）、noindex のページ（r/・get/ などの受け口）と 404.html は判定から外す。
 """
 import json
 import os
@@ -39,6 +39,7 @@ class PageParser(HTMLParser):
         self.og_image = 0
         self.desc = None
         self.refresh = False
+        self.noindex = False
         self.ld_blocks = []
         self._in_ld = False
         self._ld_buf = []
@@ -58,6 +59,8 @@ class PageParser(HTMLParser):
                 self.desc = a.get("content", "")
             if (a.get("http-equiv") or "").lower() == "refresh":
                 self.refresh = True
+            if a.get("name") == "robots" and "noindex" in (a.get("content") or ""):
+                self.noindex = True
         elif tag == "script" and a.get("type") == "application/ld+json":
             self._in_ld = True
             self._ld_buf = []
@@ -165,7 +168,7 @@ def main():
     rows, bad = [], 0
     for url in sorted(pages, key=lambda u: (u.count("/"), u)):
         rel, pp = pages[url]
-        if pp.refresh or rel == "404.html":
+        if pp.refresh or pp.noindex or rel == "404.html":
             continue
         dlen = len(pp.desc) if pp.desc is not None else 0
         types, ld_ok = ld_types(pp.ld_blocks)

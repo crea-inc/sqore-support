@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2596e0">
+<title>SQOREを入手する - SQORE</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="ゴルフの握りのポイントを自動計算するSQOREのアプリを、App StoreまたはGoogle Playから入手します。">
+<meta name="apple-itunes-app" content="app-id=6777357472">
+<link rel="canonical" href="https://sqore-golf.com/get/">
+<link rel="apple-touch-icon" href="/assets/icon_180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_32.png?v=5">
+<link rel="icon" type="image/png" sizes="180x180" href="/assets/favicon_180.png?v=5">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+         margin: 0; line-height: 1.7; color: #1c1c1e; background: #f5f7fa; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 480px; margin: 0 auto; padding: 48px 16px 64px; text-align: center; }
+  .icon { width: 88px; height: 88px; border-radius: 20px; box-shadow: 0 6px 20px rgba(11,92,171,.18); }
+  h1 { font-size: 24px; margin: 20px 0 8px; }
+  .lead { color: #6e6e73; font-size: 15px; margin: 0 0 28px; }
+  .badges { display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .badges img { height: 44px; width: auto; display: block; }
+  .badges .gp img { height: 57px; }
+  .home { display: inline-block; margin-top: 32px; color: #1479d2; font-size: 14px; text-decoration: none; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <img class="icon" src="/assets/icon_180.png" alt="SQORE">
+  <h1>SQOREを入手する</h1>
+  <p class="lead">お使いのスマートフォンのストアから入手してください。</p>
+  <div class="badges">
+    <a id="get-ios" href="https://apps.apple.com/jp/app/id6777357472?pt=128704638&ct=get&mt=8"><img src="/assets/badge_appstore_ja.svg" alt="App Storeからダウンロード"></a>
+    <a id="get-android" class="gp" href="https://play.google.com/store/apps/details?id=com.sqore.app&referrer=utm_source%3Dsqore-golf%26utm_medium%3Dweb%26utm_campaign%3Dget"><img src="/assets/badge_googleplay_ja.png" alt="Google Playで手に入れよう"></a>
+  </div>
+  <a class="home" href="/">SQOREのトップへ</a>
+</main>
+<script>
+(function () {
+  // パソコンの QR から来た人をストアへ送る。飛び先は下のバッジの href(ページ別の印は tools/store_links.py が付ける)
+  var ua = navigator.userAgent;
+  var isAndroid = /Android/i.test(ua);
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var a = isAndroid ? document.getElementById('get-android') : isIOS ? document.getElementById('get-ios') : null;
+  if (a) location.replace(a.href);
+})();
+</script>
+</body>
+</html>
