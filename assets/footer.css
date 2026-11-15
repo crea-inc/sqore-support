@@ -20,11 +20,9 @@ footer.sf li a:hover { color: #fff; text-decoration: underline; background: none
   footer.sf { padding-top: 40px; }
   body:has(.dl-bar) .sf-bottom { padding-bottom: 110px; margin-bottom: -92px; }
 }
-/* パソコンで見ている人向けの入手 QR(tools/qr_block.py がストアのバッジの下に入れる)。
-   スマホ・タブレットでは出さず場所も取らない。QR は必ず白地の上(画像の白い余白4マスが箱の内側の余白を兼ねる)。 */
+/* パソコンで見ている人向けの入手 QR(tools/qr_block.py がストアのバッジの右に入れる)。
+   スマホ・タブレットでは出さず場所も取らない。白地は画像の余白4マスが兼ねる。説明文は付けない。 */
 .qr-get { display: none; }
 @media (min-width: 900px) and (hover: hover) and (pointer: fine) {
-  .qr-get { display: inline-flex; align-items: center; gap: 4px; margin-top: 16px; padding: 2px 20px 2px 2px; background: #fff; border: 1px solid rgba(13,44,71,.12); border-radius: 14px; box-shadow: 0 3px 14px rgba(11,92,171,.07); text-align: left; vertical-align: top; }
-  .qr-get img { display: block; width: 111px; height: 111px; max-width: none; flex: none; border-radius: 12px; }
-  .qr-get span { color: #1c1c1e; font-size: 13px; font-weight: 700; line-height: 1.6; opacity: 1; }
+  .qr-get { display: block; width: 74px; height: 74px; max-width: none; flex: none; border-radius: 8px; }
 }
